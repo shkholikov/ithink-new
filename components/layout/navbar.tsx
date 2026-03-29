@@ -4,12 +4,66 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { Menu, X, ChevronDown, Sun, Moon } from 'lucide-react';
+import {
+  Menu, X, Sun, Moon,
+  Database, Code2, Server,
+  Shield, Lock, Layers,
+  BookOpen, Award, Users2,
+  Briefcase, GraduationCap, Building2,
+} from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
 
 const locales = ['uz', 'ru', 'en'] as const;
+
+const dropdownGroups = [
+  {
+    key: 'services' as const,
+    section: 'services',
+    items: [
+      { icon: Database, title: 'CRM Integration', description: 'Automate your sales pipeline with modern CRM systems.', slug: 'crm' },
+      { icon: Code2, title: 'Software Development', description: 'Custom web and mobile apps tailored to your business.', slug: 'software' },
+      { icon: Server, title: 'IT Infrastructure', description: 'Networks, servers, and managed IT for your operations.', slug: 'infrastructure' },
+    ],
+  },
+  {
+    key: 'licenses' as const,
+    section: 'licenses',
+    items: [
+      { icon: Shield, title: 'Microsoft', description: 'Official Microsoft licenses for business and enterprise.', slug: 'microsoft' },
+      { icon: Lock, title: 'Security Software', description: 'Antivirus and endpoint protection solutions.', slug: 'security' },
+      { icon: Layers, title: 'Design Tools', description: 'Creative software licenses for your team.', slug: 'design' },
+    ],
+  },
+  {
+    key: 'training' as const,
+    section: 'training',
+    items: [
+      { icon: BookOpen, title: 'Online Courses', description: 'Self-paced learning programs for IT professionals.', slug: 'courses' },
+      { icon: Award, title: 'Certifications', description: 'Recognized certifications to validate your skills.', slug: 'certification' },
+      { icon: Users2, title: 'Corporate Training', description: 'Tailored training programs for your team.', slug: 'corporate' },
+    ],
+  },
+  {
+    key: 'solutions' as const,
+    section: 'solutions',
+    items: [
+      { icon: Briefcase, title: 'For Business', description: 'End-to-end IT solutions for growing companies.', slug: 'business' },
+      { icon: GraduationCap, title: 'For Education', description: 'Technology tools for schools and universities.', slug: 'education' },
+      { icon: Building2, title: 'For Enterprise', description: 'Scalable infrastructure for large organizations.', slug: 'enterprise' },
+    ],
+  },
+];
 
 interface NavbarProps {
   locale: string;
@@ -21,7 +75,6 @@ export default function Navbar({ locale }: NavbarProps) {
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => setMounted(true), []);
 
@@ -32,19 +85,6 @@ export default function Navbar({ locale }: NavbarProps) {
   }, []);
 
   const isDark = !mounted || theme === 'dark';
-
-  const companyLinks = [
-    { label: t('about'), href: `/${locale}/about` },
-    { label: t('customers'), href: `/${locale}/customers` },
-    { label: t('partners'), href: `/${locale}/partners` },
-    { label: t('faq'), href: `/${locale}/faq` },
-  ];
-
-  const serviceLinks = [
-    { label: t('hireUs'), href: `/${locale}/hire-us` },
-    { label: t('websites'), href: `/${locale}/websites` },
-    { label: t('pricing'), href: `/${locale}/pricing` },
-  ];
 
   return (
     <header
@@ -72,69 +112,60 @@ export default function Navbar({ locale }: NavbarProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {/* Company Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('company')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent">
-                {t('company')}
-                <ChevronDown className={cn('w-3.5 h-3.5 transition-transform', activeDropdown === 'company' && 'rotate-180')} />
-              </button>
-              {activeDropdown === 'company' && (
-                <div className="absolute top-full left-0 mt-1 w-48 glass-card rounded-xl overflow-hidden shadow-xl shadow-black/40">
-                  {companyLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+          <nav className="hidden lg:flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {dropdownGroups.map((group) => (
+                  <NavigationMenuItem key={group.key}>
+                    <NavigationMenuTrigger className="text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent hover:bg-accent data-open:bg-accent">
+                      {t(group.key)}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="w-72 p-2">
+                        {group.items.map((item) => (
+                          <li key={item.slug}>
+                            <Link
+                              href={`/${locale}/${group.section}/${item.slug}`}
+                              className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors"
+                            >
+                              <div className="mt-0.5 shrink-0 rounded-md bg-[#377dff]/10 p-2">
+                                <item.icon className="size-4 text-[#377dff]" />
+                              </div>
+                              <div>
+                                <p className="text-sm font-medium text-foreground">{item.title}</p>
+                                <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.description}</p>
+                              </div>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ))}
 
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('services')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent">
-                {t('services')}
-                <ChevronDown className={cn('w-3.5 h-3.5 transition-transform', activeDropdown === 'services' && 'rotate-180')} />
-              </button>
-              {activeDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-1 w-48 glass-card rounded-xl overflow-hidden shadow-xl shadow-black/40">
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                <NavigationMenuItem>
+                  <Link href={`/${locale}/blog`} className={cn(navigationMenuTriggerStyle(), 'text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent')}>
+                    {t('blog')}
+                  </Link>
+                </NavigationMenuItem>
 
-            <Link href={`/${locale}/pricing`} className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent">
-              {t('pricing')}
-            </Link>
+                <NavigationMenuItem>
+                  <Link href={`/${locale}/company`} className={cn(navigationMenuTriggerStyle(), 'text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent')}>
+                    {t('company')}
+                  </Link>
+                </NavigationMenuItem>
 
-            <Link href={`/${locale}/contact`} className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent">
-              {t('contactUs')}
-            </Link>
+                <NavigationMenuItem>
+                  <Link href={`/${locale}/career`} className={cn(navigationMenuTriggerStyle(), 'text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent')}>
+                    {t('career')}
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Language switcher */}
             <div className="flex items-center gap-0.5 bg-muted rounded-lg p-0.5">
               {locales.map((l) => (
                 <Link
@@ -150,7 +181,6 @@ export default function Navbar({ locale }: NavbarProps) {
               ))}
             </div>
 
-            {/* Theme toggle */}
             <button
               onClick={() => setTheme(isDark ? 'light' : 'dark')}
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
@@ -158,13 +188,6 @@ export default function Navbar({ locale }: NavbarProps) {
             >
               {mounted && !isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
             </button>
-
-            <Link
-              href={`/${locale}/hire-us`}
-              className="px-4 py-2 text-sm font-medium bg-[#377dff] hover:bg-[#2563eb] text-white rounded-lg transition-colors"
-            >
-              {t('hireUs')}
-            </Link>
           </div>
 
           {/* Mobile */}
@@ -178,46 +201,67 @@ export default function Navbar({ locale }: NavbarProps) {
                   <Image src={isDark ? '/logo-negative.png' : '/logo.png'} alt="ITHINK" width={100} height={30} className="h-7 w-auto" />
                 </div>
 
-                <nav className="flex-1 overflow-y-auto p-4 space-y-1">
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider px-3 py-2">{t('company')}</p>
-                  {companyLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="block px-3 py-2.5 text-sm text-foreground hover:text-white hover:bg-accent rounded-lg transition-colors">
-                      {link.label}
-                    </Link>
-                  ))}
+                <nav className="flex-1 overflow-y-auto p-4">
+                  <Accordion className="space-y-0.5">
+                    {dropdownGroups.map((group) => (
+                      <AccordionItem key={group.key}>
+                        <AccordionTrigger className="px-3 text-sm font-medium text-foreground hover:no-underline py-2.5">
+                          {t(group.key)}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="pl-2 pb-1 space-y-0.5">
+                            {group.items.map((item) => (
+                              <Link
+                                key={item.slug}
+                                href={`/${locale}/${group.section}/${item.slug}`}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center gap-2.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-accent transition-colors"
+                              >
+                                <item.icon className="size-4 text-[#377dff] shrink-0" />
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
 
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider px-3 py-2 mt-4">{t('services')}</p>
-                  {serviceLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="block px-3 py-2.5 text-sm text-foreground hover:text-white hover:bg-accent rounded-lg transition-colors">
-                      {link.label}
-                    </Link>
-                  ))}
-
-                  <Link href={`/${locale}/contact`} onClick={() => setOpen(false)} className="block px-3 py-2.5 text-sm text-foreground hover:text-white hover:bg-accent rounded-lg transition-colors mt-2">
-                    {t('contactUs')}
-                  </Link>
+                  <div className="mt-3 space-y-0.5">
+                    {(['blog', 'company', 'career'] as const).map((key) => (
+                      <Link
+                        key={key}
+                        href={`/${locale}/${key}`}
+                        onClick={() => setOpen(false)}
+                        className="block px-3 py-2.5 text-sm text-foreground hover:bg-accent rounded-lg transition-colors"
+                      >
+                        {t(key)}
+                      </Link>
+                    ))}
+                  </div>
                 </nav>
 
                 <div className="p-4 border-t border-white/5 space-y-3">
                   <div className="flex items-center gap-1 bg-muted rounded-lg p-1">
                     {locales.map((l) => (
-                      <Link key={l} href={`/${l}`} onClick={() => setOpen(false)} className={cn('flex-1 text-center py-1.5 text-xs font-medium rounded-md transition-all uppercase', l === locale ? 'bg-[#377dff] text-white' : 'text-muted-foreground hover:text-foreground')}>
+                      <Link
+                        key={l}
+                        href={`/${l}`}
+                        onClick={() => setOpen(false)}
+                        className={cn('flex-1 text-center py-1.5 text-xs font-medium rounded-md transition-all uppercase', l === locale ? 'bg-[#377dff] text-white' : 'text-muted-foreground hover:text-foreground')}
+                      >
                         {l}
                       </Link>
                     ))}
                   </div>
-                  <div className="flex items-center justify-between">
-                    <Link href={`/${locale}/hire-us`} onClick={() => setOpen(false)} className="flex-1 text-center px-4 py-2.5 text-sm font-medium bg-[#377dff] hover:bg-[#2563eb] text-white rounded-lg transition-colors">
-                      {t('hireUs')}
-                    </Link>
-                    <button
-                      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                      className="ml-2 p-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label="Toggle theme"
-                    >
-                      {mounted && !isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                    className="w-full p-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center gap-2 text-sm"
+                    aria-label="Toggle theme"
+                  >
+                    {mounted && !isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+                    {mounted && !isDark ? 'Light mode' : 'Dark mode'}
+                  </button>
                 </div>
               </div>
             </SheetContent>
