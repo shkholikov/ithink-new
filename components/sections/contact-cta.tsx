@@ -5,16 +5,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Phone, Mail, Clock, MessageSquare } from 'lucide-react';
 import { SectionBadge } from '@/components/ui/section-badge';
-
-function InstagramIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
+import { InstagramIcon } from '@/components/ui/instagram-icon';
 
 export default function ContactCta() {
   const t = useTranslations('cta');
@@ -175,7 +166,7 @@ export default function ContactCta() {
                       type="text"
                       placeholder={t('name')}
                       value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#377dff]/50 transition-colors"
                     />
@@ -183,7 +174,7 @@ export default function ContactCta() {
                       type="email"
                       placeholder={t('email')}
                       value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#377dff]/50 transition-colors"
                     />
@@ -192,13 +183,13 @@ export default function ContactCta() {
                     type="tel"
                     placeholder={t('phone')}
                     value={form.phone}
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
                     className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#377dff]/50 transition-colors"
                   />
                   <textarea
                     placeholder={t('message')}
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#377dff]/50 transition-colors resize-none"

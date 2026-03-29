@@ -22,9 +22,9 @@ export default function Hero({ locale }: HeroProps) {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 bg-background">
       {/* Gradient blobs — more visible in dark, subtle in light */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#377dff]/15 dark:bg-[#377dff]/15 light:bg-[#377dff]/8 rounded-full blur-[120px] animate-blob" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-600/10 dark:bg-purple-600/10 light:bg-purple-600/5 rounded-full blur-[120px] animate-blob animation-delay-2000" />
-        <div className="absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-cyan-500/10 dark:bg-cyan-500/10 light:bg-cyan-500/5 rounded-full blur-[100px] animate-blob animation-delay-4000" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#377dff]/8 dark:bg-[#377dff]/15 rounded-full blur-[120px] animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-600/5 dark:bg-purple-600/10 rounded-full blur-[120px] animate-blob animation-delay-2000" />
+        <div className="absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-cyan-500/5 dark:bg-cyan-500/10 rounded-full blur-[100px] animate-blob animation-delay-4000" />
       </div>
 
       {/* Grid overlay */}

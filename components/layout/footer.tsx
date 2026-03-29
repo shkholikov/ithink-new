@@ -3,19 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Send, Phone } from "lucide-react";
-
-function InstagramIcon({ className }: { className?: string }) {
-	return (
-		<svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-			<rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-			<circle cx="12" cy="12" r="4" />
-			<circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-		</svg>
-	);
-}
+import { useIsDark } from "@/hooks/use-is-dark";
+import { InstagramIcon } from "@/components/ui/instagram-icon";
 
 interface FooterProps {
 	locale: string;
@@ -24,10 +14,7 @@ interface FooterProps {
 export default function Footer({ locale }: FooterProps) {
 	const t = useTranslations("footer");
 	const nav = useTranslations("nav");
-	const { theme } = useTheme();
-	const [mounted, setMounted] = useState(false);
-	useEffect(() => setMounted(true), []);
-	const isDark = !mounted || theme === "dark";
+	const isDark = useIsDark();
 	const year = new Date().getFullYear();
 
 	const columns = [
@@ -103,8 +90,8 @@ export default function Footer({ locale }: FooterProps) {
 					</div>
 
 					{/* Nav columns */}
-					{columns.map((col) => (
-						<div key={col.heading} className="text-left sm:text-right">
+					{columns.map((col, i) => (
+						<div key={i} className="text-left sm:text-right">
 							<p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">{col.heading}</p>
 							<ul className="space-y-2.5">
 								{col.links.map((link) => (

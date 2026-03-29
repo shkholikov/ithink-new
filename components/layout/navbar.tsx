@@ -29,6 +29,7 @@ import {
 	CalendarCheck
 } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useIsDark } from "@/hooks/use-is-dark";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import {
@@ -99,20 +100,16 @@ interface NavbarProps {
 
 export default function Navbar({ locale }: NavbarProps) {
 	const t = useTranslations("nav");
-	const { theme, setTheme } = useTheme();
-	const [mounted, setMounted] = useState(false);
+	const { setTheme } = useTheme();
+	const isDark = useIsDark();
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
-
-	useEffect(() => setMounted(true), []);
 
 	useEffect(() => {
 		const handleScroll = () => setScrolled(window.scrollY > 20);
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-
-	const isDark = !mounted || theme === "dark";
 
 	return (
 		<header
@@ -217,7 +214,7 @@ export default function Navbar({ locale }: NavbarProps) {
 							className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
 							aria-label="Toggle theme"
 						>
-							{mounted && !isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+							{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
 						</button>
 					</div>
 
@@ -302,8 +299,8 @@ export default function Navbar({ locale }: NavbarProps) {
 										className="w-full p-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center gap-2 text-sm"
 										aria-label="Toggle theme"
 									>
-										{mounted && !isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-										{mounted && !isDark ? "Light mode" : "Dark mode"}
+										{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+										{!isDark ? "Light mode" : "Dark mode"}
 									</button>
 								</div>
 							</div>
