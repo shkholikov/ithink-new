@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { ArrowUpRight, Server, MonitorCheck, PhoneCall, Code2, Workflow, Database } from 'lucide-react';
+import { ArrowUpRight, Server, MonitorCheck, TrendingUp, Workflow, Code2, Search, Layers } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SectionBadge } from '@/components/ui/section-badge';
 
-const serviceIcons = [Server, MonitorCheck, PhoneCall, Code2, Workflow, Database];
+const serviceIcons = [Server, MonitorCheck, TrendingUp, Workflow, Code2, Search];
 
 interface ServicesProps {
   locale: string;
@@ -17,7 +18,7 @@ export default function Services({ locale }: ServicesProps) {
   const services = [0, 1, 2, 3, 4, 5].map((i) => ({
     title: t(`items.${i}.title`),
     description: t(`items.${i}.description`),
-    price: t(`items.${i}.price`),
+    tag: t(`items.${i}.tag`),
     Icon: serviceIcons[i],
   }));
 
@@ -30,15 +31,11 @@ export default function Services({ locale }: ServicesProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-14"
+          className="text-center mb-14"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-4">
-            {t('badge')}
-          </span>
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">{t('title')}</h2>
-            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">{t('subtitle')}</p>
-          </div>
+          <SectionBadge icon={Layers} label={t('badge')} />
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">{t('title')}</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
         </motion.div>
 
         {/* Service Cards */}
@@ -74,8 +71,8 @@ export default function Services({ locale }: ServicesProps) {
 
                 {/* Footer */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-[#377dff] bg-[#377dff]/10 px-2.5 py-1 rounded-full">
-                    {t('from')} {service.price}
+                  <span className="text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
+                    {service.tag}
                   </span>
                   <Link
                     href={`/${locale}/hire-us`}

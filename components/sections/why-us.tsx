@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Puzzle, TrendingUp } from 'lucide-react';
+import { ShieldCheck, Puzzle, TrendingUp, Award } from 'lucide-react';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 const icons = [ShieldCheck, Puzzle, TrendingUp];
 
@@ -31,9 +32,7 @@ export default function WhyUs() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] dark:text-[#f9b934] text-xs font-medium mb-4">
-            {t('badge')}
-          </span>
+          <SectionBadge icon={Award} label={t('badge')} variant="yellow" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t('title')}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-sm">{t('subtitle')}</p>
         </motion.div>

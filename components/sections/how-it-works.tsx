@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { MessageSquare, ClipboardList, Hammer, Headphones } from 'lucide-react';
+import { MessageSquare, ClipboardList, Hammer, Headphones, Route } from 'lucide-react';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 const stepIcons = [MessageSquare, ClipboardList, Hammer, Headphones];
 
@@ -32,9 +33,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] text-xs font-medium mb-4">
-            {t('badge')}
-          </span>
+          <SectionBadge icon={Route} label={t('badge')} variant="yellow" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t('title')}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-sm">{t('subtitle')}</p>
         </motion.div>

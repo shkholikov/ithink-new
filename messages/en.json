@@ -27,55 +27,25 @@
     "cta2": "Our Services",
     "stat1": "50+",
     "stat1Label": "Satisfied Clients",
-    "stat2": "25+",
+    "stat2": "72+",
     "stat2Label": "Completed Projects",
-    "stat3": "99%",
+    "stat3": "100%",
     "stat3Label": "Satisfaction Rate",
     "trustNote": "No commitment · Response within 1 hour"
   },
   "services": {
     "badge": "What We Do",
-    "title": "Our Services",
-    "subtitle": "End-to-end IT solutions to keep your business running, growing, and ahead of the curve.",
+    "title": "Comprehensive IT Solutions for Business",
+    "subtitle": "We help companies build reliable IT infrastructure, automate sales and processes, implement CRM systems, and develop digital solutions for business growth.",
     "learnMore": "Learn more",
     "from": "from",
     "items": [
-      {
-        "number": "01",
-        "title": "Network & Infrastructure",
-        "description": "Design, deploy, and manage reliable network infrastructure tailored to your business scale.",
-        "price": "$500"
-      },
-      {
-        "number": "02",
-        "title": "Managed IT Services",
-        "description": "Proactive monitoring, maintenance, and support so your team can focus on what matters.",
-        "price": "$300/mo"
-      },
-      {
-        "number": "03",
-        "title": "Business VoIP Communications",
-        "description": "Modern cloud telephony and unified communications for distributed teams.",
-        "price": "$200/mo"
-      },
-      {
-        "number": "04",
-        "title": "Software Development",
-        "description": "Custom web applications, mobile apps, and integrations built for your business processes.",
-        "price": "$500"
-      },
-      {
-        "number": "05",
-        "title": "Business Process Digitalization",
-        "description": "Transform manual workflows into automated, data-driven digital processes.",
-        "price": "$800"
-      },
-      {
-        "number": "06",
-        "title": "CRM System Integration",
-        "description": "Connect and configure CRM platforms to centralize your sales and customer data.",
-        "price": "$400"
-      }
+      { "title": "IT Infrastructure", "description": "We design and deploy on-premise and cloud infrastructure: servers, networks, workstations, access control, and IT architecture for stable business operations.", "tag": "Project-based" },
+      { "title": "Managed IT Services (MSP)", "description": "We handle daily IT support and management by subscription: 24/7 monitoring, user support, fast response, and full responsibility for stability.", "tag": "Monthly" },
+      { "title": "CRM & Sales Automation", "description": "We implement AmoCRM, automate sales pipelines, and connect telephony, messengers, your website, and other channels into one unified lead management system.", "tag": "Project-based" },
+      { "title": "Business Process Automation", "description": "We automate manual processes using bots, integrations, AI tools, and internal systems so your business runs faster, cleaner, and more efficiently.", "tag": "Project-based" },
+      { "title": "Custom Software Development", "description": "We build websites, landing pages, Telegram bots, Mini Apps, mobile apps, complex integrations, and custom business systems tailored to your company.", "tag": "Project-based" },
+      { "title": "IT Audit & Consulting", "description": "We audit your IT infrastructure and processes, identify weak points, risks, and growth opportunities, then deliver a clear optimization and development plan.", "tag": "One-time" }
     ]
   },
   "partners": {

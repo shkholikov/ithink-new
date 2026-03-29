@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle, Phone, Mail, Clock } from 'lucide-react';
+import { Send, CheckCircle, Phone, Mail, Clock, MessageSquare } from 'lucide-react';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -65,9 +66,7 @@ export default function ContactCta() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-4">
-            Contact
-          </span>
+          <SectionBadge icon={MessageSquare} label="Contact" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">{t('title')}</h2>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">{t('subtitle')}</p>
         </motion.div>

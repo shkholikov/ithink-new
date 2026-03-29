@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { Users } from 'lucide-react';
+import { SectionBadge } from '@/components/ui/section-badge';
 
 const partners = ['amoCRM', 'Bitrix24', 'onlinePBX', 'Wazzup', 'MEGACOUNT'];
 const clients = [
@@ -25,9 +27,7 @@ export default function TrustedBy() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-3">
-            {t('badge')}
-          </span>
+          <SectionBadge icon={Users} label={t('badge')} className="mb-3" />
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">{t('title')}</h2>
           <p className="text-sm text-muted-foreground">{t('subtitle')}</p>
         </motion.div>

@@ -27,25 +27,25 @@
     "cta2": "Xizmatlar",
     "stat1": "50+",
     "stat1Label": "Mamnun Mijozlar",
-    "stat2": "25+",
+    "stat2": "72+",
     "stat2Label": "Tugallangan Loyihalar",
-    "stat3": "99%",
+    "stat3": "100%",
     "stat3Label": "Mijozlar Mamnuniyati",
     "trustNote": "Majburiyatsiz · 1 soat ichida javob"
   },
   "services": {
     "badge": "Biz Nima Qilamiz",
-    "title": "Xizmatlarimiz",
-    "subtitle": "Biznesingiz ishlashi, o'sishi va oldinda bo'lishi uchun to'liq IT yechimlari.",
+    "title": "Biznes uchun kompleks IT yechimlar",
+    "subtitle": "Kompaniyalarga ishonchli IT infratuzilma qurishda, savdo va jarayonlarni avtomatlashtirishda, CRM joriy etishda va biznes o'sishi uchun raqamli yechimlar yaratishda yordam beramiz.",
     "learnMore": "Batafsil",
     "from": "dan",
     "items": [
-      { "number": "01", "title": "Tarmoq va Infratuzilma", "description": "Biznesingiz hajmiga moslashtirilgan ishonchli tarmoq infratuzilmasini loyihalash, joylashtirish va boshqarish.", "price": "$500" },
-      { "number": "02", "title": "Boshqariladigan IT Xizmatlari", "description": "Jamoangiz asosiy ishga e'tibor qaratishi uchun proaktiv monitoring, texnik xizmat ko'rsatish va qo'llab-quvvatlash.", "price": "$300/oy" },
-      { "number": "03", "title": "VoIP Biznes Aloqalari", "description": "Taqsimlangan jamoalar uchun zamonaviy bulutli telefoniya va birlashtirilgan kommunikatsiyalar.", "price": "$200/oy" },
-      { "number": "04", "title": "Dasturiy Ta'minot Ishlab Chiqish", "description": "Biznes jarayonlaringiz uchun maxsus veb-ilovalar, mobil ilovalar va integratsiyalar.", "price": "$500" },
-      { "number": "05", "title": "Biznes Jarayonlarini Raqamlashtirish", "description": "Qo'lda bajariladigan ish oqimlarini avtomatlashtirilgan, ma'lumotlarga asoslangan raqamli jarayonlarga aylantirish.", "price": "$800" },
-      { "number": "06", "title": "CRM Tizimi Integratsiyasi", "description": "Savdo va mijozlar ma'lumotlarini markazlashtirish uchun CRM platformalarini ulash va sozlash.", "price": "$400" }
+      { "title": "IT Infrastructure", "description": "On-premise va cloud infratuzilmani loyihalаymiz va joylashtiramiz: serverlar, tarmoq, ish stantsiyalari, kirishlar va IT arxitekturasi biznesning barqaror ishlashi uchun.", "tag": "Loyiha asosida" },
+      { "title": "Managed IT Services (MSP)", "description": "Kundalik IT qo'llab-quvvatlash va boshqaruvni obuna bo'yicha o'z zimmamizga olamiz: 24/7 monitoring, foydalanuvchilarni qo'llab-quvvatlash va barqarorlik uchun to'liq javobgarlik.", "tag": "Oylik" },
+      { "title": "CRM & Sales Automation", "description": "AmoCRM joriy etamiz, savdo hunillarini avtomatlаshtiramiz, telefoniya, messenjerlar, veb-sayt va boshqa kanallarni yagona liderlarni boshqarish tizimiga ulaymiz.", "tag": "Loyiha asosida" },
+      { "title": "Business Process Automation", "description": "Botlar, integratsiyalar, AI yechimlari va ichki tizimlar yordamida qo'lda bajariladigan jarayonlarni avtomatlаshtiramiz — biznes tezroq, aniqroq va samaraliroq ishlaydi.", "tag": "Loyiha asosida" },
+      { "title": "Custom Software Development", "description": "Veb-saytlar, landing sahifalar, Telegram botlar, Mini Applar, mobil ilovalar, murakkab integratsiyalar va kompaniyangiz vazifalariga moslashtirilgan maxsus biznes tizimlarini yaratamiz.", "tag": "Loyiha asosida" },
+      { "title": "IT Audit & Consulting", "description": "IT infratuzilma va jarayonlarni audit qilamiz, zaif joylar, xatarlar va o'sish nuqtalarini aniqlaymiz, so'ngra optimizatsiya va rivojlantirish rejasini taqdim etamiz.", "tag": "Bir martalik" }
     ]
   },
   "partners": {
