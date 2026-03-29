@@ -1,0 +1,345 @@
+{
+  "nav": {
+    "company": "Company",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contactUs": "Contact Us",
+    "about": "About Us",
+    "customers": "Our Clients",
+    "partners": "Partners",
+    "faq": "FAQ",
+    "hireUs": "Outsourcing",
+    "websites": "Websites"
+  },
+  "hero": {
+    "badge": "50+ satisfied clients",
+    "title1": "Streamlining Your Business",
+    "title2": "with Comprehensive",
+    "title3": "IT Solutions",
+    "subtitle": "We maximize your business potential with efficient, custom IT solutions tailored to your needs.",
+    "cta1": "Hire Us",
+    "cta2": "Our Services",
+    "stat1": "50+",
+    "stat1Label": "Satisfied Clients",
+    "stat2": "25+",
+    "stat2Label": "Completed Projects",
+    "stat3": "99%",
+    "stat3Label": "Satisfaction Rate"
+  },
+  "services": {
+    "badge": "What We Do",
+    "title": "Our Services",
+    "subtitle": "End-to-end IT solutions to keep your business running, growing, and ahead of the curve.",
+    "learnMore": "Learn more",
+    "from": "from",
+    "items": [
+      {
+        "number": "01",
+        "title": "Network & Infrastructure",
+        "description": "Design, deploy, and manage reliable network infrastructure tailored to your business scale.",
+        "price": "$500"
+      },
+      {
+        "number": "02",
+        "title": "Managed IT Services",
+        "description": "Proactive monitoring, maintenance, and support so your team can focus on what matters.",
+        "price": "$300/mo"
+      },
+      {
+        "number": "03",
+        "title": "Business VoIP Communications",
+        "description": "Modern cloud telephony and unified communications for distributed teams.",
+        "price": "$200/mo"
+      },
+      {
+        "number": "04",
+        "title": "Software Development",
+        "description": "Custom web applications, mobile apps, and integrations built for your business processes.",
+        "price": "$500"
+      },
+      {
+        "number": "05",
+        "title": "Business Process Digitalization",
+        "description": "Transform manual workflows into automated, data-driven digital processes.",
+        "price": "$800"
+      },
+      {
+        "number": "06",
+        "title": "CRM System Integration",
+        "description": "Connect and configure CRM platforms to centralize your sales and customer data.",
+        "price": "$400"
+      }
+    ]
+  },
+  "partners": {
+    "badge": "Integrations",
+    "title": "Partners & Integrations",
+    "subtitle": "We are official partners with leading business platforms, bringing deep expertise to every implementation.",
+    "officialPartner": "Official Partner",
+    "items": [
+      {
+        "name": "amoCRM",
+        "description": "Sales-focused CRM built for fast-growing teams. We implement, customize, and train your staff."
+      },
+      {
+        "name": "Bitrix24",
+        "description": "All-in-one platform combining CRM, project management, HR, and communications."
+      },
+      {
+        "name": "onlinePBX",
+        "description": "Cloud telephony and call center solutions integrated with your CRM and workflows."
+      },
+      {
+        "name": "Wazzup",
+        "description": "Omnichannel messaging — WhatsApp, Telegram, Instagram — all inside your CRM."
+      },
+      {
+        "name": "MEGACOUNT",
+        "description": "AI-powered visitor counting and retail analytics for physical business locations."
+      }
+    ]
+  },
+  "clients": {
+    "badge": "Trust",
+    "title": "Our Clients",
+    "subtitle": "Businesses across industries trust ITHINK to keep their operations running and growing.",
+    "all": "All",
+    "viewAll": "View all case studies"
+  },
+  "whyUs": {
+    "badge": "Why ITHINK",
+    "title": "Built for Business Results",
+    "subtitle": "We don't just deliver technology — we deliver outcomes.",
+    "items": [
+      {
+        "title": "Deep Expertise",
+        "description": "12+ years of hands-on experience across IT infrastructure, software, and business systems."
+      },
+      {
+        "title": "Custom Solutions",
+        "description": "No cookie-cutter packages. Every solution is designed around your specific processes and goals."
+      },
+      {
+        "title": "Flexible & Scalable",
+        "description": "We grow with you. Solutions that adapt as your team, processes, and ambitions expand."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to optimize your business?",
+    "subtitle": "Tell us about your project and we'll get back to you within 1–2 business days.",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone number",
+    "message": "Tell us about your project",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "slogan": "Think beyond limits with ITHINK",
+    "company": "Company",
+    "services": "Services",
+    "contact": "Contact",
+    "rights": "All rights reserved",
+    "links": {
+      "about": "About Us",
+      "customers": "Clients",
+      "partners": "Partners",
+      "faq": "FAQ",
+      "hireUs": "Outsourcing",
+      "websites": "Websites",
+      "pricing": "Pricing",
+      "contactPage": "Contact Us"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "About Us",
+      "title": "We Build IT Systems That Work for You",
+      "subtitle": "ITHINK is a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2012.",
+      "stat1": "12+",
+      "stat1Label": "Years of Experience",
+      "stat2": "25+",
+      "stat2Label": "Completed Projects",
+      "stat3": "99%",
+      "stat3Label": "Client Satisfaction"
+    },
+    "story": {
+      "badge": "Our Story",
+      "title": "Building Digital Futures Since 2012",
+      "p1": "ITHINK was founded with a single mission: help Uzbek businesses harness the power of modern technology. From setting up networks in small offices to building complex enterprise software, we've grown alongside our clients.",
+      "p2": "Today, we're a full-service IT partner for companies across industries — from retail and finance to manufacturing and professional services. Our team combines technical depth with business understanding to deliver solutions that actually move the needle."
+    },
+    "values": {
+      "badge": "Our Values",
+      "title": "What Drives Us",
+      "items": [
+        { "title": "Reliability", "description": "We show up, we follow through, and we stand behind every solution we deliver." },
+        { "title": "Clarity", "description": "No jargon, no hidden costs. You always know what we're doing and why." },
+        { "title": "Partnership", "description": "We treat your business goals as our own. Your success is our benchmark." }
+      ]
+    }
+  },
+  "customers": {
+    "hero": {
+      "badge": "Case Studies",
+      "title": "Clients Who Trust ITHINK",
+      "subtitle": "From startups to established enterprises, here's a selection of businesses we've helped grow."
+    },
+    "services": "Services provided",
+    "items": [
+      { "name": "Crayton & Vilt", "industry": "Retail", "description": "IT infrastructure setup and managed services for a fast-growing retail chain.", "services": ["Managed IT", "Network Setup"] },
+      { "name": "OBBO", "industry": "E-Commerce", "description": "Full-stack web application development and CRM integration for an online marketplace.", "services": ["Software Dev", "CRM Integration"] },
+      { "name": "AslZar", "industry": "Jewelry", "description": "Custom e-commerce platform with inventory management and customer loyalty system.", "services": ["Software Dev", "E-Commerce"] },
+      { "name": "Kredit Market", "industry": "Finance", "description": "Digitalization of loan application workflows and customer management system.", "services": ["Digitalization", "CRM Integration"] },
+      { "name": "Penostyle", "industry": "Retail", "description": "Network infrastructure and VoIP communications for multi-location operations.", "services": ["Network & Infra", "VoIP"] },
+      { "name": "Avtozet", "industry": "Automotive", "description": "CRM implementation and sales process automation for an auto dealership.", "services": ["CRM Integration", "Digitalization"] },
+      { "name": "SOKOLOV", "industry": "Jewelry", "description": "IT support and managed services for a premium jewelry brand's local operations.", "services": ["Managed IT"] },
+      { "name": "UDirect", "industry": "Professional Services", "description": "Business process digitalization and software development for a consulting firm.", "services": ["Digitalization", "Software Dev"] },
+      { "name": "ParadiseWall", "industry": "Interior", "description": "Website development and digital tools for a home decor and wallpaper company.", "services": ["Websites", "Software Dev"] },
+      { "name": "Mobicenter", "industry": "Retail", "description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.", "services": ["Network & Infra", "VoIP", "Managed IT"] },
+      { "name": "Chudo Tovary", "industry": "E-Commerce", "description": "E-commerce platform development and CRM integration for an online goods marketplace.", "services": ["E-Commerce", "CRM Integration"] }
+    ]
+  },
+  "pricing": {
+    "hero": {
+      "badge": "Pricing",
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "No hidden fees. Pay for what you need, scale as you grow."
+    },
+    "popular": "Most Popular",
+    "getStarted": "Get Started",
+    "contactUs": "Contact for Custom",
+    "plans": [
+      {
+        "name": "Landing Page",
+        "price": "$300",
+        "period": "one-time",
+        "description": "Professional landing page to present your business online.",
+        "features": ["Custom design", "Mobile responsive", "SEO optimized", "1 contact form", "Hosting setup guide", "2 revision rounds"]
+      },
+      {
+        "name": "Web Application",
+        "price": "$500",
+        "period": "starting from",
+        "description": "Custom web app tailored to your business processes.",
+        "features": ["Everything in Landing", "Custom functionality", "Admin dashboard", "User authentication", "API integrations", "3 months support"]
+      },
+      {
+        "name": "E-Commerce & Marketplace",
+        "price": "$1000",
+        "period": "starting from",
+        "description": "Full-featured online store or marketplace platform.",
+        "features": ["Everything in Web App", "Product catalog & search", "Payments (Payme, Click)", "Order management", "Inventory tracking", "6 months support"]
+      }
+    ],
+    "faq": {
+      "title": "Pricing FAQ",
+      "items": [
+        { "q": "What's included in the initial price?", "a": "The listed prices are starting points. Final cost depends on scope, number of pages, integrations, and complexity. We provide a detailed quote after a discovery call." },
+        { "q": "Are there ongoing maintenance costs?", "a": "Managed IT and VoIP are monthly services. One-time projects (websites, software) can be paired with an optional support plan billed monthly." },
+        { "q": "How do you handle payments?", "a": "We accept bank transfer, Payme, and Click. For larger projects, we work on a milestone-based payment schedule." },
+        { "q": "Can I start small and scale up?", "a": "Absolutely. Many clients start with a landing page or basic IT setup and expand over time. Our solutions are designed to grow with you." }
+      ]
+    }
+  },
+  "hireUs": {
+    "hero": {
+      "badge": "Outsourcing",
+      "title": "Hire Our IT Team",
+      "subtitle": "Get dedicated IT professionals without the overhead of in-house hiring. We become your IT department."
+    },
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "budget": "Budget range",
+      "message": "Describe your needs",
+      "submit": "Send Request",
+      "sending": "Sending...",
+      "success": "Request received! We'll contact you within 1–2 business days.",
+      "error": "Something went wrong. Please try again."
+    },
+    "benefits": [
+      { "title": "No Hiring Costs", "description": "Skip recruitment, onboarding, and HR overhead. We're ready to start immediately." },
+      { "title": "Full Team Access", "description": "Get access to developers, network engineers, and CRM specialists — not just one generalist." },
+      { "title": "Flexible Engagement", "description": "Scale up or down based on your current needs. Monthly contracts, no lock-ins." }
+    ]
+  },
+  "websites": {
+    "hero": {
+      "badge": "Web Development",
+      "title": "Websites That Work for Your Business",
+      "subtitle": "From simple landing pages to full-scale e-commerce platforms, we build the web presence you need."
+    },
+    "process": {
+      "title": "Our Process",
+      "steps": [
+        { "step": "01", "title": "Discovery", "description": "We learn your business, goals, and audience to define the right scope." },
+        { "step": "02", "title": "Design", "description": "Wireframes and visual design tailored to your brand identity." },
+        { "step": "03", "title": "Build", "description": "Clean code, fast performance, mobile-first responsive development." },
+        { "step": "04", "title": "Launch", "description": "Deployment, testing, and handover with documentation and training." }
+      ]
+    },
+    "faq": {
+      "title": "Website FAQ",
+      "items": [
+        { "q": "How long does it take to build a website?", "a": "Landing pages typically take 1–2 weeks. Web applications 4–8 weeks depending on complexity. We provide a detailed timeline after scoping." },
+        { "q": "What technologies do you use?", "a": "We primarily use Next.js, React, and Node.js. For e-commerce we integrate with local payment gateways (Payme, Click) and can connect to any CRM or ERP." },
+        { "q": "Do you provide hosting?", "a": "We recommend and set up hosting on Vercel, AWS, or a VPS depending on your needs. We can manage it for you or hand it over to your team." },
+        { "q": "Can you redesign an existing website?", "a": "Yes. We do full redesigns with content migration, performance optimization, and SEO improvement." }
+      ]
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "FAQ",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about working with ITHINK."
+    },
+    "searchPlaceholder": "Search questions...",
+    "stillQuestions": "Still have questions?",
+    "contactUs": "Contact Us",
+    "items": [
+      { "q": "What types of businesses do you work with?", "a": "We work with businesses of all sizes across retail, e-commerce, finance, professional services, manufacturing, and more. If you need IT solutions, we can help." },
+      { "q": "How is ITHINK different from other IT companies?", "a": "We combine technical depth with business understanding. We don't just install software — we understand your workflows and design solutions that fit. Every client gets a dedicated account manager." },
+      { "q": "Do you develop custom software?", "a": "Yes. We build custom web applications, internal tools, and integrations. Our development process includes requirements gathering, design, development, testing, and post-launch support." },
+      { "q": "What technologies do you specialize in?", "a": "On the infrastructure side: networking, VoIP, cloud services. On the software side: Next.js, React, Node.js, Python, and database design. For CRM: amoCRM, Bitrix24, and related integrations." },
+      { "q": "How do you handle ongoing support?", "a": "We offer monthly support plans with defined SLA response times. Critical issues are addressed within 2–4 hours, standard issues within 1 business day." },
+      { "q": "How is pricing determined?", "a": "Pricing depends on scope, complexity, and timeline. We provide detailed quotes after a free discovery call. No hidden fees — what we quote is what you pay." },
+      { "q": "How do we get started?", "a": "Fill out the contact form or call us directly. We'll schedule a 30-minute discovery call to understand your needs and recommend a solution." },
+      { "q": "Do you work with international clients?", "a": "Our primary focus is Uzbekistan, but we work with clients across Central Asia and accept international projects for software development and CRM implementation." }
+    ]
+  },
+  "contact": {
+    "hero": {
+      "badge": "Contact",
+      "title": "Let's Talk",
+      "subtitle": "Have a project in mind? We'd love to hear about it."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "ceo": "CEO",
+      "name": "Farkhod Kholikov",
+      "phone": "+998 55 500-00-XX",
+      "email": "info@ithink.uz",
+      "address": "Bogishamol Street 3, Tashkent 100084, Uzbekistan",
+      "telegram": "Telegram",
+      "instagram": "Instagram",
+      "responseTime": "We respond within 1–2 business days"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone number",
+      "message": "Your message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  }
+}

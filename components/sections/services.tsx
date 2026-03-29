@@ -1,0 +1,88 @@
+'use client';
+
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+interface ServicesProps {
+  locale: string;
+}
+
+export default function Services({ locale }: ServicesProps) {
+  const t = useTranslations('services');
+
+  const services = [0, 1, 2, 3, 4, 5].map((i) => ({
+    number: t(`items.${i}.number`),
+    title: t(`items.${i}.title`),
+    description: t(`items.${i}.description`),
+    price: t(`items.${i}.price`),
+  }));
+
+  return (
+    <section id="services" className="py-24 lg:py-32 bg-background relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-4">
+            {t('badge')}
+          </span>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">{t('title')}</h2>
+            <p className="text-muted-foreground max-w-md text-sm leading-relaxed">{t('subtitle')}</p>
+          </div>
+        </motion.div>
+
+        {/* Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/30 rounded-2xl p-6 transition-all duration-300 cursor-default overflow-hidden"
+            >
+              {/* Hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#377dff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+
+              <div className="relative z-10">
+                {/* Number */}
+                <span className="text-4xl font-black text-border group-hover:text-[#377dff]/20 transition-colors duration-300 select-none block mb-4 leading-none">
+                  {service.number}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-base font-semibold text-foreground mb-2">{service.title}</h3>
+
+                {/* Description */}
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-[#377dff] bg-[#377dff]/10 px-2.5 py-1 rounded-full">
+                    {t('from')} {service.price}
+                  </span>
+                  <Link
+                    href={`/${locale}/hire-us`}
+                    className="inline-flex items-center gap-1 text-xs text-muted-foreground group-hover:text-[#377dff] transition-colors"
+                  >
+                    {t('learnMore')}
+                    <ArrowUpRight className="w-3 h-3" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "company": "Kompaniya",
+    "services": "Xizmatlar",
+    "pricing": "Narxlar",
+    "contactUs": "Kontaktlar",
+    "about": "Biz Haqimizda",
+    "customers": "Mijozlarimiz",
+    "partners": "Hamkorlar",
+    "faq": "FAQ",
+    "hireUs": "Autsorsing",
+    "websites": "Veb-saytlar"
+  },
+  "hero": {
+    "badge": "50+ mamnun mijoz",
+    "title1": "Biznesingizni",
+    "title2": "Kompleks IT Yechimlar",
+    "title3": "bilan optimallashtiring",
+    "subtitle": "Biz sizning biznes salohiyatingizni samarali va moslashtirilgan IT yechimlari bilan maksimal darajada oshiramiz.",
+    "cta1": "Yollash",
+    "cta2": "Xizmatlar",
+    "stat1": "50+",
+    "stat1Label": "Mamnun Mijozlar",
+    "stat2": "25+",
+    "stat2Label": "Tugallangan Loyihalar",
+    "stat3": "99%",
+    "stat3Label": "Mijozlar Mamnuniyati"
+  },
+  "services": {
+    "badge": "Biz Nima Qilamiz",
+    "title": "Xizmatlarimiz",
+    "subtitle": "Biznesingiz ishlashi, o'sishi va oldinda bo'lishi uchun to'liq IT yechimlari.",
+    "learnMore": "Batafsil",
+    "from": "dan",
+    "items": [
+      { "number": "01", "title": "Tarmoq va Infratuzilma", "description": "Biznesingiz hajmiga moslashtirilgan ishonchli tarmoq infratuzilmasini loyihalash, joylashtirish va boshqarish.", "price": "$500" },
+      { "number": "02", "title": "Boshqariladigan IT Xizmatlari", "description": "Jamoangiz asosiy ishga e'tibor qaratishi uchun proaktiv monitoring, texnik xizmat ko'rsatish va qo'llab-quvvatlash.", "price": "$300/oy" },
+      { "number": "03", "title": "VoIP Biznes Aloqalari", "description": "Taqsimlangan jamoalar uchun zamonaviy bulutli telefoniya va birlashtirilgan kommunikatsiyalar.", "price": "$200/oy" },
+      { "number": "04", "title": "Dasturiy Ta'minot Ishlab Chiqish", "description": "Biznes jarayonlaringiz uchun maxsus veb-ilovalar, mobil ilovalar va integratsiyalar.", "price": "$500" },
+      { "number": "05", "title": "Biznes Jarayonlarini Raqamlashtirish", "description": "Qo'lda bajariladigan ish oqimlarini avtomatlashtirilgan, ma'lumotlarga asoslangan raqamli jarayonlarga aylantirish.", "price": "$800" },
+      { "number": "06", "title": "CRM Tizimi Integratsiyasi", "description": "Savdo va mijozlar ma'lumotlarini markazlashtirish uchun CRM platformalarini ulash va sozlash.", "price": "$400" }
+    ]
+  },
+  "partners": {
+    "badge": "Integratsiyalar",
+    "title": "Hamkorlar va Integratsiyalar",
+    "subtitle": "Biz yetakchi biznes platformalarining rasmiy hamkorlarimiz bo'lib, har bir implementatsiyaga chuqur bilim olib kelamiz.",
+    "officialPartner": "Rasmiy Hamkor",
+    "items": [
+      { "name": "amoCRM", "description": "Tez o'sib borayotgan jamoalar uchun sotuvga yo'naltirilgan CRM. Biz amalga oshiramiz, moslashtiramiz va xodimlaringizni o'qitamiz." },
+      { "name": "Bitrix24", "description": "CRM, loyiha boshqaruvi, HR va kommunikatsiyalarni birlashtirgan universal platforma." },
+      { "name": "onlinePBX", "description": "CRM va ish oqimlaringiz bilan integratsiya qilingan bulutli telefoniya va qo'ng'iroq markazi yechimlari." },
+      { "name": "Wazzup", "description": "Omnichannel xabar almashish — WhatsApp, Telegram, Instagram — barchasi CRM ichida." },
+      { "name": "MEGACOUNT", "description": "Jismoniy biznes joylari uchun sun'iy intellektga asoslangan tashrif buyuruvchilarni hisoblash va chakana savdo tahlili." }
+    ]
+  },
+  "clients": {
+    "badge": "Ishonch",
+    "title": "Mijozlarimiz",
+    "subtitle": "Turli sohalardagi bizneslar ITHINK ga ishonib o'z operatsiyalarini boshqarish va o'stirishni topshiradi.",
+    "all": "Barchasi",
+    "viewAll": "Barcha case study larni ko'rish"
+  },
+  "whyUs": {
+    "badge": "Nima Uchun ITHINK",
+    "title": "Biznes Natijalari Uchun Yaratilgan",
+    "subtitle": "Biz faqat texnologiya yetkazib bermaymiz — biz natijalar yetkazib beramiz.",
+    "items": [
+      { "title": "Chuqur Tajriba", "description": "IT infratuzilmasi, dasturiy ta'minot va biznes tizimlari bo'yicha 12+ yillik amaliy tajriba." },
+      { "title": "Maxsus Yechimlar", "description": "Tayyor paketlar yo'q. Har bir yechim sizning jarayonlaringiz va maqsadlaringizga moslashtirilgan." },
+      { "title": "Moslashuvchan va Kengayadigan", "description": "Biz siz bilan birga o'samiz. Jamoangiz, jarayonlaringiz va ambitsiyalaringiz kengaygani sari moslashadigan yechimlar." }
+    ]
+  },
+  "cta": {
+    "title": "Biznesingizni optimallashtirga tayyormisiz?",
+    "subtitle": "Loyihangiz haqida bizga ayting va biz 1-2 ish kuni ichida siz bilan bog'lanamiz.",
+    "name": "To'liq ismingiz",
+    "email": "Email",
+    "phone": "Telefon raqam",
+    "message": "Loyihangiz haqida ayting",
+    "submit": "Xabar Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.",
+    "error": "Xato yuz berdi. Qaytadan urinib ko'ring."
+  },
+  "footer": {
+    "slogan": "ITHINK bilan qutidan tashqarida o'ylang",
+    "company": "Kompaniya",
+    "services": "Xizmatlar",
+    "contact": "Kontaktlar",
+    "rights": "Barcha huquqlar himoyalangan",
+    "links": {
+      "about": "Biz Haqimizda",
+      "customers": "Mijozlar",
+      "partners": "Hamkorlar",
+      "faq": "FAQ",
+      "hireUs": "Autsorsing",
+      "websites": "Veb-saytlar",
+      "pricing": "Narxlar",
+      "contactPage": "Kontaktlar"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Biz Haqimizda",
+      "title": "Siz Uchun Ishlaydigan IT Tizimlarini Quramiz",
+      "subtitle": "ITHINK — 2012 yildan beri bizneslarni raqamlashtirish, avtomatlashtirish va o'sishga yordam beradigan Toshkent IT kompaniyasi.",
+      "stat1": "12+",
+      "stat1Label": "Yillik Tajriba",
+      "stat2": "25+",
+      "stat2Label": "Tugallangan Loyihalar",
+      "stat3": "99%",
+      "stat3Label": "Mijozlar Mamnuniyati"
+    },
+    "story": {
+      "badge": "Bizning Tariximiz",
+      "title": "2012 Yildan Raqamli Kelajakni Quramiz",
+      "p1": "ITHINK bitta missiya bilan tashkil etilgan: o'zbek bizneslariga zamonaviy texnologiya imkoniyatlaridan foydalanishga yordam berish. Kichik ofislarda tarmoq o'rnatishdan tortib murakkab korporativ dasturiy ta'minot yaratishgacha, biz mijozlarimiz bilan birga o'sdik.",
+      "p2": "Bugun biz turli sohalardagi kompaniyalar uchun to'liq xizmat ko'rsatuvchi IT hamkormiz — chakana savdodan moliya va ishlab chiqarishgacha. Jamoamiz texnik chuqurlik va biznesni tushunishni birlashtiradi."
+    },
+    "values": {
+      "badge": "Qadriyatlarimiz",
+      "title": "Bizni Nima Harakatlantiradi",
+      "items": [
+        { "title": "Ishonchlilik", "description": "Biz kelimiz, bajaramiz va yetkazib beramiz." },
+        { "title": "Aniqlik", "description": "Jargon yo'q, yashirin xarajatlar yo'q. Siz har doim nima qilayotganimizni va nima uchun bilasiz." },
+        { "title": "Hamkorlik", "description": "Biz sizning biznes maqsadlaringizni o'zimizniki deb bilamiz." }
+      ]
+    }
+  },
+  "customers": {
+    "hero": {
+      "badge": "Case Study'lar",
+      "title": "ITHINKga Ishongan Mijozlar",
+      "subtitle": "Startaplardan tortib yirik korxonalargacha — biz yordam bergan bizneslardan bir qismi."
+    },
+    "services": "Ko'rsatilgan xizmatlar",
+    "items": [
+      { "name": "Crayton & Vilt", "industry": "Chakana Savdo", "description": "Tez o'sib borayotgan chakana savdo zanjiri uchun IT infratuzilmasi va boshqariladigan xizmatlar.", "services": ["Boshqariladigan IT", "Tarmoq"] },
+      { "name": "OBBO", "industry": "E-Commerce", "description": "Onlayn bozor uchun to'liq veb-ilova va CRM integratsiyasi.", "services": ["Dasturiy Ta'minot", "CRM"] },
+      { "name": "AslZar", "industry": "Zargarlik", "description": "Inventar boshqaruvi va mijozlar sodiqlik tizimi bo'lgan maxsus e-commerce platforma.", "services": ["Dasturiy Ta'minot", "E-Commerce"] },
+      { "name": "Kredit Market", "industry": "Moliya", "description": "Kredit ariza ish oqimlari va mijozlar boshqaruv tizimini raqamlashtirish.", "services": ["Raqamlashtirish", "CRM"] },
+      { "name": "Penostyle", "industry": "Chakana Savdo", "description": "Ko'p filial operatsiyalar uchun tarmoq infratuzilmasi va VoIP.", "services": ["Tarmoq", "VoIP"] },
+      { "name": "Avtozet", "industry": "Avtomobil", "description": "Avtosalon uchun CRM implementatsiyasi va savdo jarayonlarini avtomatlashtirish.", "services": ["CRM", "Raqamlashtirish"] },
+      { "name": "SOKOLOV", "industry": "Zargarlik", "description": "Premium zargarlik brendining mahalliy operatsiyalari uchun IT qo'llab-quvvatlash.", "services": ["Boshqariladigan IT"] },
+      { "name": "UDirect", "industry": "Professional Xizmatlar", "description": "Konsalting firmasi uchun biznes jarayonlarini raqamlashtirish va dasturiy ta'minot.", "services": ["Raqamlashtirish", "Dasturiy Ta'minot"] },
+      { "name": "ParadiseWall", "industry": "Interyer", "description": "Uy bezagi kompaniyasi uchun veb-sayt va raqamli vositalar.", "services": ["Veb-saytlar", "Dasturiy Ta'minot"] },
+      { "name": "Mobicenter", "industry": "Chakana Savdo", "description": "Ko'p filial chakana elektronika do'koni uchun IT infratuzilmasi va VoIP.", "services": ["Tarmoq", "VoIP", "Boshqariladigan IT"] },
+      { "name": "Chudo Tovary", "industry": "E-Commerce", "description": "Onlayn bozor uchun e-commerce platforma va CRM integratsiyasi.", "services": ["E-Commerce", "CRM"] }
+    ]
+  },
+  "pricing": {
+    "hero": { "badge": "Narxlar", "title": "Oddiy va Shaffof Narxlar", "subtitle": "Yashirin to'lovlar yo'q. Kerakli narsangiz uchun to'lang, o'sganingiz sari kengaytiring." },
+    "popular": "Eng Mashhur",
+    "getStarted": "Boshlash",
+    "contactUs": "Maxsus taklif uchun bog'laning",
+    "plans": [
+      { "name": "Landing Sahifa", "price": "$300", "period": "bir martalik", "description": "Biznesingizni onlaynda taqdim etish uchun professional landing sahifa.", "features": ["Maxsus dizayn", "Mobil moslashuvchan", "SEO optimallashtirilgan", "1 ta aloqa formasi", "Hosting sozlash yo'riqnomasi", "2 ta tahrir turi"] },
+      { "name": "Veb-Ilova", "price": "$500", "period": "dan boshlab", "description": "Biznes jarayonlaringizga moslashtirilgan maxsus veb-ilova.", "features": ["Landing sahifadagi hamma narsa", "Maxsus funksionallik", "Admin paneli", "Foydalanuvchi autentifikatsiyasi", "API integratsiyalari", "3 oylik qo'llab-quvvatlash"] },
+      { "name": "E-Commerce va Bozor", "price": "$1000", "period": "dan boshlab", "description": "To'liq funksiyali onlayn do'kon yoki bozor platforma.", "features": ["Veb-ilovadagi hamma narsa", "Mahsulot katalogi va qidiruv", "To'lovlar (Payme, Click)", "Buyurtma boshqaruvi", "Inventar kuzatuvi", "6 oylik qo'llab-quvvatlash"] }
+    ],
+    "faq": {
+      "title": "Narxlar bo'yicha FAQ",
+      "items": [
+        { "q": "Boshlang'ich narxga nima kiradi?", "a": "Ko'rsatilgan narxlar boshlang'ich nuqtadir. Yakuniy narx ko'lam, sahifalar soni, integratsiyalar va murakkablikka bog'liq." },
+        { "q": "Doimiy xizmat ko'rsatish xarajatlari bormi?", "a": "Boshqariladigan IT va VoIP oylik xizmatlar. Bir martalik loyihalarni ixtiyoriy oylik qo'llab-quvvatlash rejasi bilan to'ldirish mumkin." },
+        { "q": "To'lovlar qanday amalga oshiriladi?", "a": "Bank o'tkazmasi, Payme va Click orqali qabul qilamiz. Katta loyihalar uchun bosqichma-bosqich to'lov jadvalida ishlaymiz." },
+        { "q": "Kichikdan boshlab, kengaytirib borsa bo'ladimi?", "a": "Albatta. Ko'p mijozlar landing sahifa yoki asosiy IT sozlamadan boshlaydi va vaqt o'tishi bilan kengaytiradi." }
+      ]
+    }
+  },
+  "hireUs": {
+    "hero": { "badge": "Autsorsing", "title": "IT Jamoamizni Yollang", "subtitle": "Uy ichidagi yollash xarajatlarisiz maxsus IT mutaxassislarini oling. Biz sizning IT bo'limingizga aylanamiz." },
+    "form": { "firstName": "Ism", "lastName": "Familiya", "email": "Email", "phone": "Telefon (ixtiyoriy)", "budget": "Byudjet diapazoni", "message": "Ehtiyojlaringizni tasvirlab bering", "submit": "So'rov Yuborish", "sending": "Yuborilmoqda...", "success": "So'rov qabul qilindi! 1-2 ish kuni ichida siz bilan bog'lanamiz.", "error": "Xato yuz berdi. Qaytadan urinib ko'ring." },
+    "benefits": [
+      { "title": "Yollash Xarajatlari Yo'q", "description": "Recruitment, onboarding va HR yukini o'tkazib yuboring. Biz darhol boshlashga tayyormiz." },
+      { "title": "To'liq Jamoa Kirishi", "description": "Dasturchilar, tarmoq muhandislari va CRM mutaxassislariga kirish huquqini oling." },
+      { "title": "Moslashuvchan Shartnoma", "description": "Joriy ehtiyojlaringizga qarab kengaytiring yoki qisqartiring. Oylik shartnomalar, bog'lanish yo'q." }
+    ]
+  },
+  "websites": {
+    "hero": { "badge": "Veb-Ishlab Chiqish", "title": "Biznesingiz Uchun Ishlaydigan Veb-Saytlar", "subtitle": "Oddiy landing sahifalardan to'liq e-commerce platformalarigacha, kerakli veb mavjudligini quramiz." },
+    "process": { "title": "Jarayonimiz", "steps": [
+      { "step": "01", "title": "Kashfiyot", "description": "Biznesingizni, maqsadlaringizni va auditoriyangizni o'rganamiz." },
+      { "step": "02", "title": "Dizayn", "description": "Brendingiz identifikatsiyasiga moslashtirilgan vireframlar va vizual dizayn." },
+      { "step": "03", "title": "Qurish", "description": "Toza kod, tez ishlash, mobil-first moslashuvchan ishlab chiqish." },
+      { "step": "04", "title": "Ishga Tushirish", "description": "Joylashtirish, sinov va hujjatlar va o'qitish bilan topshirish." }
+    ]},
+    "faq": { "title": "Veb-Sayt FAQ", "items": [
+      { "q": "Veb-sayt qurish qancha vaqt oladi?", "a": "Landing sahifalar odatda 1-2 hafta. Veb-ilovalar murakkabligiga qarab 4-8 hafta." },
+      { "q": "Qanday texnologiyalardan foydalanasiz?", "a": "Asosan Next.js, React va Node.js. E-commerce uchun mahalliy to'lov shlyuzlari (Payme, Click) va istalgan CRM yoki ERP bilan integratsiya." },
+      { "q": "Hosting xizmatini taqdim etasizmi?", "a": "Ha, Vercel, AWS yoki VPS bo'yicha tavsiya va sozlash. Boshqarishni o'z zimmamizga olishimiz yoki jamoangizga topshirishimiz mumkin." },
+      { "q": "Mavjud veb-saytni qayta dizayn qilasizmi?", "a": "Ha. Kontent migratsiyasi, ishlash optimizatsiyasi va SEO yaxshilash bilan to'liq qayta dizayn." }
+    ]}
+  },
+  "faq": {
+    "hero": { "badge": "FAQ", "title": "Ko'p So'raladigan Savollar", "subtitle": "ITHINK bilan ishlash haqida bilishingiz kerak bo'lgan hamma narsa." },
+    "searchPlaceholder": "Savollarni qidiring...",
+    "stillQuestions": "Hali savollargiz bormi?",
+    "contactUs": "Bog'lanish",
+    "items": [
+      { "q": "Qanday bizneslar bilan ishlavasiz?", "a": "Biz chakana savdo, e-commerce, moliya, professional xizmatlar, ishlab chiqarish va boshqa sohalardagi har qanday hajmdagi bizneslar bilan ishlaymiz." },
+      { "q": "ITHINK boshqa IT kompaniyalardan qanday farq qiladi?", "a": "Biz texnik chuqurlikni biznesni tushunish bilan birlashtirамиз. Har bir mijoz maxsus hisob menejeri oladi." },
+      { "q": "Maxsus dasturiy ta'minot ishlab chiqasizmi?", "a": "Ha. Biz maxsus veb-ilovalar, ichki vositalar va integratsiyalarni quramiz." },
+      { "q": "Qanday texnologiyalarda ixtisoslashgansiz?", "a": "Infratuzilma: tarmoq, VoIP, bulutli xizmatlar. Dasturiy ta'minot: Next.js, React, Node.js, Python. CRM: amoCRM, Bitrix24." },
+      { "q": "Doimiy qo'llab-quvvatlashni qanday amalga oshirasiz?", "a": "Biz belgilangan SLA muddatlari bilan oylik qo'llab-quvvatlash rejalarini taklif etamiz." },
+      { "q": "Narxlar qanday belgilanadi?", "a": "Narxlar ko'lam, murakkablik va muddatga bog'liq. Bepul kashfiyot qo'ng'irog'idan so'ng batafsil taklif beramiz." },
+      { "q": "Qanday boshlash mumkin?", "a": "Aloqa formasini to'ldiring yoki to'g'ridan-to'g'ri qo'ng'iring. Ehtiyojlaringizni tushunish uchun 30 daqiqalik kashfiyot qo'ng'irog'ini rejalashtirамиз." },
+      { "q": "Xalqaro mijozlar bilan ishlayсизми?", "a": "Asosiy diqqatimiz O'zbekiston, ammo Markaziy Osiyo bo'ylab va dasturiy ta'minot ishlab chiqish hamda CRM loyihalari uchun xalqaro loyihalar bilan ishlaymiz." }
+    ]
+  },
+  "contact": {
+    "hero": { "badge": "Kontaktlar", "title": "Gaplashamiz", "subtitle": "Loyiha rejangiz bormi? Uni eshitishdan xursand bo'lamiz." },
+    "info": { "title": "Bog'lanish", "ceo": "Bosh Direktor", "name": "Farkhod Kholikov", "phone": "+998 55 500-00-XX", "email": "info@ithink.uz", "address": "Bog'ishamol ko'chasi 3, Toshkent 100084, O'zbekiston", "telegram": "Telegram", "instagram": "Instagram", "responseTime": "1-2 ish kuni ichida javob beramiz" },
+    "form": { "name": "To'liq ismingiz", "email": "Email", "phone": "Telefon raqam", "message": "Xabaringiz", "submit": "Xabar Yuborish", "sending": "Yuborilmoqda...", "success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.", "error": "Xato yuz berdi. Qaytadan urinib ko'ring." }
+  }
+}
