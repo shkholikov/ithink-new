@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { Share2, Send } from 'lucide-react';
 
 interface FooterProps {
@@ -11,6 +13,10 @@ interface FooterProps {
 
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer');
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isDark = !mounted || theme === 'dark';
   const year = new Date().getFullYear();
 
   return (
@@ -21,7 +27,7 @@ export default function Footer({ locale }: FooterProps) {
           <div className="md:col-span-1">
             <Link href={`/${locale}`}>
               <Image
-                src="/logo.png"
+                src={isDark ? '/logo-negative.png' : '/logo.png'}
                 alt="ITHINK"
                 width={110}
                 height={34}

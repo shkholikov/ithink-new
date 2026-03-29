@@ -50,7 +50,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-/* Dark theme */
+/* Dark theme (default) */
 :root {
   --background: #0d0d14;
   --foreground: #e2e8f0;
@@ -81,6 +81,36 @@
   --sidebar-ring: #377dff;
 }
 
+
+/* Light theme */
+.light {
+  --background: #ffffff;
+  --foreground: #1e2022;
+  --card: #f7faff;
+  --card-foreground: #1e2022;
+  --popover: #ffffff;
+  --popover-foreground: #1e2022;
+  --primary: #377dff;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f5ff;
+  --secondary-foreground: #1e2022;
+  --muted: #f0f0f0;
+  --muted-foreground: #677788;
+  --accent: #e8f0ff;
+  --accent-foreground: #1e2022;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #377dff;
+  --sidebar: #f7faff;
+  --sidebar-foreground: #1e2022;
+  --sidebar-primary: #377dff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8f0ff;
+  --sidebar-accent-foreground: #1e2022;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #377dff;
+}
 
 @layer base {
   * {
@@ -132,6 +162,11 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 /* Noise overlay */
