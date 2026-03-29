@@ -2,9 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/hero';
 import Services from '@/components/sections/services';
-import PartnersGrid from '@/components/sections/partners-grid';
-import ClientsGrid from '@/components/sections/clients-grid';
+import HowItWorks from '@/components/sections/how-it-works';
+import TrustedBy from '@/components/sections/trusted-by';
 import WhyUs from '@/components/sections/why-us';
+import Testimonials from '@/components/sections/testimonials';
 import ContactCta from '@/components/sections/contact-cta';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -31,9 +32,10 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero locale={locale} />
       <Services locale={locale} />
-      <PartnersGrid />
-      <ClientsGrid locale={locale} />
+      <HowItWorks />
+      <TrustedBy />
       <WhyUs />
+      <Testimonials />
       <ContactCta />
     </>
   );

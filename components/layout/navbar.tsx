@@ -25,7 +25,8 @@ import {
 	LayoutGrid,
 	Phone,
 	MessageCircle,
-	BarChart2
+	BarChart2,
+	CalendarCheck
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -186,6 +187,16 @@ export default function Navbar({ locale }: NavbarProps) {
 
 					{/* Right side */}
 					<div className="hidden lg:flex items-center gap-3">
+						{/* Free Consultation CTA */}
+						<Link
+							href={`/${locale}/contact`}
+							className="relative inline-flex items-center gap-2 px-4 py-2 bg-[#377dff] hover:bg-[#2563eb] text-white text-xs font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] overflow-hidden group"
+						>
+							<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 ease-in-out" />
+							<CalendarCheck className="w-3.5 h-3.5 relative z-10" />
+							<span className="relative z-10">{t("freeCta")}</span>
+						</Link>
+
 						<div className="flex items-center gap-0.5 bg-muted rounded-lg p-0.5">
 							{locales.map((l) => (
 								<Link
@@ -262,6 +273,15 @@ export default function Navbar({ locale }: NavbarProps) {
 								</nav>
 
 								<div className="p-4 border-t border-white/5 space-y-3">
+									<Link
+										href={`/${locale}/contact`}
+										onClick={() => setOpen(false)}
+										className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-colors"
+									>
+										<CalendarCheck className="w-4 h-4" />
+										{t("freeCta")}
+									</Link>
+
 									<div className="flex items-center gap-1 bg-muted rounded-lg p-1">
 										{locales.map((l) => (
 											<Link

@@ -14,7 +14,8 @@
     "training": "Ta'lim",
     "solutions": "Yechimlar",
     "blog": "Blog",
-    "career": "Karyera"
+    "career": "Karyera",
+    "freeCta": "Bepul Konsultatsiya"
   },
   "hero": {
     "badge": "50+ mamnun mijoz",
@@ -29,7 +30,8 @@
     "stat2": "25+",
     "stat2Label": "Tugallangan Loyihalar",
     "stat3": "99%",
-    "stat3Label": "Mijozlar Mamnuniyati"
+    "stat3Label": "Mijozlar Mamnuniyati",
+    "trustNote": "Majburiyatsiz · 1 soat ichida javob"
   },
   "services": {
     "badge": "Biz Nima Qilamiz",
@@ -79,6 +81,13 @@
   "cta": {
     "title": "Biznesingizni optimallashtirga tayyormisiz?",
     "subtitle": "Loyihangiz haqida bizga ayting va biz 1-2 ish kuni ichida siz bilan bog'lanamiz.",
+    "contactTitle": "Biz bilan bog'laning",
+    "contactSubtitle": "To'g'ridan-to'g'ri murojaat qiling — biz yordam berishga tayyormiz.",
+    "phoneValue": "+997 95 171-71-01",
+    "telegramValue": "https://t.me/ithinkteam",
+    "emailValue": "team@ithink.uz",
+    "instagramValue": "https://instagram.com/ithinkuz",
+    "responseNote": "1 ish soati ichida javob beramiz",
     "name": "To'liq ismingiz",
     "email": "Email",
     "phone": "Telefon raqam",
@@ -87,6 +96,47 @@
     "sending": "Yuborilmoqda...",
     "success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.",
     "error": "Xato yuz berdi. Qaytadan urinib ko'ring."
+  },
+  "howItWorks": {
+    "badge": "Bizning jarayon",
+    "title": "Biz qanday ishlаymiz",
+    "subtitle": "Birinchi suhbatdan uzoq muddatli hamkorlikkacha aniq va sinovdan o'tgan jarayon.",
+    "items": [
+      { "step": "01", "title": "Konsultatsiya", "description": "Biz sizning muammolaringiz va maqsadlaringizni tinglаymiz. Shablonsiz — faqat nima kerakligingiz haqida ochiq suhbat." },
+      { "step": "02", "title": "Rejalashtirish", "description": "Biznesingizga moslashtirilgan yechim arxitekturasi, muddati va byudjetini ishlab chiqамiz. Siz qurilishdan oldin tasdiqlaysiz." },
+      { "step": "03", "title": "Bajarish", "description": "Jamoamiz quради, sozlaydi va joylashtiradi. Siz har bir bosqichda xabardor bo'lasiz — kutilmagan holatlar yo'q." },
+      { "step": "04", "title": "Doimiy Qo'llab-quvvatlash", "description": "Ishga tushirilgandan keyin yo'qolmaymiz. Proaktiv monitoring, tezkor javob va doimiy takomillashtirish." }
+    ]
+  },
+  "trustedBy": {
+    "badge": "Ishonch",
+    "title": "50+ kompaniya bizga ishonadi",
+    "subtitle": "O'zbekiston bo'ylab startaplardan katta korxonalargacha."
+  },
+  "testimonials": {
+    "badge": "Mijoz fikrlari",
+    "title": "Mijozlarimiz nima deydi",
+    "subtitle": "Haqiqiy bizneslardan haqiqiy natijalar.",
+    "items": [
+      {
+        "quote": "ITHINK 3 ta filialimizning butun tarmoq infratuzilmasini ikki haftadan kamroq vaqt ichida o'rnatdi. Ishonchli, sifatli ish — kutilmagan holatlar yo'q.",
+        "name": "Azizbek Toshmatov",
+        "company": "Crayton & Vilt",
+        "role": "Operatsiyalar direktori"
+      },
+      {
+        "quote": "Ular kredit ariza jarayonimizni qog'ozdan to'liq avtomatlashtirilgan tizimga 6 hafta ichida o'tkazishdi. Jamoamiz samaradorligi darhol 40% oshdi.",
+        "name": "Jamshid Yusupov",
+        "company": "Kredit Market",
+        "role": "CEO"
+      },
+      {
+        "quote": "Ular yaratgan CRM integratsiyasi butun savdo quvurimizni bog'ladi. Jamoa nafaqat kod, balki biznesni ham tushunadi.",
+        "name": "Dilnoza Rahimova",
+        "company": "OBBO Marketplace",
+        "role": "O'sish bo'limi rahbari"
+      }
+    ]
   },
   "footer": {
     "slogan": "ITHINK bilan qutidan tashqarida o'ylang",
@@ -216,7 +266,7 @@
   },
   "contact": {
     "hero": { "badge": "Kontaktlar", "title": "Gaplashamiz", "subtitle": "Loyiha rejangiz bormi? Uni eshitishdan xursand bo'lamiz." },
-    "info": { "title": "Bog'lanish", "ceo": "Bosh Direktor", "name": "Farkhod Kholikov", "phone": "+998 55 500-00-XX", "email": "info@ithink.uz", "address": "Bog'ishamol ko'chasi 3, Toshkent 100084, O'zbekiston", "telegram": "Telegram", "instagram": "Instagram", "responseTime": "1-2 ish kuni ichida javob beramiz" },
+    "info": { "title": "Bog'lanish", "ceo": "Bosh Direktor", "name": "Farkhod Kholikov", "phone": "+997 95 171-71-01", "email": "team@ithink.uz", "address": "Bog'ishamol ko'chasi 3, Toshkent 100084, O'zbekiston", "telegram": "Telegram", "instagram": "Instagram", "responseTime": "1-2 ish kuni ichida javob beramiz" },
     "form": { "name": "To'liq ismingiz", "email": "Email", "phone": "Telefon raqam", "message": "Xabaringiz", "submit": "Xabar Yuborish", "sending": "Yuborilmoqda...", "success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.", "error": "Xato yuz berdi. Qaytadan urinib ko'ring." }
   }
 }

@@ -14,7 +14,8 @@
     "training": "Training",
     "solutions": "Solutions",
     "blog": "Blog",
-    "career": "Career"
+    "career": "Career",
+    "freeCta": "Get Free Consultation"
   },
   "hero": {
     "badge": "50+ satisfied clients",
@@ -29,7 +30,8 @@
     "stat2": "25+",
     "stat2Label": "Completed Projects",
     "stat3": "99%",
-    "stat3Label": "Satisfaction Rate"
+    "stat3Label": "Satisfaction Rate",
+    "trustNote": "No commitment · Response within 1 hour"
   },
   "services": {
     "badge": "What We Do",
@@ -133,6 +135,13 @@
   "cta": {
     "title": "Ready to optimize your business?",
     "subtitle": "Tell us about your project and we'll get back to you within 1–2 business days.",
+    "contactTitle": "Get in Touch",
+    "contactSubtitle": "Reach us directly — we're here to help.",
+    "phoneValue": "+997 95 171-71-01",
+    "telegramValue": "https://t.me/ithinkteam",
+    "emailValue": "team@ithink.uz",
+    "instagramValue": "https://instagram.com/ithinkuz",
+    "responseNote": "We respond within 1 business hour",
     "name": "Full name",
     "email": "Email",
     "phone": "Phone number",
@@ -141,6 +150,47 @@
     "sending": "Sending...",
     "success": "Message sent! We'll be in touch soon.",
     "error": "Something went wrong. Please try again."
+  },
+  "howItWorks": {
+    "badge": "Our Process",
+    "title": "How We Work",
+    "subtitle": "A clear, proven process from first conversation to long-term partnership.",
+    "items": [
+      { "step": "01", "title": "Consultation", "description": "We listen to your challenges and goals. No templates — just honest conversation about what you actually need." },
+      { "step": "02", "title": "Planning", "description": "We design a solution architecture, timeline, and budget tailored to your business. You approve before we build." },
+      { "step": "03", "title": "Execution", "description": "Our team builds, configures, and deploys. You stay informed at every milestone with no surprises." },
+      { "step": "04", "title": "Ongoing Support", "description": "We don't disappear after launch. Proactive monitoring, fast response, and continuous improvement." }
+    ]
+  },
+  "trustedBy": {
+    "badge": "Social Proof",
+    "title": "Trusted by 50+ Companies",
+    "subtitle": "From startups to enterprises across Uzbekistan."
+  },
+  "testimonials": {
+    "badge": "Client Stories",
+    "title": "What Our Clients Say",
+    "subtitle": "Real results from real businesses.",
+    "items": [
+      {
+        "quote": "ITHINK set up our entire network infrastructure across 3 branches in under two weeks. Reliable, clean work — no surprises, no excuses.",
+        "name": "Azizbek Toshmatov",
+        "company": "Crayton & Vilt",
+        "role": "Operations Director"
+      },
+      {
+        "quote": "They digitalized our loan application process from paper to fully automated in 6 weeks. Our team's productivity went up 40% immediately.",
+        "name": "Jamshid Yusupov",
+        "company": "Kredit Market",
+        "role": "CEO"
+      },
+      {
+        "quote": "The CRM integration they built for us connects our entire sales pipeline. The team actually understands business, not just code.",
+        "name": "Dilnoza Rahimova",
+        "company": "OBBO Marketplace",
+        "role": "Head of Growth"
+      }
+    ]
   },
   "footer": {
     "slogan": "Think beyond limits with ITHINK",
@@ -329,8 +379,8 @@
       "title": "Get in Touch",
       "ceo": "CEO",
       "name": "Farkhod Kholikov",
-      "phone": "+998 55 500-00-XX",
-      "email": "info@ithink.uz",
+      "phone": "+997 95 171-71-01",
+      "email": "team@ithink.uz",
       "address": "Bogishamol Street 3, Tashkent 100084, Uzbekistan",
       "telegram": "Telegram",
       "instagram": "Instagram",

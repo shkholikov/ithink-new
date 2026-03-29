@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Server, MonitorCheck, PhoneCall, Code2, Workflow, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const serviceIcons = [Server, MonitorCheck, PhoneCall, Code2, Workflow, Database];
 
 interface ServicesProps {
   locale: string;
@@ -13,10 +15,10 @@ export default function Services({ locale }: ServicesProps) {
   const t = useTranslations('services');
 
   const services = [0, 1, 2, 3, 4, 5].map((i) => ({
-    number: t(`items.${i}.number`),
     title: t(`items.${i}.title`),
     description: t(`items.${i}.description`),
     price: t(`items.${i}.price`),
+    Icon: serviceIcons[i],
   }));
 
   return (
@@ -48,16 +50,21 @@ export default function Services({ locale }: ServicesProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/30 rounded-2xl p-6 transition-all duration-300 cursor-default overflow-hidden"
+              whileHover={{ y: -4 }}
+              className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/40 rounded-2xl p-6 transition-all duration-300 cursor-default overflow-hidden"
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#377dff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
               <div className="relative z-10">
-                {/* Number */}
-                <span className="text-4xl font-black text-border group-hover:text-[#377dff]/20 transition-colors duration-300 select-none block mb-4 leading-none">
-                  {service.number}
-                </span>
+                {/* Icon */}
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-12 h-12 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 group-hover:shadow-lg group-hover:shadow-[#377dff]/20 transition-all duration-300"
+                >
+                  <service.Icon className="w-5 h-5 text-[#377dff]" />
+                </motion.div>
 
                 {/* Title */}
                 <h3 className="text-base font-semibold text-foreground mb-2">{service.title}</h3>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface HeroProps {
@@ -79,20 +79,38 @@ export default function Hero({ locale }: HeroProps) {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
+          {/* Primary — shimmer + pulsing ring */}
+          <div className="relative group">
+            <span className="absolute inset-0 rounded-xl border-2 border-[#377dff]/50 scale-100 opacity-100 group-hover:scale-[1.12] group-hover:opacity-0 transition-all duration-500 pointer-events-none" />
+            <Link
+              href={`/${locale}/hire-us`}
+              className="relative inline-flex items-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-[#377dff]/30 hover:shadow-xl hover:shadow-[#377dff]/40 hover:scale-[1.03] overflow-hidden"
+            >
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500" />
+              <span className="relative z-10">{t('cta1')}</span>
+              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </div>
+
+          {/* Secondary — hover color shift + chevron */}
           <Link
-            href={`/${locale}/hire-us`}
-            className="group inline-flex items-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-medium rounded-xl transition-all duration-200 shadow-lg shadow-[#377dff]/25"
-          >
-            {t('cta1')}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-          <Link
-            href={`#services`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-accent text-foreground text-sm font-medium rounded-xl border border-border hover:border-[#377dff]/30 transition-all duration-200"
+            href="#services"
+            className="group inline-flex items-center gap-2 px-6 py-3.5 bg-secondary/50 hover:bg-accent text-foreground hover:text-[#377dff] text-sm font-medium rounded-xl border border-border hover:border-[#377dff]/40 transition-all duration-200"
           >
             {t('cta2')}
+            <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-200" />
           </Link>
         </motion.div>
+
+        {/* Trust note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="text-[11px] text-muted-foreground/50 mt-3"
+        >
+          {t('trustNote')}
+        </motion.p>
 
         {/* Stats */}
         <motion.div
