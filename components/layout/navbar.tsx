@@ -135,7 +135,15 @@ export default function Navbar({ locale }: NavbarProps) {
 				<div className="flex items-center justify-between h-16 lg:h-18">
 					{/* Logo */}
 					<Link href={`/${locale}`} className="flex-shrink-0">
-						<Image src={isDark ? "/logo-negative.png" : "/logo.png"} alt="ITHINK" width={120} height={36} className="h-8 w-auto" priority />
+						<Image
+							src={isDark ? "/logo-negative.png" : "/logo.png"}
+							alt="ITHINK"
+							width={120}
+							height={36}
+							className="h-8 w-auto"
+							priority
+							loading="eager"
+						/>
 					</Link>
 
 					{/* Desktop Nav */}
