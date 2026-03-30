@@ -40,12 +40,12 @@
     "learnMore": "Batafsil",
     "from": "dan",
     "items": [
-      { "title": "IT Infrastructure", "description": "On-premise va cloud infratuzilmani loyihalаymiz va joylashtiramiz: serverlar, tarmoq, ish stantsiyalari, kirishlar va IT arxitekturasi biznesning barqaror ishlashi uchun.", "tag": "Loyiha asosida" },
-      { "title": "Managed IT Services (MSP)", "description": "Kundalik IT qo'llab-quvvatlash va boshqaruvni obuna bo'yicha o'z zimmamizga olamiz: 24/7 monitoring, foydalanuvchilarni qo'llab-quvvatlash va barqarorlik uchun to'liq javobgarlik.", "tag": "Oylik" },
-      { "title": "CRM & Sales Automation", "description": "AmoCRM joriy etamiz, savdo hunillarini avtomatlаshtiramiz, telefoniya, messenjerlar, veb-sayt va boshqa kanallarni yagona liderlarni boshqarish tizimiga ulaymiz.", "tag": "Loyiha asosida" },
-      { "title": "Business Process Automation", "description": "Botlar, integratsiyalar, AI yechimlari va ichki tizimlar yordamida qo'lda bajariladigan jarayonlarni avtomatlаshtiramiz — biznes tezroq, aniqroq va samaraliroq ishlaydi.", "tag": "Loyiha asosida" },
-      { "title": "Custom Software Development", "description": "Veb-saytlar, landing sahifalar, Telegram botlar, Mini Applar, mobil ilovalar, murakkab integratsiyalar va kompaniyangiz vazifalariga moslashtirilgan maxsus biznes tizimlarini yaratamiz.", "tag": "Loyiha asosida" },
-      { "title": "IT Audit & Consulting", "description": "IT infratuzilma va jarayonlarni audit qilamiz, zaif joylar, xatarlar va o'sish nuqtalarini aniqlaymiz, so'ngra optimizatsiya va rivojlantirish rejasini taqdim etamiz.", "tag": "Bir martalik" }
+      { "title": "IT-infratuzilma", "description": "On-premise va cloud infratuzilmani loyihalаymiz va joylashtiramiz: serverlar, tarmoq, ish stantsiyalari, kirishlar va IT arxitekturasi biznesning barqaror ishlashi uchun.", "tag": "Loyiha asosida" },
+      { "title": "Boshqariladigan IT-xizmatlar (MSP)", "description": "Kundalik IT qo'llab-quvvatlash va boshqaruvni obuna bo'yicha o'z zimmamizga olamiz: 24/7 monitoring, foydalanuvchilarni qo'llab-quvvatlash va barqarorlik uchun to'liq javobgarlik.", "tag": "Oylik" },
+      { "title": "CRM va savdo avtomatizatsiyasi", "description": "AmoCRM joriy etamiz, savdo hunillarini avtomatlаshtiramiz, telefoniya, messenjerlar, veb-sayt va boshqa kanallarni yagona liderlarni boshqarish tizimiga ulaymiz.", "tag": "Loyiha asosida" },
+      { "title": "Biznes-jarayonlarni avtomatlashtirish", "description": "Botlar, integratsiyalar, AI yechimlari va ichki tizimlar yordamida qo'lda bajariladigan jarayonlarni avtomatlаshtiramiz — biznes tezroq, aniqroq va samaraliroq ishlaydi.", "tag": "Loyiha asosida" },
+      { "title": "Dasturiy ta'minot ishlab chiqish", "description": "Veb-saytlar, landing sahifalar, Telegram botlar, Mini Applar, mobil ilovalar, murakkab integratsiyalar va kompaniyangiz vazifalariga moslashtirilgan maxsus biznes tizimlarini yaratamiz.", "tag": "Loyiha asosida" },
+      { "title": "IT-audit va konsalting", "description": "IT infratuzilma va jarayonlarni audit qilamiz, zaif joylar, xatarlar va o'sish nuqtalarini aniqlaymiz, so'ngra optimizatsiya va rivojlantirish rejasini taqdim etamiz.", "tag": "Bir martalik" }
     ]
   },
   "partners": {

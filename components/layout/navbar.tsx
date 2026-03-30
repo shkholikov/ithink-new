@@ -106,6 +106,8 @@ export default function Navbar({ locale }: NavbarProps) {
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
+		setScrolled(window.scrollY > 20);
+
 		let ticking = false;
 		const handleScroll = () => {
 			if (!ticking) {
