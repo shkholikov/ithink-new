@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import MotionProvider from "@/components/motion-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -79,7 +80,7 @@ export default function RootLayout({
 		<html lang="uz" className={`${inter.variable} h-full`} suppressHydrationWarning>
 			<body className="min-h-full flex flex-col bg-background text-foreground antialiased">
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} scriptProps={{ id: "next-themes-init" }}>
-					{children}
+					<MotionProvider>{children}</MotionProvider>
 				</ThemeProvider>
 			</body>
 		</html>
