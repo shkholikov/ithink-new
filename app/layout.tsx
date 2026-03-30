@@ -77,7 +77,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="uz" className={`${inter.variable} h-full`} suppressHydrationWarning>
+		<html lang="ru" className={`${inter.variable} h-full`} data-scroll-behavior="smooth" suppressHydrationWarning>
 			<body className="min-h-full flex flex-col bg-background text-foreground antialiased">
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} scriptProps={{ id: "next-themes-init" }}>
 					<MotionProvider>{children}</MotionProvider>

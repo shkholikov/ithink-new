@@ -19,7 +19,7 @@ export default function Hero({ locale }: HeroProps) {
 	];
 
 	return (
-		<section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 bg-background">
+		<section className="relative flex flex-col items-center overflow-hidden pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 bg-background">
 			{/* Gradient blobs — more visible in dark, subtle in light */}
 			<div className="absolute inset-0 overflow-hidden pointer-events-none">
 				<div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#377dff]/8 dark:bg-[#377dff]/15 rounded-full blur-[120px] animate-blob" />
