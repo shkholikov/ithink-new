@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 import { ShieldCheck, Puzzle, TrendingUp, Award } from "lucide-react";
-import { SectionBadge } from "@/components/ui/section-badge";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const icons = [ShieldCheck, Puzzle, TrendingUp];
 
@@ -24,18 +24,7 @@ export default function WhyUs() {
 			</div>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-50px" }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-14"
-				>
-					<SectionBadge icon={Award} label={t("badge")} variant="yellow" />
-					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t("title")}</h2>
-					<p className="text-muted-foreground max-w-xl mx-auto text-sm">{t("subtitle")}</p>
-				</m.div>
+				<SectionHeader icon={Award} badge={t("badge")} badgeVariant="yellow" title={t("title")} subtitle={t("subtitle")} />
 
 				{/* Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">

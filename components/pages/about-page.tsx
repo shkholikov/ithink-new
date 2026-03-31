@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
-import { ShieldCheck, MessageSquare, Handshake } from "lucide-react";
+import { ShieldCheck, MessageSquare, Handshake, Info } from "lucide-react";
+import { PageHero } from "@/components/ui/page-hero";
 
 const valueIcons = [ShieldCheck, MessageSquare, Handshake];
 
@@ -23,30 +24,16 @@ export default function AboutPage({ locale: _ }: { locale: string }) {
 
 	return (
 		<div className="pt-24 bg-background">
-			{/* Hero */}
-			<section className="relative py-20 lg:py-28 overflow-hidden">
-				<div className="absolute inset-0 pointer-events-none">
-					<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#377dff]/8 rounded-full blur-[120px]" />
-				</div>
-				<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-						<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-6">
-							{t("hero.badge")}
-						</span>
-						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-5 leading-tight">{t("hero.title")}</h1>
-						<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mb-12">{t("hero.subtitle")}</p>
-
-						<div className="grid grid-cols-3 gap-6 max-w-xl">
-							{stats.map((s, i) => (
-								<div key={i} className="text-center sm:text-left">
-									<div className="text-3xl sm:text-4xl font-bold gradient-text-blue">{s.value}</div>
-									<div className="text-xs text-muted-foreground mt-1">{s.label}</div>
-								</div>
-							))}
+			<PageHero icon={Info} badge={t("hero.badge")} title={t("hero.title")} subtitle={t("hero.subtitle")} className="py-20 lg:py-28">
+				<div className="grid grid-cols-3 gap-6 max-w-xl mx-auto mt-12">
+					{stats.map((s, i) => (
+						<div key={i} className="text-center sm:text-left">
+							<div className="text-3xl sm:text-4xl font-bold gradient-text-blue">{s.value}</div>
+							<div className="text-xs text-muted-foreground mt-1">{s.label}</div>
 						</div>
-					</m.div>
+					))}
 				</div>
-			</section>
+			</PageHero>
 
 			{/* Story */}
 			<section className="py-20 border-t border-border bg-secondary/20">

@@ -2,8 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Handshake } from "lucide-react";
 import Link from "next/link";
+import { PageHero } from "@/components/ui/page-hero";
 
 export default function PartnersPage({ locale }: { locale: string }) {
 	const t = useTranslations("partners");
@@ -25,21 +26,7 @@ export default function PartnersPage({ locale }: { locale: string }) {
 
 	return (
 		<div className="pt-24 bg-background">
-			{/* Hero */}
-			<section className="py-20 lg:py-24 relative overflow-hidden">
-				<div className="absolute inset-0 pointer-events-none">
-					<div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-[#f9b934]/5 rounded-full blur-[120px]" />
-				</div>
-				<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-						<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] dark:text-[#f9b934] text-xs font-medium mb-6">
-							{t("badge")}
-						</span>
-						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">{t("title")}</h1>
-						<p className="text-base text-muted-foreground max-w-2xl">{t("subtitle")}</p>
-					</m.div>
-				</div>
-			</section>
+			<PageHero icon={Handshake} badge={t("badge")} badgeVariant="yellow" title={t("title")} subtitle={t("subtitle")} />
 
 			<section className="pb-24 border-t border-border">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">

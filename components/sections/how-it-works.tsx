@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
 import { MessageSquare, ClipboardList, Hammer, Headphones, Route } from "lucide-react";
-import { SectionBadge } from "@/components/ui/section-badge";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const stepIcons = [MessageSquare, ClipboardList, Hammer, Headphones];
 
@@ -25,18 +25,7 @@ export default function HowItWorks() {
 			</div>
 
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-50px" }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-16"
-				>
-					<SectionBadge icon={Route} label={t("badge")} variant="yellow" />
-					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t("title")}</h2>
-					<p className="text-muted-foreground max-w-xl mx-auto text-sm">{t("subtitle")}</p>
-				</m.div>
+				<SectionHeader icon={Route} badge={t("badge")} badgeVariant="yellow" title={t("title")} subtitle={t("subtitle")} className="mb-16" />
 
 				{/* Steps */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ArrowUpRight, Server, MonitorCheck, TrendingUp, Workflow, Code2, Search, Layers } from "lucide-react";
 import { m } from "framer-motion";
-import { SectionBadge } from "@/components/ui/section-badge";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const serviceIcons = [Server, MonitorCheck, TrendingUp, Workflow, Code2, Search];
 
@@ -25,18 +25,7 @@ export default function Services({ locale }: ServicesProps) {
 	return (
 		<section id="services" className="py-24 lg:py-32 bg-background relative">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-50px" }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-14"
-				>
-					<SectionBadge icon={Layers} label={t("badge")} />
-					<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">{t("title")}</h2>
-					<p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">{t("subtitle")}</p>
-				</m.div>
+				<SectionHeader icon={Layers} badge={t("badge")} title={t("title")} subtitle={t("subtitle")} />
 
 				{/* Service Cards */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

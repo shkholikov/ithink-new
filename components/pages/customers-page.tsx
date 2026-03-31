@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
+import { Building2 } from "lucide-react";
+import { PageHero } from "@/components/ui/page-hero";
 
 export default function CustomersPage({ locale: _ }: { locale: string }) {
 	const t = useTranslations("customers");
@@ -30,21 +32,7 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 
 	return (
 		<div className="pt-24 bg-background">
-			{/* Hero */}
-			<section className="py-20 lg:py-24 relative overflow-hidden">
-				<div className="absolute inset-0 pointer-events-none">
-					<div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[#377dff]/8 rounded-full blur-[120px]" />
-				</div>
-				<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-						<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-6">
-							{t("hero.badge")}
-						</span>
-						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">{t("hero.title")}</h1>
-						<p className="text-base text-muted-foreground max-w-xl">{t("hero.subtitle")}</p>
-					</m.div>
-				</div>
-			</section>
+			<PageHero icon={Building2} badge={t("hero.badge")} title={t("hero.title")} subtitle={t("hero.subtitle")} />
 
 			<section className="pb-24 border-t border-border">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
