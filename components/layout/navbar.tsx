@@ -26,7 +26,8 @@ import {
 	Phone,
 	MessageCircle,
 	BarChart2,
-	CalendarCheck
+	CalendarCheck,
+	Cable
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useIsDark } from "@/hooks/use-is-dark";
@@ -87,6 +88,7 @@ const dropdownGroups = [
 		items: [
 			{ icon: TrendingUp, title: "amoCRM", description: "Sales-focused CRM built for fast-growing teams.", slug: "amocrm" },
 			{ icon: LayoutGrid, title: "Bitrix24", description: "All-in-one CRM, project management and HR.", slug: "bitrix24" },
+			{ icon: Cable, title: "Itgrix", description: "Asterisk telephony integration for Bitrix24 and amoCRM.", slug: "itgrix" },
 			{ icon: Phone, title: "onlinePBX", description: "Cloud telephony and call center solutions.", slug: "online-pbx" },
 			{ icon: MessageCircle, title: "Wazzup", description: "Omnichannel messaging inside your CRM.", slug: "wazzup" },
 			{ icon: BarChart2, title: "MEGACOUNT", description: "AI-powered visitor counting and retail analytics.", slug: "megacount" }

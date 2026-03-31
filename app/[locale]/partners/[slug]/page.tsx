@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PartnerItgrixPage from "@/components/pages/partner-itgrix-page";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -22,6 +23,10 @@ const partnerData: Record<string, { name: string; description: string }> = {
 	megacount: {
 		name: "MEGACOUNT",
 		description: "AI-powered visitor counting and retail analytics for physical business locations."
+	},
+	itgrix: {
+		name: "Itgrix",
+		description: "Reliable Asterisk IP telephony integration for Bitrix24 and amoCRM. 3000+ installations in 20 countries since 2017."
 	}
 };
 
@@ -49,6 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PartnerPage({ params }: Props) {
 	const { locale, slug } = await params;
+
+	if (slug === "itgrix") {
+		return <PartnerItgrixPage locale={locale} />;
+	}
+
 	const partner = partnerData[slug];
 
 	const comingSoon: Record<string, string> = {

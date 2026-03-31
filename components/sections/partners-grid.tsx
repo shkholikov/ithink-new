@@ -7,7 +7,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function PartnersGrid() {
 	const t = useTranslations("partners");
 
-	const partners = [0, 1, 2, 3, 4].map((i) => ({
+	const partners = [0, 1, 2, 3, 4, 5].map((i) => ({
 		name: t(`items.${i}.name`),
 		description: t(`items.${i}.description`)
 	}));
@@ -17,7 +17,8 @@ export default function PartnersGrid() {
 		"bg-orange-500/10 border-orange-500/20 text-orange-500",
 		"bg-green-500/10 border-green-500/20 text-green-500",
 		"bg-teal-500/10 border-teal-500/20 text-teal-500",
-		"bg-purple-500/10 border-purple-500/20 text-purple-500"
+		"bg-purple-500/10 border-purple-500/20 text-purple-500",
+		"bg-amber-500/10 border-amber-500/20 text-amber-500"
 	];
 
 	return (

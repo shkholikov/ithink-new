@@ -40,12 +40,36 @@
     "learnMore": "Learn more",
     "from": "from",
     "items": [
-      { "title": "IT Infrastructure", "description": "We design and deploy on-premise and cloud infrastructure: servers, networks, workstations, access control, and IT architecture for stable business operations.", "tag": "Project-based" },
-      { "title": "Managed IT Services (MSP)", "description": "We handle daily IT support and management by subscription: 24/7 monitoring, user support, fast response, and full responsibility for stability.", "tag": "Monthly" },
-      { "title": "CRM & Sales Automation", "description": "We implement AmoCRM, automate sales pipelines, and connect telephony, messengers, your website, and other channels into one unified lead management system.", "tag": "Project-based" },
-      { "title": "Business Process Automation", "description": "We automate manual processes using bots, integrations, AI tools, and internal systems so your business runs faster, cleaner, and more efficiently.", "tag": "Project-based" },
-      { "title": "Custom Software Development", "description": "We build websites, landing pages, Telegram bots, Mini Apps, mobile apps, complex integrations, and custom business systems tailored to your company.", "tag": "Project-based" },
-      { "title": "IT Audit & Consulting", "description": "We audit your IT infrastructure and processes, identify weak points, risks, and growth opportunities, then deliver a clear optimization and development plan.", "tag": "One-time" }
+      {
+        "title": "IT Infrastructure",
+        "description": "We design and deploy on-premise and cloud infrastructure: servers, networks, workstations, access control, and IT architecture for stable business operations.",
+        "tag": "Project-based"
+      },
+      {
+        "title": "Managed IT Services (MSP)",
+        "description": "We handle daily IT support and management by subscription: 24/7 monitoring, user support, fast response, and full responsibility for stability.",
+        "tag": "Monthly"
+      },
+      {
+        "title": "CRM & Sales Automation",
+        "description": "We implement AmoCRM, automate sales pipelines, and connect telephony, messengers, your website, and other channels into one unified lead management system.",
+        "tag": "Project-based"
+      },
+      {
+        "title": "Business Process Automation",
+        "description": "We automate manual processes using bots, integrations, AI tools, and internal systems so your business runs faster, cleaner, and more efficiently.",
+        "tag": "Project-based"
+      },
+      {
+        "title": "Custom Software Development",
+        "description": "We build websites, landing pages, Telegram bots, Mini Apps, mobile apps, complex integrations, and custom business systems tailored to your company.",
+        "tag": "Project-based"
+      },
+      {
+        "title": "IT Audit & Consulting",
+        "description": "We audit your IT infrastructure and processes, identify weak points, risks, and growth opportunities, then deliver a clear optimization and development plan.",
+        "tag": "One-time"
+      }
     ]
   },
   "partners": {
@@ -73,6 +97,10 @@
       {
         "name": "MEGACOUNT",
         "description": "AI-powered visitor counting and retail analytics for physical business locations."
+      },
+      {
+        "name": "Itgrix",
+        "description": "Asterisk telephony connector for Bitrix24 and amoCRM. 3000+ installs in 20 countries."
       }
     ]
   },
@@ -104,7 +132,7 @@
   },
   "cta": {
     "title": "Ready to optimize your business?",
-    "subtitle": "Tell us about your project and we'll get back to you within 1–2 business days.",
+    "subtitle": "Tell us about your project and we'll get back to you within 1 hour.",
     "contactTitle": "Get in Touch",
     "contactSubtitle": "Reach us directly — we're here to help.",
     "phoneValue": "+997 95 171-71-01",
@@ -126,10 +154,26 @@
     "title": "How We Work",
     "subtitle": "A clear, proven process from first conversation to long-term partnership.",
     "items": [
-      { "step": "01", "title": "Consultation", "description": "We listen to your challenges and goals. No templates — just honest conversation about what you actually need." },
-      { "step": "02", "title": "Planning", "description": "We design a solution architecture, timeline, and budget tailored to your business. You approve before we build." },
-      { "step": "03", "title": "Execution", "description": "Our team builds, configures, and deploys. You stay informed at every milestone with no surprises." },
-      { "step": "04", "title": "Ongoing Support", "description": "We don't disappear after launch. Proactive monitoring, fast response, and continuous improvement." }
+      {
+        "step": "01",
+        "title": "Consultation",
+        "description": "We listen to your challenges and goals. No templates — just honest conversation about what you actually need."
+      },
+      {
+        "step": "02",
+        "title": "Planning",
+        "description": "We design a solution architecture, timeline, and budget tailored to your business. You approve before we build."
+      },
+      {
+        "step": "03",
+        "title": "Execution",
+        "description": "Our team builds, configures, and deploys. You stay informed at every milestone with no surprises."
+      },
+      {
+        "step": "04",
+        "title": "Ongoing Support",
+        "description": "We don't disappear after launch. Proactive monitoring, fast response, and continuous improvement."
+      }
     ]
   },
   "trustedBy": {
@@ -201,9 +245,18 @@
       "badge": "Our Values",
       "title": "What Drives Us",
       "items": [
-        { "title": "Reliability", "description": "We show up, we follow through, and we stand behind every solution we deliver." },
-        { "title": "Clarity", "description": "No jargon, no hidden costs. You always know what we're doing and why." },
-        { "title": "Partnership", "description": "We treat your business goals as our own. Your success is our benchmark." }
+        {
+          "title": "Reliability",
+          "description": "We show up, we follow through, and we stand behind every solution we deliver."
+        },
+        {
+          "title": "Clarity",
+          "description": "No jargon, no hidden costs. You always know what we're doing and why."
+        },
+        {
+          "title": "Partnership",
+          "description": "We treat your business goals as our own. Your success is our benchmark."
+        }
       ]
     }
   },
@@ -215,17 +268,105 @@
     },
     "services": "Services provided",
     "items": [
-      { "name": "Crayton & Vilt", "industry": "Retail", "description": "IT infrastructure setup and managed services for a fast-growing retail chain.", "services": ["Managed IT", "Network Setup"] },
-      { "name": "OBBO", "industry": "E-Commerce", "description": "Full-stack web application development and CRM integration for an online marketplace.", "services": ["Software Dev", "CRM Integration"] },
-      { "name": "AslZar", "industry": "Jewelry", "description": "Custom e-commerce platform with inventory management and customer loyalty system.", "services": ["Software Dev", "E-Commerce"] },
-      { "name": "Kredit Market", "industry": "Finance", "description": "Digitalization of loan application workflows and customer management system.", "services": ["Digitalization", "CRM Integration"] },
-      { "name": "Penostyle", "industry": "Retail", "description": "Network infrastructure and VoIP communications for multi-location operations.", "services": ["Network & Infra", "VoIP"] },
-      { "name": "Avtozet", "industry": "Automotive", "description": "CRM implementation and sales process automation for an auto dealership.", "services": ["CRM Integration", "Digitalization"] },
-      { "name": "SOKOLOV", "industry": "Jewelry", "description": "IT support and managed services for a premium jewelry brand's local operations.", "services": ["Managed IT"] },
-      { "name": "UDirect", "industry": "Professional Services", "description": "Business process digitalization and software development for a consulting firm.", "services": ["Digitalization", "Software Dev"] },
-      { "name": "ParadiseWall", "industry": "Interior", "description": "Website development and digital tools for a home decor and wallpaper company.", "services": ["Websites", "Software Dev"] },
-      { "name": "Mobicenter", "industry": "Retail", "description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.", "services": ["Network & Infra", "VoIP", "Managed IT"] },
-      { "name": "Chudo Tovary", "industry": "E-Commerce", "description": "E-commerce platform development and CRM integration for an online goods marketplace.", "services": ["E-Commerce", "CRM Integration"] }
+      {
+        "name": "Crayton & Vilt",
+        "industry": "Retail",
+        "description": "IT infrastructure setup and managed services for a fast-growing retail chain.",
+        "services": [
+          "Managed IT",
+          "Network Setup"
+        ]
+      },
+      {
+        "name": "OBBO",
+        "industry": "E-Commerce",
+        "description": "Full-stack web application development and CRM integration for an online marketplace.",
+        "services": [
+          "Software Dev",
+          "CRM Integration"
+        ]
+      },
+      {
+        "name": "AslZar",
+        "industry": "Jewelry",
+        "description": "Custom e-commerce platform with inventory management and customer loyalty system.",
+        "services": [
+          "Software Dev",
+          "E-Commerce"
+        ]
+      },
+      {
+        "name": "Kredit Market",
+        "industry": "Finance",
+        "description": "Digitalization of loan application workflows and customer management system.",
+        "services": [
+          "Digitalization",
+          "CRM Integration"
+        ]
+      },
+      {
+        "name": "Penostyle",
+        "industry": "Retail",
+        "description": "Network infrastructure and VoIP communications for multi-location operations.",
+        "services": [
+          "Network & Infra",
+          "VoIP"
+        ]
+      },
+      {
+        "name": "Avtozet",
+        "industry": "Automotive",
+        "description": "CRM implementation and sales process automation for an auto dealership.",
+        "services": [
+          "CRM Integration",
+          "Digitalization"
+        ]
+      },
+      {
+        "name": "SOKOLOV",
+        "industry": "Jewelry",
+        "description": "IT support and managed services for a premium jewelry brand's local operations.",
+        "services": [
+          "Managed IT"
+        ]
+      },
+      {
+        "name": "UDirect",
+        "industry": "Professional Services",
+        "description": "Business process digitalization and software development for a consulting firm.",
+        "services": [
+          "Digitalization",
+          "Software Dev"
+        ]
+      },
+      {
+        "name": "ParadiseWall",
+        "industry": "Interior",
+        "description": "Website development and digital tools for a home decor and wallpaper company.",
+        "services": [
+          "Websites",
+          "Software Dev"
+        ]
+      },
+      {
+        "name": "Mobicenter",
+        "industry": "Retail",
+        "description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.",
+        "services": [
+          "Network & Infra",
+          "VoIP",
+          "Managed IT"
+        ]
+      },
+      {
+        "name": "Chudo Tovary",
+        "industry": "E-Commerce",
+        "description": "E-commerce platform development and CRM integration for an online goods marketplace.",
+        "services": [
+          "E-Commerce",
+          "CRM Integration"
+        ]
+      }
     ]
   },
   "pricing": {
@@ -243,30 +384,63 @@
         "price": "$300",
         "period": "one-time",
         "description": "Professional landing page to present your business online.",
-        "features": ["Custom design", "Mobile responsive", "SEO optimized", "1 contact form", "Hosting setup guide", "2 revision rounds"]
+        "features": [
+          "Custom design",
+          "Mobile responsive",
+          "SEO optimized",
+          "1 contact form",
+          "Hosting setup guide",
+          "2 revision rounds"
+        ]
       },
       {
         "name": "Web Application",
         "price": "$500",
         "period": "starting from",
         "description": "Custom web app tailored to your business processes.",
-        "features": ["Everything in Landing", "Custom functionality", "Admin dashboard", "User authentication", "API integrations", "3 months support"]
+        "features": [
+          "Everything in Landing",
+          "Custom functionality",
+          "Admin dashboard",
+          "User authentication",
+          "API integrations",
+          "3 months support"
+        ]
       },
       {
         "name": "E-Commerce & Marketplace",
         "price": "$1000",
         "period": "starting from",
         "description": "Full-featured online store or marketplace platform.",
-        "features": ["Everything in Web App", "Product catalog & search", "Payments (Payme, Click)", "Order management", "Inventory tracking", "6 months support"]
+        "features": [
+          "Everything in Web App",
+          "Product catalog & search",
+          "Payments (Payme, Click)",
+          "Order management",
+          "Inventory tracking",
+          "6 months support"
+        ]
       }
     ],
     "faq": {
       "title": "Pricing FAQ",
       "items": [
-        { "q": "What's included in the initial price?", "a": "The listed prices are starting points. Final cost depends on scope, number of pages, integrations, and complexity. We provide a detailed quote after a discovery call." },
-        { "q": "Are there ongoing maintenance costs?", "a": "Managed IT and VoIP are monthly services. One-time projects (websites, software) can be paired with an optional support plan billed monthly." },
-        { "q": "How do you handle payments?", "a": "We accept bank transfer, Payme, and Click. For larger projects, we work on a milestone-based payment schedule." },
-        { "q": "Can I start small and scale up?", "a": "Absolutely. Many clients start with a landing page or basic IT setup and expand over time. Our solutions are designed to grow with you." }
+        {
+          "q": "What's included in the initial price?",
+          "a": "The listed prices are starting points. Final cost depends on scope, number of pages, integrations, and complexity. We provide a detailed quote after a discovery call."
+        },
+        {
+          "q": "Are there ongoing maintenance costs?",
+          "a": "Managed IT and VoIP are monthly services. One-time projects (websites, software) can be paired with an optional support plan billed monthly."
+        },
+        {
+          "q": "How do you handle payments?",
+          "a": "We accept bank transfer, Payme, and Click. For larger projects, we work on a milestone-based payment schedule."
+        },
+        {
+          "q": "Can I start small and scale up?",
+          "a": "Absolutely. Many clients start with a landing page or basic IT setup and expand over time. Our solutions are designed to grow with you."
+        }
       ]
     }
   },
@@ -285,13 +459,22 @@
       "message": "Describe your needs",
       "submit": "Send Request",
       "sending": "Sending...",
-      "success": "Request received! We'll contact you within 1–2 business days.",
+      "success": "Request received! We'll contact you within 1 hour.",
       "error": "Something went wrong. Please try again."
     },
     "benefits": [
-      { "title": "No Hiring Costs", "description": "Skip recruitment, onboarding, and HR overhead. We're ready to start immediately." },
-      { "title": "Full Team Access", "description": "Get access to developers, network engineers, and CRM specialists — not just one generalist." },
-      { "title": "Flexible Engagement", "description": "Scale up or down based on your current needs. Monthly contracts, no lock-ins." }
+      {
+        "title": "No Hiring Costs",
+        "description": "Skip recruitment, onboarding, and HR overhead. We're ready to start immediately."
+      },
+      {
+        "title": "Full Team Access",
+        "description": "Get access to developers, network engineers, and CRM specialists — not just one generalist."
+      },
+      {
+        "title": "Flexible Engagement",
+        "description": "Scale up or down based on your current needs. Monthly contracts, no lock-ins."
+      }
     ]
   },
   "websites": {
@@ -303,19 +486,47 @@
     "process": {
       "title": "Our Process",
       "steps": [
-        { "step": "01", "title": "Discovery", "description": "We learn your business, goals, and audience to define the right scope." },
-        { "step": "02", "title": "Design", "description": "Wireframes and visual design tailored to your brand identity." },
-        { "step": "03", "title": "Build", "description": "Clean code, fast performance, mobile-first responsive development." },
-        { "step": "04", "title": "Launch", "description": "Deployment, testing, and handover with documentation and training." }
+        {
+          "step": "01",
+          "title": "Discovery",
+          "description": "We learn your business, goals, and audience to define the right scope."
+        },
+        {
+          "step": "02",
+          "title": "Design",
+          "description": "Wireframes and visual design tailored to your brand identity."
+        },
+        {
+          "step": "03",
+          "title": "Build",
+          "description": "Clean code, fast performance, mobile-first responsive development."
+        },
+        {
+          "step": "04",
+          "title": "Launch",
+          "description": "Deployment, testing, and handover with documentation and training."
+        }
       ]
     },
     "faq": {
       "title": "Website FAQ",
       "items": [
-        { "q": "How long does it take to build a website?", "a": "Landing pages typically take 1–2 weeks. Web applications 4–8 weeks depending on complexity. We provide a detailed timeline after scoping." },
-        { "q": "What technologies do you use?", "a": "We primarily use Next.js, React, and Node.js. For e-commerce we integrate with local payment gateways (Payme, Click) and can connect to any CRM or ERP." },
-        { "q": "Do you provide hosting?", "a": "We recommend and set up hosting on Vercel, AWS, or a VPS depending on your needs. We can manage it for you or hand it over to your team." },
-        { "q": "Can you redesign an existing website?", "a": "Yes. We do full redesigns with content migration, performance optimization, and SEO improvement." }
+        {
+          "q": "How long does it take to build a website?",
+          "a": "Landing pages typically take 1–2 weeks. Web applications 4–8 weeks depending on complexity. We provide a detailed timeline after scoping."
+        },
+        {
+          "q": "What technologies do you use?",
+          "a": "We primarily use Next.js, React, and Node.js. For e-commerce we integrate with local payment gateways (Payme, Click) and can connect to any CRM or ERP."
+        },
+        {
+          "q": "Do you provide hosting?",
+          "a": "We recommend and set up hosting on Vercel, AWS, or a VPS depending on your needs. We can manage it for you or hand it over to your team."
+        },
+        {
+          "q": "Can you redesign an existing website?",
+          "a": "Yes. We do full redesigns with content migration, performance optimization, and SEO improvement."
+        }
       ]
     }
   },
@@ -329,14 +540,38 @@
     "stillQuestions": "Still have questions?",
     "contactUs": "Contact Us",
     "items": [
-      { "q": "What types of businesses do you work with?", "a": "We work with businesses of all sizes across retail, e-commerce, finance, professional services, manufacturing, and more. If you need IT solutions, we can help." },
-      { "q": "How is ITHINK different from other IT companies?", "a": "We combine technical depth with business understanding. We don't just install software — we understand your workflows and design solutions that fit. Every client gets a dedicated account manager." },
-      { "q": "Do you develop custom software?", "a": "Yes. We build custom web applications, internal tools, and integrations. Our development process includes requirements gathering, design, development, testing, and post-launch support." },
-      { "q": "What technologies do you specialize in?", "a": "On the infrastructure side: networking, VoIP, cloud services. On the software side: Next.js, React, Node.js, Python, and database design. For CRM: amoCRM, Bitrix24, and related integrations." },
-      { "q": "How do you handle ongoing support?", "a": "We offer monthly support plans with defined SLA response times. Critical issues are addressed within 2–4 hours, standard issues within 1 business day." },
-      { "q": "How is pricing determined?", "a": "Pricing depends on scope, complexity, and timeline. We provide detailed quotes after a free discovery call. No hidden fees — what we quote is what you pay." },
-      { "q": "How do we get started?", "a": "Fill out the contact form or call us directly. We'll schedule a 30-minute discovery call to understand your needs and recommend a solution." },
-      { "q": "Do you work with international clients?", "a": "Our primary focus is Uzbekistan, but we work with clients across Central Asia and accept international projects for software development and CRM implementation." }
+      {
+        "q": "What types of businesses do you work with?",
+        "a": "We work with businesses of all sizes across retail, e-commerce, finance, professional services, manufacturing, and more. If you need IT solutions, we can help."
+      },
+      {
+        "q": "How is ITHINK different from other IT companies?",
+        "a": "We combine technical depth with business understanding. We don't just install software — we understand your workflows and design solutions that fit. Every client gets a dedicated account manager."
+      },
+      {
+        "q": "Do you develop custom software?",
+        "a": "Yes. We build custom web applications, internal tools, and integrations. Our development process includes requirements gathering, design, development, testing, and post-launch support."
+      },
+      {
+        "q": "What technologies do you specialize in?",
+        "a": "On the infrastructure side: networking, VoIP, cloud services. On the software side: Next.js, React, Node.js, Python, and database design. For CRM: amoCRM, Bitrix24, and related integrations."
+      },
+      {
+        "q": "How do you handle ongoing support?",
+        "a": "We offer monthly support plans with defined SLA response times. Critical issues are addressed within 2–4 hours, standard issues within 1 hour."
+      },
+      {
+        "q": "How is pricing determined?",
+        "a": "Pricing depends on scope, complexity, and timeline. We provide detailed quotes after a free discovery call. No hidden fees — what we quote is what you pay."
+      },
+      {
+        "q": "How do we get started?",
+        "a": "Fill out the contact form or call us directly. We'll schedule a 30-minute discovery call to understand your needs and recommend a solution."
+      },
+      {
+        "q": "Do you work with international clients?",
+        "a": "Our primary focus is Uzbekistan, but we work with clients across Central Asia and accept international projects for software development and CRM implementation."
+      }
     ]
   },
   "contact": {
@@ -347,14 +582,11 @@
     },
     "info": {
       "title": "Get in Touch",
-      "ceo": "CEO",
-      "name": "Farkhod Kholikov",
       "phone": "+997 95 171-71-01",
       "email": "team@ithink.uz",
-      "address": "Bogishamol Street 3, Tashkent 100084, Uzbekistan",
-      "telegram": "Telegram",
-      "instagram": "Instagram",
-      "responseTime": "We respond within 1–2 business days"
+      "responseTime": "We respond within 1 hour",
+      "subtitle": "Write to us directly — we're always ready to help.",
+      "telegramHandle": "@ithinkteam"
     },
     "form": {
       "name": "Full name",

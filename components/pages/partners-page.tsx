@@ -9,7 +9,7 @@ export default function PartnersPage({ locale }: { locale: string }) {
 	const t = useTranslations("partners");
 	const ct = useTranslations("contact");
 
-	const partners = [0, 1, 2, 3, 4].map((i) => ({
+	const partners = [0, 1, 2, 3, 4, 5].map((i) => ({
 		name: t(`items.${i}.name`),
 		description: t(`items.${i}.description`)
 	}));
@@ -19,7 +19,8 @@ export default function PartnersPage({ locale }: { locale: string }) {
 		{ icon: "bg-orange-500/10 border-orange-500/20 text-orange-500" },
 		{ icon: "bg-green-500/10 border-green-500/20 text-green-500" },
 		{ icon: "bg-teal-500/10 border-teal-500/20 text-teal-500" },
-		{ icon: "bg-purple-500/10 border-purple-500/20 text-purple-500" }
+		{ icon: "bg-purple-500/10 border-purple-500/20 text-purple-500" },
+		{ icon: "bg-amber-500/10 border-amber-500/20 text-amber-500" }
 	];
 
 	return (
