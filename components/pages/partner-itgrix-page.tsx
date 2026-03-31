@@ -1,8 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Phone, Users, Globe, Zap, Shield, BookOpen, Settings, Wifi } from "lucide-react";
+import { SectionBadge } from "@/components/ui/section-badge";
 
 interface Props {
 	locale: string;
@@ -162,7 +161,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 
 	return (
 		<div className="pt-24 bg-background">
-			{/* Hero */}
 			<section className="py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-amber-500/10 via-amber-100/10 to-background">
 				<div className="absolute inset-0 pointer-events-none">
 					<div className="absolute top-0 right-0 w-[600px] h-[500px] bg-slate-100/20 rounded-full blur-[120px]" />
@@ -170,10 +168,7 @@ export default function PartnerItgrixPage({ locale }: Props) {
 				<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col sm:flex-row items-center gap-10 mb-8">
 						<div className="flex-1">
-							<span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-medium mb-2">
-								<CheckCircle2 className="w-3 h-3" />
-								{c.badge}
-							</span>
+							<SectionBadge icon={CheckCircle2} label={c.badge} variant="yellow" className="mb-2" />
 							<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">Itgrix</h1>
 							<p className="text-muted-foreground mt-1">{c.tagline}</p>
 						</div>
@@ -182,7 +177,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 						</div>
 					</div>
 
-					{/* Stats */}
 					<div className="flex flex-wrap gap-3">
 						{[c.since, c.installs, c.countries].map((stat) => (
 							<span
@@ -196,7 +190,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 				</div>
 			</section>
 
-			{/* About */}
 			<section className="border-t border-border py-16">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<h2 className="text-2xl font-bold text-foreground mb-4">{c.aboutTitle}</h2>
@@ -204,7 +197,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 				</div>
 			</section>
 
-			{/* Advantages */}
 			<section className="border-t border-border py-16 bg-card/30">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<h2 className="text-2xl font-bold text-foreground mb-8">{c.advantagesTitle}</h2>
@@ -224,12 +216,10 @@ export default function PartnerItgrixPage({ locale }: Props) {
 				</div>
 			</section>
 
-			{/* Features */}
 			<section className="border-t border-border py-16">
 				<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 					<h2 className="text-2xl font-bold text-foreground mb-8">{c.featuresTitle}</h2>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-						{/* Bitrix24 */}
 						<div className="rounded-2xl border border-border bg-card p-6">
 							<div className="flex items-center gap-3 mb-5">
 								<div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
@@ -247,7 +237,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 							</ul>
 						</div>
 
-						{/* amoCRM */}
 						<div className="rounded-2xl border border-border bg-card p-6">
 							<div className="flex items-center gap-3 mb-5">
 								<div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
@@ -268,7 +257,6 @@ export default function PartnerItgrixPage({ locale }: Props) {
 				</div>
 			</section>
 
-			{/* CTA */}
 			<section className="border-t border-border py-16">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="rounded-3xl bg-amber-500/5 border border-amber-500/20 p-10 text-center">
@@ -279,8 +267,7 @@ export default function PartnerItgrixPage({ locale }: Props) {
 								href="https://itgrix.com/ru"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors"
-								style={{ backgroundColor: "#ff9800" }}
+								className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-colors bg-[#ff9800] hover:bg-[#e68900]"
 							>
 								{c.ctaBtn}
 								<ArrowRight className="w-4 h-4" />

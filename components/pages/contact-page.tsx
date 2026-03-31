@@ -30,8 +30,9 @@ export default function ContactPage({ locale: _ }: { locale: string }) {
 	const inputClass =
 		"w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#377dff]/50 transition-colors";
 
+	const phone = t("info.phone");
 	const contacts = [
-		{ icon: Phone, label: "PHONE", value: t("info.phone"), href: `tel:${t("info.phone").replace(/\s/g, "")}` },
+		{ icon: Phone, label: "PHONE", value: phone, href: `tel:${phone.replace(/\s/g, "")}` },
 		{ icon: Send, label: "TELEGRAM", value: t("info.telegramHandle"), href: "https://t.me/ithinkteam" },
 		{ icon: Mail, label: "EMAIL", value: t("info.email"), href: `mailto:${t("info.email")}` }
 	];
