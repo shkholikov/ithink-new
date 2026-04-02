@@ -9,7 +9,6 @@ import {
 	X,
 	Sun,
 	Moon,
-	Database,
 	Code2,
 	Server,
 	Shield,
@@ -27,7 +26,10 @@ import {
 	MessageCircle,
 	BarChart2,
 	CalendarCheck,
-	Cable
+	Cable,
+	MonitorCheck,
+	Workflow,
+	ClipboardList
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useIsDark } from "@/hooks/use-is-dark";
@@ -50,48 +52,51 @@ const dropdownGroups = [
 		key: "services" as const,
 		section: "services",
 		items: [
-			{ icon: Database, title: "CRM Integration", description: "Automate your sales pipeline with modern CRM systems.", slug: "crm" },
-			{ icon: Code2, title: "Software Development", description: "Custom web and mobile apps tailored to your business.", slug: "software" },
-			{ icon: Server, title: "IT Infrastructure", description: "Networks, servers, and managed IT for your operations.", slug: "infrastructure" }
+			{ icon: Server, slug: "it-infrastructure" },
+			{ icon: MonitorCheck, slug: "managed-it" },
+			{ icon: TrendingUp, slug: "crm-automation" },
+			{ icon: Workflow, slug: "process-automation" },
+			{ icon: Code2, slug: "software-development" },
+			{ icon: ClipboardList, slug: "it-audit" }
 		]
 	},
 	{
 		key: "licenses" as const,
 		section: "licenses",
 		items: [
-			{ icon: Shield, title: "Microsoft", description: "Official Microsoft licenses for business and enterprise.", slug: "microsoft" },
-			{ icon: Lock, title: "Security Software", description: "Antivirus and endpoint protection solutions.", slug: "security" },
-			{ icon: Layers, title: "Design Tools", description: "Creative software licenses for your team.", slug: "design" }
+			{ icon: Shield, slug: "microsoft" },
+			{ icon: Lock, slug: "security" },
+			{ icon: Layers, slug: "design" }
 		]
 	},
 	{
 		key: "training" as const,
 		section: "training",
 		items: [
-			{ icon: BookOpen, title: "Online Courses", description: "Self-paced learning programs for IT professionals.", slug: "courses" },
-			{ icon: Award, title: "Certifications", description: "Recognized certifications to validate your skills.", slug: "certification" },
-			{ icon: Users2, title: "Corporate Training", description: "Tailored training programs for your team.", slug: "corporate" }
+			{ icon: BookOpen, slug: "courses" },
+			{ icon: Award, slug: "certification" },
+			{ icon: Users2, slug: "corporate" }
 		]
 	},
 	{
 		key: "solutions" as const,
 		section: "solutions",
 		items: [
-			{ icon: Briefcase, title: "For Business", description: "End-to-end IT solutions for growing companies.", slug: "business" },
-			{ icon: GraduationCap, title: "For Education", description: "Technology tools for schools and universities.", slug: "education" },
-			{ icon: Building2, title: "For Enterprise", description: "Scalable infrastructure for large organizations.", slug: "enterprise" }
+			{ icon: Briefcase, slug: "business" },
+			{ icon: GraduationCap, slug: "education" },
+			{ icon: Building2, slug: "enterprise" }
 		]
 	},
 	{
 		key: "partners" as const,
 		section: "partners",
 		items: [
-			{ icon: TrendingUp, title: "amoCRM", description: "Sales-focused CRM built for fast-growing teams.", slug: "amocrm" },
-			{ icon: LayoutGrid, title: "Bitrix24", description: "All-in-one CRM, project management and HR.", slug: "bitrix24" },
-			{ icon: Cable, title: "Itgrix", description: "Asterisk telephony integration for Bitrix24 and amoCRM.", slug: "itgrix" },
-			{ icon: Phone, title: "onlinePBX", description: "Cloud telephony and call center solutions.", slug: "online-pbx" },
-			{ icon: MessageCircle, title: "Wazzup", description: "Omnichannel messaging inside your CRM.", slug: "wazzup" },
-			{ icon: BarChart2, title: "MEGACOUNT", description: "AI-powered visitor counting and retail analytics.", slug: "megacount" }
+			{ icon: TrendingUp, slug: "amocrm" },
+			{ icon: LayoutGrid, slug: "bitrix24" },
+			{ icon: Cable, slug: "itgrix" },
+			{ icon: Phone, slug: "online-pbx" },
+			{ icon: MessageCircle, slug: "wazzup" },
+			{ icon: BarChart2, slug: "megacount" }
 		]
 	}
 ];
@@ -171,8 +176,10 @@ export default function Navbar({ locale }: NavbarProps) {
 																<item.icon className="size-4 text-[#377dff]" />
 															</div>
 															<div>
-																<p className="text-sm font-medium text-foreground">{item.title}</p>
-																<p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.description}</p>
+																<p className="text-sm font-medium text-foreground">{t(`items.${group.key}.${item.slug}.title`)}</p>
+																<p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+																	{t(`items.${group.key}.${item.slug}.description`)}
+																</p>
 															</div>
 														</Link>
 													</li>
@@ -267,7 +274,7 @@ export default function Navbar({ locale }: NavbarProps) {
 																className="flex items-center gap-2.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-accent transition-colors"
 															>
 																<item.icon className="size-4 text-[#377dff] shrink-0" />
-																{item.title}
+																{t(`items.${group.key}.${item.slug}.title`)}
 															</Link>
 														))}
 													</div>

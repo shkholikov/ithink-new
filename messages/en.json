@@ -1,602 +1,1092 @@
 {
-  "nav": {
-    "company": "Company",
-    "services": "Services",
-    "pricing": "Pricing",
-    "contactUs": "Contact Us",
-    "about": "About Us",
-    "customers": "Our Clients",
-    "partners": "Partners",
-    "faq": "FAQ",
-    "hireUs": "Outsourcing",
-    "websites": "Websites",
-    "licenses": "Licenses",
-    "training": "Training",
-    "solutions": "Solutions",
-    "blog": "Blog",
-    "career": "Career",
-    "freeCta": "Get Free Consultation"
-  },
-  "hero": {
-    "badge": "50+ satisfied clients",
-    "title1": "Streamlining Your Business",
-    "title2": "with Comprehensive",
-    "title3": "IT Solutions",
-    "subtitle": "We maximize your business potential with efficient, custom IT solutions tailored to your needs.",
-    "cta1": "Hire Us",
-    "cta2": "Our Services",
-    "stat1": "50+",
-    "stat1Label": "Satisfied Clients",
-    "stat2": "72+",
-    "stat2Label": "Completed Projects",
-    "stat3": "100%",
-    "stat3Label": "Satisfaction Rate",
-    "trustNote": "No commitment · Response within 1 hour"
-  },
-  "services": {
-    "badge": "What We Do",
-    "title": "Comprehensive IT Solutions for Business",
-    "subtitle": "We help companies build reliable IT infrastructure, automate sales and processes, implement CRM systems, and develop digital solutions for business growth.",
-    "learnMore": "Learn more",
-    "from": "from",
-    "items": [
-      {
-        "title": "IT Infrastructure",
-        "description": "We design and deploy on-premise and cloud infrastructure: servers, networks, workstations, access control, and IT architecture for stable business operations.",
-        "tag": "Project-based"
-      },
-      {
-        "title": "Managed IT Services (MSP)",
-        "description": "We handle daily IT support and management by subscription: 24/7 monitoring, user support, fast response, and full responsibility for stability.",
-        "tag": "Monthly"
-      },
-      {
-        "title": "CRM & Sales Automation",
-        "description": "We implement AmoCRM, automate sales pipelines, and connect telephony, messengers, your website, and other channels into one unified lead management system.",
-        "tag": "Project-based"
-      },
-      {
-        "title": "Business Process Automation",
-        "description": "We automate manual processes using bots, integrations, AI tools, and internal systems so your business runs faster, cleaner, and more efficiently.",
-        "tag": "Project-based"
-      },
-      {
-        "title": "Custom Software Development",
-        "description": "We build websites, landing pages, Telegram bots, Mini Apps, mobile apps, complex integrations, and custom business systems tailored to your company.",
-        "tag": "Project-based"
-      },
-      {
-        "title": "IT Audit & Consulting",
-        "description": "We audit your IT infrastructure and processes, identify weak points, risks, and growth opportunities, then deliver a clear optimization and development plan.",
-        "tag": "One-time"
-      }
-    ]
-  },
-  "partners": {
-    "badge": "Integrations",
-    "title": "Partners & Integrations",
-    "subtitle": "We are official partners with leading business platforms, bringing deep expertise to every implementation.",
-    "officialPartner": "Official Partner",
-    "items": [
-      {
-        "name": "amoCRM",
-        "description": "Sales-focused CRM built for fast-growing teams. We implement, customize, and train your staff."
-      },
-      {
-        "name": "Bitrix24",
-        "description": "All-in-one platform combining CRM, project management, HR, and communications."
-      },
-      {
-        "name": "onlinePBX",
-        "description": "Cloud telephony and call center solutions integrated with your CRM and workflows."
-      },
-      {
-        "name": "Wazzup",
-        "description": "Omnichannel messaging — WhatsApp, Telegram, Instagram — all inside your CRM."
-      },
-      {
-        "name": "MEGACOUNT",
-        "description": "AI-powered visitor counting and retail analytics for physical business locations."
-      },
-      {
-        "name": "Itgrix",
-        "description": "Asterisk telephony connector for Bitrix24 and amoCRM. 3000+ installs in 20 countries."
-      }
-    ]
-  },
-  "clients": {
-    "badge": "Trust",
-    "title": "Our Clients",
-    "subtitle": "Businesses across industries trust ITHINK to keep their operations running and growing.",
-    "all": "All",
-    "viewAll": "View all case studies"
-  },
-  "whyUs": {
-    "badge": "Why ITHINK",
-    "title": "Built for Business Results",
-    "subtitle": "We don't just deliver technology — we deliver outcomes.",
-    "items": [
-      {
-        "title": "Deep Expertise",
-        "description": "12+ years of hands-on experience across IT infrastructure, software, and business systems."
-      },
-      {
-        "title": "Custom Solutions",
-        "description": "No cookie-cutter packages. Every solution is designed around your specific processes and goals."
-      },
-      {
-        "title": "Flexible & Scalable",
-        "description": "We grow with you. Solutions that adapt as your team, processes, and ambitions expand."
-      }
-    ]
-  },
-  "cta": {
-    "title": "Ready to optimize your business?",
-    "subtitle": "Tell us about your project and we'll get back to you within 1 hour.",
-    "contactTitle": "Get in Touch",
-    "contactSubtitle": "Reach us directly — we're here to help.",
-    "phoneValue": "+997 95 171-71-01",
-    "telegramValue": "https://t.me/ithinkteam",
-    "emailValue": "team@ithink.uz",
-    "instagramValue": "https://instagram.com/ithinkuz",
-    "responseNote": "We respond within 1 business hour",
-    "name": "Full name",
-    "email": "Email",
-    "phone": "Phone number",
-    "message": "Tell us about your project",
-    "submit": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent! We'll be in touch soon.",
-    "error": "Something went wrong. Please try again."
-  },
-  "howItWorks": {
-    "badge": "Our Process",
-    "title": "How We Work",
-    "subtitle": "A clear, proven process from first conversation to long-term partnership.",
-    "items": [
-      {
-        "step": "01",
-        "title": "Consultation",
-        "description": "We listen to your challenges and goals. No templates — just honest conversation about what you actually need."
-      },
-      {
-        "step": "02",
-        "title": "Planning",
-        "description": "We design a solution architecture, timeline, and budget tailored to your business. You approve before we build."
-      },
-      {
-        "step": "03",
-        "title": "Execution",
-        "description": "Our team builds, configures, and deploys. You stay informed at every milestone with no surprises."
-      },
-      {
-        "step": "04",
-        "title": "Ongoing Support",
-        "description": "We don't disappear after launch. Proactive monitoring, fast response, and continuous improvement."
-      }
-    ]
-  },
-  "trustedBy": {
-    "badge": "Social Proof",
-    "title": "Trusted by 50+ Companies",
-    "subtitle": "From startups to enterprises across Uzbekistan."
-  },
-  "testimonials": {
-    "badge": "Client Stories",
-    "title": "What Our Clients Say",
-    "subtitle": "Real results from real businesses.",
-    "items": [
-      {
-        "quote": "ITHINK set up our entire network infrastructure across 3 branches in under two weeks. Reliable, clean work — no surprises, no excuses.",
-        "name": "Azizbek Toshmatov",
-        "company": "Crayton & Vilt",
-        "role": "Operations Director"
-      },
-      {
-        "quote": "They digitalized our loan application process from paper to fully automated in 6 weeks. Our team's productivity went up 40% immediately.",
-        "name": "Jamshid Yusupov",
-        "company": "Kredit Market",
-        "role": "CEO"
-      },
-      {
-        "quote": "The CRM integration they built for us connects our entire sales pipeline. The team actually understands business, not just code.",
-        "name": "Dilnoza Rahimova",
-        "company": "OBBO Marketplace",
-        "role": "Head of Growth"
-      }
-    ]
-  },
-  "footer": {
-    "slogan": "Think beyond limits with ITHINK",
-    "company": "Company",
-    "services": "Services",
-    "contact": "Contact",
-    "rights": "All rights reserved",
-    "links": {
-      "about": "About Us",
-      "customers": "Clients",
-      "partners": "Partners",
-      "faq": "FAQ",
-      "hireUs": "Outsourcing",
-      "websites": "Websites",
-      "pricing": "Pricing",
-      "contactPage": "Contact Us"
-    }
-  },
-  "about": {
-    "hero": {
-      "badge": "About Us",
-      "title": "We Build IT Systems That Work for You",
-      "subtitle": "ITHINK is a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2012.",
-      "stat1": "12+",
-      "stat1Label": "Years of Experience",
-      "stat2": "25+",
-      "stat2Label": "Completed Projects",
-      "stat3": "99%",
-      "stat3Label": "Client Satisfaction"
-    },
-    "story": {
-      "badge": "Our Story",
-      "title": "Building Digital Futures Since 2012",
-      "p1": "ITHINK was founded with a single mission: help Uzbek businesses harness the power of modern technology. From setting up networks in small offices to building complex enterprise software, we've grown alongside our clients.",
-      "p2": "Today, we're a full-service IT partner for companies across industries — from retail and finance to manufacturing and professional services. Our team combines technical depth with business understanding to deliver solutions that actually move the needle."
-    },
-    "values": {
-      "badge": "Our Values",
-      "title": "What Drives Us",
-      "items": [
-        {
-          "title": "Reliability",
-          "description": "We show up, we follow through, and we stand behind every solution we deliver."
-        },
-        {
-          "title": "Clarity",
-          "description": "No jargon, no hidden costs. You always know what we're doing and why."
-        },
-        {
-          "title": "Partnership",
-          "description": "We treat your business goals as our own. Your success is our benchmark."
-        }
-      ]
-    }
-  },
-  "customers": {
-    "hero": {
-      "badge": "Case Studies",
-      "title": "Clients Who Trust ITHINK",
-      "subtitle": "From startups to established enterprises, here's a selection of businesses we've helped grow."
-    },
-    "services": "Services provided",
-    "items": [
-      {
-        "name": "Crayton & Vilt",
-        "industry": "Retail",
-        "description": "IT infrastructure setup and managed services for a fast-growing retail chain.",
-        "services": [
-          "Managed IT",
-          "Network Setup"
-        ]
-      },
-      {
-        "name": "OBBO",
-        "industry": "E-Commerce",
-        "description": "Full-stack web application development and CRM integration for an online marketplace.",
-        "services": [
-          "Software Dev",
-          "CRM Integration"
-        ]
-      },
-      {
-        "name": "AslZar",
-        "industry": "Jewelry",
-        "description": "Custom e-commerce platform with inventory management and customer loyalty system.",
-        "services": [
-          "Software Dev",
-          "E-Commerce"
-        ]
-      },
-      {
-        "name": "Kredit Market",
-        "industry": "Finance",
-        "description": "Digitalization of loan application workflows and customer management system.",
-        "services": [
-          "Digitalization",
-          "CRM Integration"
-        ]
-      },
-      {
-        "name": "Penostyle",
-        "industry": "Retail",
-        "description": "Network infrastructure and VoIP communications for multi-location operations.",
-        "services": [
-          "Network & Infra",
-          "VoIP"
-        ]
-      },
-      {
-        "name": "Avtozet",
-        "industry": "Automotive",
-        "description": "CRM implementation and sales process automation for an auto dealership.",
-        "services": [
-          "CRM Integration",
-          "Digitalization"
-        ]
-      },
-      {
-        "name": "SOKOLOV",
-        "industry": "Jewelry",
-        "description": "IT support and managed services for a premium jewelry brand's local operations.",
-        "services": [
-          "Managed IT"
-        ]
-      },
-      {
-        "name": "UDirect",
-        "industry": "Professional Services",
-        "description": "Business process digitalization and software development for a consulting firm.",
-        "services": [
-          "Digitalization",
-          "Software Dev"
-        ]
-      },
-      {
-        "name": "ParadiseWall",
-        "industry": "Interior",
-        "description": "Website development and digital tools for a home decor and wallpaper company.",
-        "services": [
-          "Websites",
-          "Software Dev"
-        ]
-      },
-      {
-        "name": "Mobicenter",
-        "industry": "Retail",
-        "description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.",
-        "services": [
-          "Network & Infra",
-          "VoIP",
-          "Managed IT"
-        ]
-      },
-      {
-        "name": "Chudo Tovary",
-        "industry": "E-Commerce",
-        "description": "E-commerce platform development and CRM integration for an online goods marketplace.",
-        "services": [
-          "E-Commerce",
-          "CRM Integration"
-        ]
-      }
-    ]
-  },
-  "pricing": {
-    "hero": {
-      "badge": "Pricing",
-      "title": "Simple, Transparent Pricing",
-      "subtitle": "No hidden fees. Pay for what you need, scale as you grow."
-    },
-    "popular": "Most Popular",
-    "getStarted": "Get Started",
-    "contactUs": "Contact for Custom",
-    "plans": [
-      {
-        "name": "Landing Page",
-        "price": "$300",
-        "period": "one-time",
-        "description": "Professional landing page to present your business online.",
-        "features": [
-          "Custom design",
-          "Mobile responsive",
-          "SEO optimized",
-          "1 contact form",
-          "Hosting setup guide",
-          "2 revision rounds"
-        ]
-      },
-      {
-        "name": "Web Application",
-        "price": "$500",
-        "period": "starting from",
-        "description": "Custom web app tailored to your business processes.",
-        "features": [
-          "Everything in Landing",
-          "Custom functionality",
-          "Admin dashboard",
-          "User authentication",
-          "API integrations",
-          "3 months support"
-        ]
-      },
-      {
-        "name": "E-Commerce & Marketplace",
-        "price": "$1000",
-        "period": "starting from",
-        "description": "Full-featured online store or marketplace platform.",
-        "features": [
-          "Everything in Web App",
-          "Product catalog & search",
-          "Payments (Payme, Click)",
-          "Order management",
-          "Inventory tracking",
-          "6 months support"
-        ]
-      }
-    ],
-    "faq": {
-      "title": "Pricing FAQ",
-      "items": [
-        {
-          "q": "What's included in the initial price?",
-          "a": "The listed prices are starting points. Final cost depends on scope, number of pages, integrations, and complexity. We provide a detailed quote after a discovery call."
-        },
-        {
-          "q": "Are there ongoing maintenance costs?",
-          "a": "Managed IT and VoIP are monthly services. One-time projects (websites, software) can be paired with an optional support plan billed monthly."
-        },
-        {
-          "q": "How do you handle payments?",
-          "a": "We accept bank transfer, Payme, and Click. For larger projects, we work on a milestone-based payment schedule."
-        },
-        {
-          "q": "Can I start small and scale up?",
-          "a": "Absolutely. Many clients start with a landing page or basic IT setup and expand over time. Our solutions are designed to grow with you."
-        }
-      ]
-    }
-  },
-  "hireUs": {
-    "hero": {
-      "badge": "Outsourcing",
-      "title": "Hire Our IT Team",
-      "subtitle": "Get dedicated IT professionals without the overhead of in-house hiring. We become your IT department."
-    },
-    "form": {
-      "firstName": "First name",
-      "lastName": "Last name",
-      "email": "Email",
-      "phone": "Phone (optional)",
-      "budget": "Budget range",
-      "message": "Describe your needs",
-      "submit": "Send Request",
-      "sending": "Sending...",
-      "success": "Request received! We'll contact you within 1 hour.",
-      "error": "Something went wrong. Please try again."
-    },
-    "benefits": [
-      {
-        "title": "No Hiring Costs",
-        "description": "Skip recruitment, onboarding, and HR overhead. We're ready to start immediately."
-      },
-      {
-        "title": "Full Team Access",
-        "description": "Get access to developers, network engineers, and CRM specialists — not just one generalist."
-      },
-      {
-        "title": "Flexible Engagement",
-        "description": "Scale up or down based on your current needs. Monthly contracts, no lock-ins."
-      }
-    ]
-  },
-  "websites": {
-    "hero": {
-      "badge": "Web Development",
-      "title": "Websites That Work for Your Business",
-      "subtitle": "From simple landing pages to full-scale e-commerce platforms, we build the web presence you need."
-    },
-    "process": {
-      "title": "Our Process",
-      "steps": [
-        {
-          "step": "01",
-          "title": "Discovery",
-          "description": "We learn your business, goals, and audience to define the right scope."
-        },
-        {
-          "step": "02",
-          "title": "Design",
-          "description": "Wireframes and visual design tailored to your brand identity."
-        },
-        {
-          "step": "03",
-          "title": "Build",
-          "description": "Clean code, fast performance, mobile-first responsive development."
-        },
-        {
-          "step": "04",
-          "title": "Launch",
-          "description": "Deployment, testing, and handover with documentation and training."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Website FAQ",
-      "items": [
-        {
-          "q": "How long does it take to build a website?",
-          "a": "Landing pages typically take 1–2 weeks. Web applications 4–8 weeks depending on complexity. We provide a detailed timeline after scoping."
-        },
-        {
-          "q": "What technologies do you use?",
-          "a": "We primarily use Next.js, React, and Node.js. For e-commerce we integrate with local payment gateways (Payme, Click) and can connect to any CRM or ERP."
-        },
-        {
-          "q": "Do you provide hosting?",
-          "a": "We recommend and set up hosting on Vercel, AWS, or a VPS depending on your needs. We can manage it for you or hand it over to your team."
-        },
-        {
-          "q": "Can you redesign an existing website?",
-          "a": "Yes. We do full redesigns with content migration, performance optimization, and SEO improvement."
-        }
-      ]
-    }
-  },
-  "faq": {
-    "hero": {
-      "badge": "FAQ",
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know about working with ITHINK."
-    },
-    "searchPlaceholder": "Search questions...",
-    "stillQuestions": "Still have questions?",
-    "contactUs": "Contact Us",
-    "items": [
-      {
-        "q": "What types of businesses do you work with?",
-        "a": "We work with businesses of all sizes across retail, e-commerce, finance, professional services, manufacturing, and more. If you need IT solutions, we can help."
-      },
-      {
-        "q": "How is ITHINK different from other IT companies?",
-        "a": "We combine technical depth with business understanding. We don't just install software — we understand your workflows and design solutions that fit. Every client gets a dedicated account manager."
-      },
-      {
-        "q": "Do you develop custom software?",
-        "a": "Yes. We build custom web applications, internal tools, and integrations. Our development process includes requirements gathering, design, development, testing, and post-launch support."
-      },
-      {
-        "q": "What technologies do you specialize in?",
-        "a": "On the infrastructure side: networking, VoIP, cloud services. On the software side: Next.js, React, Node.js, Python, and database design. For CRM: amoCRM, Bitrix24, and related integrations."
-      },
-      {
-        "q": "How do you handle ongoing support?",
-        "a": "We offer monthly support plans with defined SLA response times. Critical issues are addressed within 2–4 hours, standard issues within 1 hour."
-      },
-      {
-        "q": "How is pricing determined?",
-        "a": "Pricing depends on scope, complexity, and timeline. We provide detailed quotes after a free discovery call. No hidden fees — what we quote is what you pay."
-      },
-      {
-        "q": "How do we get started?",
-        "a": "Fill out the contact form or call us directly. We'll schedule a 30-minute discovery call to understand your needs and recommend a solution."
-      },
-      {
-        "q": "Do you work with international clients?",
-        "a": "Our primary focus is Uzbekistan, but we work with clients across Central Asia and accept international projects for software development and CRM implementation."
-      }
-    ]
-  },
-  "contact": {
-    "hero": {
-      "badge": "Contact",
-      "title": "Let's Talk",
-      "subtitle": "Have a project in mind? We'd love to hear about it."
-    },
-    "info": {
-      "title": "Get in Touch",
-      "phone": "+997 95 171-71-01",
-      "email": "team@ithink.uz",
-      "responseTime": "We respond within 1 hour",
-      "subtitle": "Write to us directly — we're always ready to help.",
-      "telegramHandle": "@ithinkteam"
-    },
-    "form": {
-      "name": "Full name",
-      "email": "Email",
-      "phone": "Phone number",
-      "message": "Your message",
-      "submit": "Send Message",
-      "sending": "Sending...",
-      "success": "Message sent! We'll be in touch soon.",
-      "error": "Something went wrong. Please try again."
-    }
-  }
+	"nav": {
+		"company": "Company",
+		"services": "Services",
+		"pricing": "Pricing",
+		"contactUs": "Contact Us",
+		"about": "About Us",
+		"customers": "Our Clients",
+		"partners": "Partners",
+		"faq": "FAQ",
+		"hireUs": "Outsourcing",
+		"websites": "Websites",
+		"licenses": "Licenses",
+		"training": "Training",
+		"solutions": "Solutions",
+		"blog": "Blog",
+		"career": "Career",
+		"freeCta": "Get Free Consultation",
+		"items": {
+			"services": {
+				"it-infrastructure": { "title": "IT Infrastructure", "description": "Servers, networks, and cloud infrastructure for stable operations." },
+				"managed-it": { "title": "Managed IT Services", "description": "24/7 monitoring, helpdesk, and full IT management by subscription." },
+				"crm-automation": { "title": "CRM & Sales Automation", "description": "AmoCRM and Bitrix24 implementation with full channel integration." },
+				"process-automation": { "title": "Process Automation", "description": "Bots, integrations, and AI tools to eliminate manual work." },
+				"software-development": {
+					"title": "Software Development",
+					"description": "Web apps, Telegram bots, Mini Apps, and custom business systems."
+				},
+				"it-audit": { "title": "IT Audit & Consulting", "description": "Infrastructure and security audit with a prioritized action plan." }
+			},
+			"licenses": {
+				"microsoft": { "title": "Microsoft", "description": "Official Microsoft licenses for business and enterprise." },
+				"security": { "title": "Security Software", "description": "Antivirus and endpoint protection solutions." },
+				"design": { "title": "Design Tools", "description": "Creative software licenses for your team." }
+			},
+			"training": {
+				"courses": { "title": "Online Courses", "description": "Self-paced learning programs for IT professionals." },
+				"certification": { "title": "Certifications", "description": "Recognized certifications to validate your skills." },
+				"corporate": { "title": "Corporate Training", "description": "Tailored training programs for your team." }
+			},
+			"solutions": {
+				"business": { "title": "For Business", "description": "End-to-end IT solutions for growing companies." },
+				"education": { "title": "For Education", "description": "Technology tools for schools and universities." },
+				"enterprise": { "title": "For Enterprise", "description": "Scalable infrastructure for large organizations." }
+			},
+			"partners": {
+				"amocrm": { "title": "amoCRM", "description": "Sales-focused CRM built for fast-growing teams." },
+				"bitrix24": { "title": "Bitrix24", "description": "All-in-one CRM, project management and HR." },
+				"itgrix": { "title": "Itgrix", "description": "Asterisk telephony integration for Bitrix24 and amoCRM." },
+				"online-pbx": { "title": "onlinePBX", "description": "Cloud telephony and call center solutions." },
+				"wazzup": { "title": "Wazzup", "description": "Omnichannel messaging inside your CRM." },
+				"megacount": { "title": "MEGACOUNT", "description": "AI-powered visitor counting and retail analytics." }
+			}
+		}
+	},
+	"hero": {
+		"badge": "50+ satisfied clients",
+		"title1": "Streamlining Your Business",
+		"title2": "with Comprehensive",
+		"title3": "IT Solutions",
+		"subtitle": "We maximize your business potential with efficient, custom IT solutions tailored to your needs.",
+		"cta1": "Hire Us",
+		"cta2": "Our Services",
+		"stat1": "50+",
+		"stat1Label": "Satisfied Clients",
+		"stat2": "72+",
+		"stat2Label": "Completed Projects",
+		"stat3": "100%",
+		"stat3Label": "Satisfaction Rate",
+		"trustNote": "No commitment · Response within 1 hour"
+	},
+	"services": {
+		"badge": "What We Do",
+		"title": "Comprehensive IT Solutions for Business",
+		"subtitle": "We help companies build reliable IT infrastructure, automate sales and processes, implement CRM systems, and develop digital solutions for business growth.",
+		"learnMore": "Learn more",
+		"from": "from",
+		"items": [
+			{
+				"title": "IT Infrastructure",
+				"description": "We design and deploy on-premise and cloud infrastructure: servers, networks, workstations, access control, and IT architecture for stable business operations.",
+				"tag": "Project-based"
+			},
+			{
+				"title": "Managed IT Services (MSP)",
+				"description": "We handle daily IT support and management by subscription: 24/7 monitoring, user support, fast response, and full responsibility for stability.",
+				"tag": "Monthly"
+			},
+			{
+				"title": "CRM & Sales Automation",
+				"description": "We implement AmoCRM, automate sales pipelines, and connect telephony, messengers, your website, and other channels into one unified lead management system.",
+				"tag": "Project-based"
+			},
+			{
+				"title": "Business Process Automation",
+				"description": "We automate manual processes using bots, integrations, AI tools, and internal systems so your business runs faster, cleaner, and more efficiently.",
+				"tag": "Project-based"
+			},
+			{
+				"title": "Custom Software Development",
+				"description": "We build websites, landing pages, Telegram bots, Mini Apps, mobile apps, complex integrations, and custom business systems tailored to your company.",
+				"tag": "Project-based"
+			},
+			{
+				"title": "IT Audit & Consulting",
+				"description": "We audit your IT infrastructure and processes, identify weak points, risks, and growth opportunities, then deliver a clear optimization and development plan.",
+				"tag": "One-time"
+			}
+		]
+	},
+	"partners": {
+		"badge": "Integrations",
+		"title": "Partners & Integrations",
+		"subtitle": "We are official partners with leading business platforms, bringing deep expertise to every implementation.",
+		"officialPartner": "Official Partner",
+		"items": [
+			{
+				"name": "amoCRM",
+				"description": "Sales-focused CRM built for fast-growing teams. We implement, customize, and train your staff."
+			},
+			{
+				"name": "Bitrix24",
+				"description": "All-in-one platform combining CRM, project management, HR, and communications."
+			},
+			{
+				"name": "onlinePBX",
+				"description": "Cloud telephony and call center solutions integrated with your CRM and workflows."
+			},
+			{
+				"name": "Wazzup",
+				"description": "Omnichannel messaging — WhatsApp, Telegram, Instagram — all inside your CRM."
+			},
+			{
+				"name": "MEGACOUNT",
+				"description": "AI-powered visitor counting and retail analytics for physical business locations."
+			},
+			{
+				"name": "Itgrix",
+				"description": "Asterisk telephony connector for Bitrix24 and amoCRM. 3000+ installs in 20 countries."
+			}
+		]
+	},
+	"clients": {
+		"badge": "Trust",
+		"title": "Our Clients",
+		"subtitle": "Businesses across industries trust ITHINK to keep their operations running and growing.",
+		"all": "All",
+		"viewAll": "View all case studies"
+	},
+	"whyUs": {
+		"badge": "Why ITHINK",
+		"title": "Built for Business Results",
+		"subtitle": "We don't just deliver technology — we deliver outcomes.",
+		"items": [
+			{
+				"title": "Deep Expertise",
+				"description": "12+ years of hands-on experience across IT infrastructure, software, and business systems."
+			},
+			{
+				"title": "Custom Solutions",
+				"description": "No cookie-cutter packages. Every solution is designed around your specific processes and goals."
+			},
+			{
+				"title": "Flexible & Scalable",
+				"description": "We grow with you. Solutions that adapt as your team, processes, and ambitions expand."
+			}
+		]
+	},
+	"cta": {
+		"title": "Ready to optimize your business?",
+		"subtitle": "Tell us about your project and we'll get back to you within 1 hour.",
+		"contactTitle": "Get in Touch",
+		"contactSubtitle": "Reach us directly — we're here to help.",
+		"phoneValue": "+997 95 171-71-01",
+		"telegramValue": "https://t.me/ithinkteam",
+		"emailValue": "team@ithink.uz",
+		"instagramValue": "https://instagram.com/ithinkuz",
+		"responseNote": "We respond within 1 business hour",
+		"name": "Full name",
+		"email": "Email",
+		"phone": "Phone number",
+		"message": "Tell us about your project",
+		"submit": "Send Message",
+		"sending": "Sending...",
+		"success": "Message sent! We'll be in touch soon.",
+		"error": "Something went wrong. Please try again."
+	},
+	"howItWorks": {
+		"badge": "Our Process",
+		"title": "How We Work",
+		"subtitle": "A clear, proven process from first conversation to long-term partnership.",
+		"items": [
+			{
+				"step": "01",
+				"title": "Consultation",
+				"description": "We listen to your challenges and goals. No templates — just honest conversation about what you actually need."
+			},
+			{
+				"step": "02",
+				"title": "Planning",
+				"description": "We design a solution architecture, timeline, and budget tailored to your business. You approve before we build."
+			},
+			{
+				"step": "03",
+				"title": "Execution",
+				"description": "Our team builds, configures, and deploys. You stay informed at every milestone with no surprises."
+			},
+			{
+				"step": "04",
+				"title": "Ongoing Support",
+				"description": "We don't disappear after launch. Proactive monitoring, fast response, and continuous improvement."
+			}
+		]
+	},
+	"trustedBy": {
+		"badge": "Social Proof",
+		"title": "Trusted by 50+ Companies",
+		"subtitle": "From startups to enterprises across Uzbekistan."
+	},
+	"testimonials": {
+		"badge": "Client Stories",
+		"title": "What Our Clients Say",
+		"subtitle": "Real results from real businesses.",
+		"items": [
+			{
+				"quote": "ITHINK set up our entire network infrastructure across 3 branches in under two weeks. Reliable, clean work — no surprises, no excuses.",
+				"name": "Azizbek Toshmatov",
+				"company": "Crayton & Vilt",
+				"role": "Operations Director"
+			},
+			{
+				"quote": "They digitalized our loan application process from paper to fully automated in 6 weeks. Our team's productivity went up 40% immediately.",
+				"name": "Jamshid Yusupov",
+				"company": "Kredit Market",
+				"role": "CEO"
+			},
+			{
+				"quote": "The CRM integration they built for us connects our entire sales pipeline. The team actually understands business, not just code.",
+				"name": "Dilnoza Rahimova",
+				"company": "OBBO Marketplace",
+				"role": "Head of Growth"
+			}
+		]
+	},
+	"footer": {
+		"slogan": "Think beyond limits with ITHINK",
+		"company": "Company",
+		"services": "Services",
+		"contact": "Contact",
+		"rights": "All rights reserved",
+		"links": {
+			"about": "About Us",
+			"customers": "Clients",
+			"partners": "Partners",
+			"faq": "FAQ",
+			"hireUs": "Outsourcing",
+			"websites": "Websites",
+			"pricing": "Pricing",
+			"contactPage": "Contact Us"
+		}
+	},
+	"about": {
+		"hero": {
+			"badge": "About Us",
+			"title": "We Build IT Systems That Work for You",
+			"subtitle": "ITHINK is a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2012.",
+			"stat1": "12+",
+			"stat1Label": "Years of Experience",
+			"stat2": "25+",
+			"stat2Label": "Completed Projects",
+			"stat3": "99%",
+			"stat3Label": "Client Satisfaction"
+		},
+		"story": {
+			"badge": "Our Story",
+			"title": "Building Digital Futures Since 2012",
+			"p1": "ITHINK was founded with a single mission: help Uzbek businesses harness the power of modern technology. From setting up networks in small offices to building complex enterprise software, we've grown alongside our clients.",
+			"p2": "Today, we're a full-service IT partner for companies across industries — from retail and finance to manufacturing and professional services. Our team combines technical depth with business understanding to deliver solutions that actually move the needle."
+		},
+		"values": {
+			"badge": "Our Values",
+			"title": "What Drives Us",
+			"items": [
+				{
+					"title": "Reliability",
+					"description": "We show up, we follow through, and we stand behind every solution we deliver."
+				},
+				{
+					"title": "Clarity",
+					"description": "No jargon, no hidden costs. You always know what we're doing and why."
+				},
+				{
+					"title": "Partnership",
+					"description": "We treat your business goals as our own. Your success is our benchmark."
+				}
+			]
+		}
+	},
+	"customers": {
+		"hero": {
+			"badge": "Case Studies",
+			"title": "Clients Who Trust ITHINK",
+			"subtitle": "From startups to established enterprises, here's a selection of businesses we've helped grow."
+		},
+		"services": "Services provided",
+		"items": [
+			{
+				"name": "Crayton & Vilt",
+				"industry": "Retail",
+				"description": "IT infrastructure setup and managed services for a fast-growing retail chain.",
+				"services": ["Managed IT", "Network Setup"]
+			},
+			{
+				"name": "OBBO",
+				"industry": "E-Commerce",
+				"description": "Full-stack web application development and CRM integration for an online marketplace.",
+				"services": ["Software Dev", "CRM Integration"]
+			},
+			{
+				"name": "AslZar",
+				"industry": "Jewelry",
+				"description": "Custom e-commerce platform with inventory management and customer loyalty system.",
+				"services": ["Software Dev", "E-Commerce"]
+			},
+			{
+				"name": "Kredit Market",
+				"industry": "Finance",
+				"description": "Digitalization of loan application workflows and customer management system.",
+				"services": ["Digitalization", "CRM Integration"]
+			},
+			{
+				"name": "Penostyle",
+				"industry": "Retail",
+				"description": "Network infrastructure and VoIP communications for multi-location operations.",
+				"services": ["Network & Infra", "VoIP"]
+			},
+			{
+				"name": "Avtozet",
+				"industry": "Automotive",
+				"description": "CRM implementation and sales process automation for an auto dealership.",
+				"services": ["CRM Integration", "Digitalization"]
+			},
+			{
+				"name": "SOKOLOV",
+				"industry": "Jewelry",
+				"description": "IT support and managed services for a premium jewelry brand's local operations.",
+				"services": ["Managed IT"]
+			},
+			{
+				"name": "UDirect",
+				"industry": "Professional Services",
+				"description": "Business process digitalization and software development for a consulting firm.",
+				"services": ["Digitalization", "Software Dev"]
+			},
+			{
+				"name": "ParadiseWall",
+				"industry": "Interior",
+				"description": "Website development and digital tools for a home decor and wallpaper company.",
+				"services": ["Websites", "Software Dev"]
+			},
+			{
+				"name": "Mobicenter",
+				"industry": "Retail",
+				"description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.",
+				"services": ["Network & Infra", "VoIP", "Managed IT"]
+			},
+			{
+				"name": "Chudo Tovary",
+				"industry": "E-Commerce",
+				"description": "E-commerce platform development and CRM integration for an online goods marketplace.",
+				"services": ["E-Commerce", "CRM Integration"]
+			}
+		]
+	},
+	"pricing": {
+		"hero": {
+			"badge": "Pricing",
+			"title": "Simple, Transparent Pricing",
+			"subtitle": "No hidden fees. Pay for what you need, scale as you grow."
+		},
+		"popular": "Most Popular",
+		"getStarted": "Get Started",
+		"contactUs": "Contact for Custom",
+		"plans": [
+			{
+				"name": "Landing Page",
+				"price": "$300",
+				"period": "one-time",
+				"description": "Professional landing page to present your business online.",
+				"features": ["Custom design", "Mobile responsive", "SEO optimized", "1 contact form", "Hosting setup guide", "2 revision rounds"]
+			},
+			{
+				"name": "Web Application",
+				"price": "$500",
+				"period": "starting from",
+				"description": "Custom web app tailored to your business processes.",
+				"features": [
+					"Everything in Landing",
+					"Custom functionality",
+					"Admin dashboard",
+					"User authentication",
+					"API integrations",
+					"3 months support"
+				]
+			},
+			{
+				"name": "E-Commerce & Marketplace",
+				"price": "$1000",
+				"period": "starting from",
+				"description": "Full-featured online store or marketplace platform.",
+				"features": [
+					"Everything in Web App",
+					"Product catalog & search",
+					"Payments (Payme, Click)",
+					"Order management",
+					"Inventory tracking",
+					"6 months support"
+				]
+			}
+		],
+		"faq": {
+			"title": "Pricing FAQ",
+			"items": [
+				{
+					"q": "What's included in the initial price?",
+					"a": "The listed prices are starting points. Final cost depends on scope, number of pages, integrations, and complexity. We provide a detailed quote after a discovery call."
+				},
+				{
+					"q": "Are there ongoing maintenance costs?",
+					"a": "Managed IT and VoIP are monthly services. One-time projects (websites, software) can be paired with an optional support plan billed monthly."
+				},
+				{
+					"q": "How do you handle payments?",
+					"a": "We accept bank transfer, Payme, and Click. For larger projects, we work on a milestone-based payment schedule."
+				},
+				{
+					"q": "Can I start small and scale up?",
+					"a": "Absolutely. Many clients start with a landing page or basic IT setup and expand over time. Our solutions are designed to grow with you."
+				}
+			]
+		}
+	},
+	"hireUs": {
+		"hero": {
+			"badge": "Outsourcing",
+			"title": "Hire Our IT Team",
+			"subtitle": "Get dedicated IT professionals without the overhead of in-house hiring. We become your IT department."
+		},
+		"form": {
+			"firstName": "First name",
+			"lastName": "Last name",
+			"email": "Email",
+			"phone": "Phone (optional)",
+			"budget": "Budget range",
+			"message": "Describe your needs",
+			"submit": "Send Request",
+			"sending": "Sending...",
+			"success": "Request received! We'll contact you within 1 hour.",
+			"error": "Something went wrong. Please try again."
+		},
+		"benefits": [
+			{
+				"title": "No Hiring Costs",
+				"description": "Skip recruitment, onboarding, and HR overhead. We're ready to start immediately."
+			},
+			{
+				"title": "Full Team Access",
+				"description": "Get access to developers, network engineers, and CRM specialists — not just one generalist."
+			},
+			{
+				"title": "Flexible Engagement",
+				"description": "Scale up or down based on your current needs. Monthly contracts, no lock-ins."
+			}
+		]
+	},
+	"websites": {
+		"hero": {
+			"badge": "Web Development",
+			"title": "Websites That Work for Your Business",
+			"subtitle": "From simple landing pages to full-scale e-commerce platforms, we build the web presence you need."
+		},
+		"process": {
+			"title": "Our Process",
+			"steps": [
+				{
+					"step": "01",
+					"title": "Discovery",
+					"description": "We learn your business, goals, and audience to define the right scope."
+				},
+				{
+					"step": "02",
+					"title": "Design",
+					"description": "Wireframes and visual design tailored to your brand identity."
+				},
+				{
+					"step": "03",
+					"title": "Build",
+					"description": "Clean code, fast performance, mobile-first responsive development."
+				},
+				{
+					"step": "04",
+					"title": "Launch",
+					"description": "Deployment, testing, and handover with documentation and training."
+				}
+			]
+		},
+		"faq": {
+			"title": "Website FAQ",
+			"items": [
+				{
+					"q": "How long does it take to build a website?",
+					"a": "Landing pages typically take 1–2 weeks. Web applications 4–8 weeks depending on complexity. We provide a detailed timeline after scoping."
+				},
+				{
+					"q": "What technologies do you use?",
+					"a": "We primarily use Next.js, React, and Node.js. For e-commerce we integrate with local payment gateways (Payme, Click) and can connect to any CRM or ERP."
+				},
+				{
+					"q": "Do you provide hosting?",
+					"a": "We recommend and set up hosting on Vercel, AWS, or a VPS depending on your needs. We can manage it for you or hand it over to your team."
+				},
+				{
+					"q": "Can you redesign an existing website?",
+					"a": "Yes. We do full redesigns with content migration, performance optimization, and SEO improvement."
+				}
+			]
+		}
+	},
+	"faq": {
+		"hero": {
+			"badge": "FAQ",
+			"title": "Frequently Asked Questions",
+			"subtitle": "Everything you need to know about working with ITHINK."
+		},
+		"searchPlaceholder": "Search questions...",
+		"stillQuestions": "Still have questions?",
+		"contactUs": "Contact Us",
+		"items": [
+			{
+				"q": "What types of businesses do you work with?",
+				"a": "We work with businesses of all sizes across retail, e-commerce, finance, professional services, manufacturing, and more. If you need IT solutions, we can help."
+			},
+			{
+				"q": "How is ITHINK different from other IT companies?",
+				"a": "We combine technical depth with business understanding. We don't just install software — we understand your workflows and design solutions that fit. Every client gets a dedicated account manager."
+			},
+			{
+				"q": "Do you develop custom software?",
+				"a": "Yes. We build custom web applications, internal tools, and integrations. Our development process includes requirements gathering, design, development, testing, and post-launch support."
+			},
+			{
+				"q": "What technologies do you specialize in?",
+				"a": "On the infrastructure side: networking, VoIP, cloud services. On the software side: Next.js, React, Node.js, Python, and database design. For CRM: amoCRM, Bitrix24, and related integrations."
+			},
+			{
+				"q": "How do you handle ongoing support?",
+				"a": "We offer monthly support plans with defined SLA response times. Critical issues are addressed within 2–4 hours, standard issues within 1 hour."
+			},
+			{
+				"q": "How is pricing determined?",
+				"a": "Pricing depends on scope, complexity, and timeline. We provide detailed quotes after a free discovery call. No hidden fees — what we quote is what you pay."
+			},
+			{
+				"q": "How do we get started?",
+				"a": "Fill out the contact form or call us directly. We'll schedule a 30-minute discovery call to understand your needs and recommend a solution."
+			},
+			{
+				"q": "Do you work with international clients?",
+				"a": "Our primary focus is Uzbekistan, but we work with clients across Central Asia and accept international projects for software development and CRM implementation."
+			}
+		]
+	},
+	"contact": {
+		"hero": {
+			"badge": "Contact",
+			"title": "Let's Talk",
+			"subtitle": "Have a project in mind? We'd love to hear about it."
+		},
+		"info": {
+			"title": "Get in Touch",
+			"phone": "+997 95 171-71-01",
+			"email": "team@ithink.uz",
+			"responseTime": "We respond within 1 hour",
+			"subtitle": "Write to us directly — we're always ready to help.",
+			"telegramHandle": "@ithinkteam"
+		},
+		"form": {
+			"name": "Full name",
+			"email": "Email",
+			"phone": "Phone number",
+			"message": "Your message",
+			"submit": "Send Message",
+			"sending": "Sending...",
+			"success": "Message sent! We'll be in touch soon.",
+			"error": "Something went wrong. Please try again."
+		}
+	},
+	"servicePages": {
+		"common": {
+			"allServices": "All Services",
+			"getConsultation": "Get Free Consultation",
+			"hireTeam": "Hire Our Team"
+		},
+		"it-infrastructure": {
+			"hero": {
+				"badge": "IT Infrastructure",
+				"title": "Reliable IT Infrastructure for Your Business",
+				"subtitle": "We design and deploy on-premise and cloud systems that keep your operations running without interruptions — from single offices to multi-branch networks."
+			},
+			"features": {
+				"badge": "What's Included",
+				"title": "Everything You Need to Run Reliably",
+				"items": [
+					{
+						"title": "Server Setup & Configuration",
+						"description": "Physical and virtual server deployment with performance tuning optimized for your workloads."
+					},
+					{
+						"title": "Network Design & Implementation",
+						"description": "Structured cabling, Wi-Fi, VLANs, and firewall configuration tailored to your office layout."
+					},
+					{
+						"title": "Workstation & Device Management",
+						"description": "Centralized management of all employee devices, accounts, software, and access permissions."
+					},
+					{ "title": "Cloud Infrastructure", "description": "AWS, Azure, or on-prem hybrid setups designed to scale with your business growth." },
+					{
+						"title": "Access Control & Security",
+						"description": "Role-based access, VPN configuration, and network perimeter protection from day one."
+					},
+					{
+						"title": "Backup & Disaster Recovery",
+						"description": "Automated backup schedules and tested recovery plans to protect against data loss and downtime."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "Our Delivery Process",
+				"items": [
+					{
+						"step": "01",
+						"title": "Infrastructure Audit",
+						"description": "We assess your current environment, identify bottlenecks, and document what needs to change."
+					},
+					{
+						"step": "02",
+						"title": "Architecture Design",
+						"description": "We design a solution matching your scale, budget, and 3-year growth trajectory."
+					},
+					{
+						"step": "03",
+						"title": "Deployment",
+						"description": "Our engineers deploy and configure everything with minimal disruption to your business operations."
+					},
+					{ "step": "04", "title": "Handover & Training", "description": "Full documentation, admin training, and an optional ongoing support plan." }
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "What You Walk Away With",
+				"items": [
+					{ "title": "Zero Downtime", "description": "Stable, redundant infrastructure means your team works without interruptions day after day." },
+					{
+						"title": "Scalable Foundation",
+						"description": "Systems built to grow with your business — no expensive rebuilds as you add headcount or offices."
+					},
+					{ "title": "End-to-End Security", "description": "Protected endpoints, controlled access, and resilient backups from the very first day." }
+				]
+			},
+			"cta": {
+				"title": "Ready to build a solid IT foundation?",
+				"subtitle": "Tell us about your current setup and we'll map out a plan within 24 hours."
+			}
+		},
+		"managed-it": {
+			"hero": {
+				"badge": "Managed IT Services",
+				"title": "Your IT Department, Without the Overhead",
+				"subtitle": "We take full responsibility for your IT operations — monitoring, support, and maintenance — on a predictable monthly subscription with defined SLAs."
+			},
+			"features": {
+				"badge": "What's Included",
+				"title": "A Complete IT Operations Package",
+				"items": [
+					{
+						"title": "24/7 Infrastructure Monitoring",
+						"description": "Continuous monitoring of servers, networks, and critical services with instant alerting on anomalies."
+					},
+					{
+						"title": "Helpdesk & User Support",
+						"description": "Fast response for employee IT issues — password resets, device problems, software installs, and more."
+					},
+					{
+						"title": "Proactive Maintenance",
+						"description": "Regular updates, patch management, and preventive checks before issues become costly outages."
+					},
+					{
+						"title": "Security & Antivirus Management",
+						"description": "Endpoint protection, firewall rules, and security patches applied consistently across all devices."
+					},
+					{
+						"title": "Vendor & License Management",
+						"description": "We manage your software subscriptions, hardware warranties, and vendor relationships."
+					},
+					{
+						"title": "Monthly Performance Reports",
+						"description": "Clear, readable reports on infrastructure health, incidents handled, and uptime statistics."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "Getting Started Is Simple",
+				"items": [
+					{
+						"step": "01",
+						"title": "Onboarding Audit",
+						"description": "We document your entire IT environment: devices, software, accounts, and access points."
+					},
+					{
+						"step": "02",
+						"title": "Monitoring Setup",
+						"description": "We deploy monitoring agents and configure alerting thresholds for your specific infrastructure."
+					},
+					{
+						"step": "03",
+						"title": "Ongoing Operations",
+						"description": "Daily monitoring, fast incident response, and regular maintenance on a defined SLA."
+					},
+					{
+						"step": "04",
+						"title": "Monthly Review",
+						"description": "We meet monthly to review incidents, report on performance, and plan upcoming improvements."
+					}
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "What You Get",
+				"items": [
+					{ "title": "Predictable IT Costs", "description": "Fixed monthly fee — no surprise invoices when something breaks or needs upgrading." },
+					{ "title": "Faster Issue Resolution", "description": "Average response under 1 hour. Critical issues handled within 2–4 hours under SLA." },
+					{
+						"title": "Business Continuity",
+						"description": "Proactive monitoring catches problems before they cause downtime or data loss for your team."
+					}
+				]
+			},
+			"cta": {
+				"title": "Let us handle IT — you focus on business.",
+				"subtitle": "Talk to us about your team size and infrastructure — we'll design the right plan."
+			}
+		},
+		"crm-automation": {
+			"hero": {
+				"badge": "CRM & Sales Automation",
+				"title": "Turn Your Sales Process Into a Machine",
+				"subtitle": "We implement AmoCRM and Bitrix24, connect all your lead channels, and automate your entire pipeline so no opportunity slips through the cracks."
+			},
+			"features": {
+				"badge": "What's Included",
+				"title": "A Full CRM Implementation",
+				"items": [
+					{
+						"title": "CRM Setup & Configuration",
+						"description": "AmoCRM or Bitrix24 configured to match your exact sales process, stages, and team structure."
+					},
+					{
+						"title": "Sales Pipeline Design",
+						"description": "Custom pipeline stages, automation rules, and deal routing built around how your team actually sells."
+					},
+					{
+						"title": "Telephony Integration",
+						"description": "onlinePBX or Asterisk connected to your CRM — every call logged, recorded, and linked to the right deal."
+					},
+					{
+						"title": "Messenger & Channel Integration",
+						"description": "WhatsApp, Telegram, Instagram, and your website all funneling leads into one unified inbox."
+					},
+					{
+						"title": "Automated Follow-Ups",
+						"description": "Triggered tasks, reminders, and message sequences that run without manual effort from your team."
+					},
+					{
+						"title": "Team Training",
+						"description": "Practical onboarding for your sales team — not just theory, but how to use it every single day."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "From Chaos to Clarity",
+				"items": [
+					{
+						"step": "01",
+						"title": "Sales Process Audit",
+						"description": "We map how leads move from first contact to closed deal and identify where they're being lost."
+					},
+					{ "step": "02", "title": "CRM Setup", "description": "We configure the CRM from scratch — pipelines, users, automations, and templates." },
+					{
+						"step": "03",
+						"title": "Channel Integration",
+						"description": "We connect telephony, messengers, website forms, and other lead sources to the CRM."
+					},
+					{
+						"step": "04",
+						"title": "Training & Launch",
+						"description": "We train your team, run a parallel test period, and stay on hand for questions after go-live."
+					}
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "What Changes After Implementation",
+				"items": [
+					{
+						"title": "More Leads Converted",
+						"description": "Automated follow-ups and structured pipelines mean fewer deals lost to slow response or human error."
+					},
+					{
+						"title": "Full Pipeline Visibility",
+						"description": "Managers see every deal, every stage, and every conversation in one place — no more guesswork."
+					},
+					{
+						"title": "Faster Response Times",
+						"description": "Leads from any channel hit your CRM instantly and your team is notified to act within minutes."
+					}
+				]
+			},
+			"cta": {
+				"title": "Ready to automate your sales?",
+				"subtitle": "Tell us your current setup and lead sources — we'll propose a CRM architecture in 48 hours."
+			}
+		},
+		"process-automation": {
+			"hero": {
+				"badge": "Business Process Automation",
+				"title": "Make Your Business Run Without You",
+				"subtitle": "We identify manual, repetitive tasks and replace them with bots, integrations, and automated workflows — so your team focuses on what actually moves the needle."
+			},
+			"features": {
+				"badge": "What's Included",
+				"title": "Automation That Fits Your Business",
+				"items": [
+					{
+						"title": "Process Mapping & Analysis",
+						"description": "We document your current workflows and identify every bottleneck, manual step, and redundancy."
+					},
+					{
+						"title": "Telegram Bot Development",
+						"description": "Custom bots for internal notifications, employee requests, approvals, and customer interactions."
+					},
+					{
+						"title": "API & System Integrations",
+						"description": "We connect your disparate tools — CRM, accounting, warehouse, HR — so data flows automatically."
+					},
+					{
+						"title": "AI-Assisted Automation",
+						"description": "Intelligent routing, auto-classification, and smart responses using modern AI tools where they add real value."
+					},
+					{
+						"title": "Internal Tools & Dashboards",
+						"description": "Custom admin panels, reporting tools, and internal systems built exactly for how your team operates."
+					},
+					{
+						"title": "Monitoring & Analytics",
+						"description": "Dashboards that show how automated processes are performing and alert you when something needs attention."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "Automation, Step by Step",
+				"items": [
+					{
+						"step": "01",
+						"title": "Process Audit",
+						"description": "We spend time with your team to understand current workflows, pain points, and automation opportunities."
+					},
+					{
+						"step": "02",
+						"title": "Solution Design",
+						"description": "We propose a concrete automation plan: what to automate first, the tech stack, and expected ROI."
+					},
+					{
+						"step": "03",
+						"title": "Build & Integrate",
+						"description": "We build bots, integrations, and workflows — tested in a staging environment before going live."
+					},
+					{
+						"step": "04",
+						"title": "Monitor & Improve",
+						"description": "After launch we monitor performance and iterate based on real-world usage data and your feedback."
+					}
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "The Impact on Your Business",
+				"items": [
+					{
+						"title": "Hours Saved Every Week",
+						"description": "Typical clients recover 10–30 hours of manual work per week within the first month after launch."
+					},
+					{
+						"title": "Fewer Errors",
+						"description": "Automated processes run consistently — no forgotten steps, no copy-paste mistakes, no missed deadlines."
+					},
+					{
+						"title": "Team Freed Up",
+						"description": "Your people stop doing repetitive tasks and start focusing on growth, customers, and real strategy."
+					}
+				]
+			},
+			"cta": {
+				"title": "What would you automate first?",
+				"subtitle": "Tell us your most painful manual process — we'll show you how to fix it."
+			}
+		},
+		"software-development": {
+			"hero": {
+				"badge": "Custom Software Development",
+				"title": "Software Built Around Your Business",
+				"subtitle": "We build web applications, Telegram bots, Mini Apps, and custom systems — everything designed around your workflows, not generic templates or off-the-shelf tools."
+			},
+			"features": {
+				"badge": "What We Build",
+				"title": "Every Format Your Business Needs",
+				"items": [
+					{
+						"title": "Web Applications",
+						"description": "Full-stack web apps with React/Next.js frontends and Node.js backends — fast, scalable, and maintainable."
+					},
+					{
+						"title": "Landing Pages & Websites",
+						"description": "High-converting pages and multi-section websites built for performance and SEO from the ground up."
+					},
+					{
+						"title": "Telegram Bots & Mini Apps",
+						"description": "Custom bots for automation and customer interaction, plus Mini Apps with full web UI inside Telegram."
+					},
+					{
+						"title": "Admin Panels & Dashboards",
+						"description": "Internal management tools for your team — orders, inventory, users, and analytics in one place."
+					},
+					{
+						"title": "API Development & Integrations",
+						"description": "REST APIs, webhooks, and third-party integrations that connect your software to everything else."
+					},
+					{
+						"title": "E-Commerce Platforms",
+						"description": "Online stores with product catalogs, cart, Payme/Click payments, order management, and inventory tracking."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "From Idea to Production",
+				"items": [
+					{
+						"step": "01",
+						"title": "Discovery & Scoping",
+						"description": "We define requirements, user flows, and technical architecture before writing a single line of code."
+					},
+					{
+						"step": "02",
+						"title": "Design",
+						"description": "UI/UX design with real wireframes and mockups — you see exactly what you're getting before we build it."
+					},
+					{
+						"step": "03",
+						"title": "Development",
+						"description": "Iterative sprints with regular demos — you stay in the loop at every milestone, not just at the end."
+					},
+					{
+						"step": "04",
+						"title": "QA & Launch",
+						"description": "Thorough testing, deployment to production, and structured handover with documentation and training."
+					}
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "What You Own at the End",
+				"items": [
+					{
+						"title": "Full Code Ownership",
+						"description": "You own 100% of the source code. We hand over everything — no vendor lock-in, no licensing surprises."
+					},
+					{
+						"title": "Faster Business Operations",
+						"description": "Software tailored to your workflows means your team moves faster than with any off-the-shelf tool."
+					},
+					{
+						"title": "A Foundation to Scale On",
+						"description": "Clean architecture and documentation mean future features can be built on the existing work easily."
+					}
+				]
+			},
+			"cta": {
+				"title": "Have a project in mind?",
+				"subtitle": "Describe what you need to build — we'll scope it and share a proposal within 48 hours."
+			}
+		},
+		"it-audit": {
+			"hero": {
+				"badge": "IT Audit & Consulting",
+				"title": "Know Exactly Where Your IT Stands",
+				"subtitle": "We audit your infrastructure, security, and processes — and give you a clear, prioritized roadmap to fix what's broken and optimize what's working."
+			},
+			"features": {
+				"badge": "What We Audit",
+				"title": "A Complete Picture of Your IT Health",
+				"items": [
+					{
+						"title": "Infrastructure Assessment",
+						"description": "We evaluate your servers, network, workstations, and cloud resources against best-practice benchmarks."
+					},
+					{
+						"title": "Security Audit",
+						"description": "We identify vulnerabilities, access control gaps, outdated software, and data protection weaknesses."
+					},
+					{
+						"title": "Business Process Review",
+						"description": "We examine how your IT systems support (or hinder) your actual business workflows and team productivity."
+					},
+					{
+						"title": "Tech Stack Evaluation",
+						"description": "We assess your current software tools for redundancies, gaps, and better alternatives where relevant."
+					},
+					{
+						"title": "Risk Analysis",
+						"description": "We identify the top risks to your IT continuity with probability, impact, and mitigation recommendations."
+					},
+					{
+						"title": "Optimization Roadmap",
+						"description": "A prioritized action plan: quick wins first, then medium-term improvements, then strategic investments."
+					}
+				]
+			},
+			"process": {
+				"badge": "How We Work",
+				"title": "The Audit Process",
+				"items": [
+					{
+						"step": "01",
+						"title": "Discovery Interviews",
+						"description": "We interview key stakeholders — IT staff, managers, and end users — to understand the full picture."
+					},
+					{
+						"step": "02",
+						"title": "Technical Analysis",
+						"description": "We access and document your infrastructure, run diagnostic tools, and review your configurations."
+					},
+					{
+						"step": "03",
+						"title": "Report Preparation",
+						"description": "We compile findings into a structured report with clear findings, risk ratings, and concrete recommendations."
+					},
+					{
+						"step": "04",
+						"title": "Roadmap Presentation",
+						"description": "We walk you through the report, answer questions, and help you prioritize what to tackle first."
+					}
+				]
+			},
+			"outcomes": {
+				"badge": "Results",
+				"title": "What You Get After the Audit",
+				"items": [
+					{
+						"title": "Full IT Clarity",
+						"description": "For the first time, you'll have a complete, documented picture of your IT environment and its real state."
+					},
+					{
+						"title": "Risk Reduction",
+						"description": "Known risks can be addressed before they become costly outages, breaches, or data loss events."
+					},
+					{
+						"title": "A Prioritized Action Plan",
+						"description": "Not a generic report — a concrete, sequenced plan your team can act on starting from day one."
+					}
+				]
+			},
+			"cta": {
+				"title": "Not sure where your IT gaps are?",
+				"subtitle": "That's exactly what the audit is for. Let's find out together."
+			}
+		}
+	}
 }
