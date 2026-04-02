@@ -740,7 +740,7 @@
 				"title": "What You Get",
 				"items": [
 					{ "title": "Predictable IT Costs", "description": "Fixed monthly fee — no surprise invoices when something breaks or needs upgrading." },
-					{ "title": "Faster Issue Resolution", "description": "Average response under 1 hour. Critical issues handled within 2–4 hours under SLA." },
+					{ "title": "Faster Issue Resolution", "description": "Average response in 15 minutes. Critical issues handled within 1–2 hours under SLA." },
 					{
 						"title": "Business Continuity",
 						"description": "Proactive monitoring catches problems before they cause downtime or data loss for your team."

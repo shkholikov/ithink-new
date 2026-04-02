@@ -755,7 +755,7 @@
 					},
 					{
 						"title": "Muammolarni tezroq hal qilish",
-						"description": "O'rtacha javob 1 soatdan kam. Kritik muammolar SLA bo'yicha 2–4 soat ichida hal qilinadi."
+						"description": "O'rtacha javob vaqti — 15 daqiqa. Kritik muammolar SLA bo'yicha 1–2 soat ichida hal qilinadi."
 					},
 					{
 						"title": "Biznesning uzluksizligi",
