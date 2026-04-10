@@ -239,13 +239,13 @@ export default function CompanyPage({ locale }: { locale: string }) {
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<Link
 								href={`/${locale}/contact`}
-								className="inline-flex items-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
+								className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
 							>
 								{t("cta.primary")}
 							</Link>
 							<Link
 								href={`/${locale}/customers`}
-								className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
+								className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
 							>
 								{t("cta.secondary")}
 							</Link>
