@@ -269,8 +269,8 @@
 		"hero": {
 			"badge": "Biz Haqimizda",
 			"title": "Siz Uchun Ishlaydigan IT Tizimlarini Quramiz",
-			"subtitle": "ITHINK — 2012 yildan beri bizneslarni raqamlashtirish, avtomatlashtirish va o'sishga yordam beradigan Toshkent IT kompaniyasi.",
-			"stat1": "12+",
+			"subtitle": "ITHINK — 2020 yildan beri bizneslarni raqamlashtirish, avtomatlashtirish va o'sishga yordam beradigan Toshkent IT kompaniyasi.",
+			"stat1": "5+",
 			"stat1Label": "Yillik Tajriba",
 			"stat2": "25+",
 			"stat2Label": "Tugallangan Loyihalar",
@@ -279,7 +279,7 @@
 		},
 		"story": {
 			"badge": "Bizning Tariximiz",
-			"title": "2012 Yildan Raqamli Kelajakni Quramiz",
+			"title": "2020 Yildan Raqamli Kelajakni Quramiz",
 			"p1": "ITHINK bitta missiya bilan tashkil etilgan: o'zbek bizneslariga zamonaviy texnologiya imkoniyatlaridan foydalanishga yordam berish. Kichik ofislarda tarmoq o'rnatishdan tortib murakkab korporativ dasturiy ta'minot yaratishgacha, biz mijozlarimiz bilan birga o'sdik.",
 			"p2": "Bugun biz turli sohalardagi kompaniyalar uchun to'liq xizmat ko'rsatuvchi IT hamkormiz — chakana savdodan moliya va ishlab chiqarishgacha. Jamoamiz texnik chuqurlik va biznesni tushunishni birlashtiradi."
 		},
@@ -606,6 +606,66 @@
 			"sending": "Yuborilmoqda...",
 			"success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.",
 			"error": "Xato yuz berdi. Qaytadan urinib ko'ring."
+		}
+	},
+	"company": {
+		"hero": {
+			"badge": "ITHINK haqida",
+			"title": "Raqamli o'sishingiz ortidagi jamoa",
+			"subtitle": "Biz Toshkentdagi IT kompaniyasi bo'lib, 2020 yildan beri biznesni raqamlashtirish, avtomatlashtirish va kengaytirishga yordam beramiz.",
+			"stat1": "5+",
+			"stat1Label": "Yil bozorda",
+			"stat2": "72+",
+			"stat2Label": "Yakunlangan loyihalar",
+			"stat3": "50+",
+			"stat3Label": "Mamnun mijozlar",
+			"stat4": "15+",
+			"stat4Label": "Jamoa a'zolari"
+		},
+		"mission": {
+			"badge": "Missiya va maqsad",
+			"title": "Nima uchun mavjudmiz",
+			"cards": [
+				{ "label": "Missiya", "text": "Ishonchli, maxsus IT yechimlari orqali biznesga raqamlashish va kengayishga yordam beramiz." },
+				{ "label": "Maqsad", "text": "Markaziy Osiyodagi biznes uchun eng ishonchli IT hamkoriga aylanish." },
+				{ "label": "Yondashuv", "text": "Shaffof muloqot, aniq hajm va ishga tushirgandan keyin qo'llab-quvvatlash — hech qanday kutilmagan holatlar yo'q." }
+			]
+		},
+		"timeline": {
+			"badge": "Bizning yo'limiz",
+			"title": "2020 yildan beri qurayapmiz",
+			"items": [
+				{ "year": "2020", "title": "Toshkentda tashkil etildi", "description": "ITHINK zamonaviy IT texnologiyalarini o'zbek biznesiga olib kelish missiyasi bilan yaratildi." },
+				{ "year": "2021", "title": "Birinchi korporativ mijoz", "description": "Mintaqaviy korxona bilan birinchi yirik infratuzilma shartnomasini imzoladik." },
+				{ "year": "2022", "title": "Dasturlash va botlar bo'limi", "description": "Dasturiy ta'minot ishlab chiqish va Telegram orqali avtomatlashtirish xizmatlarini ishga tushirdik." },
+				{ "year": "2023", "title": "Jamoa 15+ kishiga etdi", "description": "O'sib borayotgan mijozlar bazasiga xizmat ko'rsatish uchun muhandislik jamoamizni kengaytirdik." },
+				{ "year": "2024", "title": "72+ loyiha topshirildi", "description": "Muvaffaqiyatli yakunlangan mijozlar loyihalarining muhim ko'rsatkichini oshirdik." },
+				{ "year": "2025", "title": "Mintaqaviy kengayish", "description": "Tojikiston, Qozog'iston va AQShda mijozlarga xizmat ko'rsata boshladik." }
+			]
+		},
+		"why": {
+			"badge": "Nima uchun ITHINK",
+			"title": "Bizning farqimiz",
+			"items": [
+				{ "title": "Toshkentdagi jamoa", "description": "Autsorsing yo'q. Loyihangizni boshidan oxirigacha o'z muhandislarimiz boshqaradi." },
+				{ "title": "Aniq hajm va narxlar", "description": "Natija va narxni oldindan kelishamiz. Qo'shimcha xarajatlar, yashirin hisob-fakturalar yo'q." },
+				{ "title": "Ishga tushirgandan keyin qo'llab-quvvatlash", "description": "Relizdan keyin ham qolamiz. Xatoliklarni tuzatish, yangilanishlar va monitoring shartnoma bir qismi." },
+				{ "title": "Shaffof muloqot", "description": "Loyiha qaysi bosqichda ekanini har doim bilasiz. Haftalik yangilanishlar, jamoaga to'g'ridan-to'g'ri kirish." }
+			]
+		},
+		"location": {
+			"badge": "Biz qayerdamiz",
+			"title": "4 bozorda xizmat ko'rsatamiz",
+			"uz": "O'zbekiston",
+			"tj": "Tojikiston",
+			"kz": "Qozog'iston",
+			"us": "AQSh · Hyuston"
+		},
+		"cta": {
+			"title": "Birgalikda nimadir qurishga tayyormisiz?",
+			"subtitle": "Loyihangiz haqida ayting — bir ish kuni ichida javob beramiz.",
+			"primary": "Loyiha boshlash",
+			"secondary": "Ishlarimizni ko'rish"
 		}
 	},
 	"servicePages": {

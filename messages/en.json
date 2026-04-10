@@ -263,8 +263,8 @@
 		"hero": {
 			"badge": "About Us",
 			"title": "We Build IT Systems That Work for You",
-			"subtitle": "ITHINK is a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2012.",
-			"stat1": "12+",
+			"subtitle": "ITHINK is a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2020.",
+			"stat1": "5+",
 			"stat1Label": "Years of Experience",
 			"stat2": "25+",
 			"stat2Label": "Completed Projects",
@@ -273,7 +273,7 @@
 		},
 		"story": {
 			"badge": "Our Story",
-			"title": "Building Digital Futures Since 2012",
+			"title": "Building Digital Futures Since 2020",
 			"p1": "ITHINK was founded with a single mission: help Uzbek businesses harness the power of modern technology. From setting up networks in small offices to building complex enterprise software, we've grown alongside our clients.",
 			"p2": "Today, we're a full-service IT partner for companies across industries — from retail and finance to manufacturing and professional services. Our team combines technical depth with business understanding to deliver solutions that actually move the needle."
 		},
@@ -593,6 +593,66 @@
 			"sending": "Sending...",
 			"success": "Message sent! We'll be in touch soon.",
 			"error": "Something went wrong. Please try again."
+		}
+	},
+	"company": {
+		"hero": {
+			"badge": "About ITHINK",
+			"title": "The Team Behind Your Digital Growth",
+			"subtitle": "We are a Tashkent-based IT company helping businesses digitalize, automate, and scale since 2020.",
+			"stat1": "5+",
+			"stat1Label": "Years in business",
+			"stat2": "72+",
+			"stat2Label": "Projects delivered",
+			"stat3": "50+",
+			"stat3Label": "Happy clients",
+			"stat4": "15+",
+			"stat4Label": "Team members"
+		},
+		"mission": {
+			"badge": "Mission & Vision",
+			"title": "Why We Exist",
+			"cards": [
+				{ "label": "Mission", "text": "We help businesses digitalize and scale through reliable, custom-built IT solutions that actually work." },
+				{ "label": "Vision", "text": "To become the most trusted IT partner for businesses across Central Asia." },
+				{ "label": "Approach", "text": "Transparent communication, fixed scope, and post-launch support — no surprises, ever." }
+			]
+		},
+		"timeline": {
+			"badge": "Our Journey",
+			"title": "Building Since 2020",
+			"items": [
+				{ "year": "2020", "title": "Founded in Tashkent", "description": "ITHINK was established with a mission to bring modern IT to Uzbek businesses." },
+				{ "year": "2021", "title": "First Enterprise Client", "description": "Signed our first large-scale infrastructure contract with a regional enterprise." },
+				{ "year": "2022", "title": "Software & Bots Division", "description": "Launched dedicated software development and Telegram automation services." },
+				{ "year": "2023", "title": "Team Grew to 15+", "description": "Expanded our engineering and support team to serve a growing client base." },
+				{ "year": "2024", "title": "72+ Projects Delivered", "description": "Crossed a major milestone of successfully delivered client projects." },
+				{ "year": "2025", "title": "Regional Expansion", "description": "Began serving clients in Tajikistan, Kazakhstan, and the US." }
+			]
+		},
+		"why": {
+			"badge": "Why ITHINK",
+			"title": "What Sets Us Apart",
+			"items": [
+				{ "title": "Tashkent-Based Team", "description": "No outsourcing. Your project is handled by our in-house engineers from start to finish." },
+				{ "title": "Fixed Scope & Clear Pricing", "description": "We agree on deliverables and price upfront. No scope creep, no surprise invoices." },
+				{ "title": "Post-Launch Support", "description": "We stay after go-live. Bug fixes, updates, and monitoring are part of the deal." },
+				{ "title": "Transparent Communication", "description": "You always know where your project stands. Weekly updates, direct access to your team." }
+			]
+		},
+		"location": {
+			"badge": "Where We Operate",
+			"title": "Serving Clients Across 4 Markets",
+			"uz": "Uzbekistan",
+			"tj": "Tajikistan",
+			"kz": "Kazakhstan",
+			"us": "USA · Houston"
+		},
+		"cta": {
+			"title": "Ready to Build Something Together?",
+			"subtitle": "Tell us about your project and we'll get back to you within one business day.",
+			"primary": "Start a Project",
+			"secondary": "See Our Work"
 		}
 	},
 	"servicePages": {
