@@ -236,16 +236,17 @@ export default function CompanyPage({ locale }: { locale: string }) {
 					>
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
 						<p className="text-muted-foreground mb-8">{t("cta.subtitle")}</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
+						<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
 							<Link
 								href={`/${locale}/contact`}
-								className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
+								className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
 							>
 								{t("cta.primary")}
+								<ArrowRight className="w-4 h-4" />
 							</Link>
 							<Link
 								href={`/${locale}/customers`}
-								className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
+								className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
 							>
 								{t("cta.secondary")}
 							</Link>
