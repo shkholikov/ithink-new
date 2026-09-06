@@ -41,7 +41,7 @@ export default async function Hero({ locale }: HeroProps) {
 				</div>
 
 				{/* Headline */}
-				<h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6 appear" style={{ animationDelay: "0.1s" }}>
+				<h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6 appear" style={{ animationDelay: "0.1s", animationDuration: "0.6s" }}>
 					<span className="text-foreground">{t("title1")}</span>
 					<br />
 					<span className="gradient-text">{t("title2")}</span>
@@ -50,12 +50,12 @@ export default async function Hero({ locale }: HeroProps) {
 				</h1>
 
 				{/* Subtitle */}
-				<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 appear" style={{ animationDelay: "0.2s" }}>
+				<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 appear" style={{ animationDelay: "0.2s", animationDuration: "0.6s" }}>
 					{t("subtitle")}
 				</p>
 
 				{/* CTAs */}
-				<div className="flex flex-col sm:flex-row items-center justify-center gap-3 appear" style={{ animationDelay: "0.3s" }}>
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-3 appear" style={{ animationDelay: "0.3s", animationDuration: "0.6s" }}>
 					{/* Primary — shimmer + pulsing ring */}
 					<div className="relative group">
 						<span className="absolute inset-0 rounded-xl border-2 border-[#377dff]/50 scale-100 opacity-100 group-hover:scale-[1.12] group-hover:opacity-0 transition-all duration-500 pointer-events-none" />
@@ -80,12 +80,12 @@ export default async function Hero({ locale }: HeroProps) {
 				</div>
 
 				{/* Trust note */}
-				<p className="text-[11px] text-muted-foreground/50 mt-3 appear" style={{ animationDelay: "0.45s" }}>
+				<p className="text-[11px] text-muted-foreground/50 mt-3 appear" style={{ animationDelay: "0.45s", animationDuration: "0.6s" }}>
 					{t("trustNote")}
 				</p>
 
 				{/* Stats */}
-				<div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 appear" style={{ animationDelay: "0.5s" }}>
+				<div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 appear" style={{ animationDelay: "0.5s", animationDuration: "0.6s" }}>
 					{stats.map((stat, i) => (
 						<div key={i} className="text-center">
 							<div className="text-3xl sm:text-4xl font-bold gradient-text-blue">{stat.value}</div>
@@ -96,7 +96,7 @@ export default async function Hero({ locale }: HeroProps) {
 			</div>
 
 			{/* Scroll indicator */}
-			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 appear" style={{ animationDelay: "1s" }}>
+			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 appear" style={{ animationDelay: "1s", animationDuration: "0.3s" }}>
 				<div className="w-px h-8 bg-gradient-to-b from-border to-transparent" />
 			</div>
 		</section>
