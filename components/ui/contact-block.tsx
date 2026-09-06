@@ -31,7 +31,7 @@ interface ContactBlockProps {
 
 export function ContactBlock({ strings, messageRows = 5 }: ContactBlockProps) {
 	const contacts = [
-		{ icon: Phone, label: "PHONE", value: strings.phone, href: `tel:${strings.phone.replace(/\s/g, "")}`, external: false },
+		{ icon: Phone, label: "PHONE", value: strings.phone, href: `tel:${strings.phone.replace(/[^\d+]/g, "")}`, external: false },
 		{ icon: Send, label: "TELEGRAM", value: strings.telegramLabel, href: strings.telegramUrl, external: true },
 		{ icon: Mail, label: "EMAIL", value: strings.email, href: `mailto:${strings.email}`, external: false }
 	];

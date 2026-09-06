@@ -81,7 +81,7 @@ export default async function Footer({ locale }: FooterProps) {
 								<Send className="w-4 h-4 text-muted-foreground group-hover:text-[#229ed9] transition-colors" />
 							</a>
 							<a
-								href="tel:+997951717101"
+								href="tel:+998951717101"
 								className="w-9 h-9 rounded-xl bg-secondary hover:bg-[#377dff]/10 hover:border-[#377dff]/30 flex items-center justify-center transition-all duration-200 border border-border group"
 								aria-label="Phone"
 							>
@@ -117,8 +117,8 @@ export default async function Footer({ locale }: FooterProps) {
 							team@ithink.uz
 						</a>
 						<span className="text-border">·</span>
-						<a href="tel:+997951717101" className="hover:text-foreground transition-colors">
-							+997 95 171-71-01
+						<a href="tel:+998951717101" className="hover:text-foreground transition-colors">
+							+998 95 171-71-01
 						</a>
 						<span className="text-border">·</span>
 						<Link href={`/${locale}/contact`} className="hover:text-foreground transition-colors">
