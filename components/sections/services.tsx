@@ -1,10 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { ArrowUpRight, Server, MonitorCheck, TrendingUp, Workflow, Code2, Search, Layers } from "lucide-react";
-import { m } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const serviceIcons = [Server, MonitorCheck, TrendingUp, Workflow, Code2, Search];
 
@@ -12,8 +10,8 @@ interface ServicesProps {
 	locale: string;
 }
 
-export default function Services({ locale }: ServicesProps) {
-	const t = useTranslations("services");
+export default async function Services({ locale }: ServicesProps) {
+	const t = await getTranslations({ locale, namespace: "services" });
 
 	const services = [0, 1, 2, 3, 4, 5].map((i) => ({
 		title: t(`items.${i}.title`),
@@ -30,27 +28,15 @@ export default function Services({ locale }: ServicesProps) {
 				{/* Service Cards */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{services.map((service, i) => (
-						<m.div
-							key={i}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-50px" }}
-							transition={{ duration: 0.4, delay: i * 0.07 }}
-							whileHover={{ y: -4 }}
-							className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/40 rounded-2xl p-6 transition-all duration-300 cursor-default overflow-hidden"
-						>
+						<FadeIn key={i} delay={i * 0.07} duration={0.4} className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/40 rounded-2xl p-6 transition-all duration-300 cursor-default overflow-hidden">
 							{/* Hover glow */}
 							<div className="absolute inset-0 bg-gradient-to-br from-[#377dff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
 							<div className="relative z-10">
 								{/* Icon */}
-								<m.div
-									whileHover={{ scale: 1.1, rotate: 5 }}
-									transition={{ type: "tween", duration: 0.15, ease: "easeOut" }}
-									className="w-12 h-12 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 group-hover:shadow-lg group-hover:shadow-[#377dff]/20 transition-all duration-300"
-								>
+								<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 group-hover:shadow-lg group-hover:shadow-[#377dff]/20 transition-all duration-300">
 									<service.Icon className="w-5 h-5 text-[#377dff]" />
-								</m.div>
+								</div>
 
 								{/* Title */}
 								<h3 className="text-base font-semibold text-foreground mb-2">{service.title}</h3>
@@ -72,7 +58,7 @@ export default function Services({ locale }: ServicesProps) {
 									</Link>
 								</div>
 							</div>
-						</m.div>
+						</FadeIn>
 					))}
 				</div>
 			</div>

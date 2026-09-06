@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from "next";
 import PartnerItgrixPage from "@/components/pages/partner-itgrix-page";
 
@@ -54,6 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PartnerPage({ params }: Props) {
 	const { locale, slug } = await params;
+	setRequestLocale(locale);
 
 	if (slug === "itgrix") {
 		return <PartnerItgrixPage locale={locale} />;

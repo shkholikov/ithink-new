@@ -141,13 +141,33 @@
 
 .animate-blob {
 	animation: blob 7s infinite;
-	will-change: transform;
 }
 .animation-delay-2000 {
 	animation-delay: 2s;
 }
 .animation-delay-4000 {
 	animation-delay: 4s;
+}
+
+/* Page-heading entrance.
+   Identical to the framer initial/animate it replaces (opacity 0 -> 1, 20px
+   rise, 0.5s), but driven by CSS so the heading paints with the document
+   instead of waiting for React to hydrate. It is the LCP element on every
+   sub-page, and framer serialises initial={{opacity:0}} as an inline
+   style="opacity:0" in the SSR HTML. */
+@keyframes appear {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.appear {
+	animation: appear 0.5s ease-out both;
 }
 
 /* Marquee scroll */

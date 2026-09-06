@@ -1,16 +1,13 @@
-"use client";
-
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { ArrowRight, Sparkles, ChevronDown } from "lucide-react";
-import { m } from "framer-motion";
 
 interface HeroProps {
 	locale: string;
 }
 
-export default function Hero({ locale }: HeroProps) {
-	const t = useTranslations("hero");
+export default async function Hero({ locale }: HeroProps) {
+	const t = await getTranslations({ locale, namespace: "hero" });
 
 	const stats = [
 		{ value: t("stat1"), label: t("stat1Label") },
@@ -38,47 +35,27 @@ export default function Hero({ locale }: HeroProps) {
 
 			<div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				{/* Badge */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5 }}
-					className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-8"
-				>
+				<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-8 appear">
 					<Sparkles className="w-3 h-3" />
 					{t("badge")}
-				</m.div>
+				</div>
 
 				{/* Headline */}
-				<m.h1
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.1 }}
-					className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6"
-				>
+				<h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6 appear" style={{ animationDelay: "0.1s" }}>
 					<span className="text-foreground">{t("title1")}</span>
 					<br />
 					<span className="gradient-text">{t("title2")}</span>
 					<br />
 					<span className="text-foreground">{t("title3")}</span>
-				</m.h1>
+				</h1>
 
 				{/* Subtitle */}
-				<m.p
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
-					className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
-				>
+				<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 appear" style={{ animationDelay: "0.2s" }}>
 					{t("subtitle")}
-				</m.p>
+				</p>
 
 				{/* CTAs */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					className="flex flex-col sm:flex-row items-center justify-center gap-3"
-				>
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-3 appear" style={{ animationDelay: "0.3s" }}>
 					{/* Primary — shimmer + pulsing ring */}
 					<div className="relative group">
 						<span className="absolute inset-0 rounded-xl border-2 border-[#377dff]/50 scale-100 opacity-100 group-hover:scale-[1.12] group-hover:opacity-0 transition-all duration-500 pointer-events-none" />
@@ -100,43 +77,28 @@ export default function Hero({ locale }: HeroProps) {
 						{t("cta2")}
 						<ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-200" />
 					</Link>
-				</m.div>
+				</div>
 
 				{/* Trust note */}
-				<m.p
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.6, delay: 0.45 }}
-					className="text-[11px] text-muted-foreground/50 mt-3"
-				>
+				<p className="text-[11px] text-muted-foreground/50 mt-3 appear" style={{ animationDelay: "0.45s" }}>
 					{t("trustNote")}
-				</m.p>
+				</p>
 
 				{/* Stats */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.5 }}
-					className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
-				>
+				<div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 appear" style={{ animationDelay: "0.5s" }}>
 					{stats.map((stat, i) => (
 						<div key={i} className="text-center">
 							<div className="text-3xl sm:text-4xl font-bold gradient-text-blue">{stat.value}</div>
 							<div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
 						</div>
 					))}
-				</m.div>
+				</div>
 			</div>
 
 			{/* Scroll indicator */}
-			<m.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ delay: 1 }}
-				className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
-			>
+			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 appear" style={{ animationDelay: "1s" }}>
 				<div className="w-px h-8 bg-gradient-to-b from-border to-transparent" />
-			</m.div>
+			</div>
 		</section>
 	);
 }

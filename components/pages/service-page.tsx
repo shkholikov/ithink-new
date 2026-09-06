@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import {
 	Server,
 	MonitorCheck,
@@ -48,6 +45,7 @@ import {
 import { PageHero } from "@/components/ui/page-hero";
 import { SectionHeader } from "@/components/ui/section-header";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export type ServiceSlug = "it-infrastructure" | "managed-it" | "crm-automation" | "process-automation" | "software-development" | "it-audit";
 
@@ -95,8 +93,8 @@ interface ServicePageProps {
 	slug: ServiceSlug;
 }
 
-export default function ServicePage({ locale, slug }: ServicePageProps) {
-	const t = useTranslations("servicePages");
+export default async function ServicePage({ locale, slug }: ServicePageProps) {
+	const t = await getTranslations({ locale, namespace: "servicePages" });
 	const config = serviceConfigs[slug];
 
 	const features = [0, 1, 2, 3, 4, 5].map((i) => ({
@@ -145,14 +143,7 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
 						{features.map((feature, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.07 }}
-								className="group bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5 relative overflow-hidden"
-							>
+							<FadeIn key={i} delay={i * 0.07} duration={0.4} className="group bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5 relative overflow-hidden">
 								<div className="absolute inset-0 bg-gradient-to-br from-[#377dff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
 								<div className="relative z-10">
 									<div className="w-11 h-11 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-4 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 transition-all duration-300">
@@ -161,7 +152,7 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 									<h3 className="text-sm font-semibold text-foreground mb-2">{feature.title}</h3>
 									<p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
 								</div>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -187,27 +178,16 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 						<div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
 						{processItems.map((item, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 24 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.45, delay: i * 0.1 }}
-								className="relative flex flex-col items-center text-center"
-							>
-								<m.div
-									whileHover={{ scale: 1.08 }}
-									transition={{ type: "tween", duration: 0.15, ease: "easeOut" }}
-									className="relative w-20 h-20 rounded-2xl bg-card border border-border hover:border-[#377dff]/40 flex items-center justify-center mb-5 shadow-sm hover:shadow-[#377dff]/10 hover:shadow-lg transition-all duration-300 z-10"
-								>
+							<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="relative flex flex-col items-center text-center">
+								<div className="relative w-20 h-20 rounded-2xl bg-card border border-border hover:border-[#377dff]/40 flex items-center justify-center mb-5 shadow-sm hover:shadow-[#377dff]/10 hover:shadow-lg transition-all duration-300 z-10">
 									<item.Icon className="w-7 h-7 text-[#377dff]" />
 									<span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#377dff] text-white text-[10px] font-bold flex items-center justify-center">
 										{item.step}
 									</span>
-								</m.div>
+								</div>
 								<h3 className="text-sm font-semibold text-foreground mb-2">{item.title}</h3>
 								<p className="text-xs text-muted-foreground leading-relaxed max-w-[180px]">{item.description}</p>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -220,23 +200,16 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
 						{outcomes.map((outcome, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.1 }}
-								className={cn(
+							<FadeIn key={i} delay={i * 0.1} duration={0.4} className={cn(
 									"relative rounded-2xl p-7 overflow-hidden border",
 									i === 1 ? "bg-[#377dff] border-[#377dff] text-white shadow-xl shadow-[#377dff]/30" : "bg-card border-border"
-								)}
-							>
+								)}>
 								<div className={cn("w-10 h-10 rounded-xl flex items-center justify-center mb-5", i === 1 ? "bg-white/20" : "bg-[#377dff]/10")}>
 									<CheckCircle className={cn("w-5 h-5", i === 1 ? "text-white" : "text-[#377dff]")} />
 								</div>
 								<h3 className={cn("text-base font-semibold mb-2", i === 1 ? "text-white" : "text-foreground")}>{outcome.title}</h3>
 								<p className={cn("text-sm leading-relaxed", i === 1 ? "text-white/80" : "text-muted-foreground")}>{outcome.description}</p>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -245,7 +218,7 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 			{/* CTA */}
 			<section className="py-20 border-t border-border">
 				<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+					<FadeIn >
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t(`${slug}.cta.title`)}</h2>
 						<p className="text-muted-foreground mb-8 text-base leading-relaxed">{t(`${slug}.cta.subtitle`)}</p>
 						<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -263,7 +236,7 @@ export default function ServicePage({ locale, slug }: ServicePageProps) {
 								{t("common.hireTeam")}
 							</Link>
 						</div>
-					</m.div>
+					</FadeIn>
 				</div>
 			</section>
 		</div>

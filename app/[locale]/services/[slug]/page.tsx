@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServicePage, { type ServiceSlug } from "@/components/pages/service-page";
@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceRoute({ params }: Props) {
 	const { locale, slug } = await params;
+	setRequestLocale(locale);
 	if (!validSlugs.includes(slug as ServiceSlug)) notFound();
 	return <ServicePage locale={locale} slug={slug as ServiceSlug} />;
 }

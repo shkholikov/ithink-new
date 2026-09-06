@@ -1,14 +1,12 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { ShieldCheck, Puzzle, TrendingUp, Award } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const icons = [ShieldCheck, Puzzle, TrendingUp];
 
-export default function WhyUs() {
-	const t = useTranslations("whyUs");
+export default async function WhyUs({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "whyUs" });
 
 	const items = [0, 1, 2].map((i) => ({
 		title: t(`items.${i}.title`),
@@ -29,20 +27,13 @@ export default function WhyUs() {
 				{/* Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{items.map((item, i) => (
-						<m.div
-							key={i}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-50px" }}
-							transition={{ duration: 0.4, delay: i * 0.1 }}
-							className="group bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5"
-						>
+						<FadeIn key={i} delay={i * 0.1} duration={0.4} className="group bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
 							<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 transition-colors">
 								<item.Icon className="w-5 h-5 text-[#377dff]" />
 							</div>
 							<h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
 							<p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-						</m.div>
+						</FadeIn>
 					))}
 				</div>
 			</div>

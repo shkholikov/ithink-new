@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import PartnersPage from '@/components/pages/partners-page';
 
@@ -22,5 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Partners({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return <PartnersPage locale={locale} />;
 }

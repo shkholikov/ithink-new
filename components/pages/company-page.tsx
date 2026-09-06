@@ -1,7 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import {
 	Building2,
 	Users,
@@ -18,11 +15,12 @@ import {
 import { PageHero } from "@/components/ui/page-hero";
 import { SectionBadge } from "@/components/ui/section-badge";
 import Link from "next/link";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const WHY_ICONS = [Users, CheckCircle2, ArrowRight, MessageSquare];
 
-export default function CompanyPage({ locale }: { locale: string }) {
-	const t = useTranslations("company");
+export default async function CompanyPage({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "company" });
 
 	const stats = [
 		{ value: t("hero.stat1"), label: t("hero.stat1Label") },
@@ -66,27 +64,14 @@ export default function CompanyPage({ locale }: { locale: string }) {
 			{/* Mission & Vision */}
 			<section className="py-20 border-t border-border bg-secondary/20">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-						className="text-center mb-12"
-					>
+					<FadeIn className="text-center mb-12">
 						<SectionBadge icon={Target} label={t("mission.badge")} variant="yellow" />
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("mission.title")}</h2>
-					</m.div>
+					</FadeIn>
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 						{([Target, Eye, Handshake] as const).map((Icon, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.08 }}
-								className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors"
-							>
+							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<Icon className="w-5 h-5 text-[#377dff]" />
 								</div>
@@ -96,7 +81,7 @@ export default function CompanyPage({ locale }: { locale: string }) {
 								<p className="text-xs text-muted-foreground leading-relaxed">
 									{t(`mission.cards.${i}.text`)}
 								</p>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -105,16 +90,10 @@ export default function CompanyPage({ locale }: { locale: string }) {
 			{/* Timeline */}
 			<section className="py-20 border-t border-border bg-background">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-						className="text-center mb-16"
-					>
+					<FadeIn className="text-center mb-16">
 						<SectionBadge icon={Milestone} label={t("timeline.badge")} variant="blue" />
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("timeline.title")}</h2>
-					</m.div>
+					</FadeIn>
 
 					<div className="relative">
 						{/* vertical line */}
@@ -124,14 +103,7 @@ export default function CompanyPage({ locale }: { locale: string }) {
 							{timelineItems.map((item, i) => {
 								const isRight = i % 2 === 0;
 								return (
-									<m.div
-										key={i}
-										initial={{ opacity: 0, x: isRight ? -20 : 20 }}
-										whileInView={{ opacity: 1, x: 0 }}
-										viewport={{ once: true, margin: "-50px" }}
-										transition={{ duration: 0.4, delay: i * 0.05 }}
-										className={`relative flex items-start gap-6 sm:gap-0 ${isRight ? "sm:flex-row" : "sm:flex-row-reverse"}`}
-									>
+									<FadeIn key={i} delay={i * 0.05} duration={0.4} x={isRight ? -20 : 20} y={0} className={`relative flex items-start gap-6 sm:gap-0 ${isRight ? "sm:flex-row" : "sm:flex-row-reverse"}`}>
 										{/* dot */}
 										<div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 mt-1.5 w-3.5 h-3.5 rounded-full bg-[#377dff] border-2 border-background ring-2 ring-[#377dff]/30 shrink-0" />
 
@@ -145,7 +117,7 @@ export default function CompanyPage({ locale }: { locale: string }) {
 											<h3 className="text-sm font-semibold text-foreground mt-1 mb-1">{item.title}</h3>
 											<p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
 										</div>
-									</m.div>
+									</FadeIn>
 								);
 							})}
 						</div>
@@ -156,33 +128,20 @@ export default function CompanyPage({ locale }: { locale: string }) {
 			{/* Why ITHINK */}
 			<section className="py-20 border-t border-border bg-secondary/20">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-						className="text-center mb-12"
-					>
+					<FadeIn className="text-center mb-12">
 						<SectionBadge icon={Sparkles} label={t("why.badge")} variant="blue" />
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("why.title")}</h2>
-					</m.div>
+					</FadeIn>
 
 					<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 						{whyItems.map(({ title, description, Icon }, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.08 }}
-								className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors"
-							>
+							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<Icon className="w-5 h-5 text-[#377dff]" />
 								</div>
 								<h3 className="text-sm font-semibold text-foreground mb-2">{title}</h3>
 								<p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -191,16 +150,10 @@ export default function CompanyPage({ locale }: { locale: string }) {
 			{/* Location */}
 			<section className="py-20 border-t border-border bg-background">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-						className="text-center mb-12"
-					>
+					<FadeIn className="text-center mb-12">
 						<SectionBadge icon={Navigation} label={t("location.badge")} variant="yellow" />
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("location.title")}</h2>
-					</m.div>
+					</FadeIn>
 
 					<div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-3xl mx-auto">
 						{[
@@ -209,17 +162,10 @@ export default function CompanyPage({ locale }: { locale: string }) {
 							{ flag: "🇰🇿", country: t("location.kz") },
 							{ flag: "🇺🇸", country: t("location.us") },
 						].map(({ flag, country }, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.08 }}
-								className="bg-card border border-border rounded-2xl p-6 text-center hover:border-[#f9b934]/30 transition-colors"
-							>
+							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-[#f9b934]/30 transition-colors">
 								<div className="text-4xl mb-3">{flag}</div>
 								<p className="text-sm text-foreground font-medium">{country}</p>
-							</m.div>
+							</FadeIn>
 						))}
 					</div>
 				</div>
@@ -228,12 +174,7 @@ export default function CompanyPage({ locale }: { locale: string }) {
 			{/* CTA */}
 			<section className="py-20 border-t border-border bg-secondary/20">
 				<div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-					>
+					<FadeIn >
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
 						<p className="text-muted-foreground mb-8">{t("cta.subtitle")}</p>
 						<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -251,7 +192,7 @@ export default function CompanyPage({ locale }: { locale: string }) {
 								{t("cta.secondary")}
 							</Link>
 						</div>
-					</m.div>
+					</FadeIn>
 				</div>
 			</section>
 		</div>

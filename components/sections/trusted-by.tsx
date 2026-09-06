@@ -1,9 +1,7 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { Users } from "lucide-react";
 import { SectionBadge } from "@/components/ui/section-badge";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const partners = ["amoCRM", "Bitrix24", "onlinePBX", "Wazzup", "MEGACOUNT"];
 const clients = [
@@ -23,23 +21,17 @@ const clients = [
 // Combine for marquee — duplicate for seamless loop
 const marqueeItems = [...partners, ...clients];
 
-export default function TrustedBy() {
-	const t = useTranslations("trustedBy");
+export default async function TrustedBy({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "trustedBy" });
 
 	return (
 		<section className="py-16 lg:py-20 border-t border-border bg-background overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-				<m.div
-					initial={{ opacity: 0, y: 16 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-50px" }}
-					transition={{ duration: 0.5 }}
-					className="text-center"
-				>
+				<FadeIn y={16} className="text-center">
 					<SectionBadge icon={Users} label={t("badge")} className="mb-3" />
 					<h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">{t("title")}</h2>
 					<p className="text-sm text-muted-foreground">{t("subtitle")}</p>
-				</m.div>
+				</FadeIn>
 			</div>
 
 			{/* Marquee container */}

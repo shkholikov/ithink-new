@@ -1,12 +1,10 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { Quote, Star } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
+import { FadeIn } from "@/components/ui/fade-in";
 
-export default function Testimonials() {
-	const t = useTranslations("testimonials");
+export default async function Testimonials({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "testimonials" });
 
 	const items = [0, 1, 2].map((i) => ({
 		quote: t(`items.${i}.quote`),
@@ -28,15 +26,7 @@ export default function Testimonials() {
 				{/* Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{items.map((item, i) => (
-						<m.div
-							key={i}
-							initial={{ opacity: 0, y: 24 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-50px" }}
-							transition={{ duration: 0.45, delay: i * 0.1 }}
-							whileHover={{ y: -4 }}
-							className="group relative bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5"
-						>
+						<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="group relative bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
 							{/* Quote icon */}
 							<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 transition-colors">
 								<Quote className="w-4 h-4 text-[#377dff]" />
@@ -64,7 +54,7 @@ export default function Testimonials() {
 									</div>
 								</div>
 							</div>
-						</m.div>
+						</FadeIn>
 					))}
 				</div>
 			</div>

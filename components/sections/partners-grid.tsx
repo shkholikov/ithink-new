@@ -1,11 +1,9 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
+import { getTranslations } from "next-intl/server";
 import { CheckCircle2 } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
-export default function PartnersGrid() {
-	const t = useTranslations("partners");
+export default async function PartnersGrid({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "partners" });
 
 	const partners = [0, 1, 2, 3, 4, 5].map((i) => ({
 		name: t(`items.${i}.name`),
@@ -25,31 +23,18 @@ export default function PartnersGrid() {
 		<section className="py-24 lg:py-32 border-t border-border bg-background">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
-				<m.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-50px" }}
-					transition={{ duration: 0.5 }}
-					className="text-center mb-14"
-				>
+				<FadeIn className="text-center mb-14">
 					<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] dark:text-[#f9b934] text-xs font-medium mb-4">
 						{t("badge")}
 					</span>
 					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t("title")}</h2>
 					<p className="text-muted-foreground max-w-2xl mx-auto text-sm leading-relaxed">{t("subtitle")}</p>
-				</m.div>
+				</FadeIn>
 
 				{/* Partners Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{partners.map((partner, i) => (
-						<m.div
-							key={i}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-50px" }}
-							transition={{ duration: 0.4, delay: i * 0.08 }}
-							className="bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300"
-						>
+						<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300">
 							<div className="flex items-start justify-between mb-4">
 								<div className="flex items-center gap-2">
 									<div className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 ${accents[i]}`}>
@@ -65,7 +50,7 @@ export default function PartnersGrid() {
 								</span>
 							</div>
 							<p className="text-xs text-muted-foreground leading-relaxed">{partner.description}</p>
-						</m.div>
+						</FadeIn>
 					))}
 				</div>
 			</div>

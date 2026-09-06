@@ -1,3 +1,4 @@
+import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CareerPage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const labels: Record<string, { title: string; subtitle: string }> = {
     uz: { title: 'Karyera', subtitle: 'Tez orada...' },
     ru: { title: 'Карьера', subtitle: 'Скоро...' },

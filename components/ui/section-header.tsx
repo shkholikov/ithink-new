@@ -1,8 +1,6 @@
-"use client";
-
-import { m } from "framer-motion";
 import { type LucideIcon } from "lucide-react";
 import { SectionBadge } from "@/components/ui/section-badge";
+import { FadeIn } from "@/components/ui/fade-in";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -17,13 +15,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ icon, badge, badgeVariant = "blue", title, subtitle, align = "center", className }: SectionHeaderProps) {
 	return (
-		<m.div
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, margin: "-50px" }}
-			transition={{ duration: 0.5 }}
-			className={cn(align === "center" ? "text-center" : "text-left", "mb-14", className)}
-		>
+		<FadeIn className={cn(align === "center" ? "text-center" : "text-left", "mb-14", className)}>
 			{badge && icon && <SectionBadge icon={icon} label={badge} variant={badgeVariant} />}
 			{badge && !icon && (
 				<span
@@ -39,6 +31,6 @@ export function SectionHeader({ icon, badge, badgeVariant = "blue", title, subti
 			)}
 			<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{title}</h2>
 			{subtitle && <p className={cn("text-muted-foreground text-sm", align === "center" && "max-w-xl mx-auto")}>{subtitle}</p>}
-		</m.div>
+		</FadeIn>
 	);
 }

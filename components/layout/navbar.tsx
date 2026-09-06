@@ -144,15 +144,8 @@ export default function Navbar({ locale }: NavbarProps) {
 				<div className="flex items-center justify-between h-16 lg:h-18">
 					{/* Logo */}
 					<Link href={`/${locale}`} className="flex-shrink-0">
-						<Image
-							src={isDark ? "/logo-negative.png" : "/logo.png"}
-							alt="ITHINK"
-							width={120}
-							height={36}
-							className="h-8 w-auto"
-							priority
-							loading="eager"
-						/>
+						<Image src="/logo.png" alt="ITHINK" width={120} height={39} className="h-8 w-auto dark:hidden" priority />
+						<Image src="/logo-negative.png" alt="ITHINK" width={120} height={39} className="h-8 w-auto hidden dark:block" priority />
 					</Link>
 
 					{/* Desktop Nav */}
@@ -254,7 +247,8 @@ export default function Navbar({ locale }: NavbarProps) {
 						<SheetContent side="right" className="w-full sm:w-80 bg-background border-l border-border p-0">
 							<div className="flex flex-col h-full">
 								<div className="flex items-center p-4 border-b border-white/5">
-									<Image src={isDark ? "/logo-negative.png" : "/logo.png"} alt="ITHINK" width={100} height={30} className="h-7 w-auto" />
+									<Image src="/logo.png" alt="ITHINK" width={100} height={32} className="h-7 w-auto dark:hidden" />
+									<Image src="/logo-negative.png" alt="ITHINK" width={100} height={32} className="h-7 w-auto hidden dark:block" />
 								</div>
 
 								<nav className="flex-1 overflow-y-auto p-4">

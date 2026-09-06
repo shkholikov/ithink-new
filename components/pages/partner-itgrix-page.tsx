@@ -173,7 +173,7 @@ export default function PartnerItgrixPage({ locale }: Props) {
 							<p className="text-muted-foreground mt-1">{c.tagline}</p>
 						</div>
 						<div className="relative w-64 h-36 flex-shrink-0">
-							<Image src="/images/partners/itgrix.png" alt="Itgrix" fill className="object-contain p-6" priority />
+							<Image src="/images/partners/itgrix.png" alt="Itgrix" fill sizes="256px" className="object-contain p-6" priority />
 						</div>
 					</div>
 

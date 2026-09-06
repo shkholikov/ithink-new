@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/hero';
 import Services from '@/components/sections/services';
@@ -28,15 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <Hero locale={locale} />
       <Services locale={locale} />
-      <HowItWorks />
-      <TrustedBy />
-      <WhyUs />
-      <Testimonials />
-      <ContactCta />
+      <HowItWorks locale={locale} />
+      <TrustedBy locale={locale} />
+      <WhyUs locale={locale} />
+      <Testimonials locale={locale} />
+      <ContactCta locale={locale} />
     </>
   );
 }

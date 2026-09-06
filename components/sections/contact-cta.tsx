@@ -1,12 +1,10 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { MessageSquare } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ContactBlock } from "@/components/ui/contact-block";
 
-export default function ContactCta() {
-	const t = useTranslations("cta");
+export default async function ContactCta({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "cta" });
 
 	return (
 		<section id="contact" className="py-24 lg:py-32 border-t border-border bg-background relative overflow-hidden">

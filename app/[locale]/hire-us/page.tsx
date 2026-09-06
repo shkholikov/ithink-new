@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import HireUsPage from '@/components/pages/hire-us-page';
 
@@ -22,5 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HireUs({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return <HireUsPage locale={locale} />;
 }

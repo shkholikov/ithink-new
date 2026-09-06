@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import CustomersPage from '@/components/pages/customers-page';
 
@@ -22,5 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Customers({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   return <CustomersPage locale={locale} />;
 }

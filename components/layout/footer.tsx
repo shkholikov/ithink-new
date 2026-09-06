@@ -1,20 +1,16 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Send, Phone } from "lucide-react";
-import { useIsDark } from "@/hooks/use-is-dark";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 
 interface FooterProps {
 	locale: string;
 }
 
-export default function Footer({ locale }: FooterProps) {
-	const t = useTranslations("footer");
-	const nav = useTranslations("nav");
-	const isDark = useIsDark();
+export default async function Footer({ locale }: FooterProps) {
+	const t = await getTranslations({ locale, namespace: "footer" });
+	const nav = await getTranslations({ locale, namespace: "nav" });
 	const year = new Date().getFullYear();
 
 	const columns = [
@@ -57,7 +53,8 @@ export default function Footer({ locale }: FooterProps) {
 					{/* Brand */}
 					<div className="sm:col-span-2 lg:col-span-2">
 						<Link href={`/${locale}`}>
-							<Image src={isDark ? "/logo-negative.png" : "/logo.png"} alt="ITHINK" width={110} height={34} className="h-8 w-auto mb-4" />
+							<Image src="/logo.png" alt="ITHINK" width={110} height={36} className="h-8 w-auto mb-4 dark:hidden" />
+							<Image src="/logo-negative.png" alt="ITHINK" width={110} height={36} className="h-8 w-auto mb-4 hidden dark:block" />
 						</Link>
 						<p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-5">{t("slogan")}</p>
 						<div className="flex items-center gap-2">

@@ -1,6 +1,14 @@
+import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
+
+// The slugs the navigation actually links to, so these pages are built once
+// instead of invoking a function per request. dynamicParams stays at its
+// default of true, so any other slug still renders on demand exactly as before.
+export function generateStaticParams() {
+  return [{ slug: "courses" }, { slug: "certification" }, { slug: "corporate" }];
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
@@ -14,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TrainingPage({ params }: Props) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const subtitle: Record<string, string> = { uz: 'Tez orada...', ru: 'Скоро...', en: 'Coming soon...' };
 
   return (
