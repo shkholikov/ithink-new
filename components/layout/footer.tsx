@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Send, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
+import { SERVICE_SLUGS } from "@/components/pages/service-page";
 
 interface FooterProps {
 	locale: string;
@@ -17,9 +18,12 @@ export default async function Footer({ locale }: FooterProps) {
 		{
 			heading: nav("services"),
 			links: [
-				{ label: "CRM & Sales Automation", href: `/${locale}/services/crm` },
-				{ label: "Software Development", href: `/${locale}/services/software` },
-				{ label: "IT Infrastructure", href: `/${locale}/services/infrastructure` },
+				// Slugs come from the shared list, so these cannot drift from the
+				// routes again — all three used to 404 on every page of the site.
+				...[SERVICE_SLUGS[2], SERVICE_SLUGS[4], SERVICE_SLUGS[0]].map((slug) => ({
+					label: nav(`items.services.${slug}.title`),
+					href: `/${locale}/services/${slug}`
+				})),
 				{ label: t("links.hireUs"), href: `/${locale}/hire-us` },
 				{ label: t("links.websites"), href: `/${locale}/websites` }
 			]

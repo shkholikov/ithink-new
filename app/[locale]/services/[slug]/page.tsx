@@ -1,9 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ServicePage, { type ServiceSlug } from "@/components/pages/service-page";
+import ServicePage, { SERVICE_SLUGS, type ServiceSlug } from "@/components/pages/service-page";
 
-const validSlugs: ServiceSlug[] = ["it-infrastructure", "managed-it", "crm-automation", "process-automation", "software-development", "it-audit"];
+const validSlugs: readonly ServiceSlug[] = SERVICE_SLUGS;
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
