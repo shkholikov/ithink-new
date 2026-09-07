@@ -1,6 +1,0 @@
-[  143873ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/blog?_rsc=eqsj5:0
-[  143877ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/websites?_rsc=eqsj5:0
-[  146108ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/websites?_rsc=1isx5:0
-[  146109ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/blog?_rsc=1isx5:0
-[  182868ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/blog?_rsc=1isx5:0
-[  182876ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4102/uz/websites?_rsc=1isx5:0
