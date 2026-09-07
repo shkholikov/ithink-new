@@ -13,6 +13,9 @@ import Footer from '@/components/layout/footer';
  */
 const CLIENT_NAMESPACES = [
   'nav',
+  // error.tsx is a client component, so its copy must reach the browser —
+  // without this it renders the key paths instead of the text.
+  'error',
   'clients',
   'contact',
   'customers',

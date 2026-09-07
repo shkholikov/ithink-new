@@ -1,4 +1,18 @@
 {
+	"notFound": {
+		"badge": "404",
+		"title": "Page not found",
+		"subtitle": "The link may be out of date, or the page has moved. Here is where to go next.",
+		"home": "Go to homepage",
+		"contact": "Contact us"
+	},
+	"error": {
+		"badge": "Error",
+		"title": "Something went wrong",
+		"subtitle": "This page could not be loaded. Try again, or get in touch and we'll help.",
+		"retry": "Try again",
+		"home": "Go to homepage"
+	},
 	"nav": {
 		"company": "Company",
 		"services": "Services",

@@ -1,4 +1,18 @@
 {
+	"notFound": {
+		"badge": "404",
+		"title": "Sahifa topilmadi",
+		"subtitle": "Havola eskirgan yoki sahifa ko'chirilgan bo'lishi mumkin. Keyingi qadamlar quyida.",
+		"home": "Bosh sahifaga",
+		"contact": "Biz bilan bog'laning"
+	},
+	"error": {
+		"badge": "Xatolik",
+		"title": "Nimadir noto'g'ri ketdi",
+		"subtitle": "Sahifani yuklab bo'lmadi. Qaytadan urinib ko'ring yoki biz bilan bog'laning — yordam beramiz.",
+		"retry": "Qayta urinish",
+		"home": "Bosh sahifaga"
+	},
 	"nav": {
 		"company": "Kompaniya",
 		"services": "Xizmatlar",
