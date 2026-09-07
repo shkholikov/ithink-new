@@ -168,9 +168,9 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 					    regional-indicator pairs as grey letterboxes, and a map shows the
 					    spread — Central Asia plus the US — at a glance. */}
 					<FadeIn duration={0.4} className="max-w-5xl mx-auto">
-						<div className="rounded-2xl border border-border bg-card p-4 sm:p-8">
+						<div className="rounded-2xl border border-border bg-card p-3 sm:p-6 lg:p-8">
 							<DottedMap
-								markers={MARKETS.map((m) => ({ lat: m.lat, lng: m.lng, size: 0.55 }))}
+								markers={MARKETS.map((m) => ({ lat: m.lat, lng: m.lng, size: 0.8 }))}
 								markerColor="#377dff"
 								dotRadius={0.22}
 								pulse
