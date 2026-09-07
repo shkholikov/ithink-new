@@ -16,8 +16,17 @@ import { PageHero } from "@/components/ui/page-hero";
 import { SectionBadge } from "@/components/ui/section-badge";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { DottedMap } from "@/components/ui/dotted-map";
 
 const WHY_ICONS = [Users, CheckCircle2, ArrowRight, MessageSquare];
+
+/** The markets, pinned at the city we actually operate from in each. */
+const MARKETS = [
+	{ key: "uz", lat: 41.2995, lng: 69.2401 },
+	{ key: "tj", lat: 38.5598, lng: 68.787 },
+	{ key: "kz", lat: 43.222, lng: 76.8512 },
+	{ key: "us", lat: 29.7604, lng: -95.3698 }
+] as const;
 
 export default async function CompanyPage({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "company" });
@@ -155,19 +164,30 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("location.title")}</h2>
 					</FadeIn>
 
-					<div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-3xl mx-auto">
-						{[
-							{ flag: "🇺🇿", country: t("location.uz") },
-							{ flag: "🇹🇯", country: t("location.tj") },
-							{ flag: "🇰🇿", country: t("location.kz") },
-							{ flag: "🇺🇸", country: t("location.us") },
-						].map(({ flag, country }, i) => (
-							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 text-center hover:border-[#f9b934]/30 transition-colors">
-								<div className="text-4xl mb-3">{flag}</div>
-								<p className="text-sm text-foreground font-medium">{country}</p>
-							</FadeIn>
-						))}
-					</div>
+					{/* The four markets as a map rather than flag emoji: Windows renders
+					    regional-indicator pairs as grey letterboxes, and a map shows the
+					    spread — Central Asia plus the US — at a glance. */}
+					<FadeIn duration={0.4} className="max-w-5xl mx-auto">
+						<div className="rounded-2xl border border-border bg-card p-4 sm:p-8">
+							<DottedMap
+								markers={MARKETS.map((m) => ({ lat: m.lat, lng: m.lng, size: 0.55 }))}
+								markerColor="#377dff"
+								dotRadius={0.22}
+								pulse
+								className="w-full text-foreground/25 dark:text-foreground/30"
+								aria-hidden="true"
+							/>
+						</div>
+
+						<ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+							{MARKETS.map((market) => (
+								<li key={market.key} className="flex items-center gap-2 text-sm text-foreground">
+									<span className="w-2 h-2 rounded-full bg-[#377dff] shrink-0" aria-hidden="true" />
+									{t(`location.${market.key}`)}
+								</li>
+							))}
+						</ul>
+					</FadeIn>
 				</div>
 			</section>
 
