@@ -233,7 +233,7 @@ export default function Navbar({ locale }: NavbarProps) {
 						<button
 							onClick={() => setTheme(isDark ? "light" : "dark")}
 							className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-							aria-label="Toggle theme"
+							aria-label={isDark ? t("lightMode") : t("darkMode")}
 						>
 							{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
 						</button>
@@ -241,10 +241,10 @@ export default function Navbar({ locale }: NavbarProps) {
 
 					{/* Mobile */}
 					<Sheet open={open} onOpenChange={setOpen}>
-						<SheetTrigger className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors">
+						<SheetTrigger className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label={t("openMenu")}>
 							{open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
 						</SheetTrigger>
-						<SheetContent side="right" className="w-full sm:w-80 bg-background border-l border-border p-0">
+						<SheetContent side="right" closeLabel={t("closeMenu")} className="w-full sm:w-80 bg-background border-l border-border p-0">
 							<div className="flex flex-col h-full">
 								<div className="flex items-center p-4 border-b border-white/5">
 									<Image src="/logo.png" alt="ITHINK" width={100} height={32} className="h-7 w-auto dark:hidden" />
@@ -319,10 +319,9 @@ export default function Navbar({ locale }: NavbarProps) {
 									<button
 										onClick={() => setTheme(isDark ? "light" : "dark")}
 										className="w-full p-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center gap-2 text-sm"
-										aria-label="Toggle theme"
 									>
 										{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-										{!isDark ? "Light mode" : "Dark mode"}
+										{isDark ? t("lightMode") : t("darkMode")}
 									</button>
 								</div>
 							</div>

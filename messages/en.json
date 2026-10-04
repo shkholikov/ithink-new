@@ -30,6 +30,10 @@
 		"blog": "Blog",
 		"career": "Career",
 		"freeCta": "Get Free Consultation",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
+		"darkMode": "Dark theme",
+		"lightMode": "Light theme",
 		"items": {
 			"services": {
 				"it-infrastructure": { "title": "IT Infrastructure", "description": "Servers, networks, and cloud infrastructure for stable operations." },

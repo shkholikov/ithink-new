@@ -30,6 +30,10 @@
 		"blog": "Blog",
 		"career": "Karyera",
 		"freeCta": "Bepul Konsultatsiya",
+		"openMenu": "Menyuni ochish",
+		"closeMenu": "Menyuni yopish",
+		"darkMode": "Qorong'i mavzu",
+		"lightMode": "Yorug' mavzu",
 		"items": {
 			"services": {
 				"it-infrastructure": { "title": "IT-infratuzilma", "description": "Barqaror ishlash uchun serverlar, tarmoqlar va cloud infratuzilma." },
