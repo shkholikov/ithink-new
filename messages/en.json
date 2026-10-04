@@ -274,7 +274,8 @@
 			"hireUs": "Outsourcing",
 			"websites": "Websites",
 			"pricing": "Pricing",
-			"contactPage": "Contact Us"
+			"contactPage": "Contact Us",
+			"privacy": "Privacy policy"
 		}
 	},
 	"about": {
@@ -1166,5 +1167,51 @@
 				"subtitle": "That's exactly what the audit is for. Let's find out together."
 			}
 		}
+	},
+	"privacy": {
+		"hero": {
+			"badge": "Document",
+			"title": "Privacy Policy",
+			"subtitle": "How ITHINK collects, uses and protects the data you leave on this site."
+		},
+		"updated": "Version of [date]",
+		"sections": [
+			{
+				"title": "Who processes your data",
+				"body": "The data controller is [ITHINK LLC], [registered address], Tashkent, Republic of Uzbekistan (\"ITHINK\", \"we\"). This policy explains how we handle the data you leave on ithink.uz."
+			},
+			{
+				"title": "What we collect",
+				"body": "From the request form: your name, phone number, email, Telegram username, the service you chose, a description of your task and an approximate budget. Email, Telegram and budget are optional.\n\nAutomatically, together with the request: the address of the page it was sent from, the site language and where you came from — utm tags, ad click identifiers (fbclid, gclid), the referring site and the first page of your visit."
+			},
+			{
+				"title": "Why we use it",
+				"body": "To contact you about your request, prepare an offer and work with you as a client. The traffic-source data shows us which advertising brings clients in. We do not sell your data or send you mailings without your separate consent."
+			},
+			{
+				"title": "Where it is stored and who can see it",
+				"body": "Requests go into amoCRM, the CRM our sales team works in. Only the ITHINK staff who handle requests can access them.\n\nThe site relies on these services: amoCRM to manage requests; Cloudflare Turnstile to check that a person, not a bot, is sending the form (Cloudflare processes technical browser data and your IP address); Vercel to host the site and the server that receives requests."
+			},
+			{
+				"title": "Data kept in your browser",
+				"body": "The site keeps the source of your first visit in your browser (localStorage) for 30 days, to link a request to an ad campaign, along with your chosen colour theme. It sets no third-party advertising cookies. You can delete this data in your browser settings."
+			},
+			{
+				"title": "How long we keep it",
+				"body": "For as long as we need it to handle your request and work together, and no longer than three years after our last contact unless the law requires us to keep it longer."
+			},
+			{
+				"title": "Your rights",
+				"body": "Under the Law of the Republic of Uzbekistan \"On Personal Data\" you can ask which of your data we hold, have it corrected or deleted, and withdraw your consent. Write to team@ithink.uz and we will reply within 10 working days."
+			},
+			{
+				"title": "Consent",
+				"body": "By sending the form and ticking the consent box, you allow ITHINK to process the data you provided under this policy."
+			},
+			{
+				"title": "Changes and contact",
+				"body": "We may update this policy; the current version is always published on this page. Questions about your data: team@ithink.uz, +998 95 171-71-01."
+			}
+		]
 	}
 }

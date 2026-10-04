@@ -112,7 +112,7 @@ export default async function Footer({ locale }: FooterProps) {
 					<p className="text-xs text-muted-foreground">
 						© {year} ITHINK. {t("rights")}.
 					</p>
-					<div className="flex items-center gap-4 text-xs text-muted-foreground">
+					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
 						<a href="mailto:team@ithink.uz" className="hover:text-foreground transition-colors">
 							team@ithink.uz
 						</a>
@@ -123,6 +123,10 @@ export default async function Footer({ locale }: FooterProps) {
 						<span className="text-border">·</span>
 						<Link href={`/${locale}/contact`} className="hover:text-foreground transition-colors">
 							{t("links.contactPage")}
+						</Link>
+						<span className="text-border">·</span>
+						<Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">
+							{t("links.privacy")}
 						</Link>
 					</div>
 				</div>
