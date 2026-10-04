@@ -1,10 +1,8 @@
 import { AsYouType, parsePhoneNumberFromString } from "libphonenumber-js/min";
 
 /**
- * Countries offered in the lead form's phone field. Codes, not flag emoji:
- * flags render as letter pairs on Windows (see the market map, which dropped
- * them for the same reason). Placeholders are each country's example mobile
- * number, without the dial code.
+ * Countries offered in the lead form's phone field. Placeholders are each
+ * country's example mobile number, without the dial code.
  */
 export const PHONE_COUNTRIES = [
 	{ code: "UZ", dial: "998", placeholder: "90 123 45 67" },
@@ -21,7 +19,15 @@ export type PhoneCountry = (typeof PHONE_COUNTRIES)[number]["code"];
 
 export const DEFAULT_PHONE_COUNTRY: PhoneCountry = "UZ";
 
-function dialOf(country: PhoneCountry) {
+/**
+ * Flag emoji from the ISO code (regional indicator letters). Windows does not
+ * draw flag emoji and shows the two letters instead, which still reads fine.
+ */
+export function flagOf(country: PhoneCountry) {
+	return String.fromCodePoint(...[...country].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
+}
+
+export function dialOf(country: PhoneCountry) {
 	return PHONE_COUNTRIES.find((c) => c.code === country)!.dial;
 }
 
