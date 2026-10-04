@@ -10,6 +10,12 @@ import ContactCta from '@/components/sections/contact-cta';
 
 type Props = { params: Promise<{ locale: string }> };
 
+// Only the three locales are valid here. A path the proxy skips (anything with
+// a dot, e.g. `/foo.txt`) would otherwise reach the locale layout, which is the
+// root layout and has no not-found page above it. Returning 404 at routing time
+// sends it to app/global-not-found.tsx instead.
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
