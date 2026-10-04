@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowUpRight, Server, MonitorCheck, TrendingUp, Workflow, Code2, Search, Layers } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
-import { SERVICE_SLUGS } from "@/components/pages/service-page";
+import { SERVICE_SLUGS } from "@/lib/services";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const serviceIcons = [Server, MonitorCheck, TrendingUp, Workflow, Code2, Search];

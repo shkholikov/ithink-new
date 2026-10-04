@@ -1,7 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ServicePage, { SERVICE_SLUGS, type ServiceSlug } from "@/components/pages/service-page";
+import ServicePage from "@/components/pages/service-page";
+import { SERVICE_SLUGS, type ServiceSlug } from "@/lib/services";
 
 const validSlugs: readonly ServiceSlug[] = SERVICE_SLUGS;
 

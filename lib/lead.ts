@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { PHONE_COUNTRIES, toE164, type PhoneCountry } from "@/lib/phone";
-import type { ServiceSlug as SitePageSlug } from "@/components/pages/service-page";
+import type { ServiceSlug as SitePageSlug } from "@/lib/services";
 
 /**
  * The lead intake contract, mirrored from the endpoint's schema

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Send, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
-import { SERVICE_SLUGS } from "@/components/pages/service-page";
+import { SERVICE_SLUGS } from "@/lib/services";
 
 interface FooterProps {
 	locale: string;

@@ -48,22 +48,7 @@ import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
 import { LeadForm } from "@/components/ui/lead-form";
 import { PAGE_TO_LEAD_SERVICE } from "@/lib/lead";
-
-/**
- * The six service pages, in the order their cards appear on the homepage.
- * Both the homepage grid and the [slug] route read this, so a card can never
- * point at a page that does not exist.
- */
-export const SERVICE_SLUGS = [
-	"it-infrastructure",
-	"managed-it",
-	"crm-automation",
-	"process-automation",
-	"software-development",
-	"it-audit"
-] as const;
-
-export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+import type { ServiceSlug } from "@/lib/services";
 
 interface ServiceConfig {
 	heroIcon: LucideIcon;
