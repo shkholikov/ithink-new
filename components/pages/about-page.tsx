@@ -37,13 +37,13 @@ export default async function AboutPage({ locale }: { locale: string }) {
 			<section className="py-20 border-t border-border bg-secondary/20">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12 items-start">
-						<FadeIn x={-20} y={0}>
+						<FadeIn>
 							<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-accent-yellow-text text-xs font-medium mb-5">
 								{t("story.badge")}
 							</span>
 							<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t("story.title")}</h2>
 						</FadeIn>
-						<FadeIn delay={0.1} x={20} y={0} className="space-y-5">
+						<FadeIn className="space-y-5">
 							<p className="text-muted-foreground leading-relaxed">{t("story.p1")}</p>
 							<p className="text-muted-foreground leading-relaxed">{t("story.p2")}</p>
 						</FadeIn>
@@ -63,7 +63,7 @@ export default async function AboutPage({ locale }: { locale: string }) {
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 						{values.map((v, i) => (
-							<FadeIn key={i} delay={i * 0.1} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-all">
+							<FadeIn key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-all">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<v.Icon className="w-5 h-5 text-brand-text" />
 								</div>

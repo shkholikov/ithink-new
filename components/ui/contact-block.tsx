@@ -1,6 +1,3 @@
-"use client";
-
-import { m } from "framer-motion";
 import { Phone, Send, Mail, Clock } from "lucide-react";
 import { LeadForm } from "@/components/ui/lead-form";
 
@@ -31,13 +28,7 @@ export function ContactBlock({ strings, pageTag }: ContactBlockProps) {
 	return (
 		<div className="grid lg:grid-cols-2 gap-6">
 			{/* Info */}
-			<m.div
-				initial={{ opacity: 0, x: -20 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true, margin: "-50px" }}
-				transition={{ duration: 0.5 }}
-				className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-6"
-			>
+			<div className="reveal bg-card border border-border rounded-2xl p-8 flex flex-col gap-6">
 				<div>
 					<h2 className="text-xl font-bold text-foreground mb-1">{strings.infoTitle}</h2>
 					<p className="text-sm text-muted-foreground">{strings.infoSubtitle}</p>
@@ -67,18 +58,12 @@ export function ContactBlock({ strings, pageTag }: ContactBlockProps) {
 					<Clock className="w-3.5 h-3.5 text-brand-text flex-shrink-0" />
 					{strings.responseTime}
 				</div>
-			</m.div>
+			</div>
 
 			{/* Form */}
-			<m.div
-				initial={{ opacity: 0, x: 20 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true, margin: "-50px" }}
-				transition={{ duration: 0.5 }}
-				className="bg-card border border-border rounded-2xl p-8"
-			>
+			<div className="reveal bg-card border border-border rounded-2xl p-8">
 				<LeadForm pageTag={pageTag} />
-			</m.div>
+			</div>
 		</div>
 	);
 }

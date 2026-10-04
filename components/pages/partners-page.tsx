@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
 import { CheckCircle2, ArrowRight, Handshake } from "lucide-react";
 import Link from "next/link";
 import { PageHero } from "@/components/ui/page-hero";
@@ -32,14 +31,7 @@ export default function PartnersPage({ locale }: { locale: string }) {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 						{partners.map((p, i) => (
-							<m.div
-								key={i}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, margin: "-50px" }}
-								transition={{ duration: 0.4, delay: i * 0.08 }}
-								className="bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-7 transition-all duration-300"
-							>
+							<div key={i} className="reveal bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-7 transition-all duration-300">
 								<div className={`w-14 h-14 rounded-2xl border flex items-center justify-center mb-5 ${accents[i].icon}`}>
 									<span className="text-lg font-black">{p.name.slice(0, 2).toUpperCase()}</span>
 								</div>
@@ -53,18 +45,12 @@ export default function PartnersPage({ locale }: { locale: string }) {
 								</div>
 
 								<p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
-							</m.div>
+							</div>
 						))}
 					</div>
 
 					{/* CTA */}
-					<m.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5, delay: 0.3 }}
-						className="mt-14 text-center p-10 bg-[#377dff]/5 border border-[#377dff]/20 rounded-3xl"
-					>
+					<div className="reveal mt-14 text-center p-10 bg-[#377dff]/5 border border-[#377dff]/20 rounded-3xl">
 						<h3 className="text-2xl font-bold text-foreground mb-3">{ct("hero.title")}</h3>
 						<p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">{ct("hero.subtitle")}</p>
 						<Link
@@ -74,7 +60,7 @@ export default function PartnersPage({ locale }: { locale: string }) {
 							{ct("hero.badge")}
 							<ArrowRight className="w-4 h-4" />
 						</Link>
-					</m.div>
+					</div>
 				</div>
 			</section>
 		</div>

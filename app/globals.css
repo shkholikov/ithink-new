@@ -177,6 +177,24 @@
 	animation: appear 0.5s ease-out both;
 }
 
+/* Scroll entrance, driven by the scroll position instead of JavaScript.
+   Content is never hidden waiting for hydration: browsers without scroll-driven
+   animations (Firefox, older Safari) simply show it with no animation. */
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(var(--reveal-y, 20px));
+	}
+}
+
+@supports (animation-timeline: view()) {
+	.reveal {
+		animation: reveal linear both;
+		animation-timeline: view();
+		animation-range: entry 0% entry 40%;
+	}
+}
+
 /* Marquee scroll */
 @keyframes marquee {
 	from {
@@ -226,6 +244,9 @@
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
+	}
+	.reveal {
+		animation: none !important;
 	}
 }
 

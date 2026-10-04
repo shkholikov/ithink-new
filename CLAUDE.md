@@ -67,7 +67,7 @@ Brand blue and accent yellow used as **text** are `text-brand-text` and `text-ac
 
 ### Motion
 
-`MotionProvider` wraps the tree in framer-motion's `LazyMotion`, so use `m.div`, never `motion.div`. Scroll entrance is `initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }}` — same values everywhere.
+No animation library. Scroll entrance is `<FadeIn>` (`components/ui/fade-in.tsx`), which adds the `.reveal` class — a CSS scroll-driven animation in `app/globals.css`. It renders on the server, so content is never hidden waiting for JavaScript; browsers without `animation-timeline` simply show it unanimated. On-load entrance (above the fold) is the `.appear` class. Do not reintroduce framer-motion or any `initial={{ opacity: 0 }}` pattern — it ships invisible HTML and blanks the page on slow phones until hydration.
 
 ## Commands
 

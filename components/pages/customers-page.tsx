@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { m } from "framer-motion";
 import { Building2 } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 
@@ -55,12 +54,10 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 						{filtered.map((client, i) => (
-							<m.div
+							<div
 								key={client.name}
-								initial={{ opacity: 0, y: 16 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.3, delay: i * 0.05 }}
-								className="group bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300"
+								style={{ animationDelay: `${i * 0.05}s`, animationDuration: "0.3s" }}
+								className="appear group bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300"
 							>
 								<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<span className="text-base font-bold text-brand-text">{client.name.slice(0, 2).toUpperCase()}</span>
@@ -82,7 +79,7 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 										</span>
 									))}
 								</div>
-							</m.div>
+							</div>
 						))}
 					</div>
 				</div>
