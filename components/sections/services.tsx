@@ -49,7 +49,7 @@ export default async function Services({ locale }: ServicesProps) {
 								<div className="relative z-10">
 								{/* Icon */}
 								<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 group-hover:shadow-lg group-hover:shadow-[#377dff]/20 transition-all duration-300">
-									<service.Icon className="w-5 h-5 text-[#377dff]" />
+									<service.Icon className="w-5 h-5 text-brand-text" />
 								</div>
 
 								{/* Title */}
@@ -63,7 +63,7 @@ export default async function Services({ locale }: ServicesProps) {
 										<span className="text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
 											{service.tag}
 										</span>
-										<span className="inline-flex items-center gap-1 text-xs text-muted-foreground group-hover:text-[#377dff] transition-colors">
+										<span className="inline-flex items-center gap-1 text-xs text-muted-foreground group-hover:text-brand-text transition-colors">
 											{t("learnMore")}
 											<ArrowUpRight className="w-3 h-3" />
 										</span>

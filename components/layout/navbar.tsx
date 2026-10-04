@@ -166,7 +166,7 @@ export default function Navbar({ locale }: NavbarProps) {
 															className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors"
 														>
 															<div className="mt-0.5 shrink-0 rounded-md bg-[#377dff]/10 p-2">
-																<item.icon className="size-4 text-[#377dff]" />
+																<item.icon className="size-4 text-brand-text" />
 															</div>
 															<div>
 																<p className="text-sm font-medium text-foreground">{t(`items.${group.key}.${item.slug}.title`)}</p>
@@ -267,7 +267,7 @@ export default function Navbar({ locale }: NavbarProps) {
 																onClick={() => setOpen(false)}
 																className="flex items-center gap-2.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-accent transition-colors"
 															>
-																<item.icon className="size-4 text-[#377dff] shrink-0" />
+																<item.icon className="size-4 text-brand-text shrink-0" />
 																{t(`items.${group.key}.${item.slug}.title`)}
 															</Link>
 														))}

@@ -40,6 +40,9 @@
 	--color-brand-light: #5b96ff;
 	--color-brand-dark: #2563eb;
 	--color-accent-yellow: #f9b934;
+	/* Brand and yellow as *text*: darker in light mode to reach 4.5:1 on white */
+	--color-brand-text: var(--brand-text);
+	--color-accent-yellow-text: var(--accent-yellow-text);
 	--color-surface: #13131f;
 	--color-surface-2: #1a1a2e;
 
@@ -79,6 +82,8 @@
 	--sidebar-accent-foreground: #e2e8f0;
 	--sidebar-border: #1e1e35;
 	--sidebar-ring: #377dff;
+	--brand-text: #377dff;
+	--accent-yellow-text: #f9b934;
 }
 
 /* Light theme */
@@ -94,7 +99,7 @@
 	--secondary: #f0f5ff;
 	--secondary-foreground: #1e2022;
 	--muted: #f0f0f0;
-	--muted-foreground: #677788;
+	--muted-foreground: #5c6b81;
 	--accent: #e8f0ff;
 	--accent-foreground: #1e2022;
 	--destructive: oklch(0.577 0.245 27.325);
@@ -109,6 +114,8 @@
 	--sidebar-accent-foreground: #1e2022;
 	--sidebar-border: #e2e8f0;
 	--sidebar-ring: #377dff;
+	--brand-text: #2563eb;
+	--accent-yellow-text: #a16207;
 }
 
 @layer base {

@@ -63,6 +63,8 @@ bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transitio
 
 Brand blue is `#377dff`, hover `#2563eb`, accent yellow `#f9b934`. Everything else comes from the semantic tokens in `app/globals.css`: `bg-background`, `bg-card`, `bg-secondary`, `text-foreground`, `text-muted-foreground`, `border-border`. Do not introduce a colour that is not already in that file.
 
+Brand blue and accent yellow used as **text** are `text-brand-text` and `text-accent-yellow-text`, never `text-[#377dff]` / `text-[#f9b934]` — the tokens switch to darker values in light mode so the text passes 4.5:1. Backgrounds and borders keep the raw hex.
+
 ### Motion
 
 `MotionProvider` wraps the tree in framer-motion's `LazyMotion`, so use `m.div`, never `motion.div`. Scroll entrance is `initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }}` — same values everywhere.

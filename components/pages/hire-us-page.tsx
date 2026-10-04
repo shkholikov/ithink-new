@@ -68,7 +68,7 @@ export default function HireUsPage({ locale: _ }: { locale: string }) {
 							{benefits.map((b, i) => (
 								<div key={i} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
 									<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center flex-shrink-0">
-										<b.Icon className="w-5 h-5 text-[#377dff]" />
+										<b.Icon className="w-5 h-5 text-brand-text" />
 									</div>
 									<div>
 										<h3 className="text-sm font-semibold text-foreground mb-1">{b.title}</h3>

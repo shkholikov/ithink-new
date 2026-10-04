@@ -29,7 +29,7 @@ export default async function WhyUs({ locale }: { locale: string }) {
 					{items.map((item, i) => (
 						<FadeIn key={i} delay={i * 0.1} duration={0.4} className="group bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
 							<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 transition-colors">
-								<item.Icon className="w-5 h-5 text-[#377dff]" />
+								<item.Icon className="w-5 h-5 text-brand-text" />
 							</div>
 							<h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
 							<p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>

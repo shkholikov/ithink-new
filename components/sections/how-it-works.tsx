@@ -34,7 +34,7 @@ export default async function HowItWorks({ locale }: { locale: string }) {
 						<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="relative flex flex-col items-center text-center">
 							{/* Icon circle */}
 							<div className="relative w-20 h-20 rounded-2xl bg-card border border-border hover:border-[#377dff]/40 flex items-center justify-center mb-5 shadow-sm hover:shadow-[#377dff]/10 hover:shadow-lg transition-all duration-300 z-10">
-								<step.Icon className="w-7 h-7 text-[#377dff]" />
+								<step.Icon className="w-7 h-7 text-brand-text" />
 								{/* Step number badge */}
 								<span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#377dff] text-white text-[10px] font-bold flex items-center justify-center">
 									{step.step}

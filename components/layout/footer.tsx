@@ -85,7 +85,7 @@ export default async function Footer({ locale }: FooterProps) {
 								className="w-9 h-9 rounded-xl bg-secondary hover:bg-[#377dff]/10 hover:border-[#377dff]/30 flex items-center justify-center transition-all duration-200 border border-border group"
 								aria-label="Phone"
 							>
-								<Phone className="w-4 h-4 text-muted-foreground group-hover:text-[#377dff] transition-colors" />
+								<Phone className="w-4 h-4 text-muted-foreground group-hover:text-brand-text transition-colors" />
 							</a>
 						</div>
 					</div>

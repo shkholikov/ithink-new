@@ -82,7 +82,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 						{([Target, Eye, Handshake] as const).map((Icon, i) => (
 							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
-									<Icon className="w-5 h-5 text-[#377dff]" />
+									<Icon className="w-5 h-5 text-brand-text" />
 								</div>
 								<h3 className="text-sm font-semibold text-foreground mb-2">
 									{t(`mission.cards.${i}.label`)}
@@ -120,7 +120,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 										<div
 											className={`ml-8 sm:ml-0 sm:w-[calc(50%-28px)] ${isRight ? "sm:mr-14 sm:text-right" : "sm:ml-14 sm:text-left"}`}
 										>
-											<span className="text-xs font-bold text-[#377dff] tracking-widest uppercase">
+											<span className="text-xs font-bold text-brand-text tracking-widest uppercase">
 												{item.year}
 											</span>
 											<h3 className="text-sm font-semibold text-foreground mt-1 mb-1">{item.title}</h3>
@@ -146,7 +146,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 						{whyItems.map(({ title, description, Icon }, i) => (
 							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
-									<Icon className="w-5 h-5 text-[#377dff]" />
+									<Icon className="w-5 h-5 text-brand-text" />
 								</div>
 								<h3 className="text-sm font-semibold text-foreground mb-2">{title}</h3>
 								<p className="text-xs text-muted-foreground leading-relaxed">{description}</p>

@@ -29,7 +29,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
 						<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="group relative bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
 							{/* Quote icon */}
 							<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 transition-colors">
-								<Quote className="w-4 h-4 text-[#377dff]" />
+								<Quote className="w-4 h-4 text-brand-text" />
 							</div>
 
 							{/* Quote text */}
@@ -39,7 +39,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
 							<div className="flex items-center gap-3">
 								{/* Avatar placeholder */}
 								<div className="w-10 h-10 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center flex-shrink-0">
-									<span className="text-xs font-bold text-[#377dff]">
+									<span className="text-xs font-bold text-brand-text">
 										{item.name
 											.split(" ")
 											.map((n) => n[0])

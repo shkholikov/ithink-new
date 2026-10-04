@@ -22,8 +22,8 @@ export function SectionHeader({ icon, badge, badgeVariant = "blue", title, subti
 					className={cn(
 						"inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-4",
 						badgeVariant === "yellow"
-							? "bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934]"
-							: "bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff]"
+							? "bg-[#f9b934]/10 border border-[#f9b934]/30 text-accent-yellow-text"
+							: "bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text"
 					)}
 				>
 					{badge}

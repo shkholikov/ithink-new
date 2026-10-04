@@ -63,7 +63,7 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 								className="group bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300"
 							>
 								<div className="w-12 h-12 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
-									<span className="text-base font-bold text-[#377dff]">{client.name.slice(0, 2).toUpperCase()}</span>
+									<span className="text-base font-bold text-brand-text">{client.name.slice(0, 2).toUpperCase()}</span>
 								</div>
 
 								<div className="flex items-start justify-between mb-3">
@@ -77,7 +77,7 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 
 								<div className="flex flex-wrap gap-1.5">
 									{client.services.map((s) => (
-										<span key={s} className="text-[10px] text-[#377dff] bg-[#377dff]/10 px-2 py-0.5 rounded-full">
+										<span key={s} className="text-[10px] text-brand-text bg-[#377dff]/10 px-2 py-0.5 rounded-full">
 											{s}
 										</span>
 									))}

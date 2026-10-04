@@ -35,7 +35,7 @@ export default async function Hero({ locale }: HeroProps) {
 
 			<div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				{/* Badge */}
-				<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-8 appear">
+				<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text text-xs font-medium mb-8 appear">
 					<Sparkles className="w-3 h-3" />
 					{t("badge")}
 				</div>
@@ -72,7 +72,7 @@ export default async function Hero({ locale }: HeroProps) {
 					{/* Secondary — hover color shift + chevron */}
 					<Link
 						href="#services"
-						className="group inline-flex items-center gap-2 px-6 py-3.5 bg-secondary/50 hover:bg-accent text-foreground hover:text-[#377dff] text-sm font-medium rounded-xl border border-border hover:border-[#377dff]/40 transition-all duration-200"
+						className="group inline-flex items-center gap-2 px-6 py-3.5 bg-secondary/50 hover:bg-accent text-foreground hover:text-brand-text text-sm font-medium rounded-xl border border-border hover:border-[#377dff]/40 transition-all duration-200"
 					>
 						{t("cta2")}
 						<ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-200" />
@@ -80,7 +80,7 @@ export default async function Hero({ locale }: HeroProps) {
 				</div>
 
 				{/* Trust note */}
-				<p className="text-[11px] text-muted-foreground/50 mt-3 appear" style={{ animationDelay: "0.45s", animationDuration: "0.6s" }}>
+				<p className="text-xs text-muted-foreground mt-3 appear" style={{ animationDelay: "0.45s", animationDuration: "0.6s" }}>
 					{t("trustNote")}
 				</p>
 

@@ -230,7 +230,7 @@ export default function PartnerItgrixPage({ locale }: Props) {
 							<ul className="space-y-3">
 								{c.bitrix24Features.map((feature, i) => (
 									<li key={i} className="flex items-start gap-2.5">
-										<CheckCircle2 className="w-4 h-4 text-[#377dff] shrink-0 mt-0.5" />
+										<CheckCircle2 className="w-4 h-4 text-brand-text shrink-0 mt-0.5" />
 										<span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
 									</li>
 								))}
@@ -247,7 +247,7 @@ export default function PartnerItgrixPage({ locale }: Props) {
 							<ul className="space-y-3">
 								{c.amoFeatures.map((feature, i) => (
 									<li key={i} className="flex items-start gap-2.5">
-										<CheckCircle2 className="w-4 h-4 text-[#377dff] shrink-0 mt-0.5" />
+										<CheckCircle2 className="w-4 h-4 text-brand-text shrink-0 mt-0.5" />
 										<span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
 									</li>
 								))}

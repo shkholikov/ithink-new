@@ -38,7 +38,7 @@ export default function GlobalNotFound() {
 		<html lang="ru" className={`${inter.variable} h-full`}>
 			<body className="min-h-full flex flex-col bg-background text-foreground antialiased">
 				<div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4 text-center">
-					<span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff]">
+					<span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text">
 						{t.badge}
 					</span>
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">{t.title}</h1>

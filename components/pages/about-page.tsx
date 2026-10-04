@@ -38,7 +38,7 @@ export default async function AboutPage({ locale }: { locale: string }) {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12 items-start">
 						<FadeIn x={-20} y={0}>
-							<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] dark:text-[#f9b934] text-xs font-medium mb-5">
+							<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-accent-yellow-text text-xs font-medium mb-5">
 								{t("story.badge")}
 							</span>
 							<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">{t("story.title")}</h2>
@@ -55,7 +55,7 @@ export default async function AboutPage({ locale }: { locale: string }) {
 			<section className="py-20 border-t border-border bg-background">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<FadeIn className="text-center mb-12">
-						<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-4">
+						<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text text-xs font-medium mb-4">
 							{t("values.badge")}
 						</span>
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground">{t("values.title")}</h2>
@@ -65,7 +65,7 @@ export default async function AboutPage({ locale }: { locale: string }) {
 						{values.map((v, i) => (
 							<FadeIn key={i} delay={i * 0.1} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-all">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
-									<v.Icon className="w-5 h-5 text-[#377dff]" />
+									<v.Icon className="w-5 h-5 text-brand-text" />
 								</div>
 								<h3 className="text-sm font-semibold text-foreground mb-2">{v.title}</h3>
 								<p className="text-xs text-muted-foreground leading-relaxed">{v.description}</p>

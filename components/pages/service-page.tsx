@@ -161,7 +161,7 @@ export default async function ServicePage({ locale, slug }: ServicePageProps) {
 								<div className="absolute inset-0 bg-gradient-to-br from-[#377dff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
 								<div className="relative z-10">
 									<div className="w-11 h-11 rounded-xl bg-[#377dff]/10 border border-[#377dff]/20 flex items-center justify-center mb-4 group-hover:bg-[#377dff]/20 group-hover:border-[#377dff]/40 transition-all duration-300">
-										<feature.Icon className="w-5 h-5 text-[#377dff]" />
+										<feature.Icon className="w-5 h-5 text-brand-text" />
 									</div>
 									<h3 className="text-sm font-semibold text-foreground mb-2">{feature.title}</h3>
 									<p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
@@ -194,7 +194,7 @@ export default async function ServicePage({ locale, slug }: ServicePageProps) {
 						{processItems.map((item, i) => (
 							<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="relative flex flex-col items-center text-center">
 								<div className="relative w-20 h-20 rounded-2xl bg-card border border-border hover:border-[#377dff]/40 flex items-center justify-center mb-5 shadow-sm hover:shadow-[#377dff]/10 hover:shadow-lg transition-all duration-300 z-10">
-									<item.Icon className="w-7 h-7 text-[#377dff]" />
+									<item.Icon className="w-7 h-7 text-brand-text" />
 									<span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#377dff] text-white text-[10px] font-bold flex items-center justify-center">
 										{item.step}
 									</span>
@@ -219,7 +219,7 @@ export default async function ServicePage({ locale, slug }: ServicePageProps) {
 									i === 1 ? "bg-[#377dff] border-[#377dff] text-white shadow-xl shadow-[#377dff]/30" : "bg-card border-border"
 								)}>
 								<div className={cn("w-10 h-10 rounded-xl flex items-center justify-center mb-5", i === 1 ? "bg-white/20" : "bg-[#377dff]/10")}>
-									<CheckCircle className={cn("w-5 h-5", i === 1 ? "text-white" : "text-[#377dff]")} />
+									<CheckCircle className={cn("w-5 h-5", i === 1 ? "text-white" : "text-brand-text")} />
 								</div>
 								<h3 className={cn("text-base font-semibold mb-2", i === 1 ? "text-white" : "text-foreground")}>{outcome.title}</h3>
 								<p className={cn("text-sm leading-relaxed", i === 1 ? "text-white/80" : "text-muted-foreground")}>{outcome.description}</p>

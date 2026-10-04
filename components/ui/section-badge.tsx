@@ -14,8 +14,8 @@ export function SectionBadge({ icon: Icon, label, variant = 'blue', className }:
       className={cn(
         'inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium mb-4',
         variant === 'blue'
-          ? 'bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff]'
-          : 'bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934]',
+          ? 'bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text'
+          : 'bg-[#f9b934]/10 border border-[#f9b934]/30 text-accent-yellow-text',
         className
       )}
     >

@@ -47,7 +47,7 @@ export default function PartnersPage({ locale }: { locale: string }) {
 								<div className="flex items-center gap-2 mb-3">
 									<h3 className="text-base font-semibold text-foreground">{p.name}</h3>
 									<span className="inline-flex items-center gap-1 text-[10px] text-muted-foreground bg-secondary px-2 py-0.5 rounded-full">
-										<CheckCircle2 className="w-2.5 h-2.5 text-[#377dff]" />
+										<CheckCircle2 className="w-2.5 h-2.5 text-brand-text" />
 										{t("officialPartner")}
 									</span>
 								</div>

@@ -37,7 +37,7 @@ export default function ClientsGrid({ locale }: ClientsGridProps) {
 					transition={{ duration: 0.5 }}
 					className="mb-10"
 				>
-					<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-[#377dff] text-xs font-medium mb-4">
+					<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text text-xs font-medium mb-4">
 						{t("badge")}
 					</span>
 					<div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -80,7 +80,7 @@ export default function ClientsGrid({ locale }: ClientsGridProps) {
 							className="group bg-card hover:bg-accent border border-border hover:border-[#377dff]/20 rounded-xl p-4 transition-all duration-300"
 						>
 							<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-3 group-hover:bg-[#377dff]/20 transition-colors">
-								<span className="text-sm font-bold text-[#377dff]">{client.name.slice(0, 2).toUpperCase()}</span>
+								<span className="text-sm font-bold text-brand-text">{client.name.slice(0, 2).toUpperCase()}</span>
 							</div>
 							<h3 className="text-sm font-semibold text-foreground mb-1">{client.name}</h3>
 							<span className="inline-block text-[10px] text-muted-foreground bg-secondary px-2 py-0.5 rounded-full mb-2">{client.industry}</span>
@@ -99,7 +99,7 @@ export default function ClientsGrid({ locale }: ClientsGridProps) {
 				>
 					<Link
 						href={`/${locale}/customers`}
-						className="inline-flex items-center gap-2 text-sm text-[#377dff] hover:text-[#2563eb] transition-colors"
+						className="inline-flex items-center gap-2 text-sm text-brand-text hover:text-[#2563eb] transition-colors"
 					>
 						{t("viewAll")}
 						<ArrowRight className="w-4 h-4" />

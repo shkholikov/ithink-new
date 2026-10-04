@@ -24,7 +24,7 @@ export default async function PartnersGrid({ locale }: { locale: string }) {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<FadeIn className="text-center mb-14">
-					<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-[#f9b934] dark:text-[#f9b934] text-xs font-medium mb-4">
+					<span className="inline-flex items-center px-3 py-1 rounded-full bg-[#f9b934]/10 border border-[#f9b934]/30 text-accent-yellow-text text-xs font-medium mb-4">
 						{t("badge")}
 					</span>
 					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">{t("title")}</h2>
@@ -45,7 +45,7 @@ export default async function PartnersGrid({ locale }: { locale: string }) {
 									</div>
 								</div>
 								<span className="flex items-center gap-1 text-[10px] text-muted-foreground bg-secondary px-2 py-1 rounded-full whitespace-nowrap flex-shrink-0">
-									<CheckCircle2 className="w-2.5 h-2.5 text-[#377dff]" />
+									<CheckCircle2 className="w-2.5 h-2.5 text-brand-text" />
 									{t("officialPartner")}
 								</span>
 							</div>

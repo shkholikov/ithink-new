@@ -61,18 +61,18 @@ export function ContactBlock({ strings, messageRows = 5 }: ContactBlockProps) {
 							className="flex items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-[#377dff]/30 transition-colors group"
 						>
 							<div className="w-10 h-10 rounded-lg bg-[#377dff]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#377dff]/20 transition-colors">
-								<Icon className="w-4 h-4 text-[#377dff]" />
+								<Icon className="w-4 h-4 text-brand-text" />
 							</div>
 							<div>
 								<p className="text-[10px] font-semibold text-muted-foreground tracking-widest uppercase">{label}</p>
-								<p className="text-sm font-medium text-foreground group-hover:text-[#377dff] transition-colors">{value}</p>
+								<p className="text-sm font-medium text-foreground group-hover:text-brand-text transition-colors">{value}</p>
 							</div>
 						</a>
 					))}
 				</div>
 
 				<div className="flex items-center gap-2 text-xs text-muted-foreground mt-auto">
-					<Clock className="w-3.5 h-3.5 text-[#377dff] flex-shrink-0" />
+					<Clock className="w-3.5 h-3.5 text-brand-text flex-shrink-0" />
 					{strings.responseTime}
 				</div>
 			</m.div>
