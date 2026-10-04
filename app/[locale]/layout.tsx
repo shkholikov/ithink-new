@@ -33,23 +33,23 @@ export const metadata: Metadata = {
     'Tashkent',
     'ITHINK'
   ],
-  authors: [{ name: 'ITHINK', url: 'https://ithink.uz' }],
+  authors: [{ name: 'ITHINK', url: 'https://www.ithink.uz' }],
   creator: 'ITHINK',
   publisher: 'ITHINK',
-  metadataBase: new URL('https://ithink.uz'),
+  metadataBase: new URL('https://www.ithink.uz'),
   alternates: {
-    canonical: 'https://ithink.uz',
+    canonical: 'https://www.ithink.uz',
     languages: {
-      'uz': 'https://ithink.uz/uz',
-      'ru': 'https://ithink.uz/ru',
-      'en': 'https://ithink.uz/en'
+      'uz': 'https://www.ithink.uz/uz',
+      'ru': 'https://www.ithink.uz/ru',
+      'en': 'https://www.ithink.uz/en'
     }
   },
   openGraph: {
     type: 'website',
     locale: 'uz_UZ',
     alternateLocale: ['ru_RU', 'en_US'],
-    url: 'https://ithink.uz',
+    url: 'https://www.ithink.uz',
     siteName: 'ITHINK',
     title: 'ITHINK — IT Solutions for Business',
     description:

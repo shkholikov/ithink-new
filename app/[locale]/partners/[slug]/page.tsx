@@ -43,11 +43,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title,
 		description: partner?.description,
 		alternates: {
-			canonical: `https://ithink.uz/${locale}/partners/${slug}`,
+			canonical: `https://www.ithink.uz/${locale}/partners/${slug}`,
 			languages: {
-				uz: `https://ithink.uz/uz/partners/${slug}`,
-				ru: `https://ithink.uz/ru/partners/${slug}`,
-				en: `https://ithink.uz/en/partners/${slug}`
+				uz: `https://www.ithink.uz/uz/partners/${slug}`,
+				ru: `https://www.ithink.uz/ru/partners/${slug}`,
+				en: `https://www.ithink.uz/en/partners/${slug}`
 			}
 		}
 	};

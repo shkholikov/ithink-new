@@ -13,14 +13,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `https://ithink.uz/${locale}/company`,
+      canonical: `https://www.ithink.uz/${locale}/company`,
       languages: {
-        uz: 'https://ithink.uz/uz/company',
-        ru: 'https://ithink.uz/ru/company',
-        en: 'https://ithink.uz/en/company',
+        uz: 'https://www.ithink.uz/uz/company',
+        ru: 'https://www.ithink.uz/ru/company',
+        en: 'https://www.ithink.uz/en/company',
       },
     },
-    openGraph: { title, description, url: `https://ithink.uz/${locale}/company` },
+    openGraph: { title, description, url: `https://www.ithink.uz/${locale}/company` },
   };
 }
 

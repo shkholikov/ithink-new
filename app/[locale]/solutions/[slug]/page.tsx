@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: slug,
     alternates: {
-      canonical: `https://ithink.uz/${locale}/solutions/${slug}`,
+      canonical: `https://www.ithink.uz/${locale}/solutions/${slug}`,
     },
   };
 }

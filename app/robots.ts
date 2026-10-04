@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ithink.uz/sitemap.xml',
+    sitemap: 'https://www.ithink.uz/sitemap.xml',
   };
 }

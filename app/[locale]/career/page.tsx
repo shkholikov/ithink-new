@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     alternates: {
-      canonical: `https://ithink.uz/${locale}/career`,
-      languages: { uz: 'https://ithink.uz/uz/career', ru: 'https://ithink.uz/ru/career', en: 'https://ithink.uz/en/career' },
+      canonical: `https://www.ithink.uz/${locale}/career`,
+      languages: { uz: 'https://www.ithink.uz/uz/career', ru: 'https://www.ithink.uz/ru/career', en: 'https://www.ithink.uz/en/career' },
     },
   };
 }
