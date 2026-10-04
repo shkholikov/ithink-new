@@ -2,7 +2,7 @@
 
 import { m } from "framer-motion";
 import { Phone, Send, Mail, Clock } from "lucide-react";
-import { ContactForm } from "@/components/ui/contact-form";
+import { LeadForm } from "@/components/ui/lead-form";
 
 interface ContactBlockStrings {
 	// Info panel
@@ -13,23 +13,16 @@ interface ContactBlockStrings {
 	telegramLabel: string;
 	email: string;
 	responseTime: string;
-	// Form
-	name: string;
-	emailPlaceholder: string;
-	phonePlaceholder: string;
-	message: string;
-	submit: string;
-	sending: string;
-	success: string;
-	error: string;
 }
 
 interface ContactBlockProps {
 	strings: ContactBlockStrings;
+	/** Identifies the page in the form's Telegram deep link. */
+	pageTag: string;
 	messageRows?: number;
 }
 
-export function ContactBlock({ strings, messageRows = 5 }: ContactBlockProps) {
+export function ContactBlock({ strings, pageTag, messageRows = 5 }: ContactBlockProps) {
 	const contacts = [
 		{ icon: Phone, label: "PHONE", value: strings.phone, href: `tel:${strings.phone.replace(/[^\d+]/g, "")}`, external: false },
 		{ icon: Send, label: "TELEGRAM", value: strings.telegramLabel, href: strings.telegramUrl, external: true },
@@ -85,19 +78,7 @@ export function ContactBlock({ strings, messageRows = 5 }: ContactBlockProps) {
 				transition={{ duration: 0.5 }}
 				className="bg-card border border-border rounded-2xl p-8"
 			>
-				<ContactForm
-					strings={{
-						name: strings.name,
-						email: strings.emailPlaceholder,
-						phone: strings.phonePlaceholder,
-						message: strings.message,
-						submit: strings.submit,
-						sending: strings.sending,
-						success: strings.success,
-						error: strings.error
-					}}
-					messageRows={messageRows}
-				/>
+				<LeadForm pageTag={pageTag} messageRows={messageRows} />
 			</m.div>
 		</div>
 	);

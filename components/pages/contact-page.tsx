@@ -22,16 +22,9 @@ export default function ContactPage({ locale: _ }: { locale: string }) {
 							telegramUrl: "https://t.me/ithinkteam",
 							telegramLabel: t("info.telegramHandle"),
 							email: t("info.email"),
-							responseTime: t("info.responseTime"),
-							name: t("form.name"),
-							emailPlaceholder: t("form.email"),
-							phonePlaceholder: t("form.phone"),
-							message: t("form.message"),
-							submit: t("form.submit"),
-							sending: t("form.sending"),
-							success: t("form.success"),
-							error: t("form.error")
+							responseTime: t("info.responseTime")
 						}}
+						pageTag="contact"
 						messageRows={6}
 					/>
 				</div>

@@ -87,6 +87,8 @@ Marketing site, no database or API routes. Three locales (`uz`, `ru`, `en`, defa
 
 Each route splits in two: `app/[locale]/<route>/page.tsx` is a server component owning `params` and `generateMetadata`, and `components/pages/<name>-page.tsx` is a client component reading copy with `useTranslations`. `locale` is prop-drilled because links are built by hand as `` `/${locale}/...` ``.
 
+Every lead form is `LeadForm` (`components/ui/lead-form.tsx`). It posts to `NEXT_PUBLIC_LEAD_ENDPOINT` (the intake endpoint in ithink-miniapp), which creates a real amoCRM deal per submission — test against a local mock, never the live URL. Its schema in `lib/lead.ts` mirrors the endpoint's; keep them in step. First-touch utm data comes from `lib/attribution.ts`.
+
 All copy lives in `messages/{ru,en,uz}.json`, one namespace per page. **Key sets must stay identical across the three files** — next-intl does not throw on a missing key, it renders the key path to the visitor. Any wording change is a three-file edit.
 
 Tailwind v4, CSS-first — tokens live in `@theme inline` in `app/globals.css`, there is no `tailwind.config`. Dark-first: `ThemeProvider` defaults to `dark`, light values live under `.light`. shadcn/ui over `@base-ui/react` (not Radix).

@@ -24,16 +24,9 @@ export default async function ContactCta({ locale }: { locale: string }) {
 						telegramUrl: t("telegramValue"),
 						telegramLabel: "@ithinkteam",
 						email: t("emailValue"),
-						responseTime: t("responseNote"),
-						name: t("name"),
-						emailPlaceholder: t("email"),
-						phonePlaceholder: t("phone"),
-						message: t("message"),
-						submit: t("submit"),
-						sending: t("sending"),
-						success: t("success"),
-						error: t("error")
+						responseTime: t("responseNote")
 					}}
+					pageTag="home"
 				/>
 			</div>
 		</section>

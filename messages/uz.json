@@ -199,15 +199,7 @@
 		"telegramValue": "https://t.me/ithinkteam",
 		"emailValue": "team@ithink.uz",
 		"instagramValue": "https://instagram.com/ithinkuz",
-		"responseNote": "1 ish soati ichida javob beramiz",
-		"name": "To'liq ismingiz",
-		"email": "Email",
-		"phone": "Telefon raqam",
-		"message": "Loyihangiz haqida ayting",
-		"submit": "Xabar Yuborish",
-		"sending": "Yuborilmoqda...",
-		"success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.",
-		"error": "Xato yuz berdi. Qaytadan urinib ko'ring."
+		"responseNote": "1 ish soati ichida javob beramiz"
 	},
 	"howItWorks": {
 		"badge": "Bizning jarayon",
@@ -478,18 +470,6 @@
 			"title": "IT Jamoamizni Yollang",
 			"subtitle": "Uy ichidagi yollash xarajatlarisiz maxsus IT mutaxassislarini oling. Biz sizning IT bo'limingizga aylanamiz."
 		},
-		"form": {
-			"firstName": "Ism",
-			"lastName": "Familiya",
-			"email": "Email",
-			"phone": "Telefon (ixtiyoriy)",
-			"budget": "Byudjet diapazoni",
-			"message": "Ehtiyojlaringizni tasvirlab bering",
-			"submit": "So'rov Yuborish",
-			"sending": "Yuborilmoqda...",
-			"success": "So'rov qabul qilindi! 1 soat ichida siz bilan bog'lanamiz.",
-			"error": "Xato yuz berdi. Qaytadan urinib ko'ring."
-		},
 		"benefits": [
 			{
 				"title": "Yollash Xarajatlari Yo'q",
@@ -615,16 +595,6 @@
 			"responseTime": "1 soat ichida javob beramiz",
 			"subtitle": "Bizga to'g'ridan-to'g'ri yozing — biz doimo yordam berishga tayyormiz.",
 			"telegramHandle": "@ithinkteam"
-		},
-		"form": {
-			"name": "To'liq ismingiz",
-			"email": "Email",
-			"phone": "Telefon raqam",
-			"message": "Xabaringiz",
-			"submit": "Xabar Yuborish",
-			"sending": "Yuborilmoqda...",
-			"success": "Xabar yuborildi! Tez orada siz bilan bog'lanamiz.",
-			"error": "Xato yuz berdi. Qaytadan urinib ko'ring."
 		}
 	},
 	"company": {
@@ -1230,5 +1200,51 @@
 				"body": "Biz ushbu siyosatni yangilashimiz mumkin; amaldagi tahriri doimo shu sahifada e'lon qilinadi. Ma'lumotlar bo'yicha savollar: team@ithink.uz, +998 95 171-71-01."
 			}
 		]
+	},
+	"leadForm": {
+		"service": "Xizmatni tanlang",
+		"name": "Ismingiz",
+		"phone": "Telefon",
+		"email": "Email (ixtiyoriy)",
+		"telegram": "Telegram @username (ixtiyoriy)",
+		"budget": "Taxminiy byudjet (ixtiyoriy)",
+		"description": "Vazifani tasvirlang: nima qilish kerak va qachongacha",
+		"consent": "<link>Maxfiylik siyosatiga</link> muvofiq shaxsiy ma'lumotlarimni qayta ishlashga roziman",
+		"submit": "Ariza yuborish",
+		"sending": "Yuborilmoqda…",
+		"success": "Ariza yuborildi! Bir soat ichida siz bilan bog'lanamiz.",
+		"telegramPrompt": "Telegram qulayroqmi? <link>@ithinkuzbot ga yozing</link>",
+		"telegramCta": "Telegramda yozish",
+		"services": {
+			"it-infrastructure": "IT-infratuzilma",
+			"managed-it-services": "Boshqariladigan IT-xizmatlar",
+			"crm-sales-automation": "CRM va savdoni avtomatlashtirish",
+			"business-process-automation": "Biznes-jarayonlarni avtomatlashtirish",
+			"custom-software-development": "Dasturiy ta'minot ishlab chiqish",
+			"it-audit-consulting": "IT-audit va konsalting",
+			"software-licenses": "Dasturiy ta'minot litsenziyalari",
+			"corporate-training": "Korporativ o'qitish"
+		},
+		"budgets": {
+			"lt_1k": "$1 000 gacha",
+			"1k_5k": "$1 000 – 5 000",
+			"5k_15k": "$5 000 – 15 000",
+			"gt_15k": "$15 000 dan ortiq",
+			"unknown": "Hozircha bilmayman"
+		},
+		"errors": {
+			"service": "Xizmatni tanlang",
+			"name": "Ismingizni kiriting — 2 dan 80 belgigacha",
+			"phone": "Telefon raqamini to'liq kiriting",
+			"email": "Email manzilini tekshiring",
+			"telegram": "Username: 4–32 ta lotin harfi, raqam yoki _",
+			"budget": "Ro'yxatdan byudjetni tanlang",
+			"description": "Vazifani tasvirlang — 10 dan 2000 belgigacha",
+			"consent": "Ma'lumotlarni qayta ishlashga rozilik kerak",
+			"captcha": "Robot emasligingizni tasdiqlang va qayta yuboring",
+			"rateLimited": "Urinishlar juda ko'p. Keyinroq urinib ko'ring yoki bizga Telegramda yozing.",
+			"unavailable": "Arizani yuborib bo'lmadi. Ma'lumotlaringiz shaklda qoldi — qayta urinib ko'ring yoki bizga Telegramda yozing.",
+			"generic": "Nimadir xato ketdi. Maydonlarni tekshirib, qayta urinib ko'ring."
+		}
 	}
 }

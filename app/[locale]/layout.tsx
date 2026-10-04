@@ -95,6 +95,8 @@ const CLIENT_NAMESPACES = [
   'customers',
   'partners',
   'hireUs',
+  // LeadForm is a client leaf on the contact, hire-us, home and service pages.
+  'leadForm',
 ] as const;
 
 function pick(messages: Record<string, unknown>, namespaces: readonly string[]) {

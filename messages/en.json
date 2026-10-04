@@ -193,15 +193,7 @@
 		"telegramValue": "https://t.me/ithinkteam",
 		"emailValue": "team@ithink.uz",
 		"instagramValue": "https://instagram.com/ithinkuz",
-		"responseNote": "We respond within 1 business hour",
-		"name": "Full name",
-		"email": "Email",
-		"phone": "Phone number",
-		"message": "Tell us about your project",
-		"submit": "Send Message",
-		"sending": "Sending...",
-		"success": "Message sent! We'll be in touch soon.",
-		"error": "Something went wrong. Please try again."
+		"responseNote": "We respond within 1 business hour"
 	},
 	"howItWorks": {
 		"badge": "Our Process",
@@ -465,18 +457,6 @@
 			"title": "Hire Our IT Team",
 			"subtitle": "Get dedicated IT professionals without the overhead of in-house hiring. We become your IT department."
 		},
-		"form": {
-			"firstName": "First name",
-			"lastName": "Last name",
-			"email": "Email",
-			"phone": "Phone (optional)",
-			"budget": "Budget range",
-			"message": "Describe your needs",
-			"submit": "Send Request",
-			"sending": "Sending...",
-			"success": "Request received! We'll contact you within 1 hour.",
-			"error": "Something went wrong. Please try again."
-		},
 		"benefits": [
 			{
 				"title": "No Hiring Costs",
@@ -602,16 +582,6 @@
 			"responseTime": "We respond within 1 hour",
 			"subtitle": "Write to us directly — we're always ready to help.",
 			"telegramHandle": "@ithinkteam"
-		},
-		"form": {
-			"name": "Full name",
-			"email": "Email",
-			"phone": "Phone number",
-			"message": "Your message",
-			"submit": "Send Message",
-			"sending": "Sending...",
-			"success": "Message sent! We'll be in touch soon.",
-			"error": "Something went wrong. Please try again."
 		}
 	},
 	"company": {
@@ -1213,5 +1183,51 @@
 				"body": "We may update this policy; the current version is always published on this page. Questions about your data: team@ithink.uz, +998 95 171-71-01."
 			}
 		]
+	},
+	"leadForm": {
+		"service": "Choose a service",
+		"name": "Your name",
+		"phone": "Phone",
+		"email": "Email (optional)",
+		"telegram": "Telegram @username (optional)",
+		"budget": "Approximate budget (optional)",
+		"description": "Describe your task: what needs doing and by when",
+		"consent": "I agree to the processing of my personal data under the <link>privacy policy</link>",
+		"submit": "Send request",
+		"sending": "Sending…",
+		"success": "Request sent! We'll get back to you within an hour.",
+		"telegramPrompt": "Prefer Telegram? <link>Message @ithinkuzbot</link>",
+		"telegramCta": "Message us on Telegram",
+		"services": {
+			"it-infrastructure": "IT infrastructure",
+			"managed-it-services": "Managed IT services",
+			"crm-sales-automation": "CRM and sales automation",
+			"business-process-automation": "Business process automation",
+			"custom-software-development": "Software development",
+			"it-audit-consulting": "IT audit and consulting",
+			"software-licenses": "Software licenses",
+			"corporate-training": "Corporate training"
+		},
+		"budgets": {
+			"lt_1k": "Under $1,000",
+			"1k_5k": "$1,000 – 5,000",
+			"5k_15k": "$5,000 – 15,000",
+			"gt_15k": "Over $15,000",
+			"unknown": "Not sure yet"
+		},
+		"errors": {
+			"service": "Choose a service",
+			"name": "Enter your name — 2 to 80 characters",
+			"phone": "Enter your full phone number",
+			"email": "Check the email address",
+			"telegram": "Username: 4–32 Latin letters, digits or _",
+			"budget": "Choose a budget from the list",
+			"description": "Describe your task — 10 to 2000 characters",
+			"consent": "Please agree to the processing of your data",
+			"captcha": "Confirm you are not a robot and send again",
+			"rateLimited": "Too many attempts. Try again later or message us on Telegram.",
+			"unavailable": "Your request didn't go through. Your details are still in the form — try again or message us on Telegram.",
+			"generic": "Something went wrong. Check the fields and try again."
+		}
 	}
 }

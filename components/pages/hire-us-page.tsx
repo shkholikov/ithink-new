@@ -1,54 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { m } from "framer-motion";
-import { Send, CheckCircle, DollarSign, Users, Repeat, Briefcase } from "lucide-react";
+import { DollarSign, Users, Repeat, Briefcase } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
+import { LeadForm } from "@/components/ui/lead-form";
 
 const benefitIcons = [DollarSign, Users, Repeat];
 
 export default function HireUsPage({ locale: _ }: { locale: string }) {
 	const t = useTranslations("hireUs");
-	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-	const [form, setForm] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		phone: "",
-		budget: "",
-		message: ""
-	});
-
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		setStatus("sending");
-		try {
-			const res = await fetch("https://nodejs-serverless-function-express-two-tau.vercel.app/api/create-lead/", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					name: `${form.firstName} ${form.lastName}`,
-					email: form.email,
-					phone: form.phone,
-					message: `Budget: ${form.budget}\n\n${form.message}`
-				})
-			});
-			setStatus(res.ok ? "success" : "error");
-			if (res.ok) setForm({ firstName: "", lastName: "", email: "", phone: "", budget: "", message: "" });
-		} catch {
-			setStatus("error");
-		}
-	};
 
 	const benefits = [0, 1, 2].map((i) => ({
 		title: t(`benefits.${i}.title`),
 		description: t(`benefits.${i}.description`),
 		Icon: benefitIcons[i]
 	}));
-
-	const inputClass =
-		"w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:border-[#377dff] focus-visible:ring-2 focus-visible:ring-[#377dff]/40 transition-colors";
 
 	return (
 		<div className="pt-24 bg-background">
@@ -86,87 +53,7 @@ export default function HireUsPage({ locale: _ }: { locale: string }) {
 							transition={{ duration: 0.5 }}
 							className="bg-card border border-border rounded-2xl p-7"
 						>
-							{status === "success" ? (
-								<div role="status" className="flex flex-col items-center justify-center gap-3 py-12">
-									<CheckCircle className="w-12 h-12 text-green-500" />
-									<p className="text-foreground font-medium text-center">{t("form.success")}</p>
-								</div>
-							) : (
-								<form onSubmit={handleSubmit} className="space-y-4">
-									<div className="grid grid-cols-2 gap-4">
-										<label className="block">
-											<span className="sr-only">{t("form.firstName")}</span>
-											<input
-												placeholder={t("form.firstName")}
-												value={form.firstName}
-												onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-												required
-												className={inputClass}
-											/>
-										</label>
-										<label className="block">
-											<span className="sr-only">{t("form.lastName")}</span>
-											<input
-												placeholder={t("form.lastName")}
-												value={form.lastName}
-												onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-												required
-												className={inputClass}
-											/>
-										</label>
-									</div>
-									<label className="block">
-										<span className="sr-only">{t("form.email")}</span>
-										<input
-											type="email"
-											placeholder={t("form.email")}
-											value={form.email}
-											onChange={(e) => setForm({ ...form, email: e.target.value })}
-											required
-											className={inputClass}
-										/>
-									</label>
-									<label className="block">
-										<span className="sr-only">{t("form.phone")}</span>
-										<input
-											type="tel"
-											placeholder={t("form.phone")}
-											value={form.phone}
-											onChange={(e) => setForm({ ...form, phone: e.target.value })}
-											className={inputClass}
-										/>
-									</label>
-									<label className="block">
-										<span className="sr-only">{t("form.budget")}</span>
-										<input
-											placeholder={t("form.budget")}
-											value={form.budget}
-											onChange={(e) => setForm({ ...form, budget: e.target.value })}
-											required
-											className={inputClass}
-										/>
-									</label>
-									<label className="block">
-										<span className="sr-only">{t("form.message")}</span>
-										<textarea
-											placeholder={t("form.message")}
-											value={form.message}
-											onChange={(e) => setForm({ ...form, message: e.target.value })}
-											rows={4}
-											className={`${inputClass} resize-none`}
-										/>
-									</label>
-									{status === "error" && <p role="alert" className="text-sm text-red-500">{t("form.error")}</p>}
-									<button
-										type="submit"
-										disabled={status === "sending"}
-										className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] disabled:opacity-60 text-white text-sm font-medium rounded-xl transition-colors"
-									>
-										<Send className="w-4 h-4" />
-										{status === "sending" ? t("form.sending") : t("form.submit")}
-									</button>
-								</form>
-							)}
+							<LeadForm showBudget pageTag="hire_us" messageRows={4} />
 						</m.div>
 					</div>
 				</div>
