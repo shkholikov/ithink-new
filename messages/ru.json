@@ -567,9 +567,7 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "Все услуги",
-			"getConsultation": "Бесплатная консультация",
-			"hireTeam": "Нанять команду"
+			"allServices": "Все услуги"
 		},
 		"it-infrastructure": {
 			"hero": {

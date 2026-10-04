@@ -646,9 +646,7 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "All Services",
-			"getConsultation": "Get Free Consultation",
-			"hireTeam": "Hire Our Team"
+			"allServices": "All Services"
 		},
 		"it-infrastructure": {
 			"hero": {

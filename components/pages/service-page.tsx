@@ -46,6 +46,8 @@ import { PageHero } from "@/components/ui/page-hero";
 import { SectionHeader } from "@/components/ui/section-header";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui/fade-in";
+import { LeadForm } from "@/components/ui/lead-form";
+import { PAGE_TO_LEAD_SERVICE } from "@/lib/lead";
 
 /**
  * The six service pages, in the order their cards appear on the homepage.
@@ -134,13 +136,13 @@ export default async function ServicePage({ locale, slug }: ServicePageProps) {
 			{/* Hero */}
 			<PageHero icon={config.heroIcon} badge={t(`${slug}.hero.badge`)} title={t(`${slug}.hero.title`)} subtitle={t(`${slug}.hero.subtitle`)}>
 				<div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-					<Link
-						href={`/${locale}/contact`}
+					<a
+						href="#lead-form"
 						className="inline-flex items-center gap-2 px-6 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
 					>
 						{t(`${slug}.cta.title`)}
 						<ArrowRight className="w-4 h-4" />
-					</Link>
+					</a>
 					<Link
 						href={`/${locale}/#services`}
 						className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
@@ -229,27 +231,12 @@ export default async function ServicePage({ locale, slug }: ServicePageProps) {
 				</div>
 			</section>
 
-			{/* CTA */}
-			<section className="py-20 border-t border-border">
-				<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<FadeIn >
-						<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t(`${slug}.cta.title`)}</h2>
-						<p className="text-muted-foreground mb-8 text-base leading-relaxed">{t(`${slug}.cta.subtitle`)}</p>
-						<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-							<Link
-								href={`/${locale}/contact`}
-								className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
-							>
-								{t("common.getConsultation")}
-								<ArrowRight className="w-4 h-4" />
-							</Link>
-							<Link
-								href={`/${locale}/hire-us`}
-								className="inline-flex items-center gap-2 px-7 py-3.5 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
-							>
-								{t("common.hireTeam")}
-							</Link>
-						</div>
+			{/* Lead form — the hero CTA scrolls here; the service is preselected. */}
+			<section id="lead-form" className="py-20 border-t border-border scroll-mt-20">
+				<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+					<SectionHeader title={t(`${slug}.cta.title`)} subtitle={t(`${slug}.cta.subtitle`)} className="mb-10" />
+					<FadeIn className="bg-card border border-border rounded-2xl p-8">
+						<LeadForm service={PAGE_TO_LEAD_SERVICE[slug]} pageTag={slug.replace(/-/g, "_")} />
 					</FadeIn>
 				</div>
 			</section>

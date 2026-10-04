@@ -659,9 +659,7 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "Barcha xizmatlar",
-			"getConsultation": "Bepul konsultatsiya",
-			"hireTeam": "Jamoani yollash"
+			"allServices": "Barcha xizmatlar"
 		},
 		"it-infrastructure": {
 			"hero": {
