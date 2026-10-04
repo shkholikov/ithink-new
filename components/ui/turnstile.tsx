@@ -17,6 +17,12 @@ declare global {
 
 const SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
+/**
+ * The captcha is optional: without a site key the widget is not rendered and
+ * forms send no token. Setting the key (and the endpoint's secret) turns it on.
+ */
+export const TURNSTILE_ENABLED = !!SITE_KEY;
+
 interface TurnstileProps {
 	locale: string;
 	theme: "light" | "dark";
@@ -26,8 +32,8 @@ interface TurnstileProps {
 }
 
 /**
- * Cloudflare Turnstile — the lead endpoint rejects any submission without a
- * valid token. The script loads only on pages that render a form.
+ * Cloudflare Turnstile. When enabled, the lead endpoint rejects a submission
+ * without a valid token. The script loads only on pages that render a form.
  */
 export function Turnstile({ locale, theme, onToken, resetKey }: TurnstileProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -70,10 +76,7 @@ export function Turnstile({ locale, theme, onToken, resetKey }: TurnstileProps) 
 		}
 	}, [resetKey]);
 
-	if (!SITE_KEY) {
-		if (process.env.NODE_ENV !== "production") console.warn("NEXT_PUBLIC_TURNSTILE_SITE_KEY is not set — the lead form cannot be submitted.");
-		return null;
-	}
+	if (!SITE_KEY) return null;
 
 	return (
 		<>

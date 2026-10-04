@@ -10,7 +10,7 @@ import { getAttribution } from "@/lib/attribution";
 import { DEFAULT_PHONE_COUNTRY, formatPhone, toE164, type PhoneCountry } from "@/lib/phone";
 import { PhoneField } from "@/components/ui/phone-field";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Turnstile } from "@/components/ui/turnstile";
+import { TURNSTILE_ENABLED, Turnstile } from "@/components/ui/turnstile";
 import { cn } from "@/lib/utils";
 import { COMPANY_SIZES, LEAD_SERVICES, LeadFormSchema, telegramLink, type LeadFormValues, type LeadService } from "@/lib/lead";
 
@@ -78,9 +78,13 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 
 	const onSubmit = handleSubmit(async (values) => {
 		const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
-		if (!endpoint || !token) {
-			if (!endpoint) console.error("NEXT_PUBLIC_LEAD_ENDPOINT is not set.");
-			setServerError(token ? "unavailable" : "captcha");
+		if (!endpoint) {
+			console.error("NEXT_PUBLIC_LEAD_ENDPOINT is not set.");
+			setServerError("unavailable");
+			return;
+		}
+		if (TURNSTILE_ENABLED && !token) {
+			setServerError("captcha");
 			return;
 		}
 
@@ -100,7 +104,7 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 			page_url: location.href,
 			attribution: getAttribution(),
 			event_id: crypto.randomUUID(),
-			turnstile_token: token,
+			turnstile_token: token ?? undefined,
 			website: values.website
 		};
 
