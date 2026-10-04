@@ -107,8 +107,6 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 			phone: toE164(values.phone, values.phone_country),
 			company_size: values.company_size || undefined,
 			description: values.description?.trim() || undefined,
-			// Clicking the button is the consent; the note under it says so.
-			consent: true,
 			locale,
 			page_url: location.href,
 			attribution: getAttribution(),
@@ -327,16 +325,6 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 							</>
 						)}
 					</button>
-
-					<p className="text-xs text-muted-foreground text-center leading-relaxed">
-						{t.rich("consentNote", {
-							link: (chunks) => (
-								<a href={`/${locale}/privacy`} target="_blank" className="text-brand-text underline underline-offset-2 hover:no-underline">
-									{chunks}
-								</a>
-							)
-						})}
-					</p>
 				</div>
 
 				<p className="text-xs text-muted-foreground text-center">

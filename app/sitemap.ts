@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 const locales = ['uz', 'ru', 'en'];
-const pages = ['', '/about', '/customers', '/partners', '/pricing', '/hire-us', '/websites', '/faq', '/contact', '/privacy'];
+const pages = ['', '/about', '/customers', '/partners', '/pricing', '/hire-us', '/websites', '/faq', '/contact'];
 const baseUrl = 'https://ithink.uz';
 
 export default function sitemap(): MetadataRoute.Sitemap {

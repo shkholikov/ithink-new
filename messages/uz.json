@@ -272,8 +272,7 @@
 			"hireUs": "Autsorsing",
 			"websites": "Veb-saytlar",
 			"pricing": "Narxlar",
-			"contactPage": "Kontaktlar",
-			"privacy": "Maxfiylik siyosati"
+			"contactPage": "Kontaktlar"
 		}
 	},
 	"about": {
@@ -1153,52 +1152,6 @@
 			}
 		}
 	},
-	"privacy": {
-		"hero": {
-			"badge": "Hujjat",
-			"title": "Maxfiylik siyosati",
-			"subtitle": "ITHINK saytda qoldirgan ma'lumotlaringizni qanday yig'ishi, ishlatishi va himoya qilishi haqida."
-		},
-		"updated": "Tahrir sanasi: [sana]",
-		"sections": [
-			{
-				"title": "Ma'lumotlarni kim qayta ishlaydi",
-				"body": "Shaxsga doir ma'lumotlar operatori — [\"ITHINK\" MChJ], [yuridik manzil], Toshkent, O'zbekiston Respublikasi (keyingi o'rinlarda — ITHINK, \"biz\"). Ushbu siyosat ithink.uz saytida qoldirgan ma'lumotlaringizni qanday qayta ishlashimizni tushuntiradi."
-			},
-			{
-				"title": "Qanday ma'lumotlarni yig'amiz",
-				"body": "Ariza shaklidan: ismingiz, telefon raqamingiz, tanlangan xizmat, kompaniya hajmi va izoh. Kompaniya hajmi va izohni ko'rsatish ixtiyoriy.\n\nAriza bilan birga avtomatik ravishda: ariza yuborilgan sahifa manzili, sayt tili va qayerdan kelganingiz — utm-belgilar, reklama bosish identifikatorlari (fbclid, gclid), sizni yo'naltirgan sayt va tashrifning birinchi sahifasi."
-			},
-			{
-				"title": "Nima uchun ishlatamiz",
-				"body": "Ariza bo'yicha siz bilan bog'lanish, taklif tayyorlash va mijoz sifatida siz bilan ishlash uchun. Tashrif manbai haqidagi ma'lumotlar qaysi reklama mijoz olib kelayotganini tushunishga yordam beradi. Biz ma'lumotlarni sotmaymiz va alohida roziligingizsiz xabarnomalar yubormaymiz."
-			},
-			{
-				"title": "Ma'lumotlar qayerda saqlanadi va kim ko'ra oladi",
-				"body": "Arizalar savdo bo'limimiz ishlaydigan amoCRM tizimiga tushadi. Ularga faqat arizalar bilan ishlaydigan ITHINK xodimlari kira oladi.\n\nSayt quyidagi xizmatlardan foydalanadi: amoCRM — arizalarni hisobga olish; Cloudflare Turnstile — shaklni bot emas, inson yuborayotganini tekshirish (Cloudflare brauzerning texnik ma'lumotlari va IP-manzilni qayta ishlaydi); Vercel — sayt va arizalarni qabul qiluvchi server xostingi."
-			},
-			{
-				"title": "Brauzeringizdagi ma'lumotlar",
-				"body": "Sayt birinchi tashrifingiz manbasini brauzerda (localStorage) 30 kun saqlaydi — arizani reklama kampaniyasi bilan bog'lash uchun — hamda tanlangan mavzuni. Uchinchi tomon reklama cookie fayllari o'rnatilmaydi. Bu ma'lumotlarni brauzer sozlamalarida o'chirishingiz mumkin."
-			},
-			{
-				"title": "Qancha muddat saqlaymiz",
-				"body": "Ariza bilan ishlash va hamkorlik uchun kerak bo'lgan muddat davomida, lekin qonun uzoqroq saqlashni talab qilmasa, oxirgi aloqadan keyin uch yildan ortiq emas."
-			},
-			{
-				"title": "Sizning huquqlaringiz",
-				"body": "O'zbekiston Respublikasining \"Shaxsga doir ma'lumotlar to'g'risida\"gi Qonuniga muvofiq siz qaysi ma'lumotlaringiz saqlanayotganini bilishingiz, ularni tuzatish yoki o'chirishni talab qilishingiz va roziligingizni qaytarib olishingiz mumkin. Buning uchun team@ithink.uz manziliga yozing — 10 ish kuni ichida javob beramiz."
-			},
-			{
-				"title": "Rozilik",
-				"body": "Shaklni yuborish orqali siz ITHINKga ko'rsatgan ma'lumotlaringizni ushbu siyosat shartlari asosida qayta ishlashga ruxsat berasiz."
-			},
-			{
-				"title": "O'zgarishlar va aloqa",
-				"body": "Biz ushbu siyosatni yangilashimiz mumkin; amaldagi tahriri doimo shu sahifada e'lon qilinadi. Ma'lumotlar bo'yicha savollar: team@ithink.uz, +998 55 555-47-77."
-			}
-		]
-	},
 	"leadForm": {
 		"nameLabel": "Ism",
 		"namePlaceholder": "Ismingiz",
@@ -1222,7 +1175,6 @@
 		"successTitle": "Ariza yuborildi",
 		"successBody": "Bir soat ichida siz bilan bog'lanamiz.",
 		"sent": "Yuborildi",
-		"consentNote": "Tugmani bosish orqali siz <link>maxfiylik siyosatiga</link> muvofiq ma'lumotlaringizni qayta ishlashga rozilik bildirasiz.",
 		"telegramPrompt": "Telegram qulayroqmi? <link>@ithinkuzbot ga yozing</link>",
 		"telegramCta": "Telegramda yozish",
 		"errors": {

@@ -124,10 +124,6 @@ export default async function Footer({ locale }: FooterProps) {
 						<Link href={`/${locale}/contact`} className="hover:text-foreground transition-colors">
 							{t("links.contactPage")}
 						</Link>
-						<span className="text-border">·</span>
-						<Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">
-							{t("links.privacy")}
-						</Link>
 					</div>
 				</div>
 			</div>
