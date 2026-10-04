@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
+import MotionProvider from '@/components/motion-provider';
 import AttributionCapture from '@/components/attribution-capture';
 import '../globals.css';
 
@@ -89,6 +90,7 @@ const CLIENT_NAMESPACES = [
   // error.tsx is a client component, so its copy must reach the browser —
   // without this it renders the key paths instead of the text.
   'error',
+  'clients',
   'contact',
   'customers',
   'partners',
@@ -132,12 +134,14 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable} h-full`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} scriptProps={{ id: 'next-themes-init' }}>
-          <NextIntlClientProvider locale={locale} messages={pick(messages, CLIENT_NAMESPACES)}>
-            <Navbar locale={locale} />
-            <main className="flex-1">{children}</main>
-            <Footer locale={locale} />
-            <AttributionCapture />
-          </NextIntlClientProvider>
+          <MotionProvider>
+            <NextIntlClientProvider locale={locale} messages={pick(messages, CLIENT_NAMESPACES)}>
+              <Navbar locale={locale} />
+              <main className="flex-1">{children}</main>
+              <Footer locale={locale} />
+              <AttributionCapture />
+            </NextIntlClientProvider>
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { m } from "framer-motion";
 import { DollarSign, Users, Repeat, Briefcase } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { LeadForm } from "@/components/ui/lead-form";
@@ -24,7 +25,13 @@ export default function HireUsPage({ locale: _ }: { locale: string }) {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 					<div className="grid lg:grid-cols-2 gap-12">
 						{/* Benefits */}
-						<div className="reveal space-y-5">
+						<m.div
+							initial={{ opacity: 0, x: -20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true, margin: "-50px" }}
+							transition={{ duration: 0.5 }}
+							className="space-y-5"
+						>
 							{benefits.map((b, i) => (
 								<div key={i} className="flex gap-4 bg-card border border-border rounded-2xl p-5">
 									<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center flex-shrink-0">
@@ -36,12 +43,18 @@ export default function HireUsPage({ locale: _ }: { locale: string }) {
 									</div>
 								</div>
 							))}
-						</div>
+						</m.div>
 
 						{/* Form */}
-						<div className="reveal bg-card border border-border rounded-2xl p-7">
+						<m.div
+							initial={{ opacity: 0, x: 20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true, margin: "-50px" }}
+							transition={{ duration: 0.5 }}
+							className="bg-card border border-border rounded-2xl p-7"
+						>
 							<LeadForm pageTag="hire_us" />
-						</div>
+						</m.div>
 					</div>
 				</div>
 			</section>

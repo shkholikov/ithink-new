@@ -80,7 +80,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 						{([Target, Eye, Handshake] as const).map((Icon, i) => (
-							<FadeIn key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
+							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<Icon className="w-5 h-5 text-brand-text" />
 								</div>
@@ -112,7 +112,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 							{timelineItems.map((item, i) => {
 								const isRight = i % 2 === 0;
 								return (
-									<FadeIn key={i} className={`relative flex items-start gap-6 sm:gap-0 ${isRight ? "sm:flex-row" : "sm:flex-row-reverse"}`}>
+									<FadeIn key={i} delay={i * 0.05} duration={0.4} x={isRight ? -20 : 20} y={0} className={`relative flex items-start gap-6 sm:gap-0 ${isRight ? "sm:flex-row" : "sm:flex-row-reverse"}`}>
 										{/* dot */}
 										<div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 mt-1.5 w-3.5 h-3.5 rounded-full bg-[#377dff] border-2 border-background ring-2 ring-[#377dff]/30 shrink-0" />
 
@@ -144,7 +144,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 
 					<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 						{whyItems.map(({ title, description, Icon }, i) => (
-							<FadeIn key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
+							<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border rounded-2xl p-6 hover:border-[#377dff]/30 transition-colors">
 								<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-4">
 									<Icon className="w-5 h-5 text-brand-text" />
 								</div>
@@ -167,7 +167,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 					{/* The four markets as a map rather than flag emoji: Windows renders
 					    regional-indicator pairs as grey letterboxes, and a map shows the
 					    spread — Central Asia plus the US — at a glance. */}
-					<FadeIn className="max-w-5xl mx-auto">
+					<FadeIn duration={0.4} className="max-w-5xl mx-auto">
 						<div className="rounded-2xl border border-border bg-card p-3 sm:p-6 lg:p-8">
 							<DottedMap
 								markers={MARKETS.map((m) => ({ lat: m.lat, lng: m.lng, size: 0.8 }))}
@@ -194,7 +194,7 @@ export default async function CompanyPage({ locale }: { locale: string }) {
 			{/* CTA */}
 			<section className="py-20 border-t border-border bg-secondary/20">
 				<div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<FadeIn>
+					<FadeIn >
 						<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{t("cta.title")}</h2>
 						<p className="text-muted-foreground mb-8">{t("cta.subtitle")}</p>
 						<div className="flex flex-col sm:flex-row items-center justify-center gap-3">

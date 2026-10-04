@@ -29,9 +29,11 @@ export default async function Services({ locale }: ServicesProps) {
 
 				{/* Service Cards */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-					{services.map((service) => (
+					{services.map((service, i) => (
 						<FadeIn
 							key={service.slug}
+							delay={i * 0.07}
+							duration={0.4}
 							className="group relative bg-card hover:bg-accent border border-border hover:border-[#377dff]/40 rounded-2xl transition-all duration-300 overflow-hidden focus-within:ring-2 focus-within:ring-[#377dff] focus-within:border-[#377dff]/40"
 						>
 							{/* The whole card is the link — padding lives here so the entire

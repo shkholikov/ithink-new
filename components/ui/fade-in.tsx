@@ -1,17 +1,42 @@
-import { cn } from "@/lib/utils";
+"use client";
+
+import { m } from "framer-motion";
 
 /**
- * Scroll entrance for a block: fades up as it scrolls into view.
+ * The scroll-entry animation, extracted as a client leaf.
  *
- * Pure CSS (`.reveal` in globals.css, scroll-driven animation), so it renders on
- * the server and the content is visible before any JavaScript loads — the old
- * framer-motion version shipped `opacity: 0` in the HTML and left the page
- * blank on slow phones until hydration.
+ * Several page components were client components purely because they combined
+ * `useTranslations` with framer's `m.*`. Wrapping only the animated element
+ * lets the page around it render on the server, so its copy never ships to the
+ * browser and there is far less to hydrate.
+ *
+ * The defaults are exactly the values used across the site — see CLAUDE.md —
+ * so output is visually identical to the inline `m.div` it replaces.
  */
-export function FadeIn({ children, className, y = 20 }: { children: React.ReactNode; className?: string; y?: number }) {
+export function FadeIn({
+	children,
+	className,
+	delay = 0,
+	duration = 0.5,
+	y = 20,
+	x = 0
+}: {
+	children: React.ReactNode;
+	className?: string;
+	delay?: number;
+	duration?: number;
+	y?: number;
+	x?: number;
+}) {
 	return (
-		<div className={cn("reveal", className)} style={y === 20 ? undefined : ({ "--reveal-y": `${y}px` } as React.CSSProperties)}>
+		<m.div
+			initial={{ opacity: 0, y, x }}
+			whileInView={{ opacity: 1, y: 0, x: 0 }}
+			viewport={{ once: true, margin: "-50px" }}
+			transition={{ duration, delay }}
+			className={className}
+		>
 			{children}
-		</div>
+		</m.div>
 	);
 }

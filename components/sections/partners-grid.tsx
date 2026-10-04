@@ -34,7 +34,7 @@ export default async function PartnersGrid({ locale }: { locale: string }) {
 				{/* Partners Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{partners.map((partner, i) => (
-						<FadeIn key={i} className="bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300">
+						<FadeIn key={i} delay={i * 0.08} duration={0.4} className="bg-card border border-border hover:border-[#377dff]/25 rounded-2xl p-6 transition-all duration-300">
 							<div className="flex items-start justify-between mb-4">
 								<div className="flex items-center gap-2">
 									<div className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 ${accents[i]}`}>

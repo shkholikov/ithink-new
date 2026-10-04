@@ -26,7 +26,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
 				{/* Cards */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{items.map((item, i) => (
-						<FadeIn key={i} y={24} className="group relative bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
+						<FadeIn key={i} delay={i * 0.1} duration={0.45} y={24} className="group relative bg-card border border-border hover:border-[#377dff]/30 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:shadow-[#377dff]/5">
 							{/* Quote icon */}
 							<div className="w-10 h-10 rounded-xl bg-[#377dff]/10 flex items-center justify-center mb-5 group-hover:bg-[#377dff]/20 transition-colors">
 								<Quote className="w-4 h-4 text-brand-text" />
