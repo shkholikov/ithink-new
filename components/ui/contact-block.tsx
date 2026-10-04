@@ -19,10 +19,9 @@ interface ContactBlockProps {
 	strings: ContactBlockStrings;
 	/** Identifies the page in the form's Telegram deep link. */
 	pageTag: string;
-	messageRows?: number;
 }
 
-export function ContactBlock({ strings, pageTag, messageRows = 5 }: ContactBlockProps) {
+export function ContactBlock({ strings, pageTag }: ContactBlockProps) {
 	const contacts = [
 		{ icon: Phone, label: "PHONE", value: strings.phone, href: `tel:${strings.phone.replace(/[^\d+]/g, "")}`, external: false },
 		{ icon: Send, label: "TELEGRAM", value: strings.telegramLabel, href: strings.telegramUrl, external: true },
@@ -78,7 +77,7 @@ export function ContactBlock({ strings, pageTag, messageRows = 5 }: ContactBlock
 				transition={{ duration: 0.5 }}
 				className="bg-card border border-border rounded-2xl p-8"
 			>
-				<LeadForm pageTag={pageTag} messageRows={messageRows} />
+				<LeadForm pageTag={pageTag} />
 			</m.div>
 		</div>
 	);

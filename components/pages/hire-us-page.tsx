@@ -53,7 +53,7 @@ export default function HireUsPage({ locale: _ }: { locale: string }) {
 							transition={{ duration: 0.5 }}
 							className="bg-card border border-border rounded-2xl p-7"
 						>
-							<LeadForm showBudget pageTag="hire_us" messageRows={4} />
+							<LeadForm pageTag="hire_us" />
 						</m.div>
 					</div>
 				</div>

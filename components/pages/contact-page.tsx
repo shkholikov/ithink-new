@@ -25,7 +25,6 @@ export default function ContactPage({ locale: _ }: { locale: string }) {
 							responseTime: t("info.responseTime")
 						}}
 						pageTag="contact"
-						messageRows={6}
 					/>
 				</div>
 			</section>

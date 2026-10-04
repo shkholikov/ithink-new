@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { PHONE_COUNTRIES, toE164, type PhoneCountry } from "@/lib/phone";
 import type { ServiceSlug as SitePageSlug } from "@/components/pages/service-page";
 
 /**
@@ -23,7 +24,7 @@ export const LEAD_SERVICES = [
 
 export type LeadService = (typeof LEAD_SERVICES)[number];
 
-export const BUDGET_RANGES = ["lt_1k", "1k_5k", "5k_15k", "gt_15k", "unknown"] as const;
+export const COMPANY_SIZES = ["1_10", "11_50", "51_200", "200_plus"] as const;
 
 /** The site's service page slugs are shorter than the CRM's service slugs. */
 export const PAGE_TO_LEAD_SERVICE: Record<SitePageSlug, LeadService> = {
@@ -35,56 +36,27 @@ export const PAGE_TO_LEAD_SERVICE: Record<SitePageSlug, LeadService> = {
 	"it-audit": "it-audit-consulting"
 };
 
-/** `+` followed by digits only — what the CRM stores and dials. */
-export function normalizePhone(value: string) {
-	return "+" + value.replace(/\D/g, "");
-}
-
-/**
- * Formats as the visitor types. Uzbek numbers get the familiar
- * `+998 (90) 123-45-67` mask; other country codes (clients in KZ and TJ) are
- * left as `+` and digits, since their groupings differ.
- */
-export function formatPhone(value: string) {
-	const digits = value.replace(/\D/g, "").slice(0, 15);
-	if (!digits) return "+";
-	if (!digits.startsWith("998")) return "+" + digits;
-
-	const rest = digits.slice(3, 12);
-	let out = "+998";
-	if (rest.length > 0) out += " (" + rest.slice(0, 2);
-	if (rest.length >= 2) out += ")";
-	if (rest.length > 2) out += " " + rest.slice(2, 5);
-	if (rest.length > 5) out += "-" + rest.slice(5, 7);
-	if (rest.length > 7) out += "-" + rest.slice(7, 9);
-	return out;
-}
-
 /** The ITHINK bot, tagged with the page the visitor came from (`/start site_<tag>`). */
 export function telegramLink(pageTag: string) {
 	return `https://t.me/ithinkuzbot?start=site_${pageTag.replace(/[^A-Za-z0-9_-]/g, "_").slice(0, 59)}`;
 }
 
-const optionalText = (schema: z.ZodString) => z.union([schema, z.literal("")]).optional();
-
-export const LeadFormSchema = z.object({
-	service: z.enum(LEAD_SERVICES, { error: "service" }),
-	name: z.string().trim().min(2, "name").max(80, "name"),
-	phone: z
-		.string()
-		.trim()
-		.refine((v) => {
-			const digits = v.replace(/\D/g, "");
-			// A started-but-unfinished Uzbek number is the common mistake.
-			if (digits.startsWith("998")) return digits.length === 12;
-			return digits.length >= 9 && digits.length <= 15;
-		}, "phone"),
-	email: optionalText(z.string().trim().max(120).email("email")),
-	telegram: optionalText(z.string().trim().regex(/^@?[A-Za-z0-9_]{4,32}$/, "telegram")),
-	budget: z.union([z.enum(BUDGET_RANGES), z.literal("")]).optional(),
-	description: z.string().trim().min(10, "description").max(2000, "description"),
-	consent: z.literal(true, { error: "consent" }),
-	website: z.string().optional()
-});
+export const LeadFormSchema = z
+	.object({
+		service: z.enum(LEAD_SERVICES, { error: "service" }),
+		name: z.string().trim().min(2, "name").max(80, "name"),
+		phone_country: z.enum(PHONE_COUNTRIES.map((c) => c.code) as [PhoneCountry, ...PhoneCountry[]]),
+		phone: z.string(),
+		company_size: z.union([z.enum(COMPANY_SIZES), z.literal("")]).optional(),
+		description: z.string().trim().max(2000, "description").optional(),
+		website: z.string().optional()
+	})
+	// `when` runs this even if other fields failed, so a bad phone is reported in
+	// the same pass as an empty name instead of only after it is fixed.
+	.refine((v) => typeof v.phone === "string" && !!toE164(v.phone, v.phone_country as PhoneCountry), {
+		path: ["phone"],
+		message: "phone",
+		when: () => true
+	});
 
 export type LeadFormValues = z.input<typeof LeadFormSchema>;

@@ -50,6 +50,8 @@ export function Turnstile({ locale, theme, onToken, resetKey }: TurnstileProps) 
 			theme,
 			language: locale,
 			size: "flexible",
+			// Stays invisible unless Cloudflare actually needs the visitor to click.
+			appearance: "interaction-only",
 			callback: (token: string) => onTokenRef.current(token),
 			"expired-callback": () => onTokenRef.current(null),
 			"error-callback": () => onTokenRef.current(null)
@@ -76,7 +78,7 @@ export function Turnstile({ locale, theme, onToken, resetKey }: TurnstileProps) 
 	return (
 		<>
 			<Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="lazyOnload" onLoad={() => setLoaded(true)} />
-			<div ref={containerRef} className="min-h-[65px]" />
+			<div ref={containerRef} />
 		</>
 	);
 }

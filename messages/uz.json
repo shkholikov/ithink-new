@@ -1200,19 +1200,40 @@
 		]
 	},
 	"leadForm": {
-		"service": "Xizmatni tanlang",
-		"name": "Ismingiz",
-		"phone": "Telefon",
-		"email": "Email (ixtiyoriy)",
-		"telegram": "Telegram (ixtiyoriy)",
-		"budget": "Taxminiy byudjet (ixtiyoriy)",
-		"description": "Vazifani tasvirlang: nima qilish kerak va qachongacha",
-		"consent": "<link>Maxfiylik siyosatiga</link> muvofiq shaxsiy ma'lumotlarimni qayta ishlashga roziman",
-		"submit": "Ariza yuborish",
+		"nameLabel": "Ism",
+		"namePlaceholder": "Ismingiz",
+		"phoneLabel": "Telefon raqami",
+		"countryLabel": "Mamlakat kodi",
+		"serviceLabel": "Xizmat",
+		"companySizeLabel": "Kompaniya hajmi",
+		"commentLabel": "Izoh",
+		"commentPlaceholder": "Xohlasangiz, vazifa haqida qisqacha",
+		"addComment": "Izoh qo'shish",
+		"optional": "ixtiyoriy",
+		"selectPlaceholder": "Tanlang…",
+		"companySizes": {
+			"1_10": "1–10 xodim",
+			"11_50": "11–50 xodim",
+			"51_200": "51–200 xodim",
+			"200_plus": "200 dan ortiq xodim"
+		},
+		"submit": "Bepul konsultatsiya olish",
 		"sending": "Yuborilmoqda…",
 		"success": "Ariza yuborildi! Bir soat ichida siz bilan bog'lanamiz.",
+		"consentNote": "Tugmani bosish orqali siz <link>maxfiylik siyosatiga</link> muvofiq ma'lumotlaringizni qayta ishlashga rozilik bildirasiz.",
 		"telegramPrompt": "Telegram qulayroqmi? <link>@ithinkuzbot ga yozing</link>",
 		"telegramCta": "Telegramda yozish",
+		"errors": {
+			"service": "Xizmatni tanlang",
+			"name": "Ismingizni kiriting — 2 dan 80 belgigacha",
+			"phone": "Tanlangan mamlakat uchun raqamni tekshiring",
+			"company_size": "Ro'yxatdan kompaniya hajmini tanlang",
+			"description": "Izoh — 2000 belgidan oshmasin",
+			"captcha": "Robot emasligingizni tasdiqlang va qayta yuboring",
+			"rateLimited": "Urinishlar juda ko'p. Keyinroq urinib ko'ring yoki bizga Telegramda yozing.",
+			"unavailable": "Arizani yuborib bo'lmadi. Ma'lumotlaringiz shaklda qoldi — qayta urinib ko'ring yoki bizga Telegramda yozing.",
+			"generic": "Nimadir xato ketdi. Maydonlarni tekshirib, qayta urinib ko'ring."
+		},
 		"services": {
 			"it-infrastructure": "IT-infratuzilma",
 			"managed-it-services": "Boshqariladigan IT-xizmatlar",
@@ -1222,27 +1243,6 @@
 			"it-audit-consulting": "IT-audit va konsalting",
 			"software-licenses": "Dasturiy ta'minot litsenziyalari",
 			"corporate-training": "Korporativ o'qitish"
-		},
-		"budgets": {
-			"lt_1k": "$1 000 gacha",
-			"1k_5k": "$1 000 – 5 000",
-			"5k_15k": "$5 000 – 15 000",
-			"gt_15k": "$15 000 dan ortiq",
-			"unknown": "Hozircha bilmayman"
-		},
-		"errors": {
-			"service": "Xizmatni tanlang",
-			"name": "Ismingizni kiriting — 2 dan 80 belgigacha",
-			"phone": "Telefon raqamini to'liq kiriting",
-			"email": "Email manzilini tekshiring",
-			"telegram": "Username: 4–32 ta lotin harfi, raqam yoki _",
-			"budget": "Ro'yxatdan byudjetni tanlang",
-			"description": "Vazifani tasvirlang — 10 dan 2000 belgigacha",
-			"consent": "Ma'lumotlarni qayta ishlashga rozilik kerak",
-			"captcha": "Robot emasligingizni tasdiqlang va qayta yuboring",
-			"rateLimited": "Urinishlar juda ko'p. Keyinroq urinib ko'ring yoki bizga Telegramda yozing.",
-			"unavailable": "Arizani yuborib bo'lmadi. Ma'lumotlaringiz shaklda qoldi — qayta urinib ko'ring yoki bizga Telegramda yozing.",
-			"generic": "Nimadir xato ketdi. Maydonlarni tekshirib, qayta urinib ko'ring."
 		}
 	}
 }

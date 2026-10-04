@@ -1,43 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { useForm, useWatch, type FieldPath } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
-import { Send, CheckCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, Building2, CheckCircle, ChevronDown, Layers, Plus, User } from "lucide-react";
 import { useIsDark } from "@/hooks/use-is-dark";
 import { getAttribution } from "@/lib/attribution";
+import { DEFAULT_PHONE_COUNTRY, formatPhone, toE164, type PhoneCountry } from "@/lib/phone";
+import { PhoneField } from "@/components/ui/phone-field";
 import { Turnstile } from "@/components/ui/turnstile";
 import { cn } from "@/lib/utils";
-import {
-	BUDGET_RANGES,
-	LEAD_SERVICES,
-	LeadFormSchema,
-	formatPhone,
-	normalizePhone,
-	telegramLink,
-	type LeadFormValues,
-	type LeadService
-} from "@/lib/lead";
+import { COMPANY_SIZES, LEAD_SERVICES, LeadFormSchema, telegramLink, type LeadFormValues, type LeadService } from "@/lib/lead";
 
 const INPUT_CLASS =
 	"w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:border-[#377dff] focus-visible:ring-2 focus-visible:ring-[#377dff]/40 transition-colors aria-[invalid=true]:border-red-500/60";
-
+const SELECT_CLASS = `${INPUT_CLASS} appearance-none pl-11 pr-10 cursor-pointer [&>option]:text-foreground`;
+const LABEL_CLASS = "block text-sm font-medium text-foreground mb-2";
+const ICON_CLASS = "pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground";
+const CHEVRON_CLASS = "pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground";
 const ERROR_CLASS = "mt-1.5 text-xs text-red-600 dark:text-red-400";
 
 /** Fields the endpoint can reject by name; anything else is shown as a form-level error. */
-const FIELDS = ["service", "name", "phone", "email", "telegram", "budget", "description", "consent"] as const;
+const FIELDS = ["service", "name", "phone", "company_size", "description"] as const;
+type Field = (typeof FIELDS)[number];
 
 type ServerError = "captcha" | "rateLimited" | "unavailable" | "generic";
 
 interface LeadFormProps {
-	/** Preselects the service and hides the select — used on the service pages. */
+	/** Preselects the service: the select is replaced by a chip naming it (service pages). */
 	service?: LeadService;
-	/** Shows the budget select (/hire-us). */
-	showBudget?: boolean;
 	/** Identifies the page in the Telegram deep link, e.g. `managed_it`. */
 	pageTag: string;
-	messageRows?: number;
 }
 
 /**
@@ -45,30 +39,43 @@ interface LeadFormProps {
  * which creates the amoCRM deal — so never point a dev build at the live URL and
  * submit: every submission is a real deal.
  */
-export function LeadForm({ service, showBudget = false, pageTag, messageRows = 5 }: LeadFormProps) {
+export function LeadForm({ service, pageTag }: LeadFormProps) {
 	const t = useTranslations("leadForm");
 	const locale = useLocale();
 	const isDark = useIsDark();
+	const uid = useId();
+	const id = (field: string) => `${uid}-${field}`;
 	const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
 	const [serverError, setServerError] = useState<ServerError | null>(null);
 	const [token, setToken] = useState<string | null>(null);
 	const [resetKey, setResetKey] = useState(0);
+	const [showComment, setShowComment] = useState(false);
 
 	const {
 		register,
 		handleSubmit,
 		setError,
+		setValue,
+		getValues,
 		control,
 		reset,
 		formState: { errors }
 	} = useForm<LeadFormValues>({
 		resolver: zodResolver(LeadFormSchema),
-		// "" leaves the select on its placeholder; the schema rejects it on submit.
-		defaultValues: { service: service ?? ("" as LeadService), name: "", phone: "+998 ", email: "", telegram: "", budget: "", description: "", website: "" }
+		// "" leaves a select on its placeholder; the schema rejects an empty service on submit.
+		defaultValues: {
+			service: service ?? ("" as LeadService),
+			name: "",
+			phone_country: DEFAULT_PHONE_COUNTRY,
+			phone: "",
+			company_size: "",
+			description: "",
+			website: ""
+		}
 	});
 
 	// useWatch rather than watch(): the React Compiler skips components that call watch().
-	const [serviceValue, budgetValue] = useWatch({ control, name: ["service", "budget"] });
+	const [serviceValue, companySize, phoneCountry] = useWatch({ control, name: ["service", "company_size", "phone_country"] });
 
 	const onSubmit = handleSubmit(async (values) => {
 		const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
@@ -84,11 +91,11 @@ export function LeadForm({ service, showBudget = false, pageTag, messageRows = 5
 		const body = {
 			service: values.service,
 			name: values.name.trim(),
-			phone: normalizePhone(values.phone),
-			email: values.email?.trim() || undefined,
-			telegram: values.telegram?.trim() || undefined,
-			budget: values.budget || undefined,
-			description: values.description.trim(),
+			// The schema has already checked it is valid for the chosen country.
+			phone: toE164(values.phone, values.phone_country),
+			company_size: values.company_size || undefined,
+			description: values.description?.trim() || undefined,
+			// Clicking the button is the consent; the note under it says so.
 			consent: true,
 			locale,
 			page_url: location.href,
@@ -147,32 +154,93 @@ export function LeadForm({ service, showBudget = false, pageTag, messageRows = 5
 		);
 	}
 
-	const fieldError = (name: (typeof FIELDS)[number]) => {
+	const fieldError = (name: Field) => {
 		const message = errors[name]?.message;
 		return message ? (
-			<p id={`${pageTag}-${name}-error`} className={ERROR_CLASS}>
+			<p id={id(`${name}-error`)} className={ERROR_CLASS}>
 				{t(`errors.${message}`)}
 			</p>
 		) : null;
 	};
 
-	const a11y = (name: (typeof FIELDS)[number]) => ({
+	const a11y = (name: Field) => ({
 		"aria-invalid": errors[name] ? true : undefined,
-		"aria-describedby": errors[name] ? `${pageTag}-${name}-error` : undefined
+		"aria-describedby": errors[name] ? id(`${name}-error`) : undefined
 	});
+
+	const optional = <span className="font-normal text-muted-foreground"> ({t("optional")})</span>;
 
 	const phone = register("phone");
 	const offerTelegram = serverError === "rateLimited" || serverError === "unavailable";
 
 	return (
-		<form onSubmit={onSubmit} noValidate className="space-y-4">
+		<form onSubmit={onSubmit} noValidate className="space-y-5">
+			{service && (
+				<span className="inline-flex text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
+					{t(`services.${service}`)}
+				</span>
+			)}
+
+			<div>
+				<label htmlFor={id("name")} className={LABEL_CLASS}>
+					{t("nameLabel")}
+				</label>
+				<div className="relative">
+					<User className={ICON_CLASS} aria-hidden="true" />
+					<input
+						id={id("name")}
+						type="text"
+						autoComplete="name"
+						placeholder={t("namePlaceholder")}
+						{...register("name")}
+						{...a11y("name")}
+						className={cn(INPUT_CLASS, "pl-11")}
+					/>
+				</div>
+				{fieldError("name")}
+			</div>
+
+			<div>
+				<label htmlFor={id("phone")} className={LABEL_CLASS}>
+					{t("phoneLabel")}
+				</label>
+				<PhoneField
+					id={id("phone")}
+					country={phoneCountry as PhoneCountry}
+					countryLabel={t("countryLabel")}
+					onCountryChange={(country) => {
+						setValue("phone_country", country);
+						setValue("phone", formatPhone(getValues("phone"), country));
+					}}
+					invalid={!!errors.phone}
+					inputProps={{
+						...phone,
+						...a11y("phone"),
+						onChange: (e) => {
+							e.target.value = formatPhone(e.target.value, phoneCountry as PhoneCountry);
+							return phone.onChange(e);
+						}
+					}}
+				/>
+				{fieldError("phone")}
+			</div>
+
 			{!service && (
 				<div>
-					<label className="relative block">
-						<span className="sr-only">{t("service")}</span>
-						<select {...register("service")} {...a11y("service")} aria-required="true" className={cn(INPUT_CLASS, "appearance-none pr-10 [&>option]:text-foreground", !serviceValue && "text-muted-foreground")}>
+					<label htmlFor={id("service")} className={LABEL_CLASS}>
+						{t("serviceLabel")}
+					</label>
+					<div className="relative">
+						<Layers className={ICON_CLASS} aria-hidden="true" />
+						<select
+							id={id("service")}
+							{...register("service")}
+							{...a11y("service")}
+							aria-required="true"
+							className={cn(SELECT_CLASS, !serviceValue && "text-muted-foreground")}
+						>
 							<option value="" disabled>
-								{t("service")}
+								{t("selectPlaceholder")}
 							</option>
 							{LEAD_SERVICES.map((slug) => (
 								<option key={slug} value={slug}>
@@ -180,110 +248,62 @@ export function LeadForm({ service, showBudget = false, pageTag, messageRows = 5
 								</option>
 							))}
 						</select>
-						<ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-					</label>
+						<ChevronDown className={CHEVRON_CLASS} aria-hidden="true" />
+					</div>
 					{fieldError("service")}
 				</div>
 			)}
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-				<div>
-					<label className="block">
-						<span className="sr-only">{t("name")}</span>
-						<input type="text" autoComplete="name" placeholder={t("name")} {...register("name")} {...a11y("name")} className={INPUT_CLASS} />
-					</label>
-					{fieldError("name")}
-				</div>
-				<div>
-					<label className="block">
-						<span className="sr-only">{t("phone")}</span>
-						<input
-							type="tel"
-							inputMode="tel"
-							autoComplete="tel"
-							placeholder={t("phone")}
-							{...phone}
-							onChange={(e) => {
-								e.target.value = formatPhone(e.target.value);
-								return phone.onChange(e);
-							}}
-							{...a11y("phone")}
-							className={INPUT_CLASS}
-						/>
-					</label>
-					{fieldError("phone")}
-				</div>
-			</div>
-
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-				<div>
-					<label className="block">
-						<span className="sr-only">{t("email")}</span>
-						<input type="email" autoComplete="email" placeholder={t("email")} {...register("email")} {...a11y("email")} className={INPUT_CLASS} />
-					</label>
-					{fieldError("email")}
-				</div>
-				<div>
-					<label className="block">
-						<span className="sr-only">{t("telegram")}</span>
-						<input type="text" autoComplete="off" placeholder={t("telegram")} {...register("telegram")} {...a11y("telegram")} className={INPUT_CLASS} />
-					</label>
-					{fieldError("telegram")}
-				</div>
-			</div>
-
-			{showBudget && (
-				<div>
-					<label className="relative block">
-						<span className="sr-only">{t("budget")}</span>
-						<select {...register("budget")} className={cn(INPUT_CLASS, "appearance-none pr-10 [&>option]:text-foreground", !budgetValue && "text-muted-foreground")}>
-							<option value="" disabled>
-								{t("budget")}
-							</option>
-							{BUDGET_RANGES.map((range) => (
-								<option key={range} value={range}>
-									{t(`budgets.${range}`)}
-								</option>
-							))}
-						</select>
-						<ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-					</label>
-				</div>
-			)}
-
 			<div>
-				<label className="block">
-					<span className="sr-only">{t("description")}</span>
+				<label htmlFor={id("company_size")} className={LABEL_CLASS}>
+					{t("companySizeLabel")}
+					{optional}
+				</label>
+				<div className="relative">
+					<Building2 className={ICON_CLASS} aria-hidden="true" />
+					<select id={id("company_size")} {...register("company_size")} className={cn(SELECT_CLASS, !companySize && "text-muted-foreground")}>
+						<option value="">{t("selectPlaceholder")}</option>
+						{COMPANY_SIZES.map((size) => (
+							<option key={size} value={size}>
+								{t(`companySizes.${size}`)}
+							</option>
+						))}
+					</select>
+					<ChevronDown className={CHEVRON_CLASS} aria-hidden="true" />
+				</div>
+			</div>
+
+			{showComment ? (
+				<div>
+					<label htmlFor={id("description")} className={LABEL_CLASS}>
+						{t("commentLabel")}
+						{optional}
+					</label>
 					<textarea
-						placeholder={t("description")}
-						rows={messageRows}
+						id={id("description")}
+						rows={3}
+						autoFocus
+						placeholder={t("commentPlaceholder")}
 						{...register("description")}
 						{...a11y("description")}
 						className={cn(INPUT_CLASS, "resize-none")}
 					/>
-				</label>
-				{fieldError("description")}
-			</div>
+					{fieldError("description")}
+				</div>
+			) : (
+				<button
+					type="button"
+					onClick={() => setShowComment(true)}
+					className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-text hover:underline underline-offset-2"
+				>
+					<Plus className="w-4 h-4" />
+					{t("addComment")}
+				</button>
+			)}
 
 			{/* Honeypot: invisible to people, filled in by naive bots. */}
 			<div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
 				<input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
-			</div>
-
-			<div>
-				<label className="flex items-start gap-3 text-sm text-muted-foreground cursor-pointer">
-					<input type="checkbox" {...register("consent")} {...a11y("consent")} className="mt-0.5 w-4 h-4 shrink-0 accent-[#377dff]" />
-					<span>
-						{t.rich("consent", {
-							link: (chunks) => (
-								<a href={`/${locale}/privacy`} target="_blank" className="text-brand-text underline underline-offset-2 hover:no-underline">
-									{chunks}
-								</a>
-							)
-						})}
-					</span>
-				</label>
-				{fieldError("consent")}
 			</div>
 
 			<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
@@ -299,14 +319,26 @@ export function LeadForm({ service, showBudget = false, pageTag, messageRows = 5
 				</div>
 			)}
 
-			<button
-				type="submit"
-				disabled={status === "sending"}
-				className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#377dff] hover:bg-[#2563eb] disabled:opacity-60 text-white text-sm font-medium rounded-xl transition-colors shadow-lg shadow-[#377dff]/25"
-			>
-				<Send className="w-4 h-4" />
-				{status === "sending" ? t("sending") : t("submit")}
-			</button>
+			<div className="space-y-3">
+				<button
+					type="submit"
+					disabled={status === "sending"}
+					className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
+				>
+					{status === "sending" ? t("sending") : t("submit")}
+					<ArrowRight className="w-4 h-4" />
+				</button>
+
+				<p className="text-xs text-muted-foreground text-center leading-relaxed">
+					{t.rich("consentNote", {
+						link: (chunks) => (
+							<a href={`/${locale}/privacy`} target="_blank" className="text-brand-text underline underline-offset-2 hover:no-underline">
+								{chunks}
+							</a>
+						)
+					})}
+				</p>
+			</div>
 
 			<p className="text-xs text-muted-foreground text-center">
 				{t.rich("telegramPrompt", {

@@ -1183,19 +1183,40 @@
 		]
 	},
 	"leadForm": {
-		"service": "Choose a service",
-		"name": "Your name",
-		"phone": "Phone",
-		"email": "Email (optional)",
-		"telegram": "Telegram (optional)",
-		"budget": "Approximate budget (optional)",
-		"description": "Describe your task: what needs doing and by when",
-		"consent": "I agree to the processing of my personal data under the <link>privacy policy</link>",
-		"submit": "Send request",
+		"nameLabel": "Name",
+		"namePlaceholder": "Your name",
+		"phoneLabel": "Phone number",
+		"countryLabel": "Country code",
+		"serviceLabel": "Service",
+		"companySizeLabel": "Company size",
+		"commentLabel": "Comment",
+		"commentPlaceholder": "A few words about the task, if you like",
+		"addComment": "Add a comment",
+		"optional": "optional",
+		"selectPlaceholder": "Choose…",
+		"companySizes": {
+			"1_10": "1–10 employees",
+			"11_50": "11–50 employees",
+			"51_200": "51–200 employees",
+			"200_plus": "Over 200 employees"
+		},
+		"submit": "Get a free consultation",
 		"sending": "Sending…",
 		"success": "Request sent! We'll get back to you within an hour.",
+		"consentNote": "By clicking the button, you agree to the processing of your data under the <link>privacy policy</link>.",
 		"telegramPrompt": "Prefer Telegram? <link>Message @ithinkuzbot</link>",
 		"telegramCta": "Message us on Telegram",
+		"errors": {
+			"service": "Choose a service",
+			"name": "Enter your name — 2 to 80 characters",
+			"phone": "Check the number for the selected country",
+			"company_size": "Choose a company size from the list",
+			"description": "Comment — up to 2000 characters",
+			"captcha": "Confirm you are not a robot and send again",
+			"rateLimited": "Too many attempts. Try again later or message us on Telegram.",
+			"unavailable": "Your request didn't go through. Your details are still in the form — try again or message us on Telegram.",
+			"generic": "Something went wrong. Check the fields and try again."
+		},
 		"services": {
 			"it-infrastructure": "IT infrastructure",
 			"managed-it-services": "Managed IT services",
@@ -1205,27 +1226,6 @@
 			"it-audit-consulting": "IT audit and consulting",
 			"software-licenses": "Software licenses",
 			"corporate-training": "Corporate training"
-		},
-		"budgets": {
-			"lt_1k": "Under $1,000",
-			"1k_5k": "$1,000 – 5,000",
-			"5k_15k": "$5,000 – 15,000",
-			"gt_15k": "Over $15,000",
-			"unknown": "Not sure yet"
-		},
-		"errors": {
-			"service": "Choose a service",
-			"name": "Enter your name — 2 to 80 characters",
-			"phone": "Enter your full phone number",
-			"email": "Check the email address",
-			"telegram": "Username: 4–32 Latin letters, digits or _",
-			"budget": "Choose a budget from the list",
-			"description": "Describe your task — 10 to 2000 characters",
-			"consent": "Please agree to the processing of your data",
-			"captcha": "Confirm you are not a robot and send again",
-			"rateLimited": "Too many attempts. Try again later or message us on Telegram.",
-			"unavailable": "Your request didn't go through. Your details are still in the form — try again or message us on Telegram.",
-			"generic": "Something went wrong. Check the fields and try again."
 		}
 	}
 }
