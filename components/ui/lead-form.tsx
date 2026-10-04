@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, Building2, Check, Layers, Plus, User, type LucideIcon } from "lucide-react";
 import { toast } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { useIsDark } from "@/hooks/use-is-dark";
 import { getAttribution } from "@/lib/attribution";
 import { DEFAULT_PHONE_COUNTRY, formatPhone, toE164, type PhoneCountry } from "@/lib/phone";
@@ -180,170 +181,175 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 	const phone = register("phone");
 
 	return (
-		<form onSubmit={onSubmit} noValidate className="space-y-5">
-			{service && (
-				<span className="inline-flex text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
-					{t(`services.${service}`)}
-				</span>
-			)}
+		<>
+			{/* Mounted here, not in the layout, so sonner only loads on pages with a form.
+			    Outside the <form> so its live region does not take a row gap. */}
+			<Toaster position="bottom-right" closeButton />
+			<form onSubmit={onSubmit} noValidate className="space-y-5">
+				{service && (
+					<span className="inline-flex text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
+						{t(`services.${service}`)}
+					</span>
+				)}
 
-			<div>
-				<label htmlFor={id("name")} className={LABEL_CLASS}>
-					{t("nameLabel")}
-				</label>
-				<div className="relative">
-					<User className={ICON_CLASS} aria-hidden="true" />
-					<input
-						id={id("name")}
-						type="text"
-						autoComplete="name"
-						placeholder={t("namePlaceholder")}
-						{...register("name")}
-						{...a11y("name")}
-						className={cn(INPUT_CLASS, "pl-11")}
-					/>
-				</div>
-				{fieldError("name")}
-			</div>
-
-			<div>
-				<label htmlFor={id("phone")} className={LABEL_CLASS}>
-					{t("phoneLabel")}
-				</label>
-				<PhoneField
-					id={id("phone")}
-					country={phoneCountry as PhoneCountry}
-					countryLabel={t("countryLabel")}
-					onCountryChange={(country) => {
-						setValue("phone_country", country);
-						setValue("phone", formatPhone(getValues("phone"), country));
-					}}
-					invalid={!!errors.phone}
-					inputProps={{
-						...phone,
-						...a11y("phone"),
-						onChange: (e) => {
-							e.target.value = formatPhone(e.target.value, phoneCountry as PhoneCountry);
-							return phone.onChange(e);
-						}
-					}}
-				/>
-				{fieldError("phone")}
-			</div>
-
-			{!service && (
 				<div>
-					<label htmlFor={id("service")} className={LABEL_CLASS}>
-						{t("serviceLabel")}
+					<label htmlFor={id("name")} className={LABEL_CLASS}>
+						{t("nameLabel")}
+					</label>
+					<div className="relative">
+						<User className={ICON_CLASS} aria-hidden="true" />
+						<input
+							id={id("name")}
+							type="text"
+							autoComplete="name"
+							placeholder={t("namePlaceholder")}
+							{...register("name")}
+							{...a11y("name")}
+							className={cn(INPUT_CLASS, "pl-11")}
+						/>
+					</div>
+					{fieldError("name")}
+				</div>
+
+				<div>
+					<label htmlFor={id("phone")} className={LABEL_CLASS}>
+						{t("phoneLabel")}
+					</label>
+					<PhoneField
+						id={id("phone")}
+						country={phoneCountry as PhoneCountry}
+						countryLabel={t("countryLabel")}
+						onCountryChange={(country) => {
+							setValue("phone_country", country);
+							setValue("phone", formatPhone(getValues("phone"), country));
+						}}
+						invalid={!!errors.phone}
+						inputProps={{
+							...phone,
+							...a11y("phone"),
+							onChange: (e) => {
+								e.target.value = formatPhone(e.target.value, phoneCountry as PhoneCountry);
+								return phone.onChange(e);
+							}
+						}}
+					/>
+					{fieldError("phone")}
+				</div>
+
+				{!service && (
+					<div>
+						<label htmlFor={id("service")} className={LABEL_CLASS}>
+							{t("serviceLabel")}
+						</label>
+						<FormSelect
+							control={control}
+							name="service"
+							id={id("service")}
+							icon={Layers}
+							placeholder={t("selectPlaceholder")}
+							items={LEAD_SERVICES.map((slug) => ({ value: slug, label: t(`services.${slug}`) }))}
+							{...a11y("service")}
+						/>
+						{fieldError("service")}
+					</div>
+				)}
+
+				<div>
+					<label htmlFor={id("company_size")} className={LABEL_CLASS}>
+						{t("companySizeLabel")}
+						{optional}
 					</label>
 					<FormSelect
 						control={control}
-						name="service"
-						id={id("service")}
-						icon={Layers}
+						name="company_size"
+						id={id("company_size")}
+						icon={Building2}
 						placeholder={t("selectPlaceholder")}
-						items={LEAD_SERVICES.map((slug) => ({ value: slug, label: t(`services.${slug}`) }))}
-						{...a11y("service")}
+						items={COMPANY_SIZES.map((size) => ({ value: size, label: t(`companySizes.${size}`) }))}
 					/>
-					{fieldError("service")}
 				</div>
-			)}
 
-			<div>
-				<label htmlFor={id("company_size")} className={LABEL_CLASS}>
-					{t("companySizeLabel")}
-					{optional}
-				</label>
-				<FormSelect
-					control={control}
-					name="company_size"
-					id={id("company_size")}
-					icon={Building2}
-					placeholder={t("selectPlaceholder")}
-					items={COMPANY_SIZES.map((size) => ({ value: size, label: t(`companySizes.${size}`) }))}
-				/>
-			</div>
+				{showComment ? (
+					<div>
+						<label htmlFor={id("description")} className={LABEL_CLASS}>
+							{t("commentLabel")}
+							{optional}
+						</label>
+						<textarea
+							id={id("description")}
+							rows={3}
+							autoFocus
+							placeholder={t("commentPlaceholder")}
+							{...register("description")}
+							{...a11y("description")}
+							className={cn(INPUT_CLASS, "resize-none")}
+						/>
+						{fieldError("description")}
+					</div>
+				) : (
+					<button
+						type="button"
+						onClick={() => setShowComment(true)}
+						className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-text hover:underline underline-offset-2"
+					>
+						<Plus className="w-4 h-4" />
+						{t("addComment")}
+					</button>
+				)}
 
-			{showComment ? (
-				<div>
-					<label htmlFor={id("description")} className={LABEL_CLASS}>
-						{t("commentLabel")}
-						{optional}
-					</label>
-					<textarea
-						id={id("description")}
-						rows={3}
-						autoFocus
-						placeholder={t("commentPlaceholder")}
-						{...register("description")}
-						{...a11y("description")}
-						className={cn(INPUT_CLASS, "resize-none")}
-					/>
-					{fieldError("description")}
+				{/* Honeypot: invisible to people, filled in by naive bots. */}
+				<div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+					<input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
 				</div>
-			) : (
-				<button
-					type="button"
-					onClick={() => setShowComment(true)}
-					className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-text hover:underline underline-offset-2"
-				>
-					<Plus className="w-4 h-4" />
-					{t("addComment")}
-				</button>
-			)}
 
-			{/* Honeypot: invisible to people, filled in by naive bots. */}
-			<div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
-				<input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
-			</div>
+				{/* In interaction-only mode the widget is usually 0px tall; -mt-5 cancels the
+				    form's row gap so it does not leave an empty band above the button. */}
+				<div className="-mt-5">
+					<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
+				</div>
 
-			{/* In interaction-only mode the widget is usually 0px tall; -mt-5 cancels the
-			    form's row gap so it does not leave an empty band above the button. */}
-			<div className="-mt-5">
-				<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
-			</div>
+				<div className="space-y-3">
+					<button
+						type="submit"
+						disabled={status !== "idle"}
+						data-sending={status === "sending"}
+						className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] data-[sending=true]:opacity-60 disabled:hover:scale-100"
+					>
+						{status === "sent" ? (
+							<>
+								{t("sent")}
+								<Check className="w-4 h-4" />
+							</>
+						) : (
+							<>
+								{status === "sending" ? t("sending") : t("submit")}
+								<ArrowRight className="w-4 h-4" />
+							</>
+						)}
+					</button>
 
-			<div className="space-y-3">
-				<button
-					type="submit"
-					disabled={status !== "idle"}
-					data-sending={status === "sending"}
-					className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] data-[sending=true]:opacity-60 disabled:hover:scale-100"
-				>
-					{status === "sent" ? (
-						<>
-							{t("sent")}
-							<Check className="w-4 h-4" />
-						</>
-					) : (
-						<>
-							{status === "sending" ? t("sending") : t("submit")}
-							<ArrowRight className="w-4 h-4" />
-						</>
-					)}
-				</button>
+					<p className="text-xs text-muted-foreground text-center leading-relaxed">
+						{t.rich("consentNote", {
+							link: (chunks) => (
+								<a href={`/${locale}/privacy`} target="_blank" className="text-brand-text underline underline-offset-2 hover:no-underline">
+									{chunks}
+								</a>
+							)
+						})}
+					</p>
+				</div>
 
-				<p className="text-xs text-muted-foreground text-center leading-relaxed">
-					{t.rich("consentNote", {
+				<p className="text-xs text-muted-foreground text-center">
+					{t.rich("telegramPrompt", {
 						link: (chunks) => (
-							<a href={`/${locale}/privacy`} target="_blank" className="text-brand-text underline underline-offset-2 hover:no-underline">
+							<a href={telegramLink(pageTag)} target="_blank" rel="noopener noreferrer" className="text-brand-text hover:underline">
 								{chunks}
 							</a>
 						)
 					})}
 				</p>
-			</div>
-
-			<p className="text-xs text-muted-foreground text-center">
-				{t.rich("telegramPrompt", {
-					link: (chunks) => (
-						<a href={telegramLink(pageTag)} target="_blank" rel="noopener noreferrer" className="text-brand-text hover:underline">
-							{chunks}
-						</a>
-					)
-				})}
-			</p>
-		</form>
+			</form>
+		</>
 	);
 }
 

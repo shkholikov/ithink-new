@@ -38,7 +38,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }
       toastOptions={{
         classNames: {
-          toast: "cn-toast",
+          // An action button beside a long message squeezes the text into a narrow
+          // column; wrap it onto its own line under the text instead.
+          // `!` because sonner's own stylesheet is unlayered and beats utilities.
+          toast: "cn-toast flex-wrap!",
+          content: "basis-[calc(100%-1.75rem)]!",
+          actionButton: "bg-[#377dff]! text-white! ml-[1.375rem]! mt-1!",
         },
       }}
       {...props}

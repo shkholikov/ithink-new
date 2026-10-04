@@ -9,7 +9,6 @@ import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import MotionProvider from '@/components/motion-provider';
 import AttributionCapture from '@/components/attribution-capture';
-import { Toaster } from '@/components/ui/sonner';
 import '../globals.css';
 
 const inter = Inter({
@@ -141,7 +140,6 @@ export default async function LocaleLayout({
               <main className="flex-1">{children}</main>
               <Footer locale={locale} />
               <AttributionCapture />
-              <Toaster position="bottom-right" richColors={false} closeButton />
             </NextIntlClientProvider>
           </MotionProvider>
         </ThemeProvider>
