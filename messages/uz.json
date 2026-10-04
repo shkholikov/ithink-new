@@ -1167,7 +1167,7 @@
 			},
 			{
 				"title": "Qanday ma'lumotlarni yig'amiz",
-				"body": "Ariza shaklidan: ismingiz, telefon raqamingiz, email, Telegram foydalanuvchi nomi, tanlangan xizmat, vazifa tavsifi va taxminiy byudjet. Email, Telegram va byudjetni ko'rsatish ixtiyoriy.\n\nAriza bilan birga avtomatik ravishda: ariza yuborilgan sahifa manzili, sayt tili va qayerdan kelganingiz — utm-belgilar, reklama bosish identifikatorlari (fbclid, gclid), sizni yo'naltirgan sayt va tashrifning birinchi sahifasi."
+				"body": "Ariza shaklidan: ismingiz, telefon raqamingiz, tanlangan xizmat, kompaniya hajmi va izoh. Kompaniya hajmi va izohni ko'rsatish ixtiyoriy.\n\nAriza bilan birga avtomatik ravishda: ariza yuborilgan sahifa manzili, sayt tili va qayerdan kelganingiz — utm-belgilar, reklama bosish identifikatorlari (fbclid, gclid), sizni yo'naltirgan sayt va tashrifning birinchi sahifasi."
 			},
 			{
 				"title": "Nima uchun ishlatamiz",
@@ -1191,7 +1191,7 @@
 			},
 			{
 				"title": "Rozilik",
-				"body": "Shaklni yuborib, rozilik belgisini qo'yish orqali siz ITHINKga ko'rsatgan ma'lumotlaringizni ushbu siyosat shartlari asosida qayta ishlashga ruxsat berasiz."
+				"body": "Shaklni yuborish orqali siz ITHINKga ko'rsatgan ma'lumotlaringizni ushbu siyosat shartlari asosida qayta ishlashga ruxsat berasiz."
 			},
 			{
 				"title": "O'zgarishlar va aloqa",

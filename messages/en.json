@@ -1150,7 +1150,7 @@
 			},
 			{
 				"title": "What we collect",
-				"body": "From the request form: your name, phone number, email, Telegram username, the service you chose, a description of your task and an approximate budget. Email, Telegram and budget are optional.\n\nAutomatically, together with the request: the address of the page it was sent from, the site language and where you came from — utm tags, ad click identifiers (fbclid, gclid), the referring site and the first page of your visit."
+				"body": "From the request form: your name, phone number, the service you chose, your company size and a comment. Company size and the comment are optional.\n\nAutomatically, together with the request: the address of the page it was sent from, the site language and where you came from — utm tags, ad click identifiers (fbclid, gclid), the referring site and the first page of your visit."
 			},
 			{
 				"title": "Why we use it",
@@ -1174,7 +1174,7 @@
 			},
 			{
 				"title": "Consent",
-				"body": "By sending the form and ticking the consent box, you allow ITHINK to process the data you provided under this policy."
+				"body": "By sending the form, you allow ITHINK to process the data you provided under this policy."
 			},
 			{
 				"title": "Changes and contact",
