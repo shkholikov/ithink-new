@@ -306,7 +306,11 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 				<input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
 			</div>
 
-			<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
+			{/* In interaction-only mode the widget is usually 0px tall; -mt-5 cancels the
+			    form's row gap so it does not leave an empty band above the button. */}
+			<div className="-mt-5">
+				<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
+			</div>
 
 			{serverError && (
 				<div role="alert" className="text-sm text-red-600 dark:text-red-400">
