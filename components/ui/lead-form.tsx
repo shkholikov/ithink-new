@@ -246,6 +246,8 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 							icon={Layers}
 							placeholder={t("selectPlaceholder")}
 							items={LEAD_SERVICES.map((slug) => ({ value: slug, label: t(`services.${slug}`) }))}
+							// "Other" says nothing about the need, so open the comment field for it.
+							onValue={(value) => value === "other" && setShowComment(true)}
 							{...a11y("service")}
 						/>
 						{fieldError("service")}
@@ -348,12 +350,13 @@ interface FormSelectProps {
 	icon: LucideIcon;
 	placeholder: string;
 	items: { value: string; label: string }[];
+	onValue?: (value: string) => void;
 	"aria-invalid"?: boolean;
 	"aria-describedby"?: string;
 }
 
 /** shadcn Select bound to the form, styled to match the text inputs. */
-function FormSelect({ control, name, id, icon: Icon, placeholder, items, ...aria }: FormSelectProps) {
+function FormSelect({ control, name, id, icon: Icon, placeholder, items, onValue, ...aria }: FormSelectProps) {
 	return (
 		<Controller
 			control={control}
@@ -361,7 +364,10 @@ function FormSelect({ control, name, id, icon: Icon, placeholder, items, ...aria
 			render={({ field }) => (
 				<Select
 					value={field.value || null}
-					onValueChange={(value) => field.onChange(value ?? "")}
+					onValueChange={(value) => {
+						field.onChange(value ?? "");
+						onValue?.(value ?? "");
+					}}
 					items={Object.fromEntries(items.map((item) => [item.value, item.label]))}
 				>
 					<SelectTrigger

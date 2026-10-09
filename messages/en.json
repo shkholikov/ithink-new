@@ -1179,7 +1179,8 @@
 			"custom-software-development": "Software development",
 			"it-audit-consulting": "IT audit and consulting",
 			"software-licenses": "Software licenses",
-			"corporate-training": "Corporate training"
+			"corporate-training": "Corporate training",
+			"other": "Other"
 		}
 	}
 }

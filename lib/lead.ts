@@ -19,7 +19,9 @@ export const LEAD_SERVICES = [
 	"custom-software-development",
 	"it-audit-consulting",
 	"software-licenses",
-	"corporate-training"
+	"corporate-training",
+	// Last in the list: for requests that fit none of the above; the comment field opens with it.
+	"other"
 ] as const;
 
 export type LeadService = (typeof LEAD_SERVICES)[number];

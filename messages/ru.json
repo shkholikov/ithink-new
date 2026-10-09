@@ -1116,7 +1116,8 @@
 			"custom-software-development": "Разработка ПО",
 			"it-audit-consulting": "IT-аудит и консалтинг",
 			"software-licenses": "Лицензии на ПО",
-			"corporate-training": "Корпоративное обучение"
+			"corporate-training": "Корпоративное обучение",
+			"other": "Другое"
 		}
 	}
 }
