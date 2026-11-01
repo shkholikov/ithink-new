@@ -4,14 +4,12 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { AlertTriangle, RotateCcw } from "lucide-react";
-import { SectionBadge } from "@/components/ui/section-badge";
+import { GlassButton } from "@/components/glassyui/glass-button";
 
 /**
  * Render-error boundary for the locale segment.
  *
- * Every page component here is a client component, so before this existed a
- * single throw during render took the whole page to a blank white screen with
- * nothing to catch it. This keeps the navbar and footer and offers a way out.
+ * Keeps the navbar and footer when a page throws during render, and offers a retry.
  */
 export default function LocaleError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
 	const locale = useLocale();
@@ -24,37 +22,26 @@ export default function LocaleError({ error, reset }: { error: Error & { digest?
 	}, [error]);
 
 	return (
-		<div className="pt-24 bg-background">
-			<section className="py-16 lg:py-20 relative overflow-hidden">
-				<div className="absolute inset-0 pointer-events-none">
-					<div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#377dff]/8 rounded-full blur-[120px]" />
-				</div>
-				<div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-					<SectionBadge icon={AlertTriangle} label={t("badge")} variant="yellow" className="mb-6" />
-					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">{t("title")}</h1>
-					<p className="text-base text-muted-foreground max-w-2xl mx-auto">{t("subtitle")}</p>
-					{error.digest && <p className="mt-4 text-xs text-muted-foreground/70 font-mono">{error.digest}</p>}
-				</div>
-			</section>
-
-			<section className="pb-24">
-				<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
-					<button
-						type="button"
-						onClick={reset}
-						className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
-					>
-						<RotateCcw className="w-4 h-4" />
+		<section data-lg-theme="dark" className="ink-scene relative flex min-h-[70vh] items-center overflow-hidden text-white">
+			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0" />
+			<div className="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-36 sm:px-6 lg:px-8">
+				<p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">
+					<AlertTriangle className="size-3.5 text-accent-yellow" aria-hidden="true" />
+					{t("badge")}
+				</p>
+				<h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.03em] sm:text-6xl">{t("title")}</h1>
+				<p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">{t("subtitle")}</p>
+				{error.digest && <p className="mt-4 font-mono text-xs text-ink-muted">{error.digest}</p>}
+				<div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+					<GlassButton variant="prominent" size="lg" onClick={reset} className="gap-2 font-semibold">
+						<RotateCcw className="size-4" aria-hidden="true" />
 						{t("retry")}
-					</button>
-					<Link
-						href={`/${locale}`}
-						className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-card border border-border hover:border-[#377dff]/40 hover:bg-accent text-foreground text-sm font-medium rounded-xl transition-all duration-200"
-					>
-						{t("home")}
-					</Link>
+					</GlassButton>
+					<GlassButton asChild variant="soft" size="lg" className="font-semibold">
+						<Link href={`/${locale}`}>{t("home")}</Link>
+					</GlassButton>
 				</div>
-			</section>
-		</div>
+			</div>
+		</section>
 	);
 }

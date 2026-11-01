@@ -54,6 +54,10 @@ const nextConfig: NextConfig = {
 		globalNotFound: true,
 		optimizePackageImports: ["lucide-react", "@base-ui/react"]
 	},
+	async redirects() {
+		// /about was merged into /company.
+		return [{ source: "/:locale(uz|ru|en)/about", destination: "/:locale/company", permanent: true }];
+	},
 	async headers() {
 		// Pages only: static chunks, optimized images and the favicon do not need a CSP.
 		return [{ source: "/((?!_next/static|_next/image|favicon.ico).*)", headers: securityHeaders }];

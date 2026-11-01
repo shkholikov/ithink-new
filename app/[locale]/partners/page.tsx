@@ -1,27 +1,28 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import type { Metadata } from 'next';
-import PartnersPage from '@/components/pages/partners-page';
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { PartnersHero, PartnersHow, PartnersList, PartnersStory } from "@/components/partners/partners-hub";
+import { CtaSection } from "@/components/site/cta-section";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'partners' });
-  const title = t('title');
-  const description = t('subtitle');
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `https://www.ithink.uz/${locale}/partners`,
-      languages: { uz: 'https://www.ithink.uz/uz/partners', ru: 'https://www.ithink.uz/ru/partners', en: 'https://www.ithink.uz/en/partners' },
-    },
-    openGraph: { title, description, url: `https://www.ithink.uz/${locale}/partners` },
-  };
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "partnersHub.meta" });
+	return pageMetadata({ locale, path: "/partners", title: t("title"), description: t("description") });
 }
 
 export default async function Partners({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return <PartnersPage locale={locale} />;
+	const { locale } = await params;
+	setRequestLocale(locale);
+	const t = await getTranslations({ locale, namespace: "partnersHub.cta" });
+	return (
+		<>
+			<PartnersHero locale={locale} />
+			<PartnersList locale={locale} />
+			<PartnersHow locale={locale} />
+			<PartnersStory locale={locale} />
+			<CtaSection locale={locale} pageTag="partners" title={t("title")} subtitle={t("subtitle")} />
+		</>
+	);
 }

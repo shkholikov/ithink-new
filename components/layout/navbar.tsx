@@ -1,334 +1,212 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import {
-	Menu,
-	X,
-	Sun,
-	Moon,
-	Code2,
-	Server,
-	Shield,
-	Lock,
-	Layers,
-	BookOpen,
-	Award,
-	Users2,
-	Briefcase,
-	GraduationCap,
-	Building2,
-	TrendingUp,
-	LayoutGrid,
-	Phone,
-	MessageCircle,
-	BarChart2,
-	CalendarCheck,
-	Cable,
-	MonitorCheck,
-	Workflow,
-	ClipboardList
-} from "lucide-react";
-import { useTheme } from "next-themes";
-import { useIsDark } from "@/hooks/use-is-dark";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-	navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { ArrowRight, ChevronDown, Handshake, type LucideIcon } from "lucide-react";
+import { SERVICE_SLUGS } from "@/lib/services";
+import { LICENSE_SLUGS, PARTNER_SLUGS, SOLUTION_SLUGS, TRAINING_SLUGS } from "@/lib/site-nav";
+import { LICENSE_ICONS, SERVICE_ICONS, SOLUTION_ICONS, TRAINING_ICONS } from "@/lib/icons";
+import { Cta } from "@/components/site/cta";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { LocaleSwitch } from "@/components/layout/locale-switch";
+import { MobileMenu } from "@/components/layout/mobile-menu";
 import { cn } from "@/lib/utils";
 
-const locales = ["uz", "ru", "en"] as const;
+type Item = { href: string; title: string; description?: string; icon?: LucideIcon };
 
-const dropdownGroups = [
-	{
-		key: "services" as const,
-		section: "services",
-		items: [
-			{ icon: Server, slug: "it-infrastructure" },
-			{ icon: MonitorCheck, slug: "managed-it" },
-			{ icon: TrendingUp, slug: "crm-automation" },
-			{ icon: Workflow, slug: "process-automation" },
-			{ icon: Code2, slug: "software-development" },
-			{ icon: ClipboardList, slug: "it-audit" }
-		]
-	},
-	{
-		key: "licenses" as const,
-		section: "licenses",
-		items: [
-			{ icon: Shield, slug: "microsoft" },
-			{ icon: Lock, slug: "security" },
-			{ icon: Layers, slug: "design" }
-		]
-	},
-	{
-		key: "training" as const,
-		section: "training",
-		items: [
-			{ icon: BookOpen, slug: "courses" },
-			{ icon: Award, slug: "certification" },
-			{ icon: Users2, slug: "corporate" }
-		]
-	},
-	{
-		key: "solutions" as const,
-		section: "solutions",
-		items: [
-			{ icon: Briefcase, slug: "business" },
-			{ icon: GraduationCap, slug: "education" },
-			{ icon: Building2, slug: "enterprise" }
-		]
-	},
-	{
-		key: "partners" as const,
-		section: "partners",
-		items: [
-			{ icon: TrendingUp, slug: "amocrm" },
-			{ icon: LayoutGrid, slug: "bitrix24" },
-			{ icon: Cable, slug: "itgrix" },
-			{ icon: Phone, slug: "online-pbx" },
-			{ icon: MessageCircle, slug: "wazzup" },
-			{ icon: BarChart2, slug: "megacount" }
-		]
-	}
-];
+/**
+ * Server-rendered navbar. Desktop dropdowns open on hover and keyboard focus with CSS only;
+ * the client islands are the theme toggle, the locale switch and the mobile menu's close-on-navigate.
+ * The bar is a dark glass pill in both themes, so it reads the same over the navy heroes and the light body.
+ */
+export default async function Navbar({ locale }: { locale: string }) {
+	const t = await getTranslations({ locale, namespace: "nav" });
+	const item = (group: string, slug: string, icon?: LucideIcon): Item => ({
+		href: `/${locale}/${group}/${slug}`,
+		title: t(`items.${group}.${slug}.title`),
+		description: t(`items.${group}.${slug}.description`),
+		icon
+	});
 
-interface NavbarProps {
-	locale: string;
-}
-
-export default function Navbar({ locale }: NavbarProps) {
-	const t = useTranslations("nav");
-	const { setTheme } = useTheme();
-	const isDark = useIsDark();
-	const [scrolled, setScrolled] = useState(false);
-	const [open, setOpen] = useState(false);
-
-	useEffect(() => {
-		let ticking = false;
-		const handleScroll = () => {
-			if (!ticking) {
-				requestAnimationFrame(() => {
-					setScrolled(window.scrollY > 20);
-					ticking = false;
-				});
-				ticking = true;
-			}
-		};
-		// Reads the initial position on the next frame, for pages opened mid-scroll.
-		handleScroll();
-		window.addEventListener("scroll", handleScroll, { passive: true });
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	const services = SERVICE_SLUGS.map((s) => item("services", s, SERVICE_ICONS[s]));
+	const solutions = SOLUTION_SLUGS.map((s) => item("solutions", s, SOLUTION_ICONS[s]));
+	const licenses = LICENSE_SLUGS.map((s) => item("licenses", s, LICENSE_ICONS[s]));
+	const training = TRAINING_SLUGS.map((s) => item("training", s, TRAINING_ICONS[s]));
+	const partners = PARTNER_SLUGS.map((s) => item("partners", s));
+	const company: Item[] = [
+		{ href: `/${locale}/company`, title: t("companyPage") },
+		{ href: `/${locale}/customers`, title: t("clients") },
+		{ href: `/${locale}/hire-us`, title: t("hireUs") },
+		{ href: `/${locale}/career`, title: t("career") },
+		{ href: `/${locale}/contact`, title: t("contactUs") }
+	];
 
 	return (
-		<header
-			className={cn(
-				"fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-				scrolled
-					? isDark
-						? "bg-[#0d0d14]/90 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
-						: "bg-white/90 backdrop-blur-md border-b border-black/5 shadow-lg shadow-black/10"
-					: "bg-transparent"
-			)}
-		>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center justify-between h-16 lg:h-18">
-					{/* Logo */}
-					<Link href={`/${locale}`} className="flex-shrink-0">
-						<Image src="/logo.png" alt="ITHINK" width={120} height={39} className="h-8 w-auto dark:hidden" priority />
-						<Image src="/logo-negative.png" alt="ITHINK" width={120} height={39} className="h-8 w-auto hidden dark:block" priority />
-					</Link>
+		<header data-lg-theme="dark" className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
+			<a
+				href="#main"
+				className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-black"
+			>
+				{t("skip")}
+			</a>
+			<div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-ink/70 pl-5 pr-2.5 shadow-[0_8px_40px_rgba(2,6,23,0.35)] backdrop-blur-xl">
+				<Link href={`/${locale}`} aria-label={t("home")} className="shrink-0">
+					<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} priority sizes="96px" className="h-7 w-auto" />
+				</Link>
 
-					{/* Desktop Nav */}
-					<nav className="hidden lg:flex items-center">
-						<NavigationMenu>
-							<NavigationMenuList>
-								{dropdownGroups.map((group) => (
-									<NavigationMenuItem key={group.key}>
-										<NavigationMenuTrigger className="text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent hover:bg-accent data-open:bg-accent">
-											{t(group.key)}
-										</NavigationMenuTrigger>
-										<NavigationMenuContent>
-											<ul className="w-72 p-2">
-												{group.items.map((item) => (
-													<li key={item.slug}>
-														<Link
-															href={`/${locale}/${group.section}/${item.slug}`}
-															className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors"
-														>
-															<div className="mt-0.5 shrink-0 rounded-md bg-[#377dff]/10 p-2">
-																<item.icon className="size-4 text-brand-text" />
-															</div>
-															<div>
-																<p className="text-sm font-medium text-foreground">{t(`items.${group.key}.${item.slug}.title`)}</p>
-																<p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
-																	{t(`items.${group.key}.${item.slug}.description`)}
-																</p>
-															</div>
-														</Link>
-													</li>
-												))}
-											</ul>
-										</NavigationMenuContent>
-									</NavigationMenuItem>
-								))}
-
-								<NavigationMenuItem>
-									<Link
-										href={`/${locale}/company`}
-										className={cn(navigationMenuTriggerStyle(), "text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent")}
-									>
-										{t("company")}
-									</Link>
-								</NavigationMenuItem>
-
-								<NavigationMenuItem>
-									<Link
-										href={`/${locale}/career`}
-										className={cn(navigationMenuTriggerStyle(), "text-sm text-muted-foreground hover:text-foreground px-3 py-2 bg-transparent")}
-									>
-										{t("career")}
-									</Link>
-								</NavigationMenuItem>
-							</NavigationMenuList>
-						</NavigationMenu>
-					</nav>
-
-					{/* Right side */}
-					<div className="hidden lg:flex items-center gap-3">
-						{/* Free Consultation CTA */}
-						<Link
-							href={`/${locale}/contact`}
-							className="relative inline-flex items-center gap-2 px-4 py-2 bg-[#377dff] hover:bg-[#2563eb] text-white text-xs font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] overflow-hidden group"
-						>
-							<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 ease-in-out" />
-							<CalendarCheck className="w-3.5 h-3.5 relative z-10" />
-							<span className="relative z-10">{t("freeCta")}</span>
-						</Link>
-
-						<div className="flex items-center gap-0.5 bg-muted rounded-lg p-0.5">
-							{locales.map((l) => (
-								<Link
-									key={l}
-									href={`/${l}`}
-									className={cn(
-										"px-2.5 py-1 text-xs font-medium rounded-md transition-all uppercase",
-										l === locale ? "bg-[#377dff] text-white" : "text-muted-foreground hover:text-foreground"
-									)}
-								>
-									{l}
+				<nav aria-label={t("services")} className="hidden items-center gap-1 lg:flex">
+					<Dropdown label={t("services")} wide>
+						<div className="grid grid-cols-[1.6fr_1fr] gap-6">
+							<ItemGrid items={services} />
+							<div className="border-l border-border pl-6">
+								<p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("solutions")}</p>
+								<ItemList items={solutions} />
+							</div>
+						</div>
+					</Dropdown>
+					<Dropdown label={t("products")} wide>
+						<div className="grid grid-cols-2 gap-6">
+							<div>
+								<p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("licenses")}</p>
+								<ItemList items={licenses} />
+							</div>
+							<div>
+								<p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t("training")}</p>
+								<ItemList items={training} />
+							</div>
+						</div>
+					</Dropdown>
+					<Dropdown label={t("partners")}>
+						<div className="grid grid-cols-2 gap-1">
+							{partners.map((p) => (
+								<Link key={p.href} href={p.href} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-accent">
+									{p.title}
 								</Link>
 							))}
 						</div>
-
-						<button
-							onClick={() => setTheme(isDark ? "light" : "dark")}
-							className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-							aria-label={isDark ? t("lightMode") : t("darkMode")}
+						<Link
+							href={`/${locale}/partners`}
+							className="mt-3 flex items-center gap-2 border-t border-border px-3 pt-3 text-sm font-semibold text-brand-text hover:underline"
 						>
-							{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-						</button>
-					</div>
+							<Handshake className="size-4" aria-hidden="true" />
+							{t("allPartners")}
+						</Link>
+					</Dropdown>
+					<NavLink href={`/${locale}/customers`}>{t("clients")}</NavLink>
+					<Dropdown label={t("company")}>
+						<div className="flex flex-col">
+							{company.map((c) => (
+								<Link key={c.href} href={c.href} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-accent">
+									{c.title}
+								</Link>
+							))}
+						</div>
+					</Dropdown>
+				</nav>
 
-					{/* Mobile */}
-					<Sheet open={open} onOpenChange={setOpen}>
-						<SheetTrigger className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors" aria-label={t("openMenu")}>
-							{open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-						</SheetTrigger>
-						<SheetContent side="right" closeLabel={t("closeMenu")} className="w-full sm:w-80 bg-background border-l border-border p-0">
-							<div className="flex flex-col h-full">
-								<div className="flex items-center p-4 border-b border-white/5">
-									<Image src="/logo.png" alt="ITHINK" width={100} height={32} className="h-7 w-auto dark:hidden" />
-									<Image src="/logo-negative.png" alt="ITHINK" width={100} height={32} className="h-7 w-auto hidden dark:block" />
-								</div>
-
-								<nav className="flex-1 overflow-y-auto p-4">
-									<Accordion className="space-y-0.5">
-										{dropdownGroups.map((group) => (
-											<AccordionItem key={group.key}>
-												<AccordionTrigger className="px-3 text-sm font-medium text-foreground hover:no-underline py-2.5">
-													{t(group.key)}
-												</AccordionTrigger>
-												<AccordionContent>
-													<div className="pl-2 pb-1 space-y-0.5">
-														{group.items.map((item) => (
-															<Link
-																key={item.slug}
-																href={`/${locale}/${group.section}/${item.slug}`}
-																onClick={() => setOpen(false)}
-																className="flex items-center gap-2.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-accent transition-colors"
-															>
-																<item.icon className="size-4 text-brand-text shrink-0" />
-																{t(`items.${group.key}.${item.slug}.title`)}
-															</Link>
-														))}
-													</div>
-												</AccordionContent>
-											</AccordionItem>
-										))}
-									</Accordion>
-
-									<div className="mt-3 space-y-0.5">
-										{(["company", "career"] as const).map((key) => (
-											<Link
-												key={key}
-												href={`/${locale}/${key}`}
-												onClick={() => setOpen(false)}
-												className="block px-3 py-2.5 text-sm text-foreground hover:bg-accent rounded-lg transition-colors"
-											>
-												{t(key)}
-											</Link>
-										))}
-									</div>
-								</nav>
-
-								<div className="p-4 border-t border-white/5 space-y-3">
-									<Link
-										href={`/${locale}/contact`}
-										onClick={() => setOpen(false)}
-										className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-colors"
-									>
-										<CalendarCheck className="w-4 h-4" />
-										{t("freeCta")}
-									</Link>
-
-									<div className="flex items-center gap-1 bg-muted rounded-lg p-1">
-										{locales.map((l) => (
-											<Link
-												key={l}
-												href={`/${l}`}
-												onClick={() => setOpen(false)}
-												className={cn(
-													"flex-1 text-center py-1.5 text-xs font-medium rounded-md transition-all uppercase",
-													l === locale ? "bg-[#377dff] text-white" : "text-muted-foreground hover:text-foreground"
-												)}
-											>
-												{l}
-											</Link>
-										))}
-									</div>
-									<button
-										onClick={() => setTheme(isDark ? "light" : "dark")}
-										className="w-full p-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center gap-2 text-sm"
-									>
-										{!isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-										{isDark ? t("lightMode") : t("darkMode")}
-									</button>
-								</div>
-							</div>
-						</SheetContent>
-					</Sheet>
+				<div className="flex items-center gap-1.5">
+					<LocaleSwitch locale={locale} label={t("language")} className="hidden sm:flex" />
+					<ThemeToggle labelDark={t("darkMode")} labelLight={t("lightMode")} />
+					<Cta href={`/${locale}/contact`} size="sm" className="hidden sm:inline-flex">
+						{t("consult")}
+					</Cta>
+					<MobileMenu openLabel={t("openMenu")} closeLabel={t("closeMenu")}>
+						<MobileGroup title={t("services")} items={services} />
+						<MobileGroup title={t("solutions")} items={solutions} />
+						<MobileGroup title={t("licenses")} items={licenses} />
+						<MobileGroup title={t("training")} items={training} />
+						<MobileGroup title={t("partners")} items={[...partners, { href: `/${locale}/partners`, title: t("allPartners") }]} />
+						<MobileGroup title={t("company")} items={company} />
+						<div className="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+							<LocaleSwitch locale={locale} label={t("language")} />
+							<Cta href={`/${locale}/contact`} size="sm">
+								{t("consult")}
+							</Cta>
+						</div>
+					</MobileMenu>
 				</div>
 			</div>
 		</header>
+	);
+}
+
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+	return (
+		<Link href={href} className="rounded-xl px-3.5 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white">
+			{children}
+		</Link>
+	);
+}
+
+/** Opens on hover and on focus-within, so it works with the keyboard and without JavaScript. */
+function Dropdown({ label, wide = false, children }: { label: string; wide?: boolean; children: React.ReactNode }) {
+	return (
+		<div className="group/dd relative">
+			<button
+				type="button"
+				aria-haspopup="true"
+				className="inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white group-focus-within/dd:text-white"
+			>
+				{label}
+				<ChevronDown className="size-3.5 opacity-70 transition-transform group-hover/dd:rotate-180" aria-hidden="true" />
+			</button>
+			<div
+				className={cn(
+					"invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200",
+					"group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100",
+					wide ? "w-[760px]" : "w-80"
+				)}
+			>
+				<div className="rounded-2xl border border-border bg-popover p-4 text-popover-foreground shadow-[0_24px_60px_rgba(2,6,23,0.25)]">{children}</div>
+			</div>
+		</div>
+	);
+}
+
+function ItemGrid({ items }: { items: Item[] }) {
+	return (
+		<div className="grid grid-cols-2 gap-1">
+			{items.map((i) => (
+				<Link key={i.href} href={i.href} className="flex gap-3 rounded-xl p-3 transition-colors hover:bg-accent">
+					{i.icon && (
+						<span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand-text">
+							<i.icon className="size-[18px]" aria-hidden="true" />
+						</span>
+					)}
+					<span>
+						<span className="block text-sm font-semibold text-foreground">{i.title}</span>
+						{i.description && <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">{i.description}</span>}
+					</span>
+				</Link>
+			))}
+		</div>
+	);
+}
+
+function ItemList({ items }: { items: Item[] }) {
+	return (
+		<div className="flex flex-col gap-1">
+			{items.map((i) => (
+				<Link key={i.href} href={i.href} className="group/item flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-accent">
+					{i.icon && <i.icon className="size-4 shrink-0 text-brand-text" aria-hidden="true" />}
+					<span className="text-sm font-medium text-foreground">{i.title}</span>
+					<ArrowRight className="ml-auto size-3.5 text-muted-foreground opacity-0 transition-opacity group-hover/item:opacity-100" aria-hidden="true" />
+				</Link>
+			))}
+		</div>
+	);
+}
+
+function MobileGroup({ title, items }: { title: string; items: Item[] }) {
+	return (
+		<div className="border-b border-white/10 py-3 last:border-0">
+			<p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-white/50">{title}</p>
+			<div className="grid grid-cols-2 gap-x-2">
+				{items.map((i) => (
+					<Link key={i.href} href={i.href} className="rounded-lg px-2 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10">
+						{i.title}
+					</Link>
+				))}
+			</div>
+		</div>
 	);
 }
