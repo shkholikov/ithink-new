@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import PartnerItgrixPage from "@/components/pages/partner-itgrix-page";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -31,9 +32,6 @@ const partnerData: Record<string, { name: string; description: string }> = {
 	}
 };
 
-// Only the partners listed above exist; any other slug returns 404.
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
 	return Object.keys(partnerData).map((slug) => ({ slug }));
 }
@@ -58,13 +56,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PartnerPage({ params }: Props) {
 	const { locale, slug } = await params;
+	// Unknown slugs get the localized app/[locale]/not-found.tsx.
+	const partner = partnerData[slug];
+	if (!partner) notFound();
 	setRequestLocale(locale);
 
 	if (slug === "itgrix") {
 		return <PartnerItgrixPage locale={locale} />;
 	}
-
-	const partner = partnerData[slug];
 
 	const comingSoon: Record<string, string> = {
 		uz: "Tez orada...",
@@ -76,8 +75,8 @@ export default async function PartnerPage({ params }: Props) {
 		<div className="pt-24 min-h-screen bg-background flex items-center justify-center">
 			<div className="text-center max-w-lg mx-auto px-4">
 				<p className="text-sm text-muted-foreground uppercase tracking-widest mb-3">Partner</p>
-				<h1 className="text-4xl font-bold text-foreground mb-4">{partner?.name ?? slug}</h1>
-				{partner?.description && <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{partner.description}</p>}
+				<h1 className="text-4xl font-bold text-foreground mb-4">{partner.name}</h1>
+				{partner.description && <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{partner.description}</p>}
 				<p className="text-muted-foreground">{comingSoon[locale] ?? comingSoon.en}</p>
 			</div>
 		</div>

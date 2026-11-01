@@ -1,13 +1,15 @@
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-// Only the slugs the navigation links to exist; any other slug returns 404.
-export const dynamicParams = false;
+// Only the slugs the navigation links to exist. Other slugs call notFound(), which renders
+// app/[locale]/not-found.tsx; dynamicParams = false would serve the Russian-only global 404 instead.
+const SLUGS = ["courses", "certification", "corporate"];
 
 export function generateStaticParams() {
-  return [{ slug: "courses" }, { slug: "certification" }, { slug: "corporate" }];
+  return SLUGS.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -22,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TrainingPage({ params }: Props) {
   const { locale, slug } = await params;
+  if (!SLUGS.includes(slug)) notFound();
   setRequestLocale(locale);
   const subtitle: Record<string, string> = { uz: 'Tez orada...', ru: 'Скоро...', en: 'Coming soon...' };
 
