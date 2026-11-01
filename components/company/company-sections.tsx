@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Compass, Eye, Handshake, MessagesSquare, Scale, ShieldCheck, Target, Users, Wrench } from "lucide-react";
 import { Section, SectionHeading } from "@/components/site/section";
 import { FeatureGrid } from "@/components/site/feature-grid";
-import { DottedMap } from "@/components/ui/dotted-map";
+import { MarketsGlobe } from "@/components/site/markets-globe";
 
 /** About the company: the founding story from the old /about page, heading left and text right. */
 export async function StorySection({ locale }: { locale: string }) {
@@ -109,42 +109,30 @@ export async function WhySection({ locale }: { locale: string }) {
 	);
 }
 
-/** The markets, pinned at the city we work from in each. */
-const MARKETS = [
-	{ key: "uz", lat: 41.2995, lng: 69.2401 },
-	{ key: "kz", lat: 43.222, lng: 76.8512 },
-	{ key: "tj", lat: 38.5598, lng: 68.787 },
-	{ key: "us", lat: 29.7604, lng: -95.3698 }
-] as const;
+const MARKETS = ["uz", "kz", "tj", "us"] as const;
 
-/** The four markets: a list on the left, the dotted world map on the right. The map is decoration; the list carries the names. */
+/** The four markets: a list on the left, the rotating globe on the right. The globe is decoration; the list carries the names. */
 export async function MarketsSection({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "company.location" });
 	const page = await getTranslations({ locale, namespace: "companyPage.location" });
 	return (
 		<Section tone="muted">
-			<div className="grid items-center gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
+			<div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
 				<div>
 					<SectionHeading eyebrow={t("badge")} title={t("title")} subtitle={page("subtitle")} className="mb-8 sm:mb-10" />
 					<ul className="reveal grid grid-cols-1 gap-2 sm:grid-cols-2">
-						{MARKETS.map((m) => (
-							<li key={m.key} className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground">
-								<span className="size-2 shrink-0 rounded-full bg-brand" aria-hidden="true" />
-								{t(m.key)}
+						{MARKETS.map((m, i) => (
+							<li
+								key={m}
+								className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground"
+							>
+								<span className={i === 0 ? "led text-accent-yellow" : "led text-brand"} aria-hidden="true" />
+								{t(m)}
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className="reveal rounded-3xl border border-border bg-card p-3 sm:p-6">
-					<DottedMap
-						markers={MARKETS.map((m) => ({ lat: m.lat, lng: m.lng, size: 0.8 }))}
-						markerColor="#377dff"
-						dotRadius={0.22}
-						pulse
-						className="w-full text-foreground/25"
-						aria-hidden="true"
-					/>
-				</div>
+				<MarketsGlobe labels={{ uz: t("uz"), kz: t("kz"), tj: t("tj"), us: t("us") }} />
 			</div>
 		</Section>
 	);

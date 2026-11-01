@@ -67,11 +67,13 @@ export function NumberTicker({
     () =>
       springValue.on("change", (latest) => {
         if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US", {
+          const text = Intl.NumberFormat("en-US", {
             minimumFractionDigits: decimalPlaces,
             maximumFractionDigits: decimalPlaces,
             useGrouping: false,
           }).format(Number(latest.toFixed(decimalPlaces)))
+          // The spring settles for ~5 s after the figure stops changing; skip identical writes.
+          if (ref.current.textContent !== text) ref.current.textContent = text
         }
       }),
     [springValue, decimalPlaces]
@@ -81,7 +83,7 @@ export function NumberTicker({
     <span
       ref={ref}
       className={cn(
-        "inline-block tracking-wider text-black tabular-nums dark:text-white",
+        "inline-block tracking-wider text-black tabular-nums dark:text-ink-foreground",
         className
       )}
       {...props}

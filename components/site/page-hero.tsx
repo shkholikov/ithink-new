@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /** A crumb without `href` renders as plain text (a group with no index page). */
@@ -30,7 +29,7 @@ export function PageHero({
 	className?: string;
 }) {
 	return (
-		<section data-lg-theme="dark" className={cn("ink-scene relative overflow-hidden text-white", className)}>
+		<section className={cn("ink-scene relative overflow-hidden text-ink-foreground", className)}>
 			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0" />
 			<div
 				className={cn(
@@ -40,28 +39,38 @@ export function PageHero({
 			>
 				<div>
 					{crumbs && crumbs.length > 0 && (
-						<nav aria-label="Breadcrumb" className="appear mb-6">
-							<ol className="flex flex-wrap items-center gap-1.5 text-xs text-ink-muted">
-								{crumbs.map((c, i) => (
-									<li key={c.label} className="inline-flex items-center gap-1.5">
-										{i > 0 && <ChevronRight className="size-3.5 opacity-60" aria-hidden="true" />}
-										{i < crumbs.length - 1 && c.href ? (
-											<Link href={c.href} className="transition-colors hover:text-white">
-												{c.label}
-											</Link>
-										) : (
-											<span aria-current={i === crumbs.length - 1 ? "page" : undefined} className={i === crumbs.length - 1 ? "text-white/85" : undefined}>
-												{c.label}
-											</span>
-										)}
-									</li>
-								))}
+						<nav aria-label="Breadcrumb" className="appear mb-5">
+							<ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] font-medium text-ink-muted">
+								{crumbs.map((c, i) => {
+									const last = i === crumbs.length - 1;
+									return (
+										<li key={c.label} className="inline-flex items-center gap-2">
+											{i > 0 && (
+												<span aria-hidden="true" className="text-ink-foreground/25">
+													/
+												</span>
+											)}
+											{!last && c.href ? (
+												<Link href={c.href} className="transition-colors hover:text-ink-foreground">
+													{c.label}
+												</Link>
+											) : (
+												<span
+													aria-current={last ? "page" : undefined}
+													className={last ? "text-ink-foreground underline decoration-brand decoration-2 underline-offset-[6px]" : undefined}
+												>
+													{c.label}
+												</span>
+											)}
+										</li>
+									);
+								})}
 							</ol>
 						</nav>
 					)}
 					{eyebrow && (
-						<p className="appear mb-5 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">
-							<span className="size-1.5 rounded-full bg-accent-yellow" aria-hidden="true" />
+						<p className="appear mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-accent">
+							<span aria-hidden="true" className="h-px w-6 bg-ink-accent/60" />
 							{eyebrow}
 						</p>
 					)}

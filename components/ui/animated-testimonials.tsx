@@ -86,10 +86,10 @@ export const AnimatedTestimonials = ({
                 >
                   <div
                     aria-hidden="true"
-                    className="ink-scene relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 p-8 text-white shadow-2xl"
+                    className="ink-scene relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-ink-foreground/10 p-8 text-ink-foreground shadow-2xl"
                   >
                     <div className="ink-grid absolute inset-0" />
-                    <span className="relative flex size-16 items-center justify-center rounded-2xl bg-white/10 text-2xl font-semibold backdrop-blur">
+                    <span className="relative flex size-16 items-center justify-center rounded-2xl bg-ink-foreground/10 text-2xl font-semibold backdrop-blur">
                       {testimonial.company.slice(0, 2).toUpperCase()}
                     </span>
                     <span className="relative">

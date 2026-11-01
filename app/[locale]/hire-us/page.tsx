@@ -68,12 +68,13 @@ export default async function HireUsRoute({ params }: Props) {
 			<Section tone="muted">
 				<SectionHeading eyebrow={t("roles.eyebrow")} title={t("roles.title")} subtitle={t("roles.subtitle")} />
 				<BentoGrid className="auto-rows-[15rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-					{roles.map((r) => (
+					{roles.map((r, i) => (
 						<BentoCard
 							key={r.key}
 							name={t(`roles.${r.key}`)}
 							description={t(`roles.${r.key}Note`)}
 							Icon={r.icon}
+							index={i + 1}
 							href={r.href}
 							cta={svc("more")}
 							className={`reveal col-span-1 ${r.span}`}

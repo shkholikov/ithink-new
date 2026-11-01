@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
-import { NumberTicker } from "@/components/ui/number-ticker";
+import { StatsStrip } from "@/components/site/stats-strip";
 import { Section, SectionHeading } from "@/components/site/section";
+import { MarketsGlobe } from "@/components/site/markets-globe";
 
 /** The figures used everywhere on the site. Change them here and in the copy that quotes them. */
 export const STATS = [
@@ -8,25 +9,39 @@ export const STATS = [
 	{ key: "projects", value: 72, suffix: "+" },
 	{ key: "team", value: 15, suffix: "+" },
 	{ key: "markets", value: 4, suffix: "" },
-	{ key: "since", value: 2020, suffix: "", start: 2000 }
+	{ key: "since", value: 2020, suffix: "" }
 ] as const;
 
+/** Four figures on the left, the markets globe on the right. */
 export async function StatsBand({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "home.stats" });
+	const p = await getTranslations({ locale, namespace: "home.partners" });
+	const figures = STATS.filter((s) => s.key !== "markets");
+	const markets = [p("market1"), p("market2"), p("market3"), p("market4")];
+
 	return (
 		<Section tone="ink">
-			<SectionHeading eyebrow={t("eyebrow")} title={t("title")} onInk align="center" />
-			<dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 lg:grid-cols-5">
-				{STATS.map((s) => (
-					<div key={s.key} className="reveal flex flex-col justify-between gap-6 bg-ink/80 p-6 last:col-span-2 sm:p-8 lg:last:col-span-1">
-						<dt className="order-2 text-sm leading-snug text-ink-muted">{t(s.key)}</dt>
-						<dd className="order-1 text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-							<NumberTicker value={s.value} startValue={"start" in s ? s.start : 0} className="tracking-tight text-white dark:text-white" />
-							<span className="text-[#9cc0ff]">{s.suffix}</span>
-						</dd>
+			<div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-8">
+				<div>
+					<SectionHeading eyebrow={t("eyebrow")} title={t("title")} onInk />
+					<StatsStrip items={figures.map((s) => ({ key: s.key, value: s.value, suffix: s.suffix, label: t(s.key) }))} />
+				</div>
+				<div>
+					<MarketsGlobe labels={{ uz: markets[0], kz: markets[1], tj: markets[2], us: markets[3] }} />
+					<p className="mt-4 text-center text-sm font-semibold text-ink-foreground">{p("marketsTitle")}</p>
+					<div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+						{markets.map((m, i) => (
+							<span
+								key={m}
+								className="tag tag-scene"
+							>
+								<span aria-hidden="true" className={i === 0 ? "led text-accent-yellow" : "led text-ink-accent"} />
+								{m}
+							</span>
+						))}
 					</div>
-				))}
-			</dl>
+				</div>
+			</div>
 		</Section>
 	);
 }

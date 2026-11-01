@@ -18,7 +18,7 @@ export function MobileMenu({ openLabel, closeLabel, children }: { openLabel: str
 	return (
 		<details ref={ref} className="group lg:hidden">
 			<summary
-				className="flex size-10 cursor-pointer list-none items-center justify-center rounded-xl text-white/80 hover:bg-white/10 [&::-webkit-details-marker]:hidden"
+				className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full text-ink-foreground/80 hover:bg-ink-foreground/10 [&::-webkit-details-marker]:hidden"
 				aria-label={openLabel}
 			>
 				<Menu className="size-5 group-open:hidden" aria-hidden="true" />

@@ -1,10 +1,12 @@
 import type { LucideIcon } from "lucide-react";
-import { MagicCard } from "@/components/ui/magic-card";
 import { cn } from "@/lib/utils";
 
 export type Feature = { title: string; description: string; icon?: LucideIcon; meta?: string };
 
-/** Magic UI cards whose border glow follows the cursor. 1, 2 or 3 columns with a single-column fallback. */
+/**
+ * Feature cards that lead with an index numeral; the icon, when given, sits small in the corner.
+ * Hover fades in the blueprint grid and turns the numeral blue. Server-rendered, no JS.
+ */
 export function FeatureGrid({ items, columns = 3, className }: { items: Feature[]; columns?: 2 | 3 | 4; className?: string }) {
 	return (
 		<div
@@ -16,19 +18,18 @@ export function FeatureGrid({ items, columns = 3, className }: { items: Feature[
 				className
 			)}
 		>
-			{items.map((f) => (
-				<MagicCard key={f.title} className="reveal rounded-3xl" gradientColor="rgba(55,125,255,0.10)" gradientFrom="#377dff" gradientTo="#f9b934">
-					<div className="relative flex h-full flex-col p-6 sm:p-7">
-						{f.icon && (
-							<span className="mb-5 flex size-11 items-center justify-center rounded-xl bg-brand/10 text-brand-text">
-								<f.icon className="size-5" aria-hidden="true" />
-							</span>
-						)}
-						{f.meta && <span className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand-text">{f.meta}</span>}
-						<h3 className="text-lg font-semibold tracking-tight text-foreground">{f.title}</h3>
-						<p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
+			{items.map((f, i) => (
+				<div key={f.title} className="blueprint-hover group reveal flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-colors duration-300 hover:border-brand/40 sm:p-8">
+					<div className="flex items-start justify-between gap-4">
+						<span className="text-5xl font-light leading-none tracking-tight text-muted-foreground/45 tabular-nums transition-colors duration-300 group-hover:text-brand-text">
+							{String(i + 1).padStart(2, "0")}
+						</span>
+						{f.icon && <f.icon className="size-5 text-muted-foreground/70 transition-colors group-hover:text-brand-text" aria-hidden="true" />}
 					</div>
-				</MagicCard>
+					{f.meta && <span className="mt-8 text-[11px] font-semibold uppercase tracking-wider text-brand-text">{f.meta}</span>}
+					<h3 className={cn("text-lg font-semibold tracking-tight text-foreground", f.meta ? "mt-2" : "mt-10")}>{f.title}</h3>
+					<p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
+				</div>
 			))}
 		</div>
 	);

@@ -44,12 +44,13 @@ export default async function Footer({ locale }: { locale: string }) {
 	];
 
 	return (
-		<footer className="ink-scene relative overflow-hidden border-t border-white/10 text-white">
+		<footer className="ink-scene relative overflow-hidden border-t border-ink-foreground/10 text-ink-foreground">
 			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0 opacity-60" />
 			<div className="relative mx-auto max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
 				<div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
 					<div className="max-w-sm">
-						<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} sizes="112px" className="h-8 w-auto" />
+						<Image src="/logo.png" alt="ITHINK" width={1372} height={440} sizes="112px" className="h-8 w-auto dark:hidden" />
+						<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} sizes="112px" className="h-8 w-auto hidden dark:block" />
 						<p className="mt-6 text-sm leading-relaxed text-ink-muted">{t("about")}</p>
 						<ul className="mt-8 space-y-3">
 							{channels.map((c) => (
@@ -58,9 +59,9 @@ export default async function Footer({ locale }: { locale: string }) {
 										href={c.href}
 										target={c.href.startsWith("http") ? "_blank" : undefined}
 										rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-										className="inline-flex items-center gap-3 text-sm text-white/85 transition-colors hover:text-white"
+										className="inline-flex items-center gap-3 text-sm text-ink-foreground/85 transition-colors hover:text-ink-foreground"
 									>
-										<span className="flex size-9 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+										<span className="flex size-9 items-center justify-center rounded-xl border border-ink-foreground/10 bg-ink-foreground/5">
 											<c.icon className="size-4" aria-hidden="true" />
 										</span>
 										{c.label}
@@ -72,11 +73,11 @@ export default async function Footer({ locale }: { locale: string }) {
 					<div className="grid gap-10 sm:grid-cols-3">
 						{columns.map((col) => (
 							<nav key={col.title} aria-label={col.title}>
-								<p className="text-sm font-semibold text-white">{col.title}</p>
+								<p className="text-sm font-semibold text-ink-foreground">{col.title}</p>
 								<ul className="mt-4 space-y-2.5">
 									{col.links.map((l) => (
 										<li key={l.href}>
-											<Link href={l.href} className="text-sm text-ink-muted transition-colors hover:text-white">
+											<Link href={l.href} className="text-sm text-ink-muted transition-colors hover:text-ink-foreground">
 												{l.label}
 											</Link>
 										</li>
@@ -86,7 +87,7 @@ export default async function Footer({ locale }: { locale: string }) {
 						))}
 					</div>
 				</div>
-				<div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+				<div className="mt-16 flex flex-col gap-3 border-t border-ink-foreground/10 pt-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
 					<p>
 						© {new Date().getFullYear()} ITHINK. {t("rights")}.
 					</p>

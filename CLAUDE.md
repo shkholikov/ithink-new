@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Page skeleton: `PageHero` (`components/site/page-hero.tsx`) → `Section` / `SectionHeading` (`components/site/section.tsx`) → `CtaSection` (`components/site/cta-section.tsx`). No hand-rolled `<h1>` blocks.
 - Actions: `Cta` and `CtaRow` (`components/site/cta.tsx`), GlassyUI glass buttons. `prominent` is the primary; `soft` is the secondary on ink, `ghost` on light. Two actions side by side always go in `CtaRow`.
 - Cards: `rounded-3xl border border-border bg-card p-6`; feature cards via `FeatureGrid`. Controls `rounded-xl`.
-- Colour: semantic tokens from `app/globals.css` only. Brand blue as text is `text-brand-text`; filled buttons are #2563eb (white on #377dff fails 4.5:1). On ink: `text-white`, `text-ink-muted`, `border-white/10`.
+- Colour: semantic tokens from `app/globals.css` only. Brand blue as text is `text-brand-text`; filled buttons are #2563eb (white on #377dff fails 4.5:1). The hero, CTA band and footer "scene" follows the theme: on it use `text-ink-foreground`, `text-ink-muted`, `text-ink-accent`, `border-ink-foreground/10`; `text-white` only on a solid blue fill.
 - Motion: `appear` classes for hero headings, `reveal` for scroll entrance, both CSS. framer-motion only inside registry components, via `m.*`, never `motion.*`.
 - New registry components: install from the registries in `components.json`, then rewrite `motion/react` imports to `framer-motion` + `m`, and swap other icon sets for lucide.
 

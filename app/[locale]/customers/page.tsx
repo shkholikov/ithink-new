@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/site/page-hero";
 import { Cta, CtaRow } from "@/components/site/cta";
 import { CtaSection } from "@/components/site/cta-section";
-import { StatsPanel } from "@/components/company/stats-panel";
-import { ClientsSection, QuotesSection } from "@/components/customers/customer-sections";
+import { ClientWall, ClientsSection, FeaturedCases, QuotesSection } from "@/components/customers/customer-sections";
 import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -19,14 +18,13 @@ export default async function CustomersPage({ params }: Props) {
 	const { locale } = await params;
 	setRequestLocale(locale);
 	const t = await getTranslations({ locale, namespace: "customersPage.hero" });
-	const legacy = await getTranslations({ locale, namespace: "customers.hero" });
 	const nav = await getTranslations({ locale, namespace: "nav" });
 
 	return (
 		<>
 			<PageHero
 				eyebrow={t("eyebrow")}
-				title={legacy("title")}
+				title={t("title")}
 				subtitle={t("subtitle")}
 				crumbs={[
 					{ href: `/${locale}`, label: nav("home") },
@@ -37,13 +35,14 @@ export default async function CustomersPage({ params }: Props) {
 						<Cta href={`/${locale}/contact`} arrow>
 							{nav("freeCta")}
 						</Cta>
-						<Cta href={`/${locale}/company`} variant="soft">
-							{nav("companyPage")}
+						<Cta href={`/${locale}/customers#cases`} variant="soft">
+							{t("casesCta")}
 						</Cta>
 					</CtaRow>
 				}
-				aside={<StatsPanel locale={locale} keys={["clients", "projects", "markets"]} />}
+				aside={<ClientWall locale={locale} />}
 			/>
+			<FeaturedCases locale={locale} />
 			<ClientsSection locale={locale} />
 			<QuotesSection locale={locale} />
 			<CtaSection locale={locale} pageTag="customers" />

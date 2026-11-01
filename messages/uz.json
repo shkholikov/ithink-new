@@ -381,11 +381,6 @@
 		}
 	},
 	"customers": {
-		"hero": {
-			"badge": "Case Study'lar",
-			"title": "ITHINKga Ishongan Mijozlar",
-			"subtitle": "Startaplardan tortib yirik korxonalargacha — biz yordam bergan bizneslardan bir qismi."
-		},
 		"services": "Ko'rsatilgan xizmatlar",
 		"items": [
 			{
@@ -804,14 +799,17 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "Barcha xizmatlar",
 			"ctaPrimary": "Loyihani muhokama qilish",
 			"ctaSecondary": "Barcha xizmatlar",
-			"outcomesCard": "Nimaga ega bo'lasiz",
 			"otherEyebrow": "Boshqa xizmatlar",
 			"otherTitle": "Qo'shni vazifalarni ham hal qilamiz",
-			"beamEyebrow": "Qanday ishlaydi",
-			"beamTitle": "Barcha savdo kanallari bitta CRM'da"
+			"before": "Oldin",
+			"after": "Keyin",
+			"example": "Interfeys namunasi",
+			"exampleReport": "Hisobot namunasi",
+			"resolved": "Hal qilindi",
+			"tickets": "Xodimlar so'rovlari",
+			"auto": "Avtomatik"
 		},
 		"it-infrastructure": {
 			"hero": {
@@ -854,22 +852,18 @@
 				"title": "Yetkazib berish jarayonimiz",
 				"items": [
 					{
-						"step": "01",
 						"title": "Infratuzilma auditi",
 						"description": "Mavjud muhitni baholaymiz, muammoli joylarni aniqlaymiz va o'zgartirish kerak bo'lgan narsalarni hujjatlashtiramiz."
 					},
 					{
-						"step": "02",
 						"title": "Arxitektura dizayni",
 						"description": "Miqyos, byudjet va 3 yillik o'sish yo'nalishingizga mos yechim loyihalaymiz."
 					},
 					{
-						"step": "03",
 						"title": "Joylashtirish",
 						"description": "Muhandislarimiz hamma narsani biznesingizga minimal ta'sir ko'rsatib sozlaydi."
 					},
 					{
-						"step": "04",
 						"title": "Topshirish va o'qitish",
 						"description": "To'liq hujjatlashtirish, administrator o'qitish va ixtiyoriy qo'llab-quvvatlash rejasi."
 					}
@@ -896,7 +890,12 @@
 			"cta": {
 				"title": "Mustahkam IT asosini qurishga tayyormisiz?",
 				"subtitle": "Mavjud tizimingiz haqida aytib bering — 24 soat ichida reja tuzamiz."
-			}
+			},
+			"before": [
+				"Tarmoq va serverlar bo'laklab yig'ilgan, har qanday nosozlik ofis ishini to'xtatadi.",
+				"Har bir yangi xodim yoki filial uchun tarmoq va sozlamalarni qayta qilish kerak bo'ladi.",
+				"Kirish huquqlari qo'lda beriladi, zaxira nusxalarni esa hech kim tekshirmagan."
+			]
 		},
 		"managed-it": {
 			"hero": {
@@ -939,22 +938,18 @@
 				"title": "Boshlash juda oddiy",
 				"items": [
 					{
-						"step": "01",
 						"title": "Onboarding auditi",
 						"description": "IT muhitingizni to'liq hujjatlashtiramiz: qurilmalar, dasturlar, hisoblar va kirish nuqtalari."
 					},
 					{
-						"step": "02",
 						"title": "Monitoring o'rnatish",
 						"description": "Monitoring agentlarini joylashtiramiz va infratuzilmangiz uchun ogohlantirish chegaralarini sozlaymiz."
 					},
 					{
-						"step": "03",
 						"title": "Doimiy operatsiyalar",
 						"description": "Kunlik monitoring, tezkor hodisaga javob va belgilangan SLA asosida texnik xizmat."
 					},
 					{
-						"step": "04",
 						"title": "Oylik ko'rib chiqish",
 						"description": "Oylik uchrashuv: hodisalar tahlili, ishlash hisoboti va kelgusi yaxshilanishlarni rejalashtirish."
 					}
@@ -981,6 +976,21 @@
 			"cta": {
 				"title": "IT bilan biz shug'ullanamiz — siz biznesga e'tibor bering.",
 				"subtitle": "Jamoa hajmingiz va infratuzilmangiz haqida aytib bering — to'g'ri reja tuzamiz."
+			},
+			"before": [
+				"IT xarajatlari oldindan noma'lum: har bir nosozlik shoshilinch hisobga aylanadi.",
+				"Xodimlar kompyuter yoki printerni kimdir bo'shab tuzatishini kutib o'tiradi.",
+				"Muammo haqida server allaqachon ishlamay qolganda bilishadi."
+			],
+			"visual": {
+				"tickets": [
+					"Yangi xodim uchun parolni tiklash",
+					"Buxgalteriyadagi printer chop etmayapti",
+					"Ish stansiyasiga dastur o'rnatish",
+					"Serverlarda patchlarni yangilash",
+					"Noutbuk Wi-Fi'ga ulanmayapti",
+					"Antivirus litsenziyasini uzaytirish"
+				]
 			}
 		},
 		"crm-automation": {
@@ -1024,22 +1034,18 @@
 				"title": "Tartibsizlikdan aniqlikka",
 				"items": [
 					{
-						"step": "01",
 						"title": "Savdo jarayoni auditi",
 						"description": "Leadlar birinchi kontaktdan bitim yopilishigacha qanday harakatlanishini xaritalaymiz."
 					},
 					{
-						"step": "02",
 						"title": "CRM sozlash",
 						"description": "CRM ni noldan sozlaymiz — pipelinelar, foydalanuvchilar, avtomatlashtirish va shablonlar."
 					},
 					{
-						"step": "03",
 						"title": "Kanal integratsiyasi",
 						"description": "Telefoniya, messenjerlar, sayt formalar va boshqa lead manbalarini CRM ga ulaymiz."
 					},
 					{
-						"step": "04",
 						"title": "O'qitish va ishga tushirish",
 						"description": "Jamoangizni o'qitamiz, parallel test davri o'tkazamiz va ishga tushirgandan keyin yordam beramiz."
 					}
@@ -1066,7 +1072,12 @@
 			"cta": {
 				"title": "Savdoni avtomatlashtirishga tayyormisiz?",
 				"subtitle": "Hozirgi tizimingiz va lead manbalaringizni aytib bering — 48 soat ichida CRM arxitekturasini taklif etamiz."
-			}
+			},
+			"before": [
+				"Menejerga qayta qo'ng'iroq qilishni hech kim eslatmagani uchun arizalar yo'qoladi.",
+				"Bitimlar menejerlarning daftarlari va shaxsiy yozishmalarida qoladi.",
+				"Lidlar WhatsApp, Telegram, Instagram va saytga keladi, ularni qo'lda yig'ishadi."
+			]
 		},
 		"process-automation": {
 			"hero": {
@@ -1109,22 +1120,18 @@
 				"title": "Avtomatlashtirish, qadam-baqadam",
 				"items": [
 					{
-						"step": "01",
 						"title": "Jarayon auditi",
 						"description": "Jamoangiz bilan hozirgi workflowlar, og'riqli nuqtalar va avtomatlashtirish imkoniyatlarini o'rganamiz."
 					},
 					{
-						"step": "02",
 						"title": "Yechim dizayni",
 						"description": "Aniq avtomatlashtirish rejasini taklif etamiz: nimani birinchi avtomatlashtirish, texnik stek va kutilgan ROI."
 					},
 					{
-						"step": "03",
 						"title": "Qurish va integratsiya qilish",
 						"description": "Botlar, integratsiyalar va workflowlarni quramiz — ishga tushirishdan oldin test muhitida sinovdan o'tkazamiz."
 					},
 					{
-						"step": "04",
 						"title": "Monitoring va takomillashtirish",
 						"description": "Ishga tushirgandan keyin ishlashni kuzatamiz va haqiqiy foydalanish ma'lumotlariga asoslanib takomillashtiramiz."
 					}
@@ -1151,6 +1158,40 @@
 			"cta": {
 				"title": "Nimani birinchi avtomatlashtirgan bo'lar edingiz?",
 				"subtitle": "Eng og'riqli qo'l jarayoningizni aytib bering — qanday hal qilishni ko'rsatamiz."
+			},
+			"before": [
+				"Xodimlar jadvallar, CRM va buxgalteriya o'rtasida ma'lumotlarni soatlab ko'chiradi.",
+				"Qo'lda kiritish xatolar, o'tkazib yuborilgan qadamlar va takrorlarga olib keladi.",
+				"Jamoa mijozlar va o'sish o'rniga kundalik ishlar bilan band."
+			],
+			"visual": {
+				"title": "Avtomatlashtirish lentasi",
+				"events": [
+					{
+						"title": "Hisob-faktura yaratildi va mijozga yuborildi",
+						"source": "Buxgalteriya"
+					},
+					{
+						"title": "Vazifa menejerga biriktirildi",
+						"source": "CRM"
+					},
+					{
+						"title": "Shartnoma imzolandi",
+						"source": "Hujjatlar"
+					},
+					{
+						"title": "Jamoaga bildirishnoma yuborildi",
+						"source": "Telegram-bot"
+					},
+					{
+						"title": "Ombordagi qoldiqlar yangilandi",
+						"source": "Ombor"
+					},
+					{
+						"title": "Ta'til so'rovi tasdiqlandi",
+						"source": "HR"
+					}
+				]
 			}
 		},
 		"software-development": {
@@ -1194,22 +1235,18 @@
 				"title": "G'oyadan ishlab chiqarishgacha",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery va qamrov",
 						"description": "Birorta qator kod yozmasdan oldin talablar, foydalanuvchi oqimlari va texnik arxitekturani aniqlaymiz."
 					},
 					{
-						"step": "02",
 						"title": "Dizayn",
 						"description": "Haqiqiy wireframelar va maketchalar bilan UI/UX dizayn — qurishdan oldin nima olishingizni ko'rasiz."
 					},
 					{
-						"step": "03",
 						"title": "Ishlab chiqish",
 						"description": "Muntazam demolar bilan iterativ sprintlar — faqat oxirida emas, har bir bosqichda xabardor bo'lasiz."
 					},
 					{
-						"step": "04",
 						"title": "QA va ishga tushirish",
 						"description": "Sinchiklab sinov, ishlab chiqarishga joylashtirish va hujjatlashtirish bilan tuzilgan topshirish."
 					}
@@ -1236,6 +1273,14 @@
 			"cta": {
 				"title": "Loyiha rejangiz bormi?",
 				"subtitle": "Nima qurishingiz kerakligini tasvirlab bering — 48 soat ichida qamrov va taklif tayyorlaymiz."
+			},
+			"before": [
+				"Tayyor servis pudratchiga tegishli, usiz hech narsani o'zgartirib bo'lmaydi.",
+				"Shablon vositalar jarayonlarni birovning mantiqiga moslashga majbur qiladi.",
+				"Har bir yangi funksiya tizimni qaytadan yozishni talab qiladi."
+			],
+			"visual": {
+				"done": "Tayyor: reliz prodakshnda ishlamoqda"
 			}
 		},
 		"it-audit": {
@@ -1279,22 +1324,18 @@
 				"title": "Audit jarayoni",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery suhbatlari",
 						"description": "Asosiy manfaatdor tomonlar — IT xodimlar, menejerlar va oxirgi foydalanuvchilar — bilan to'liq tablo tushunish uchun suhbatlashamiz."
 					},
 					{
-						"step": "02",
 						"title": "Texnik tahlil",
 						"description": "Infratuzilmangizga kiramiz va hujjatlashtiramiz, diagnostika vositalarini ishlatamiz va konfiguratsiyalaringizni ko'rib chiqamiz."
 					},
 					{
-						"step": "03",
 						"title": "Hisobot tayyorlash",
 						"description": "Topilmalarni aniq xulosalar, risk reytinglari va aniq tavsiyalar bilan tuzilgan hisobotga jamlaymiz."
 					},
 					{
-						"step": "04",
 						"title": "Yo'l xaritasini taqdimot",
 						"description": "Hisobot bo'yicha savollarga javob beramiz va birinchi navbatda nimaga kirishishni aniqlaymizga yordam beramiz."
 					}
@@ -1321,6 +1362,30 @@
 			"cta": {
 				"title": "IT bo'shliqlari qayerdaligini bilmayapsizmi?",
 				"subtitle": "Audit aynan shuning uchun. Birgalikda aniqlaymiz."
+			},
+			"before": [
+				"Kompaniyada qanday qurilmalar, litsenziyalar va kirish huquqlari borligini hech kim aniq bilmaydi.",
+				"Zaifliklar faqat nosozlik yoki ma'lumotlar sizib chiqqandan keyin aniqlanadi.",
+				"Yaxshilashni nimadan boshlash va byudjetni qayerga yo'naltirish noaniq."
+			],
+			"visual": {
+				"title": "IT muhiti bahosi",
+				"areas": [
+					"Tarmoq",
+					"Xavfsizlik",
+					"Zaxira nusxalar",
+					"Litsenziyalar"
+				],
+				"findings": [
+					{
+						"text": "Zaxira nusxalar tiklash uchun tekshirilmagan",
+						"risk": "Yuqori xavf"
+					},
+					{
+						"text": "Ish stansiyalarida eskirgan dasturlar",
+						"risk": "O'rta xavf"
+					}
+				]
 			}
 		}
 	},
@@ -1425,13 +1490,6 @@
 			"since": "kompaniya tashkil topgan yil"
 		},
 		"crm": {
-			"eyebrow": "CRM va savdoni avtomatlashtirish",
-			"title": "Har bir ariza CRM'ga tushadi. Birortasi ham yo'qolmaydi.",
-			"subtitle": "Telefoniya, WhatsApp, Telegram, Instagram va saytni amoCRM yoki Bitrix24 ga ulaymiz. Menejer mijozning butun tarixini bitta kartochkada ko'radi.",
-			"point1": "Qo'ng'iroqlar va yozuvlar mijoz kartochkasida",
-			"point2": "O'tkazib yuborilgan qo'ng'iroqlarga avtomatik vazifalar",
-			"point3": "Arizalarni menejerlar o'rtasida taqsimlash",
-			"cta": "CRM haqida batafsil",
 			"website": "Sayt",
 			"phone": "Telefoniya",
 			"hub": "CRM",
@@ -1557,17 +1615,127 @@
 	},
 	"customersPage": {
 		"meta": {
-			"title": "ITHINK mijozlari: chakana savdo, moliya, e-commerce",
-			"description": "ITHINK infratuzilma qurgan, CRM joriy qilgan va dasturiy ta'minot ishlab chiqqan kompaniyalar. Har bir mijoz bo'yicha soha va bajarilgan ishlar."
+			"title": "ITHINK mijozlari keyslari: chakana savdo, moliya, e-commerce",
+			"description": "ITHINK keyslari: mijozning vazifasi, nima qilganimiz va natija. Chakana savdo, moliya va e-commerce uchun infratuzilma, VoIP, CRM va dasturiy ta'minot."
 		},
 		"hero": {
 			"eyebrow": "50+ mijoz · 2020 yildan",
-			"subtitle": "Biz ishlaydigan kompaniyalarning bir qismi: chakana savdo, moliya, e-commerce, zargarlik brendlari va professional xizmatlar. Har bir kartada soha va bajargan ishimiz ko'rsatilgan."
+			"subtitle": "Chakana savdo, moliya, e-commerce, zargarlik va professional xizmatlar sohalaridan batafsil keyslar va mijoz kartalari. Har biri bo'yicha: vazifa, nima qilganimiz va natija.",
+			"title": "Mijozlarimiz uchun nima qildik",
+			"casesCta": "Keyslarni ko'rish",
+			"wall": "Sohalar bo'yicha mijozlar"
 		},
 		"list": {
 			"eyebrow": "Sohalar",
 			"title": "Kimga va qanday yordam berdik",
-			"filter": "Soha bo'yicha saralash"
+			"filter": "Soha bo'yicha saralash",
+			"subtitle": "Yana sakkizta mijoz. Vazifa, yechim va natijani ko'rish uchun kartani oching.",
+			"more": "Vazifa va yechim"
+		},
+		"cases": {
+			"eyebrow": "Keyslar",
+			"title": "Uchta loyiha batafsil",
+			"subtitle": "Mijozning vazifasi, ITHINK jamoasi nima qilgani va nima o'zgargani.",
+			"labels": {
+				"case": "Keys",
+				"challenge": "Vazifa",
+				"solution": "Nima qildik",
+				"result": "Natija",
+				"services": "Xizmatlar",
+				"stack": "Texnologiyalar"
+			},
+			"items": {
+				"mobicenter": {
+					"challenge": "Bir nechta filialga ega elektronika chakana savdogari: har bir nuqtaga barqaror tarmoq va aloqa kerak, IT esa barcha filiallarda bir xil ishlashi lozim.",
+					"steps": [
+						"Filiallar uchun tarmoqni loyihalab, joriy qildik",
+						"Barcha nuqtalarda VoIP telefoniyani ulab berdik",
+						"IT infratuzilmasini doimiy boshqaruvga oldik"
+					],
+					"results": [
+						"Barcha filiallarda yagona tarmoq va telefoniya",
+						"Infratuzilma va qo'llab-quvvatlash uchun bitta pudratchi javob beradi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"obbo": {
+					"challenge": "Onlayn bozorga o'z veb-ilovasi kerak, arizalar va buyurtmalar esa darhol CRM'ga tushishi lozim.",
+					"steps": [
+						"Bozorning to'liq veb-ilovasini ishlab chiqdik",
+						"Veb-ilovani CRM bilan integratsiya qildik",
+						"Mijozlar va buyurtmalar ma'lumotlarining CRM'ga uzatilishini sozladik"
+					],
+					"results": [
+						"Bozor savdolari bitta tizimda ko'rinadi",
+						"Sayt va CRM yagona tizim sifatida ishlaydi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"avtozet": {
+					"challenge": "Avtosalonga mijozlar va bitimlarni bitta tizimda yuritish, savdoning odatiy bosqichlarini esa qo'l mehnatisiz bajarish kerak.",
+					"steps": [
+						"Diler savdo jarayoniga mos CRM joriy qildik",
+						"Savdoning takrorlanuvchi bosqichlarini avtomatlashtirdik",
+						"Savdo bo'limining qo'lda bajariladigan jarayonlarini raqamli shaklga o'tkazdik"
+					],
+					"results": [
+						"Dilerning mijozlari va bitimlari bitta CRM'da",
+						"Savdoda qo'l mehnati kamaydi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"craytonVilt": {
+					"challenge": "Chakana savdo zanjiri tez o'smoqda, IT esa har bir yangi nuqtaga ulgurishi kerak.",
+					"solution": "IT infratuzilmasini sozladik va uni boshqaruvga oldik.",
+					"result": "Yangi nuqtalar tayyor infratuzilmaga ulanadi.",
+					"metrics": []
+				},
+				"aslzar": {
+					"challenge": "Zargarlik biznesiga inventar hisobi bilan bog'langan onlayn do'kon va xaridorlarni ushlab qolish usuli kerak.",
+					"solution": "Inventar boshqaruvi va sodiqlik dasturiga ega maxsus e-commerce platforma ishlab chiqdik.",
+					"result": "Savdo, qoldiqlar va sodiqlik dasturi bitta platformada ishlaydi.",
+					"metrics": []
+				},
+				"kreditMarket": {
+					"challenge": "Kredit rasmiylashtirish va mijozlar bilan ishlash qo'lda bajariladigan jarayonlar orqali borardi.",
+					"solution": "Kredit rasmiylashtirishni raqamli jarayonga o'tkazdik va mijozlar bilan ishlash uchun CRM uladik.",
+					"result": "Arizalar va mijozlar bitta tizimda yuritiladi.",
+					"metrics": []
+				},
+				"penostyle": {
+					"challenge": "Bir nechta nuqtaga ega kompaniyaga ular o'rtasida umumiy tarmoq va aloqa kerak.",
+					"solution": "Tarmoq infratuzilmasini qurdik va VoIP telefoniyani ulab berdik.",
+					"result": "Barcha nuqtalar bitta tarmoq va bitta telefoniyada ishlaydi.",
+					"metrics": []
+				},
+				"sokolov": {
+					"challenge": "Premium brendga har kuni ishonsa bo'ladigan IT qo'llab-quvvatlash kerak.",
+					"solution": "IT qo'llab-quvvatlash va boshqariladigan xizmatlarni o'z zimmamizga oldik.",
+					"result": "Brend jamoasi biznes bilan shug'ullanadi, IT'ni esa biz yuritamiz.",
+					"metrics": []
+				},
+				"udirect": {
+					"challenge": "Konsalting firmasiga ichki jarayonlarini raqamli shaklga o'tkazish kerak.",
+					"solution": "Biznes jarayonlarini raqamlashtirdik va ular uchun dasturiy ta'minot ishlab chiqdik.",
+					"result": "Kompaniya jarayonlari o'z raqamli vositalarida ishlaydi.",
+					"metrics": []
+				},
+				"paradiseWall": {
+					"challenge": "Uy bezagi kompaniyasiga veb-sayt va biznes uchun raqamli vositalar kerak.",
+					"solution": "Veb-sayt va raqamli vositalar to'plamini ishlab chiqdik.",
+					"result": "Kompaniyaning o'z veb-sayti va vazifalariga mos vositalari bor.",
+					"metrics": []
+				},
+				"chudoTovary": {
+					"challenge": "Onlayn bozorga CRM bilan bog'langan savdo platformasi kerak.",
+					"solution": "E-commerce platformani ishlab chiqdik va uni CRM bilan integratsiya qildik.",
+					"result": "Platformadagi buyurtmalar darhol CRM'ga tushadi.",
+					"metrics": []
+				}
+			}
 		}
 	},
 	"careerPage": {

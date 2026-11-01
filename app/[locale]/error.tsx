@@ -22,10 +22,10 @@ export default function LocaleError({ error, reset }: { error: Error & { digest?
 	}, [error]);
 
 	return (
-		<section data-lg-theme="dark" className="ink-scene relative flex min-h-[70vh] items-center overflow-hidden text-white">
+		<section className="ink-scene relative flex min-h-[70vh] items-center overflow-hidden text-ink-foreground">
 			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0" />
 			<div className="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-36 sm:px-6 lg:px-8">
-				<p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">
+				<p className="tag tag-scene mb-5">
 					<AlertTriangle className="size-3.5 text-accent-yellow" aria-hidden="true" />
 					{t("badge")}
 				</p>

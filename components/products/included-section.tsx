@@ -27,6 +27,7 @@ export function IncludedSection({ eyebrow, title, subtitle, items, more }: { eye
 							name={item.title}
 							description={item.description}
 							Icon={item.icon}
+							index={i + 1}
 							href={item.href!}
 							cta={more}
 							className={cn("reveal col-span-1", SPANS[i % SPANS.length])}

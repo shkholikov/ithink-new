@@ -9,7 +9,7 @@ import { Cta, CtaRow } from "@/components/site/cta";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { CrmBeam } from "@/components/home/crm-beam";
 import { PARTNER_SLUGS, type PartnerSlug } from "@/lib/site-nav";
-import { PARTNER_ICONS } from "@/components/partners/partner-meta";
+import { PartnerMark } from "@/components/partners/partner-mark";
 
 type Item = { title: string; description: string };
 
@@ -20,8 +20,7 @@ async function partnerList(locale: string) {
 		slug,
 		name: pages(`${slug}.name`),
 		category: pages(`${slug}.category`),
-		description: partners(`items.${i}.description`),
-		icon: PARTNER_ICONS[slug]
+		description: partners(`items.${i}.description`)
 	}));
 }
 
@@ -56,13 +55,11 @@ export async function PartnersHero({ locale }: { locale: string }) {
 							<li key={p.slug}>
 								<Link
 									href={`/${locale}/partners/${p.slug}`}
-									className="flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 transition-colors hover:bg-white/10"
+									className="flex h-full flex-col gap-3 rounded-2xl border border-ink-foreground/10 bg-ink-foreground/5 p-4 transition-colors hover:bg-ink-foreground/10"
 								>
-									<span className="flex size-9 items-center justify-center rounded-xl bg-[#377dff]/25">
-										<p.icon className="size-4 text-[#9cc0ff]" aria-hidden="true" />
-									</span>
+									<PartnerMark slug={p.slug} name="" className="size-10" />
 									<span>
-										<span className="block text-sm font-semibold text-white">{p.name}</span>
+										<span className="block text-sm font-semibold text-ink-foreground">{p.name}</span>
 										<span className="block text-xs text-ink-muted">{p.category}</span>
 									</span>
 								</Link>
@@ -89,10 +86,8 @@ export async function PartnersList({ locale }: { locale: string }) {
 						<MagicCard className="h-full rounded-3xl" gradientColor="rgba(55,125,255,0.10)" gradientFrom="#377dff" gradientTo="#f9b934">
 							<Link href={`/${locale}/partners/${p.slug}`} className="group relative flex h-full flex-col p-6 sm:p-7">
 								<span className="flex items-start justify-between gap-3">
-									<span className="flex size-11 items-center justify-center rounded-xl bg-brand/10 text-brand-text">
-										<p.icon className="size-5" aria-hidden="true" />
-									</span>
-									<span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-2.5 py-1 text-[11px] font-medium text-muted-foreground">
+									<PartnerMark slug={p.slug} name="" className="size-12" />
+									<span className="tag">
 										<BadgeCheck className="size-3.5 text-brand-text" aria-hidden="true" />
 										{partners("officialPartner")}
 									</span>
@@ -153,7 +148,7 @@ export async function PartnersStory({ locale }: { locale: string }) {
 										<Link
 											key={slug}
 											href={`/${locale}/partners/${slug}`}
-											className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-brand/40"
+											className="tag hover:border-brand/50 hover:text-brand-text"
 										>
 											{pages(`${slug}.name`)}
 											<ArrowRight className="size-3" aria-hidden="true" />

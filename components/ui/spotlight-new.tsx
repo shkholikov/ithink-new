@@ -1,6 +1,7 @@
-"use client";
 import React from "react";
-import { m } from "framer-motion";
+
+// Adapted from @aceternity/spotlight-new. The sway runs as CSS transform keyframes (spot-sway-*
+// in globals.css) on the compositor, so it costs no main-thread work while scrolling.
 
 type SpotlightProps = {
   gradientFirst?: string;
@@ -26,29 +27,11 @@ export const Spotlight = ({
   xOffset = 100,
 }: SpotlightProps = {}) => {
   return (
-    <m.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+    <div
+      className="pointer-events-none absolute inset-0 h-full w-full animate-[spot-fade_1.5s_ease-out_both]"
+      style={{ "--spot-x": `${xOffset}px`, "--spot-duration": `${duration}s` } as React.CSSProperties}
     >
-      <m.div
-        animate={{
-          x: [0, xOffset, 0],
-        }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
+      <div className="spot-sway-l absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none"
       >
         <div
           style={{
@@ -79,19 +62,9 @@ export const Spotlight = ({
           }}
           className={`absolute top-0 left-0 origin-top-left`}
         />
-      </m.div>
+      </div>
 
-      <m.div
-        animate={{
-          x: [0, -xOffset, 0],
-        }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-        className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none"
+      <div className="spot-sway-r absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none"
       >
         <div
           style={{
@@ -122,7 +95,7 @@ export const Spotlight = ({
           }}
           className={`absolute top-0 right-0 origin-top-right`}
         />
-      </m.div>
-    </m.div>
+      </div>
+    </div>
   );
 };

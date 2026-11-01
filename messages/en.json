@@ -337,7 +337,7 @@
 			"pricing": "Pricing",
 			"contactPage": "Contact Us"
 		},
-		"about": "An IT company from Tashkent. Infrastructure, CRM, automation and software for business since 2020.",
+		"about": "An IT company in Tashkent. Infrastructure, CRM, automation and software for business since 2020.",
 		"products": "Products",
 		"solutions": "Solutions",
 		"location": "Tashkent, Uzbekistan",
@@ -381,11 +381,6 @@
 		}
 	},
 	"customers": {
-		"hero": {
-			"badge": "Case Studies",
-			"title": "Clients Who Trust ITHINK",
-			"subtitle": "From startups to established enterprises, here's a selection of businesses we've helped grow."
-		},
 		"services": "Services provided",
 		"items": [
 			{
@@ -804,14 +799,17 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "All Services",
 			"ctaPrimary": "Discuss your project",
 			"ctaSecondary": "All services",
-			"outcomesCard": "What you get",
 			"otherEyebrow": "More services",
 			"otherTitle": "We cover the adjacent tasks too",
-			"beamEyebrow": "How it works",
-			"beamTitle": "Every sales channel in one CRM"
+			"before": "Before",
+			"after": "After",
+			"example": "Sample interface",
+			"exampleReport": "Sample report",
+			"resolved": "Resolved",
+			"tickets": "Staff requests",
+			"auto": "Automatic"
 		},
 		"it-infrastructure": {
 			"hero": {
@@ -854,22 +852,18 @@
 				"title": "Our Delivery Process",
 				"items": [
 					{
-						"step": "01",
 						"title": "Infrastructure Audit",
 						"description": "We assess your current environment, identify bottlenecks, and document what needs to change."
 					},
 					{
-						"step": "02",
 						"title": "Architecture Design",
 						"description": "We design a solution matching your scale, budget, and 3-year growth trajectory."
 					},
 					{
-						"step": "03",
 						"title": "Deployment",
 						"description": "Our engineers deploy and configure everything with minimal disruption to your business operations."
 					},
 					{
-						"step": "04",
 						"title": "Handover & Training",
 						"description": "Full documentation, admin training, and an optional ongoing support plan."
 					}
@@ -896,7 +890,12 @@
 			"cta": {
 				"title": "Ready to build a solid IT foundation?",
 				"subtitle": "Tell us about your current setup and we'll map out a plan within 24 hours."
-			}
+			},
+			"before": [
+				"The network and servers were assembled piece by piece, and any failure stops the office.",
+				"Every new hire or branch means reworking the network and settings.",
+				"Access is granted by hand, and nobody has tested the backups."
+			]
 		},
 		"managed-it": {
 			"hero": {
@@ -939,22 +938,18 @@
 				"title": "Getting Started Is Simple",
 				"items": [
 					{
-						"step": "01",
 						"title": "Onboarding Audit",
 						"description": "We document your entire IT environment: devices, software, accounts, and access points."
 					},
 					{
-						"step": "02",
 						"title": "Monitoring Setup",
 						"description": "We deploy monitoring agents and configure alerting thresholds for your specific infrastructure."
 					},
 					{
-						"step": "03",
 						"title": "Ongoing Operations",
 						"description": "Daily monitoring, fast incident response, and regular maintenance on a defined SLA."
 					},
 					{
-						"step": "04",
 						"title": "Monthly Review",
 						"description": "We meet monthly to review incidents, report on performance, and plan upcoming improvements."
 					}
@@ -981,6 +976,21 @@
 			"cta": {
 				"title": "Let us handle IT — you focus on business.",
 				"subtitle": "Talk to us about your team size and infrastructure — we'll design the right plan."
+			},
+			"before": [
+				"IT costs are unpredictable: every breakdown turns into an urgent invoice.",
+				"Staff wait until someone is free to fix a computer or printer.",
+				"You find out about a problem when the server is already down."
+			],
+			"visual": {
+				"tickets": [
+					"Password reset for a new hire",
+					"Accounting printer is not printing",
+					"Software install on a workstation",
+					"Patch update on servers",
+					"Laptop cannot connect to Wi-Fi",
+					"Antivirus licence renewal"
+				]
 			}
 		},
 		"crm-automation": {
@@ -1024,22 +1034,18 @@
 				"title": "From Chaos to Clarity",
 				"items": [
 					{
-						"step": "01",
 						"title": "Sales Process Audit",
 						"description": "We map how leads move from first contact to closed deal and identify where they're being lost."
 					},
 					{
-						"step": "02",
 						"title": "CRM Setup",
 						"description": "We configure the CRM from scratch — pipelines, users, automations, and templates."
 					},
 					{
-						"step": "03",
 						"title": "Channel Integration",
 						"description": "We connect telephony, messengers, website forms, and other lead sources to the CRM."
 					},
 					{
-						"step": "04",
 						"title": "Training & Launch",
 						"description": "We train your team, run a parallel test period, and stay on hand for questions after go-live."
 					}
@@ -1066,7 +1072,12 @@
 			"cta": {
 				"title": "Ready to automate your sales?",
 				"subtitle": "Tell us your current setup and lead sources — we'll propose a CRM architecture in 48 hours."
-			}
+			},
+			"before": [
+				"Leads get lost because nobody reminded the manager to call back.",
+				"Deals live in managers' notebooks and personal chats.",
+				"Leads arrive via WhatsApp, Telegram, Instagram and the website, and someone collects them by hand."
+			]
 		},
 		"process-automation": {
 			"hero": {
@@ -1109,22 +1120,18 @@
 				"title": "Automation, Step by Step",
 				"items": [
 					{
-						"step": "01",
 						"title": "Process Audit",
 						"description": "We spend time with your team to understand current workflows, pain points, and automation opportunities."
 					},
 					{
-						"step": "02",
 						"title": "Solution Design",
 						"description": "We propose a concrete automation plan: what to automate first, the tech stack, and expected ROI."
 					},
 					{
-						"step": "03",
 						"title": "Build & Integrate",
 						"description": "We build bots, integrations, and workflows — tested in a staging environment before going live."
 					},
 					{
-						"step": "04",
 						"title": "Monitor & Improve",
 						"description": "After launch we monitor performance and iterate based on real-world usage data and your feedback."
 					}
@@ -1151,6 +1158,40 @@
 			"cta": {
 				"title": "What would you automate first?",
 				"subtitle": "Tell us your most painful manual process — we'll show you how to fix it."
+			},
+			"before": [
+				"Staff spend hours moving data between spreadsheets, the CRM and accounting.",
+				"Manual entry brings typos, skipped steps and duplicates.",
+				"The team is busy with routine instead of customers and growth."
+			],
+			"visual": {
+				"title": "Automation feed",
+				"events": [
+					{
+						"title": "Invoice created and sent to the client",
+						"source": "Accounting"
+					},
+					{
+						"title": "Task assigned to a manager",
+						"source": "CRM"
+					},
+					{
+						"title": "Contract signed",
+						"source": "Documents"
+					},
+					{
+						"title": "Notification sent to the team",
+						"source": "Telegram bot"
+					},
+					{
+						"title": "Stock levels updated",
+						"source": "Warehouse"
+					},
+					{
+						"title": "Leave request approved",
+						"source": "HR"
+					}
+				]
 			}
 		},
 		"software-development": {
@@ -1194,22 +1235,18 @@
 				"title": "From Idea to Production",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery & Scoping",
 						"description": "We define requirements, user flows, and technical architecture before writing a single line of code."
 					},
 					{
-						"step": "02",
 						"title": "Design",
 						"description": "UI/UX design with real wireframes and mockups — you see exactly what you're getting before we build it."
 					},
 					{
-						"step": "03",
 						"title": "Development",
 						"description": "Iterative sprints with regular demos — you stay in the loop at every milestone, not just at the end."
 					},
 					{
-						"step": "04",
 						"title": "QA & Launch",
 						"description": "Thorough testing, deployment to production, and structured handover with documentation and training."
 					}
@@ -1236,6 +1273,14 @@
 			"cta": {
 				"title": "Have a project in mind?",
 				"subtitle": "Describe what you need to build — we'll scope it and share a proposal within 48 hours."
+			},
+			"before": [
+				"The off-the-shelf service belongs to the vendor, and nothing changes without them.",
+				"Template tools force your processes into someone else's logic.",
+				"Every new feature means rewriting the system."
+			],
+			"visual": {
+				"done": "Done: the release is live in production"
 			}
 		},
 		"it-audit": {
@@ -1279,22 +1324,18 @@
 				"title": "The Audit Process",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery Interviews",
 						"description": "We interview key stakeholders — IT staff, managers, and end users — to understand the full picture."
 					},
 					{
-						"step": "02",
 						"title": "Technical Analysis",
 						"description": "We access and document your infrastructure, run diagnostic tools, and review your configurations."
 					},
 					{
-						"step": "03",
 						"title": "Report Preparation",
 						"description": "We compile findings into a structured report with clear findings, risk ratings, and concrete recommendations."
 					},
 					{
-						"step": "04",
 						"title": "Roadmap Presentation",
 						"description": "We walk you through the report, answer questions, and help you prioritize what to tackle first."
 					}
@@ -1321,6 +1362,30 @@
 			"cta": {
 				"title": "Not sure where your IT gaps are?",
 				"subtitle": "That's exactly what the audit is for. Let's find out together."
+			},
+			"before": [
+				"Nobody knows exactly which devices, licences and access rights the company has.",
+				"Vulnerabilities surface only after an outage or a data leak.",
+				"It is unclear where to start improving and where to put the budget."
+			],
+			"visual": {
+				"title": "IT environment score",
+				"areas": [
+					"Network",
+					"Security",
+					"Backups",
+					"Licences"
+				],
+				"findings": [
+					{
+						"text": "Backups never tested for restore",
+						"risk": "High risk"
+					},
+					{
+						"text": "Outdated software on workstations",
+						"risk": "Medium risk"
+					}
+				]
 			}
 		}
 	},
@@ -1375,10 +1440,10 @@
 	"home": {
 		"meta": {
 			"title": "ITHINK — IT infrastructure, CRM and automation for business",
-			"description": "An IT company from Tashkent. We build infrastructure, implement amoCRM and Bitrix24, automate processes and develop software. 50+ clients, 72+ projects."
+			"description": "An IT company in Tashkent. We build infrastructure, implement amoCRM and Bitrix24, automate processes and develop software. 50+ clients, 72+ projects."
 		},
 		"hero": {
-			"eyebrow": "IT company from Tashkent · since 2020",
+			"eyebrow": "IT company in Tashkent · since 2020",
 			"titleLead": "IT that works",
 			"titleAccent": "for your business growth",
 			"subtitle": "We build infrastructure, implement amoCRM and Bitrix24, automate processes and develop software. One team runs your whole IT stack, from the server to the sales funnel.",
@@ -1425,13 +1490,6 @@
 			"since": "the year we were founded"
 		},
 		"crm": {
-			"eyebrow": "CRM and sales automation",
-			"title": "Every request lands in the CRM. None get lost.",
-			"subtitle": "We connect telephony, WhatsApp, Telegram, Instagram and your website to amoCRM or Bitrix24. Managers see the full client history in one card.",
-			"point1": "Calls and recordings in the client card",
-			"point2": "Automatic tasks for missed calls",
-			"point3": "Requests routed between managers",
-			"cta": "More about CRM",
 			"website": "Website",
 			"phone": "Telephony",
 			"hub": "CRM",
@@ -1548,7 +1606,7 @@
 		"hero": {
 			"eyebrow": "About ITHINK · since 2020",
 			"title": "One team for all of your business IT",
-			"subtitle": "ITHINK is an IT company from Tashkent. Since 2020 we have built infrastructure, implemented CRM, automated processes and developed software for businesses in Uzbekistan, Kazakhstan, Tajikistan and the USA.",
+			"subtitle": "ITHINK is an IT company in Tashkent. Since 2020 we have built infrastructure, implemented CRM, automated processes and developed software for businesses in Uzbekistan, Kazakhstan, Tajikistan and the USA.",
 			"ctaSecondary": "Our clients"
 		},
 		"location": {
@@ -1557,17 +1615,127 @@
 	},
 	"customersPage": {
 		"meta": {
-			"title": "ITHINK clients: retail, finance, e-commerce",
-			"description": "Companies for which ITHINK built infrastructure, implemented CRM and developed software. Industry and delivered work for each client."
+			"title": "ITHINK client cases: retail, finance, e-commerce",
+			"description": "ITHINK case studies: the client's challenge, what we did and the result. Infrastructure, VoIP, CRM and software for retail, finance and e-commerce."
 		},
 		"hero": {
 			"eyebrow": "50+ clients · since 2020",
-			"subtitle": "Some of the companies we work with: retail, finance, e-commerce, jewellery brands and professional services. Each card shows the industry and what we delivered."
+			"subtitle": "Detailed cases and client cards from retail, finance, e-commerce, jewellery and professional services. For each: the challenge, what we did and the result.",
+			"title": "What we built for our clients",
+			"casesCta": "See the cases",
+			"wall": "Clients by industry"
 		},
 		"list": {
 			"eyebrow": "Industries",
 			"title": "Who we helped, and how",
-			"filter": "Filter by industry"
+			"filter": "Filter by industry",
+			"subtitle": "Eight more clients. Open a card to see the challenge, the solution and the result.",
+			"more": "Challenge and solution"
+		},
+		"cases": {
+			"eyebrow": "Case studies",
+			"title": "Three projects in detail",
+			"subtitle": "The client's challenge, what the ITHINK team did and what changed.",
+			"labels": {
+				"case": "Case",
+				"challenge": "Challenge",
+				"solution": "What we did",
+				"result": "Result",
+				"services": "Services",
+				"stack": "Stack"
+			},
+			"items": {
+				"mobicenter": {
+					"challenge": "An electronics retailer with several branches: every location needs a stable network and phone line, and IT has to work the same way in all of them.",
+					"steps": [
+						"Designed and deployed the branch network",
+						"Connected VoIP telephony at every location",
+						"Took over day-to-day management of the IT infrastructure"
+					],
+					"results": [
+						"One network and one phone system across all branches",
+						"One contractor is responsible for infrastructure and support"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"obbo": {
+					"challenge": "An online marketplace needs its own web application, and enquiries and orders have to land in the CRM straight away.",
+					"steps": [
+						"Built the marketplace's full-stack web application",
+						"Integrated the web application with the CRM",
+						"Set up customer and order data flowing into the CRM"
+					],
+					"results": [
+						"Marketplace sales are visible in one system",
+						"The website and the CRM work as one"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"avtozet": {
+					"challenge": "A car dealership needs to track customers and deals in one system and run routine sales steps without manual work.",
+					"steps": [
+						"Implemented a CRM around the dealer's sales process",
+						"Automated the repetitive sales steps",
+						"Moved the sales team's manual processes into digital form"
+					],
+					"results": [
+						"The dealer's customers and deals live in one CRM",
+						"Less manual work in sales"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"craytonVilt": {
+					"challenge": "A retail chain is growing fast, and IT has to keep up with each new location.",
+					"solution": "Set up the IT infrastructure and took over its management.",
+					"result": "New locations plug into infrastructure that is already in place.",
+					"metrics": []
+				},
+				"aslzar": {
+					"challenge": "A jewellery business needs an online shop tied to its inventory and a way to keep customers coming back.",
+					"solution": "Built a custom e-commerce platform with inventory management and a loyalty programme.",
+					"result": "Sales, stock and loyalty run on one platform.",
+					"metrics": []
+				},
+				"kreditMarket": {
+					"challenge": "Loan applications and customer management ran on manual processes.",
+					"solution": "Digitised the loan application workflow and connected a CRM for customer management.",
+					"result": "Applications and customers are handled in one system.",
+					"metrics": []
+				},
+				"penostyle": {
+					"challenge": "A business with several locations needs a shared network and phone links between them.",
+					"solution": "Built the network infrastructure and connected VoIP telephony.",
+					"result": "All locations run on one network and one phone system.",
+					"metrics": []
+				},
+				"sokolov": {
+					"challenge": "A premium brand needs IT support it can rely on every day.",
+					"solution": "Took over IT support and managed services.",
+					"result": "The brand's team focuses on the business while we run the IT.",
+					"metrics": []
+				},
+				"udirect": {
+					"challenge": "A consulting firm needs to move its internal processes into digital form.",
+					"solution": "Digitised the business processes and built software around them.",
+					"result": "The firm's processes run in its own digital tools.",
+					"metrics": []
+				},
+				"paradiseWall": {
+					"challenge": "A home decor company needs a website and digital tools for the business.",
+					"solution": "Built the website and a set of digital tools.",
+					"result": "The company has its own website and tools built for its needs.",
+					"metrics": []
+				},
+				"chudoTovary": {
+					"challenge": "An online marketplace needs a sales platform connected to its CRM.",
+					"solution": "Built the e-commerce platform and integrated it with the CRM.",
+					"result": "Orders from the platform go straight into the CRM.",
+					"metrics": []
+				}
+			}
 		}
 	},
 	"careerPage": {
@@ -1585,7 +1753,7 @@
 		"team": {
 			"eyebrow": "Team",
 			"title": "Who we are",
-			"p1": "ITHINK is an IT company from Tashkent, founded in 2020. We build infrastructure, implement CRM, automate processes and develop software for businesses.",
+			"p1": "ITHINK is an IT company in Tashkent, founded in 2020. We build infrastructure, implement CRM, automate processes and develop software for businesses.",
 			"p2": "In-house engineers run each project from start to finish, with no hand-off to contractors. We work with clients in Uzbekistan, Kazakhstan, Tajikistan and the USA."
 		},
 		"directions": {

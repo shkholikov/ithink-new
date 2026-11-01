@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleSwitch } from "@/components/layout/locale-switch";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { cn } from "@/lib/utils";
+import { BorderBeamTrain } from "@/components/ui/border-beam-train";
 
 type Item = { href: string; title: string; description?: string; icon?: LucideIcon };
 
@@ -41,16 +42,19 @@ export default async function Navbar({ locale }: { locale: string }) {
 	];
 
 	return (
-		<header data-lg-theme="dark" className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
+		<header className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
 			<a
 				href="#main"
 				className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-black"
 			>
 				{t("skip")}
 			</a>
-			<div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-ink/70 pl-5 pr-2.5 shadow-[0_8px_40px_rgba(2,6,23,0.35)] backdrop-blur-xl">
+			<div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-3xl border border-ink-foreground/10 bg-ink/70 pl-6 pr-2.5 shadow-[0_8px_40px_rgba(2,6,23,0.35)] backdrop-blur-xl">
+				{/* Magic UI border beam as a train of 28 px squares, so the trail bends round the bar's ends. */}
+				<BorderBeamTrain duration={10} />
 				<Link href={`/${locale}`} aria-label={t("home")} className="shrink-0">
-					<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} priority sizes="96px" className="h-7 w-auto" />
+					<Image src="/logo.png" alt="ITHINK" width={1372} height={440} priority sizes="96px" className="h-7 w-auto dark:hidden" />
+					<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} loading="eager" fetchPriority="low" sizes="96px" className="h-7 w-auto hidden dark:block" />
 				</Link>
 
 				<nav aria-label={t("services")} className="hidden items-center gap-1 lg:flex">
@@ -91,7 +95,6 @@ export default async function Navbar({ locale }: { locale: string }) {
 							{t("allPartners")}
 						</Link>
 					</Dropdown>
-					<NavLink href={`/${locale}/customers`}>{t("clients")}</NavLink>
 					<Dropdown label={t("company")}>
 						<div className="flex flex-col">
 							{company.map((c) => (
@@ -116,7 +119,7 @@ export default async function Navbar({ locale }: { locale: string }) {
 						<MobileGroup title={t("training")} items={training} />
 						<MobileGroup title={t("partners")} items={[...partners, { href: `/${locale}/partners`, title: t("allPartners") }]} />
 						<MobileGroup title={t("company")} items={company} />
-						<div className="mt-4 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+						<div className="mt-4 flex items-center justify-between gap-3 border-t border-ink-foreground/10 pt-4">
 							<LocaleSwitch locale={locale} label={t("language")} />
 							<Cta href={`/${locale}/contact`} size="sm">
 								{t("consult")}
@@ -129,14 +132,6 @@ export default async function Navbar({ locale }: { locale: string }) {
 	);
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-	return (
-		<Link href={href} className="rounded-xl px-3.5 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white">
-			{children}
-		</Link>
-	);
-}
-
 /** Opens on hover and on focus-within, so it works with the keyboard and without JavaScript. */
 function Dropdown({ label, wide = false, children }: { label: string; wide?: boolean; children: React.ReactNode }) {
 	return (
@@ -144,7 +139,7 @@ function Dropdown({ label, wide = false, children }: { label: string; wide?: boo
 			<button
 				type="button"
 				aria-haspopup="true"
-				className="inline-flex items-center gap-1 rounded-xl px-3.5 py-2 text-sm font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white group-focus-within/dd:text-white"
+				className="inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-ink-foreground/75 transition-colors hover:bg-ink-foreground/10 hover:text-ink-foreground group-focus-within/dd:text-ink-foreground"
 			>
 				{label}
 				<ChevronDown className="size-3.5 opacity-70 transition-transform group-hover/dd:rotate-180" aria-hidden="true" />
@@ -156,7 +151,9 @@ function Dropdown({ label, wide = false, children }: { label: string; wide?: boo
 					wide ? "w-[760px]" : "w-80"
 				)}
 			>
-				<div className="rounded-2xl border border-border bg-popover p-4 text-popover-foreground shadow-[0_24px_60px_rgba(2,6,23,0.25)]">{children}</div>
+				<div className="rounded-2xl border border-border bg-popover p-4 text-popover-foreground shadow-[0_24px_60px_rgba(2,6,23,0.25)]">
+					{children}
+				</div>
 			</div>
 		</div>
 	);
@@ -189,7 +186,10 @@ function ItemList({ items }: { items: Item[] }) {
 				<Link key={i.href} href={i.href} className="group/item flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-accent">
 					{i.icon && <i.icon className="size-4 shrink-0 text-brand-text" aria-hidden="true" />}
 					<span className="text-sm font-medium text-foreground">{i.title}</span>
-					<ArrowRight className="ml-auto size-3.5 text-muted-foreground opacity-0 transition-opacity group-hover/item:opacity-100" aria-hidden="true" />
+					<ArrowRight
+						className="ml-auto size-3.5 text-muted-foreground opacity-0 transition-opacity group-hover/item:opacity-100"
+						aria-hidden="true"
+					/>
 				</Link>
 			))}
 		</div>
@@ -198,11 +198,11 @@ function ItemList({ items }: { items: Item[] }) {
 
 function MobileGroup({ title, items }: { title: string; items: Item[] }) {
 	return (
-		<div className="border-b border-white/10 py-3 last:border-0">
-			<p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-white/50">{title}</p>
+		<div className="border-b border-ink-foreground/10 py-3 last:border-0">
+			<p className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-ink-foreground/50">{title}</p>
 			<div className="grid grid-cols-2 gap-x-2">
 				{items.map((i) => (
-					<Link key={i.href} href={i.href} className="rounded-lg px-2 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10">
+					<Link key={i.href} href={i.href} className="rounded-lg px-2 py-2.5 text-sm font-medium text-ink-foreground/85 hover:bg-ink-foreground/10">
 						{i.title}
 					</Link>
 				))}

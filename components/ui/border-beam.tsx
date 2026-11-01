@@ -1,6 +1,6 @@
 "use client"
 
-import { m, type MotionStyle, type Transition } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -26,9 +26,9 @@ interface BorderBeamProps {
    */
   colorTo?: string
   /**
-   * The motion transition of the border beam.
+   * Overrides: only `duration` is read.
    */
-  transition?: Transition
+  transition?: { duration?: number }
   /**
    * The class name of the border beam.
    */
@@ -64,8 +64,18 @@ export const BorderBeam = ({
   initialOffset = 0,
   borderWidth = 1,
 }: BorderBeamProps) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const [running, setRunning] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setRunning(e.isIntersecting))
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
     <div
+      ref={ref}
       className="pointer-events-none absolute inset-0 rounded-[inherit] border-(length:--border-beam-width) border-transparent mask-[linear-gradient(transparent,transparent),linear-gradient(#000,#000)] mask-intersect [mask-clip:padding-box,border-box]"
       style={
         {
@@ -73,9 +83,10 @@ export const BorderBeam = ({
         } as React.CSSProperties
       }
     >
-      <m.div
+      {/* CSS keyframes (beam-run in globals.css); paused while the panel is off-screen. */}
+      <div
         className={cn(
-          "absolute aspect-square",
+          "beam-run absolute aspect-square",
           "bg-linear-to-l from-(--color-from) via-(--color-to) to-transparent",
           className
         )}
@@ -85,22 +96,14 @@ export const BorderBeam = ({
             offsetPath: `rect(0 auto auto 0 round ${size}px)`,
             "--color-from": colorFrom,
             "--color-to": colorTo,
+            "--beam-from": reverse ? `${100 - initialOffset}%` : `${initialOffset}%`,
+            "--beam-to": reverse ? `${-initialOffset}%` : `${100 + initialOffset}%`,
+            animationDuration: `${transition?.duration ?? duration}s`,
+            animationDelay: `${-delay}s`,
+            animationPlayState: running ? "running" : "paused",
             ...style,
-          } as MotionStyle
+          } as React.CSSProperties
         }
-        initial={{ offsetDistance: `${initialOffset}%` }}
-        animate={{
-          offsetDistance: reverse
-            ? [`${100 - initialOffset}%`, `${-initialOffset}%`]
-            : [`${initialOffset}%`, `${100 + initialOffset}%`],
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration,
-          delay: -delay,
-          ...transition,
-        }}
       />
     </div>
   )

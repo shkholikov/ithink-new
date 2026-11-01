@@ -104,7 +104,7 @@ export async function ApplyBand({ locale }: { locale: string }) {
 	return (
 		<Section tone="ink">
 			<div className="reveal mx-auto max-w-3xl text-center">
-				<h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.05]">{t("title")}</h2>
+				<h2 className="text-3xl font-semibold tracking-tight text-ink-foreground sm:text-5xl sm:leading-[1.05]">{t("title")}</h2>
 				<p className="mt-5 text-base leading-relaxed text-ink-muted sm:text-lg">{t("subtitle")}</p>
 				<div className="mt-10 flex justify-center">
 					<ApplyActions locale={locale} />

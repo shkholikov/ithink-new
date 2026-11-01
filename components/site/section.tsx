@@ -22,11 +22,10 @@ export function Section({
 	return (
 		<section
 			id={id}
-			data-lg-theme={tone === "ink" ? "dark" : undefined}
 			className={cn(
 				"relative scroll-mt-24 py-20 sm:py-28",
 				tone === "muted" && "bg-secondary",
-				tone === "ink" && "ink-scene overflow-hidden text-white",
+				tone === "ink" && "ink-scene overflow-hidden text-ink-foreground",
 				className
 			)}
 		>
@@ -42,11 +41,11 @@ export function Eyebrow({ children, className, onInk = false }: { children: Reac
 		<p
 			className={cn(
 				"mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em]",
-				onInk ? "text-[#9cc0ff]" : "text-brand-text",
+				onInk ? "text-ink-accent" : "text-brand-text",
 				className
 			)}
 		>
-			<span aria-hidden="true" className={cn("h-px w-6", onInk ? "bg-[#9cc0ff]/60" : "bg-brand/60")} />
+			<span aria-hidden="true" className={cn("h-px w-6", onInk ? "bg-ink-accent/60" : "bg-brand/60")} />
 			{children}
 		</p>
 	);
@@ -73,7 +72,7 @@ export function SectionHeading({
 	return (
 		<div className={cn("reveal mb-12 sm:mb-16", align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl", className)}>
 			{eyebrow && <Eyebrow onInk={onInk}>{eyebrow}</Eyebrow>}
-			<h2 className={cn("text-3xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.05]", onInk ? "text-white" : "text-foreground")}>{title}</h2>
+			<h2 className={cn("text-3xl font-semibold tracking-tight sm:text-5xl sm:leading-[1.05]", onInk ? "text-ink-foreground" : "text-foreground")}>{title}</h2>
 			{subtitle && (
 				<p className={cn("mt-5 text-base leading-relaxed sm:text-lg", onInk ? "text-ink-muted" : "text-muted-foreground", align === "center" && "mx-auto max-w-2xl")}>
 					{subtitle}

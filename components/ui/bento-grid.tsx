@@ -1,8 +1,8 @@
 import { type ComponentPropsWithoutRef, type ReactNode } from "react"
+import Link from "next/link"
 import { ArrowRight as ArrowRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode
@@ -17,6 +17,8 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   description: string
   href: string
   cta: string
+  /** Shown as a large 01, 02… numeral above the title. */
+  index?: number
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -41,12 +43,13 @@ const BentoCard = ({
   description,
   href,
   cta,
+  index,
   ...props
 }: BentoCardProps) => (
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card",
+      "blueprint-hover group relative col-span-3 cursor-pointer flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card transition-colors duration-300 hover:border-brand/40",
       // light styles
       "[box-shadow:0_1px_2px_rgba(10,16,36,.04),0_12px_32px_-12px_rgba(10,16,36,.12)]",
       // dark styles
@@ -58,7 +61,15 @@ const BentoCard = ({
     <div>{background}</div>
     <div className="relative z-10 p-6">
       <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
-        <span className="mb-3 flex size-11 origin-left items-center justify-center rounded-xl bg-brand/10 text-brand-text transition-transform duration-300 group-hover:scale-90"><Icon className="size-5" aria-hidden="true" /></span>
+        {/* Index numeral in place of the registry's icon tile; the icon stays small beside it. */}
+        <span className="mb-4 flex items-end gap-3">
+          {index !== undefined && (
+            <span className="text-5xl font-light leading-none tracking-tight text-muted-foreground/45 tabular-nums transition-colors duration-300 group-hover:text-brand-text">
+              {String(index).padStart(2, "0")}
+            </span>
+          )}
+          <Icon className="mb-1 size-5 text-muted-foreground/70 transition-colors duration-300 group-hover:text-brand-text" aria-hidden="true" />
+        </span>
         <h3 className="text-xl font-semibold tracking-tight text-foreground">
           {name}
         </h3>
@@ -70,7 +81,7 @@ const BentoCard = ({
           "pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:hidden"
         )}
       >
-        <Button variant="link" size="sm" className="pointer-events-auto p-0 font-semibold text-brand-text" render={<a href={href} />} nativeButton={false}>{cta}<ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /></Button>
+        <span aria-hidden="true" className="inline-flex items-center text-sm font-semibold text-brand-text">{cta}<ArrowRightIcon className="ms-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180" /></span>
       </div>
     </div>
 
@@ -79,10 +90,16 @@ const BentoCard = ({
         "pointer-events-none absolute bottom-0 z-10 hidden w-full translate-y-10 transform-gpu flex-row items-center px-6 pb-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex"
       )}
     >
-      <Button variant="link" size="sm" className="pointer-events-auto p-0 font-semibold text-brand-text" render={<a href={href} />} nativeButton={false}>{cta}<ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /></Button>
+      <span aria-hidden="true" className="inline-flex items-center text-sm font-semibold text-brand-text">{cta}<ArrowRightIcon className="ms-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180" /></span>
     </div>
 
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-brand/[0.03]" />
+    {/* The whole card is the link; the visible "more" line above is decoration. */}
+    <Link
+      href={href}
+      aria-label={name}
+      className="absolute inset-0 z-20 rounded-[inherit] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+    />
   </div>
 )
 

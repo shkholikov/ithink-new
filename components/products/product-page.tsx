@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { CheckCircle2 } from "lucide-react";
 import { GlassPanel } from "@/components/glassyui/glass-panel";
 import { PageHero } from "@/components/site/page-hero";
 import { Cta, CtaRow } from "@/components/site/cta";
@@ -52,18 +51,18 @@ export async function ProductPage({ locale, group, slug }: { locale: string; gro
 					</CtaRow>
 				}
 				aside={
-					<GlassPanel aria-hidden="true" preset="prominent" className="relative mx-auto max-w-md rounded-3xl p-6 text-white sm:p-8 lg:ml-auto lg:mr-0">
-						<div className="flex items-center gap-3">
-							<span className="flex size-12 items-center justify-center rounded-2xl bg-[#2563eb]">
-								<Icon className="size-6 text-white" />
-							</span>
-							<span className="text-sm font-semibold">{common("includedEyebrow")}</span>
+					<GlassPanel aria-hidden="true" preset="standard" className="relative mx-auto w-full max-w-md rounded-3xl p-6 text-ink-foreground sm:p-7 lg:ml-auto lg:mr-0">
+						<div className="flex items-center justify-between">
+							<span className="tag tag-scene">{common("includedEyebrow")}</span>
+							<Icon className="size-5 text-ink-accent" />
 						</div>
-						<ul className="mt-6 space-y-4">
-							{included.slice(0, 4).map((item) => (
-								<li key={item.title} className="flex gap-3">
-									<CheckCircle2 className="mt-0.5 size-5 shrink-0 text-emerald-300" />
-									<span className="text-sm font-semibold">{item.title}</span>
+						{/* Checklist rows: index, item, a square status light. */}
+						<ul className="mt-5 divide-y divide-ink-foreground/10 border-y border-ink-foreground/10">
+							{included.slice(0, 4).map((item, i) => (
+								<li key={item.title} className="flex items-center gap-4 py-3.5">
+									<span className="w-6 text-sm font-light tabular-nums text-ink-muted">{String(i + 1).padStart(2, "0")}</span>
+									<span className="flex-1 text-sm font-semibold">{item.title}</span>
+									<span className="led text-emerald-500" />
 								</li>
 							))}
 						</ul>

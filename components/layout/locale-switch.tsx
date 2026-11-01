@@ -10,7 +10,7 @@ export function LocaleSwitch({ locale, label, className }: { locale: string; lab
 	const pathname = usePathname() ?? `/${locale}`;
 	const rest = pathname.replace(/^\/(uz|ru|en)(?=\/|$)/, "");
 	return (
-		<nav aria-label={label} className={cn("flex items-center gap-0.5 rounded-xl bg-white/5 p-1", className)}>
+		<nav aria-label={label} className={cn("flex items-center gap-0.5 rounded-full bg-ink-foreground/5 p-1", className)}>
 			{routing.locales.map((l) => (
 				<Link
 					key={l}
@@ -18,8 +18,8 @@ export function LocaleSwitch({ locale, label, className }: { locale: string; lab
 					hrefLang={l}
 					aria-current={l === locale ? "true" : undefined}
 					className={cn(
-						"rounded-lg px-2 py-1 text-xs font-semibold uppercase tracking-wide transition-colors",
-						l === locale ? "bg-white/15 text-white" : "text-white/60 hover:text-white"
+						"rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide transition-colors",
+						l === locale ? "bg-ink-foreground/15 text-ink-foreground" : "text-ink-foreground/60 hover:text-ink-foreground"
 					)}
 				>
 					{l}

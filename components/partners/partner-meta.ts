@@ -1,17 +1,7 @@
-import { Cable, Funnel, LayoutGrid, MessagesSquare, PhoneCall, ScanEye, type LucideIcon } from "lucide-react";
 import type { LeadService } from "@/lib/lead";
 import { PARTNER_SLUGS, type PartnerSlug } from "@/lib/site-nav";
 
-export const PARTNER_ICONS: Record<PartnerSlug, LucideIcon> = {
-	amocrm: Funnel,
-	bitrix24: LayoutGrid,
-	"online-pbx": PhoneCall,
-	wazzup: MessagesSquare,
-	megacount: ScanEye,
-	itgrix: Cable
-};
-
-/** Partners with a logo file in public/. The others show their icon. */
+/** Partners with a logo file in public/. The others show their PartnerMark tile. */
 export const PARTNER_LOGOS: Partial<Record<PartnerSlug, { src: string; width: number; height: number }>> = {
 	itgrix: { src: "/images/partners/itgrix.png", width: 2340, height: 1101 }
 };

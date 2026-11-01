@@ -10,7 +10,8 @@ import { Cta, CtaRow } from "@/components/site/cta";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { CtaSection } from "@/components/site/cta-section";
 import { PARTNER_SLUGS, type PartnerSlug } from "@/lib/site-nav";
-import { PARTNER_ICONS, PARTNER_LEAD_SERVICE, PARTNER_LINKS, PARTNER_LOGOS } from "@/components/partners/partner-meta";
+import { PartnerMark } from "@/components/partners/partner-mark";
+import { PARTNER_LEAD_SERVICE, PARTNER_LINKS, PARTNER_LOGOS } from "@/components/partners/partner-meta";
 
 type Item = { title: string; description: string };
 type Faq = { q: string; a: string };
@@ -31,7 +32,6 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 	const partners = await getTranslations({ locale, namespace: "partners" });
 
 	const name = t("name");
-	const Icon = PARTNER_ICONS[slug];
 	const logo = PARTNER_LOGOS[slug];
 	const external = PARTNER_LINKS[slug];
 	const tags = t.raw("tags") as string[];
@@ -44,8 +44,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 	const others = PARTNER_SLUGS.filter((s) => s !== slug).map((s) => ({
 		slug: s,
 		name: nav(`items.partners.${s}.title`),
-		description: nav(`items.partners.${s}.description`),
-		icon: PARTNER_ICONS[s]
+		description: nav(`items.partners.${s}.description`)
 	}));
 
 	// Light sections after the hero, in order; tones alternate starting from default.
@@ -151,7 +150,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 							>
 								<span className="flex items-center justify-between gap-2 text-sm font-semibold text-foreground">
 									<span className="inline-flex items-center gap-2">
-										<p.icon className="size-4 text-brand-text" aria-hidden="true" />
+										<PartnerMark slug={p.slug} name="" className="size-7 rounded-lg" />
 										{p.name}
 									</span>
 									<ArrowUpRight
@@ -213,31 +212,29 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 							</div>
 						) : (
 							<div className="flex items-center gap-4">
-								<span className="flex size-14 items-center justify-center rounded-2xl bg-[#377dff]/25">
-									<Icon className="size-6 text-[#9cc0ff]" aria-hidden="true" />
-								</span>
+								<PartnerMark slug={slug} name="" className="size-16 rounded-2xl" />
 								<div>
-									<p className="text-2xl font-semibold tracking-tight text-white">{name}</p>
+									<p className="text-2xl font-semibold tracking-tight text-ink-foreground">{name}</p>
 									<p className="text-sm text-ink-muted">{t("category")}</p>
 								</div>
 							</div>
 						)}
 						{logo && <p className="mt-4 text-sm text-ink-muted">{t("category")}</p>}
 						{stats.length > 0 && (
-							<dl className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+							<dl className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-ink-foreground/10 bg-ink-foreground/10">
 								{stats.map((s) => {
 									const [, num, suffix] = /^(\d+)(.*)$/.exec(s.value) ?? [];
 									const value = Number(num);
 									return (
 										<div key={s.label} className="flex flex-col gap-1 bg-ink/80 p-3 sm:p-4">
 											<dt className="order-2 text-xs leading-snug text-ink-muted">{s.label}</dt>
-											<dd className="order-1 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+											<dd className="order-1 text-2xl font-semibold tracking-tight text-ink-foreground sm:text-3xl">
 												{num ? (
-													<NumberTicker value={value} startValue={value > 1900 ? 2000 : 0} className="tracking-tight text-white dark:text-white" />
+													<NumberTicker value={value} startValue={value > 1900 ? 2000 : 0} className="tracking-tight text-ink-foreground" />
 												) : (
 													s.value
 												)}
-												<span className="text-[#9cc0ff]">{suffix}</span>
+												<span className="text-ink-accent">{suffix}</span>
 											</dd>
 										</div>
 									);
@@ -246,7 +243,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 						)}
 						<ul className="mt-6 flex flex-wrap gap-2">
 							{tags.map((tag) => (
-								<li key={tag} className="rounded-full border border-white/12 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/85">
+								<li key={tag} className="tag tag-scene">
 									{tag}
 								</li>
 							))}

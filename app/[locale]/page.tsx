@@ -4,7 +4,6 @@ import { HomeHero } from "@/components/home/hero";
 import { ClientMarquee } from "@/components/home/client-marquee";
 import { ServicesBento } from "@/components/home/services-bento";
 import { StatsBand } from "@/components/home/stats-band";
-import { CrmSection } from "@/components/home/crm-section";
 import { ProcessSection } from "@/components/home/process-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { PartnersSection } from "@/components/home/partners-section";
@@ -35,7 +34,6 @@ export default async function HomePage({ params }: Props) {
 			<ClientMarquee locale={locale} />
 			<ServicesBento locale={locale} />
 			<StatsBand locale={locale} />
-			<CrmSection locale={locale} />
 			<ProcessSection locale={locale} />
 			<TestimonialsSection locale={locale} />
 			<PartnersSection locale={locale} />

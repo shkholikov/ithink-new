@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Bot, Mail, MapPin, Phone, Send } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
-import { MagicCard } from "@/components/ui/magic-card";
 import { PageHero } from "@/components/site/page-hero";
 import { CtaSection } from "@/components/site/cta-section";
 import { CONTACT } from "@/lib/contact";
@@ -42,9 +41,9 @@ export default async function ContactRoute({ params }: Props) {
 				]}
 			>
 				<p className="appear appear-3 mt-8 inline-flex items-center gap-2 text-sm text-ink-muted">
-					<MapPin className="size-4 text-[#9cc0ff]" aria-hidden="true" />
+					<MapPin className="size-4 text-ink-accent" aria-hidden="true" />
 					<span>
-						<span className="font-medium text-white">{t("office.title")}</span> · {t("office.note")}
+						<span className="font-medium text-ink-foreground">{t("office.title")}</span> · {t("office.note")}
 					</span>
 				</p>
 			</PageHero>
@@ -59,16 +58,14 @@ export default async function ContactRoute({ params }: Props) {
 								rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
 								className="block h-full rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
 							>
-								<MagicCard className="h-full rounded-3xl shadow-[0_20px_50px_-25px_rgba(10,16,36,0.35)]" gradientColor="rgba(55,125,255,0.10)" gradientFrom="#377dff" gradientTo="#f9b934">
-									<div className="flex h-full flex-col p-6">
-										<span className="flex size-11 items-center justify-center rounded-xl bg-brand/10 text-brand-text">
-											<c.icon className="size-5" aria-hidden="true" />
-										</span>
-										<span className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{t(`${c.key}.label`)}</span>
-										<span className="mt-1 break-all text-base font-semibold text-foreground">{c.value}</span>
-										<span className="mt-2 text-sm text-muted-foreground">{t(`${c.key}.note`)}</span>
-									</div>
-								</MagicCard>
+								<div className="blueprint-hover group flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-colors duration-300 hover:border-brand/50">
+									<span className="flex items-center justify-between">
+										<span className="tag">{t(`${c.key}.label`)}</span>
+										<c.icon className="size-5 text-muted-foreground/70 transition-colors group-hover:text-brand-text" aria-hidden="true" />
+									</span>
+									<span className="mt-10 break-all text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-text">{c.value}</span>
+									<span className="mt-2 text-sm text-muted-foreground">{t(`${c.key}.note`)}</span>
+								</div>
 							</a>
 						</li>
 					))}
