@@ -113,8 +113,6 @@ export default function Navbar({ locale }: NavbarProps) {
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
-		setScrolled(window.scrollY > 20);
-
 		let ticking = false;
 		const handleScroll = () => {
 			if (!ticking) {
@@ -125,6 +123,8 @@ export default function Navbar({ locale }: NavbarProps) {
 				ticking = true;
 			}
 		};
+		// Reads the initial position on the next frame, for pages opened mid-scroll.
+		handleScroll();
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);

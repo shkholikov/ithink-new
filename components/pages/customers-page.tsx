@@ -13,15 +13,8 @@ export default function CustomersPage({ locale: _ }: { locale: string }) {
 		name: t(`items.${i}.name`),
 		industry: t(`items.${i}.industry`),
 		description: t(`items.${i}.description`),
-		services: [0, 1, 2]
-			.map((j) => {
-				try {
-					return t(`items.${i}.services.${j}`);
-				} catch {
-					return null;
-				}
-			})
-			.filter(Boolean) as string[]
+		// Clients list 1 to 3 services. next-intl renders a missing key as its path, so check before reading.
+		services: [0, 1, 2].filter((j) => t.has(`items.${i}.services.${j}`)).map((j) => t(`items.${i}.services.${j}`))
 	}));
 
 	const allLabel = "All";

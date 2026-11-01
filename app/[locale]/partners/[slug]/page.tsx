@@ -31,6 +31,9 @@ const partnerData: Record<string, { name: string; description: string }> = {
 	}
 };
 
+// Only the partners listed above exist; any other slug returns 404.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
 	return Object.keys(partnerData).map((slug) => ({ slug }));
 }
