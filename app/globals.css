@@ -10,14 +10,6 @@
 	--font-sans: var(--font-inter);
 	--font-mono: var(--font-geist-mono);
 	--font-heading: var(--font-inter);
-	--color-sidebar-ring: var(--sidebar-ring);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar: var(--sidebar);
 	--color-ring: var(--ring);
 	--color-input: var(--input);
 	--color-border: var(--border);
@@ -35,87 +27,143 @@
 	--color-card-foreground: var(--card-foreground);
 	--color-card: var(--card);
 
-	/* Brand colors */
+	/* Brand. #377dff is decoration only; text and filled buttons use the darker shades for 4.5:1. */
 	--color-brand: #377dff;
 	--color-brand-light: #5b96ff;
 	--color-brand-dark: #2563eb;
 	--color-accent-yellow: #f9b934;
-	/* Brand and yellow as *text*: darker in light mode to reach 4.5:1 on white */
 	--color-brand-text: var(--brand-text);
 	--color-accent-yellow-text: var(--accent-yellow-text);
-	--color-surface: #13131f;
-	--color-surface-2: #1a1a2e;
+
+	/* The "scene" used by every hero, the stats band, the call-to-action panel and the footer.
+	   Light theme: pale blue with brand glows. Dark theme: deep navy. Text on it is ink-foreground. */
+	--color-ink: var(--ink);
+	--color-ink-2: var(--ink-2);
+	--color-ink-line: var(--ink-line);
+	--color-ink-muted: var(--ink-muted);
+	--color-ink-foreground: var(--ink-foreground);
+	--color-ink-accent: var(--ink-accent);
 
 	--radius-sm: calc(var(--radius) * 0.6);
 	--radius-md: calc(var(--radius) * 0.8);
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) * 1.4);
 	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.4);
+
+	--animate-marquee: marquee var(--duration) infinite linear;
+	--animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+	--animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-100% - var(--gap)));
+		}
+	}
+	@keyframes marquee-vertical {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(calc(-100% - var(--gap)));
+		}
+	}
+	@keyframes orbit {
+		0% {
+			transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+		}
+		100% {
+			transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+		}
+	}
 }
 
-/* Dark theme (default) */
-:root {
-	--background: #0d0d14;
-	--foreground: #e2e8f0;
-	--card: #13131f;
-	--card-foreground: #e2e8f0;
-	--popover: #13131f;
-	--popover-foreground: #e2e8f0;
-	--primary: #377dff;
-	--primary-foreground: #ffffff;
-	--secondary: #1a1a2e;
-	--secondary-foreground: #e2e8f0;
-	--muted: #1a1a2e;
-	--muted-foreground: #8892a4;
-	--accent: #1e1e35;
-	--accent-foreground: #e2e8f0;
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: #1e1e35;
-	--input: #1e1e35;
-	--ring: #377dff;
-	--radius: 0.625rem;
-	--sidebar: #13131f;
-	--sidebar-foreground: #e2e8f0;
-	--sidebar-primary: #377dff;
-	--sidebar-primary-foreground: #ffffff;
-	--sidebar-accent: #1a1a2e;
-	--sidebar-accent-foreground: #e2e8f0;
-	--sidebar-border: #1e1e35;
-	--sidebar-ring: #377dff;
-	--brand-text: #377dff;
-	--accent-yellow-text: #f9b934;
+/* GlassyUI in ITHINK blue. The prominent tint flattens the backdrop to one grey first
+   (contrast(0)), so the button is the same #2563eb-range blue on the navy hero and on white,
+   and white text keeps 4.5:1 on both. Unlayered, so it beats every GlassyUI theme scope. */
+:root,
+[data-lg-theme] {
+	--lg-accent: #2563eb;
+	--lg-prominent-fill: #2563eb;
+	--lg-prominent-tint: grayscale(1) contrast(0) brightness(0.62) sepia(1) hue-rotate(178deg) saturate(9) brightness(1.05);
+	--lg-prominent-glow: 156 192 255;
+	--lg-prominent-shade: 10 30 90;
+}
+/* On a light page the glass layers add white sheen, so the tint starts darker to stay above 4.5:1. */
+[data-lg-theme="light"] {
+	--lg-prominent-tint: grayscale(1) contrast(0) brightness(0.5) sepia(1) hue-rotate(178deg) saturate(9) brightness(0.92);
 }
 
-/* Light theme */
+/* Light theme is the default. */
+:root,
 .light {
 	--background: #ffffff;
-	--foreground: #1e2022;
-	--card: #f7faff;
-	--card-foreground: #1e2022;
+	--foreground: #0a1024;
+	--card: #ffffff;
+	--card-foreground: #0a1024;
 	--popover: #ffffff;
-	--popover-foreground: #1e2022;
-	--primary: #377dff;
+	--popover-foreground: #0a1024;
+	--primary: #2563eb;
 	--primary-foreground: #ffffff;
-	--secondary: #f0f5ff;
-	--secondary-foreground: #1e2022;
-	--muted: #f0f0f0;
-	--muted-foreground: #5c6b81;
-	--accent: #e8f0ff;
-	--accent-foreground: #1e2022;
+	--secondary: #f4f6fb;
+	--secondary-foreground: #0a1024;
+	--muted: #f4f6fb;
+	--muted-foreground: #4a5568;
+	--accent: #eef3ff;
+	--accent-foreground: #0a1024;
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: #e2e8f0;
-	--input: #e2e8f0;
+	--border: #e4e8f1;
+	--input: #dfe4ee;
 	--ring: #377dff;
-	--sidebar: #f7faff;
-	--sidebar-foreground: #1e2022;
-	--sidebar-primary: #377dff;
-	--sidebar-primary-foreground: #ffffff;
-	--sidebar-accent: #e8f0ff;
-	--sidebar-accent-foreground: #1e2022;
-	--sidebar-border: #e2e8f0;
-	--sidebar-ring: #377dff;
-	--brand-text: #2563eb;
-	--accent-yellow-text: #a16207;
+	--radius: 0.75rem;
+	--brand-text: #1d5fd6;
+	--accent-yellow-text: #9a6200;
+	--ink: #f3f6fd;
+	--ink-2: #e8eefb;
+	--ink-line: rgba(15, 35, 95, 0.1);
+	--ink-muted: #4a5568;
+	--ink-foreground: #0a1024;
+	--ink-accent: #1d5fd6;
+	--scene-glow-1: rgba(55, 125, 255, 0.16);
+	--scene-glow-2: rgba(124, 92, 255, 0.1);
+	--scene-glow-3: rgba(249, 185, 52, 0.1);
+	--scene-grid: rgba(15, 35, 95, 0.06);
+}
+
+.dark {
+	--background: #060914;
+	--foreground: #edf1f8;
+	--card: #0d1222;
+	--card-foreground: #edf1f8;
+	--popover: #0d1222;
+	--popover-foreground: #edf1f8;
+	--primary: #2563eb;
+	--primary-foreground: #ffffff;
+	--secondary: #0a0f1d;
+	--secondary-foreground: #edf1f8;
+	--muted: #0a0f1d;
+	--muted-foreground: #9aa5ba;
+	--accent: #121a30;
+	--accent-foreground: #edf1f8;
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: #1b2236;
+	--input: #222b42;
+	--ring: #377dff;
+	--brand-text: #8bb4ff;
+	--accent-yellow-text: #f9b934;
+	--ink: #050a1c;
+	--ink-2: #0a1433;
+	--ink-line: rgba(148, 170, 255, 0.14);
+	--ink-muted: #a8b4cf;
+	--ink-foreground: #ffffff;
+	--ink-accent: #9cc0ff;
+	--scene-glow-1: rgba(55, 125, 255, 0.28);
+	--scene-glow-2: rgba(124, 92, 255, 0.18);
+	--scene-glow-3: rgba(249, 185, 52, 0.08);
+	--scene-grid: rgba(148, 170, 255, 0.07);
 }
 
 @layer base {
@@ -124,98 +172,184 @@
 	}
 	body {
 		@apply bg-background text-foreground antialiased;
+		/* Safety net for decorative elements (tilted cards, glows) that poke past the viewport.
+		   clip, unlike hidden, does not create a scroll container, so sticky still works. */
+		overflow-x: clip;
 	}
 	html {
 		@apply font-sans scroll-smooth;
 	}
-}
-
-/* Animated gradient blob */
-@keyframes blob {
-	0% {
-		transform: translate(0px, 0px) scale(1);
-	}
-	33% {
-		transform: translate(30px, -50px) scale(1.1);
-	}
-	66% {
-		transform: translate(-20px, 20px) scale(0.9);
-	}
-	100% {
-		transform: translate(0px, 0px) scale(1);
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
 	}
 }
 
-.animate-blob {
-	animation: blob 7s infinite;
-}
-.animation-delay-2000 {
-	animation-delay: 2s;
-}
-.animation-delay-4000 {
-	animation-delay: 4s;
-}
-
-/* Page-heading entrance.
-   Identical to the framer initial/animate it replaces (opacity 0 -> 1, 20px
-   rise, 0.5s), but driven by CSS so the heading paints with the document
-   instead of waiting for React to hydrate. It is the LCP element on every
-   sub-page, and framer serialises initial={{opacity:0}} as an inline
-   style="opacity:0" in the SSR HTML. */
+/* Entrance for the heading block of every hero. It moves the text and never hides it: Chrome does
+   not count an element at opacity 0 as painted, which pushed mobile LCP from 1.4 s to 4.3 s. */
 @keyframes appear {
 	from {
+		transform: translateY(14px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+/* Scroll entrance for blocks below the fold. These are never the LCP element, so they may fade. */
+@keyframes reveal {
+	from {
 		opacity: 0;
-		transform: translateY(20px);
+		transform: translateY(16px);
 	}
 	to {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
-
 .appear {
-	animation: appear 0.5s ease-out both;
+	animation: appear 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.appear-1 {
+	animation-delay: 0.08s;
+}
+.appear-2 {
+	animation-delay: 0.16s;
+}
+.appear-3 {
+	animation-delay: 0.24s;
 }
 
-/* Marquee scroll */
-@keyframes marquee {
+/* Scroll reveal. Content is visible by default; browsers with scroll-driven animations fade it in
+   as it enters the viewport. No JavaScript, so nothing stays hidden if scripts are slow. */
+@supports (animation-timeline: view()) {
+	.reveal {
+		animation: reveal linear both;
+		animation-timeline: view();
+		animation-range: entry 0% cover 22%;
+	}
+}
+
+/* Labels: square corners, small tracked uppercase. Used for tags, services, markets and status.
+   In @layer components so hover and colour utilities can still override them. */
+@layer components {
+	.tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.375rem;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+		padding: 0.3rem 0.55rem;
+		font-size: 11px;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--muted-foreground);
+		transition: color 0.2s, border-color 0.2s;
+	}
+	.tag-scene {
+		border-color: color-mix(in srgb, var(--ink-foreground) 16%, transparent);
+		color: color-mix(in srgb, var(--ink-foreground) 82%, transparent);
+	}
+	/* A square status light in front of a label. */
+	.led {
+		width: 6px;
+		height: 6px;
+		border-radius: 1.5px;
+		background: currentColor;
+		flex: none;
+	}
+	/* Faint blueprint grid that fades in on hover (index cards). */
+	.blueprint-hover {
+		position: relative;
+		isolation: isolate;
+	}
+	.blueprint-hover::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: inherit;
+		background-image:
+			linear-gradient(color-mix(in srgb, var(--color-brand) 12%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in srgb, var(--color-brand) 12%, transparent) 1px, transparent 1px);
+		background-size: 22px 22px;
+		mask-image: radial-gradient(120% 90% at 100% 0%, #000, transparent 70%);
+		opacity: 0;
+		transition: opacity 0.35s;
+	}
+	.blueprint-hover:hover::before,
+	.blueprint-hover:focus-visible::before {
+		opacity: 1;
+	}
+}
+
+/* Process stepper: a pulse runs along the track while each node glows in turn (6 s loop). */
+.process-track {
+	overflow: hidden;
+}
+.process-track::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, transparent, #377dff, #f9b934, transparent);
+	animation: process-run 6s linear infinite;
+}
+@media (max-width: 767px) {
+	.process-track::after {
+		background: linear-gradient(180deg, transparent, #377dff, #f9b934, transparent);
+		animation-name: process-run-y;
+	}
+}
+@keyframes process-run {
 	from {
-		transform: translateX(0);
+		transform: translateX(-100%);
 	}
 	to {
-		transform: translateX(-50%);
+		transform: translateX(100%);
+	}
+}
+@keyframes process-run-y {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(100%);
+	}
+}
+.process-node {
+	animation: process-glow 6s ease-in-out infinite;
+}
+@keyframes process-glow {
+	0%,
+	30%,
+	100% {
+		box-shadow: 0 1px 2px rgba(10, 16, 36, 0.06);
+		border-color: var(--border);
+	}
+	12% {
+		box-shadow: 0 0 0 6px rgba(55, 125, 255, 0.12), 0 10px 30px rgba(55, 125, 255, 0.25);
+		border-color: rgba(55, 125, 255, 0.6);
 	}
 }
 
-.animate-marquee {
-	animation: marquee 30s linear infinite;
+/* Scene backdrop with a faint grid and soft brand glows; colours follow the theme. */
+.ink-scene {
+	background-color: var(--color-ink);
+	color: var(--ink-foreground);
+	background-image:
+		radial-gradient(60% 50% at 15% 0%, var(--scene-glow-1), transparent 70%),
+		radial-gradient(45% 40% at 90% 20%, var(--scene-glow-2), transparent 70%),
+		radial-gradient(40% 35% at 70% 100%, var(--scene-glow-3), transparent 70%);
 }
-
-/* Gradient text */
-.gradient-text {
-	background: linear-gradient(135deg, #377dff 0%, #a855f7 50%, #06b6d4 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-}
-
-.gradient-text-blue {
-	background: linear-gradient(135deg, #377dff 0%, #60a5fa 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-}
-
-/* Glass card */
-.glass-card {
-	background: rgba(255, 255, 255, 0.03);
-	backdrop-filter: blur(12px);
-	border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.light .glass-card {
-	background: rgba(255, 255, 255, 0.7);
-	border-color: rgba(0, 0, 0, 0.08);
+.ink-grid {
+	background-image:
+		linear-gradient(var(--scene-grid) 1px, transparent 1px),
+		linear-gradient(90deg, var(--scene-grid) 1px, transparent 1px);
+	background-size: 64px 64px;
+	mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 100%);
 }
 
 /* Reduced motion */
@@ -229,12 +363,53 @@
 	}
 }
 
-/* Noise overlay */
-.noise-bg::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-	pointer-events: none;
-	z-index: 0;
+/* Hero spotlight sway and the CTA border beam, as CSS keyframes (no JS per frame). */
+@keyframes spot-fade {
+	from {
+		opacity: 0;
+	}
+}
+@keyframes spot-sway-l {
+	50% {
+		transform: translateX(var(--spot-x, 100px));
+	}
+}
+@keyframes spot-sway-r {
+	50% {
+		transform: translateX(calc(var(--spot-x, 100px) * -1));
+	}
+}
+.spot-sway-l {
+	animation: spot-sway-l var(--spot-duration, 7s) ease-in-out infinite;
+}
+.spot-sway-r {
+	animation: spot-sway-r var(--spot-duration, 7s) ease-in-out infinite;
+}
+@keyframes beam-run {
+	from {
+		offset-distance: var(--beam-from, 0%);
+	}
+	to {
+		offset-distance: var(--beam-to, 100%);
+	}
+}
+.beam-run {
+	animation-name: beam-run;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+	.spot-sway-l,
+	.spot-sway-r,
+	.beam-run {
+		animation: none;
+	}
+}
+
+/* Odometer digit column (components/ui/odometer.tsx): ten 1em lines, not part of page text. */
+.odo-col::before {
+	content: "0\a 1\a 2\a 3\a 4\a 5\a 6\a 7\a 8\a 9";
+	display: block;
+	white-space: pre;
+	line-height: 1em;
 }

@@ -1,0 +1,94 @@
+"use client"
+
+import { useEffect, useRef, type ComponentPropsWithoutRef } from "react"
+import { useInView, useMotionValue, useSpring } from "framer-motion"
+
+import { cn } from "@/lib/utils"
+
+interface NumberTickerProps extends ComponentPropsWithoutRef<"span"> {
+  value: number
+  startValue?: number
+  direction?: "up" | "down"
+  delay?: number
+  decimalPlaces?: number
+}
+
+export function NumberTicker({
+  value,
+  startValue = 0,
+  direction = "up",
+  delay = 0,
+  className,
+  decimalPlaces = 0,
+  ...props
+}: NumberTickerProps) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const motionValue = useMotionValue(direction === "down" ? value : startValue)
+  const springValue = useSpring(motionValue, {
+    damping: 60,
+    stiffness: 100,
+  })
+  const isInView = useInView(ref, { once: true, margin: "0px" })
+
+  // The server renders the final value, so crawlers and no-JS visitors see the real figure.
+  // After hydration, a ticker that is still below the fold resets to its start value and counts
+  // up when scrolled to; one already on screen keeps the final value and does not animate.
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      motionValue.jump(direction === "down" ? startValue : value)
+      springValue.jump(direction === "down" ? startValue : value)
+      return
+    }
+    el.textContent = String(direction === "down" ? value : startValue)
+    // Runs once on mount by design.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | null = null
+
+    if (isInView) {
+      timer = setTimeout(() => {
+        motionValue.set(direction === "down" ? startValue : value)
+      }, delay * 1000)
+    }
+
+    return () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+    }
+  }, [motionValue, isInView, delay, value, direction, startValue])
+
+  useEffect(
+    () =>
+      springValue.on("change", (latest) => {
+        if (ref.current) {
+          const text = Intl.NumberFormat("en-US", {
+            minimumFractionDigits: decimalPlaces,
+            maximumFractionDigits: decimalPlaces,
+            useGrouping: false,
+          }).format(Number(latest.toFixed(decimalPlaces)))
+          // The spring settles for ~5 s after the figure stops changing; skip identical writes.
+          if (ref.current.textContent !== text) ref.current.textContent = text
+        }
+      }),
+    [springValue, decimalPlaces]
+  )
+
+  return (
+    <span
+      ref={ref}
+      className={cn(
+        "inline-block tracking-wider text-black tabular-nums dark:text-ink-foreground",
+        className
+      )}
+      {...props}
+    >
+      {direction === "down" ? startValue : value}
+    </span>
+  )
+}

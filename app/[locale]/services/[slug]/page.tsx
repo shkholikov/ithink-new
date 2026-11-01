@@ -1,41 +1,28 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ServicePage from "@/components/pages/service-page";
+import { ServicePage } from "@/components/services/service-page";
 import { SERVICE_SLUGS, type ServiceSlug } from "@/lib/services";
-
-const validSlugs: readonly ServiceSlug[] = SERVICE_SLUGS;
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-export async function generateStaticParams() {
-	return validSlugs.map((slug) => ({ slug }));
+const isService = (slug: string): slug is ServiceSlug => (SERVICE_SLUGS as readonly string[]).includes(slug);
+
+export function generateStaticParams() {
+	return SERVICE_SLUGS.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { locale, slug } = await params;
-	if (!validSlugs.includes(slug as ServiceSlug)) return {};
-	const t = await getTranslations({ locale, namespace: "servicePages" });
-	const title = t(`${slug}.hero.title`);
-	const description = t(`${slug}.hero.subtitle`);
-	return {
-		title,
-		description,
-		alternates: {
-			canonical: `https://www.ithink.uz/${locale}/services/${slug}`,
-			languages: {
-				uz: `https://www.ithink.uz/uz/services/${slug}`,
-				ru: `https://www.ithink.uz/ru/services/${slug}`,
-				en: `https://www.ithink.uz/en/services/${slug}`
-			}
-		},
-		openGraph: { title, description, url: `https://www.ithink.uz/${locale}/services/${slug}` }
-	};
+	if (!isService(slug)) return {};
+	const t = await getTranslations({ locale, namespace: `servicePages.${slug}.hero` });
+	return pageMetadata({ locale, path: `/services/${slug}`, title: t("title"), description: t("subtitle") });
 }
 
 export default async function ServiceRoute({ params }: Props) {
 	const { locale, slug } = await params;
+	if (!isService(slug)) notFound();
 	setRequestLocale(locale);
-	if (!validSlugs.includes(slug as ServiceSlug)) notFound();
-	return <ServicePage locale={locale} slug={slug as ServiceSlug} />;
+	return <ServicePage locale={locale} slug={slug} />;
 }

@@ -1,12 +1,15 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import type { Metadata } from 'next';
-import Hero from '@/components/sections/hero';
-import Services from '@/components/sections/services';
-import HowItWorks from '@/components/sections/how-it-works';
-import TrustedBy from '@/components/sections/trusted-by';
-import WhyUs from '@/components/sections/why-us';
-import Testimonials from '@/components/sections/testimonials';
-import ContactCta from '@/components/sections/contact-cta';
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { HomeHero } from "@/components/home/hero";
+import { ClientMarquee } from "@/components/home/client-marquee";
+import { ServicesBento } from "@/components/home/services-bento";
+import { StatsBand } from "@/components/home/stats-band";
+import { ProcessSection } from "@/components/home/process-section";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
+import { PartnersSection } from "@/components/home/partners-section";
+import { FaqSection } from "@/components/home/faq-section";
+import { CtaSection } from "@/components/site/cta-section";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -17,33 +20,25 @@ type Props = { params: Promise<{ locale: string }> };
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'hero' });
-  const title = 'ITHINK — IT Solutions for Business';
-  const description = t('subtitle');
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `https://www.ithink.uz/${locale}`,
-      languages: { uz: 'https://www.ithink.uz/uz', ru: 'https://www.ithink.uz/ru', en: 'https://www.ithink.uz/en' },
-    },
-    openGraph: { title, description, url: `https://www.ithink.uz/${locale}` },
-  };
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "home.meta" });
+	return pageMetadata({ locale, path: "", title: t("title"), description: t("description"), absoluteTitle: true });
 }
 
 export default async function HomePage({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  return (
-    <>
-      <Hero locale={locale} />
-      <Services locale={locale} />
-      <HowItWorks locale={locale} />
-      <TrustedBy locale={locale} />
-      <WhyUs locale={locale} />
-      <Testimonials locale={locale} />
-      <ContactCta locale={locale} />
-    </>
-  );
+	const { locale } = await params;
+	setRequestLocale(locale);
+	return (
+		<>
+			<HomeHero locale={locale} />
+			<ClientMarquee locale={locale} />
+			<ServicesBento locale={locale} />
+			<StatsBand locale={locale} />
+			<ProcessSection locale={locale} />
+			<TestimonialsSection locale={locale} />
+			<PartnersSection locale={locale} />
+			<FaqSection locale={locale} />
+			<CtaSection locale={locale} pageTag="home" />
+		</>
+	);
 }

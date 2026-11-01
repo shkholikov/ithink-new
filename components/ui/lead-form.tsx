@@ -313,7 +313,7 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 						type="submit"
 						disabled={status !== "idle"}
 						data-sending={status === "sending"}
-						className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] data-[sending=true]:opacity-60 disabled:hover:scale-100"
+						className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#2563eb] hover:bg-[#1d4fd8] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] data-[sending=true]:opacity-60 disabled:hover:scale-100"
 					>
 						{status === "sent" ? (
 							<>

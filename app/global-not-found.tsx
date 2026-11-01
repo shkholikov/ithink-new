@@ -45,7 +45,7 @@ export default function GlobalNotFound() {
 					<p className="text-base text-muted-foreground max-w-xl">{t.subtitle}</p>
 					<Link
 						href={home}
-						className="mt-2 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#377dff] hover:bg-[#2563eb] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
+						className="mt-2 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#2563eb] hover:bg-[#1d4fd8] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
 					>
 						{t.home}
 					</Link>

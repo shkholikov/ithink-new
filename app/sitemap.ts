@@ -1,21 +1,16 @@
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
+import { allPaths } from "@/lib/site-nav";
+import { SITE_URL } from "@/lib/seo";
 
-const locales = ['uz', 'ru', 'en'];
-const pages = ['', '/about', '/customers', '/partners', '/pricing', '/hire-us', '/websites', '/faq', '/contact'];
-const baseUrl = 'https://www.ithink.uz';
-
+/** Every routed page in every locale, from the same list the navbar and footer use. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return locales.flatMap((locale) =>
-    pages.map((page) => ({
-      url: `${baseUrl}/${locale}${page}`,
-      lastModified: new Date(),
-      changeFrequency: page === '' ? 'weekly' : 'monthly',
-      priority: page === '' ? 1 : 0.8,
-      alternates: {
-        languages: Object.fromEntries(
-          locales.map((l) => [l, `${baseUrl}/${l}${page}`])
-        ),
-      },
-    }))
-  );
+	return allPaths().flatMap((path) =>
+		routing.locales.map((locale) => ({
+			url: `${SITE_URL}/${locale}${path}`,
+			changeFrequency: path === "" ? "weekly" : "monthly",
+			priority: path === "" ? 1 : path.split("/").length > 2 ? 0.7 : 0.8,
+			alternates: { languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}${path}`])) }
+		}))
+	);
 }

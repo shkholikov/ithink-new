@@ -1,130 +1,99 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { Send, Phone } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { SERVICE_SLUGS } from "@/lib/services";
+import { LICENSE_SLUGS, SOLUTION_SLUGS, TRAINING_SLUGS } from "@/lib/site-nav";
+import { CONTACT } from "@/lib/contact";
 
-interface FooterProps {
-	locale: string;
-}
-
-export default async function Footer({ locale }: FooterProps) {
+export default async function Footer({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "footer" });
 	const nav = await getTranslations({ locale, namespace: "nav" });
-	const year = new Date().getFullYear();
 
 	const columns = [
 		{
-			heading: nav("services"),
+			title: t("services"),
+			links: SERVICE_SLUGS.map((s) => ({ href: `/${locale}/services/${s}`, label: nav(`items.services.${s}.title`) }))
+		},
+		{
+			title: t("products"),
 			links: [
-				// Slugs come from the shared list, so these cannot drift from the
-				// routes again — all three used to 404 on every page of the site.
-				...[SERVICE_SLUGS[2], SERVICE_SLUGS[4], SERVICE_SLUGS[0]].map((slug) => ({
-					label: nav(`items.services.${slug}.title`),
-					href: `/${locale}/services/${slug}`
-				})),
-				{ label: t("links.hireUs"), href: `/${locale}/hire-us` },
-				{ label: t("links.websites"), href: `/${locale}/websites` }
+				...LICENSE_SLUGS.map((s) => ({ href: `/${locale}/licenses/${s}`, label: nav(`items.licenses.${s}.title`) })),
+				...TRAINING_SLUGS.map((s) => ({ href: `/${locale}/training/${s}`, label: nav(`items.training.${s}.title`) }))
 			]
 		},
 		{
-			heading: nav("solutions"),
+			title: t("company"),
 			links: [
-				{ label: "For Business", href: `/${locale}/solutions/business` },
-				{ label: "For Education", href: `/${locale}/solutions/education` },
-				{ label: "For Enterprise", href: `/${locale}/solutions/enterprise` },
-				{ label: nav("licenses"), href: `/${locale}/licenses/microsoft` },
-				{ label: nav("training"), href: `/${locale}/training/courses` }
-			]
-		},
-		{
-			heading: nav("company"),
-			links: [
-				{ label: t("links.about"), href: `/${locale}/about` },
-				{ label: t("links.customers"), href: `/${locale}/customers` },
-				{ label: t("links.partners"), href: `/${locale}/partners` },
-				{ label: nav("career"), href: `/${locale}/career` },
-				{ label: nav("blog"), href: `/${locale}/blog` }
+				{ href: `/${locale}/company`, label: nav("companyPage") },
+				{ href: `/${locale}/customers`, label: nav("clients") },
+				{ href: `/${locale}/partners`, label: nav("partners") },
+				{ href: `/${locale}/hire-us`, label: nav("hireUs") },
+				{ href: `/${locale}/career`, label: nav("career") },
+				...SOLUTION_SLUGS.map((s) => ({ href: `/${locale}/solutions/${s}`, label: nav(`items.solutions.${s}.title`) }))
 			]
 		}
 	];
 
+	const channels = [
+		{ href: CONTACT.phoneHref, label: CONTACT.phone, icon: Phone },
+		{ href: CONTACT.telegramHref, label: `Telegram ${CONTACT.telegram}`, icon: Send },
+		{ href: `mailto:${CONTACT.email}`, label: CONTACT.email, icon: Mail },
+		{ href: CONTACT.instagramHref, label: `Instagram ${CONTACT.instagram}`, icon: InstagramIcon }
+	];
+
 	return (
-		<footer className="bg-card border-t border-border">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-					{/* Brand */}
-					<div className="sm:col-span-2 lg:col-span-2">
-						<Link href={`/${locale}`}>
-							<Image src="/logo.png" alt="ITHINK" width={110} height={36} className="h-8 w-auto mb-4 dark:hidden" />
-							<Image src="/logo-negative.png" alt="ITHINK" width={110} height={36} className="h-8 w-auto mb-4 hidden dark:block" />
-						</Link>
-						<p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-5">{t("slogan")}</p>
-						<div className="flex items-center gap-2">
-							<a
-								href="https://instagram.com/ithinkuz"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="w-9 h-9 rounded-xl bg-secondary hover:bg-[#e1306c]/10 hover:border-[#e1306c]/30 flex items-center justify-center transition-all duration-200 border border-border group"
-								aria-label="Instagram"
-							>
-								<InstagramIcon className="w-4 h-4 text-muted-foreground group-hover:text-[#e1306c] transition-colors" />
-							</a>
-							<a
-								href="https://t.me/ithinkteam"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="w-9 h-9 rounded-xl bg-secondary hover:bg-[#229ed9]/10 hover:border-[#229ed9]/30 flex items-center justify-center transition-all duration-200 border border-border group"
-								aria-label="Telegram"
-							>
-								<Send className="w-4 h-4 text-muted-foreground group-hover:text-[#229ed9] transition-colors" />
-							</a>
-							<a
-								href="tel:+998555554777"
-								className="w-9 h-9 rounded-xl bg-secondary hover:bg-[#377dff]/10 hover:border-[#377dff]/30 flex items-center justify-center transition-all duration-200 border border-border group"
-								aria-label="Phone"
-							>
-								<Phone className="w-4 h-4 text-muted-foreground group-hover:text-brand-text transition-colors" />
-							</a>
-						</div>
+		<footer className="ink-scene relative overflow-hidden border-t border-ink-foreground/10 text-ink-foreground">
+			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0 opacity-60" />
+			<div className="relative mx-auto max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
+				<div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
+					<div className="max-w-sm">
+						<Image src="/logo.png" alt="ITHINK" width={1372} height={440} sizes="112px" className="h-8 w-auto dark:hidden" />
+						<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} sizes="112px" className="h-8 w-auto hidden dark:block" />
+						<p className="mt-6 text-sm leading-relaxed text-ink-muted">{t("about")}</p>
+						<ul className="mt-8 space-y-3">
+							{channels.map((c) => (
+								<li key={c.href}>
+									<a
+										href={c.href}
+										target={c.href.startsWith("http") ? "_blank" : undefined}
+										rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+										className="inline-flex items-center gap-3 text-sm text-ink-foreground/85 transition-colors hover:text-ink-foreground"
+									>
+										<span className="flex size-9 items-center justify-center rounded-xl border border-ink-foreground/10 bg-ink-foreground/5">
+											<c.icon className="size-4" aria-hidden="true" />
+										</span>
+										{c.label}
+									</a>
+								</li>
+							))}
+						</ul>
 					</div>
-
-					{/* Nav columns */}
-					{columns.map((col, i) => (
-						<div key={i} className="text-left sm:text-right">
-							<p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-4">{col.heading}</p>
-							<ul className="space-y-2.5">
-								{col.links.map((link) => (
-									<li key={link.href}>
-										<Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-											{link.label}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
-					))}
+					<div className="grid gap-10 sm:grid-cols-3">
+						{columns.map((col) => (
+							<nav key={col.title} aria-label={col.title}>
+								<p className="text-sm font-semibold text-ink-foreground">{col.title}</p>
+								<ul className="mt-4 space-y-2.5">
+									{col.links.map((l) => (
+										<li key={l.href}>
+											<Link href={l.href} className="text-sm text-ink-muted transition-colors hover:text-ink-foreground">
+												{l.label}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</nav>
+						))}
+					</div>
 				</div>
-
-				{/* Contact bar */}
-				<div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-					<p className="text-xs text-muted-foreground">
-						© {year} ITHINK. {t("rights")}.
+				<div className="mt-16 flex flex-col gap-3 border-t border-ink-foreground/10 pt-8 text-xs text-ink-muted sm:flex-row sm:items-center sm:justify-between">
+					<p>
+						© {new Date().getFullYear()} ITHINK. {t("rights")}.
 					</p>
-					<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-						<a href="mailto:team@ithink.uz" className="hover:text-foreground transition-colors">
-							team@ithink.uz
-						</a>
-						<span className="text-border">·</span>
-						<a href="tel:+998555554777" className="hover:text-foreground transition-colors">
-							+998 55 555-47-77
-						</a>
-						<span className="text-border">·</span>
-						<Link href={`/${locale}/contact`} className="hover:text-foreground transition-colors">
-							{t("links.contactPage")}
-						</Link>
-					</div>
+					<p>
+						{t("slogan")} · {t("location")}
+					</p>
 				</div>
 			</div>
 		</footer>

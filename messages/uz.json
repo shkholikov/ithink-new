@@ -36,8 +36,14 @@
 		"lightMode": "Yorug' mavzu",
 		"items": {
 			"services": {
-				"it-infrastructure": { "title": "IT-infratuzilma", "description": "Barqaror ishlash uchun serverlar, tarmoqlar va cloud infratuzilma." },
-				"managed-it": { "title": "Boshqariladigan IT-xizmatlar", "description": "Obuna bo'yicha 24/7 monitoring, helpdesk va to'liq IT boshqaruvi." },
+				"it-infrastructure": {
+					"title": "IT-infratuzilma",
+					"description": "Barqaror ishlash uchun serverlar, tarmoqlar va cloud infratuzilma."
+				},
+				"managed-it": {
+					"title": "Boshqariladigan IT-xizmatlar",
+					"description": "Obuna bo'yicha 24/7 monitoring, helpdesk va to'liq IT boshqaruvi."
+				},
 				"crm-automation": {
 					"title": "CRM va Savdo Avtomatlashtirish",
 					"description": "To'liq kanal integratsiyasi bilan AmoCRM va Bitrix24 joriy etish."
@@ -50,32 +56,89 @@
 					"title": "Dasturiy Ta'minot Ishlab Chiqish",
 					"description": "Veb-ilovalar, Telegram botlar, Mini Apps va maxsus biznes tizimlari."
 				},
-				"it-audit": { "title": "IT-audit va Konsalting", "description": "Ustuvor amallar rejasi bilan infratuzilma va xavfsizlik auditi." }
+				"it-audit": {
+					"title": "IT-audit va Konsalting",
+					"description": "Ustuvor amallar rejasi bilan infratuzilma va xavfsizlik auditi."
+				}
 			},
 			"licenses": {
-				"microsoft": { "title": "Microsoft", "description": "Biznes va korxona uchun rasmiy Microsoft litsenziyalari." },
-				"security": { "title": "Xavfsizlik Dasturlari", "description": "Antivirus va endpoint himoya yechimlari." },
-				"design": { "title": "Dizayn Vositalari", "description": "Jamoangiz uchun kreativ dasturiy ta'minot litsenziyalari." }
+				"microsoft": {
+					"title": "Microsoft",
+					"description": "Biznes va korxona uchun rasmiy Microsoft litsenziyalari."
+				},
+				"security": {
+					"title": "Xavfsizlik Dasturlari",
+					"description": "Antivirus va endpoint himoya yechimlari."
+				},
+				"design": {
+					"title": "Dizayn Vositalari",
+					"description": "Jamoangiz uchun kreativ dasturiy ta'minot litsenziyalari."
+				}
 			},
 			"training": {
-				"courses": { "title": "Onlayn Kurslar", "description": "IT mutaxassislari uchun o'z sur'atida o'qish dasturlari." },
-				"certification": { "title": "Sertifikatlar", "description": "Ko'nikmalaringizni tasdiqlash uchun tan olingan sertifikatlar." },
-				"corporate": { "title": "Korporativ O'qitish", "description": "Jamoangiz uchun moslashtirilgan o'qitish dasturlari." }
+				"courses": {
+					"title": "Onlayn Kurslar",
+					"description": "IT mutaxassislari uchun o'z sur'atida o'qish dasturlari."
+				},
+				"certification": {
+					"title": "Sertifikatlar",
+					"description": "Ko'nikmalaringizni tasdiqlash uchun tan olingan sertifikatlar."
+				},
+				"corporate": {
+					"title": "Korporativ O'qitish",
+					"description": "Jamoangiz uchun moslashtirilgan o'qitish dasturlari."
+				}
 			},
 			"solutions": {
-				"business": { "title": "Biznes uchun", "description": "O'sib borayotgan kompaniyalar uchun to'liq IT yechimlari." },
-				"education": { "title": "Ta'lim uchun", "description": "Maktablar va universitetlar uchun texnologiya vositalari." },
-				"enterprise": { "title": "Korxona uchun", "description": "Yirik tashkilotlar uchun kengaytiriladigan infratuzilma." }
+				"business": {
+					"title": "Biznes uchun",
+					"description": "O'sib borayotgan kompaniyalar uchun to'liq IT yechimlari."
+				},
+				"education": {
+					"title": "Ta'lim uchun",
+					"description": "Maktablar va universitetlar uchun texnologiya vositalari."
+				},
+				"enterprise": {
+					"title": "Korxona uchun",
+					"description": "Yirik tashkilotlar uchun kengaytiriladigan infratuzilma."
+				}
 			},
 			"partners": {
-				"amocrm": { "title": "amoCRM", "description": "Tez o'suvchi jamoalar uchun savdoga yo'naltirilgan CRM." },
-				"bitrix24": { "title": "Bitrix24", "description": "Yagona CRM, loyiha boshqaruvi va HR platformasi." },
-				"itgrix": { "title": "Itgrix", "description": "Bitrix24 va amoCRM uchun Asterisk telefoniya integratsiyasi." },
-				"online-pbx": { "title": "onlinePBX", "description": "Cloud telefoniya va call-markaz yechimlari." },
-				"wazzup": { "title": "Wazzup", "description": "CRM ichida omnikanallik xabar almashish." },
-				"megacount": { "title": "MEGACOUNT", "description": "AI asosidagi tashrif buyuruvchilarni sanash va chakana tahlil." }
+				"amocrm": {
+					"title": "amoCRM",
+					"description": "Tez o'suvchi jamoalar uchun savdoga yo'naltirilgan CRM."
+				},
+				"bitrix24": {
+					"title": "Bitrix24",
+					"description": "Yagona CRM, loyiha boshqaruvi va HR platformasi."
+				},
+				"itgrix": {
+					"title": "Itgrix",
+					"description": "Bitrix24 va amoCRM uchun Asterisk telefoniya integratsiyasi."
+				},
+				"online-pbx": {
+					"title": "onlinePBX",
+					"description": "Cloud telefoniya va call-markaz yechimlari."
+				},
+				"wazzup": {
+					"title": "Wazzup",
+					"description": "CRM ichida omnikanallik xabar almashish."
+				},
+				"megacount": {
+					"title": "MEGACOUNT",
+					"description": "AI asosidagi tashrif buyuruvchilarni sanash va chakana tahlil."
+				}
 			}
-		}
+		},
+		"products": "Mahsulotlar",
+		"consult": "Konsultatsiya",
+		"language": "Til",
+		"allPartners": "Barcha hamkorlar",
+		"allServices": "Barcha xizmatlar",
+		"companyPage": "Kompaniya haqida",
+		"clients": "Mijozlar",
+		"home": "Bosh sahifa",
+		"skip": "Asosiy qismga o'tish"
 	},
 	"hero": {
 		"badge": "50+ mamnun mijoz",
@@ -102,7 +165,7 @@
 		"items": [
 			{
 				"title": "IT-infratuzilma",
-				"description": "On-premise va cloud infratuzilmani loyihalаymiz va joylashtiramiz: serverlar, tarmoq, ish stantsiyalari, kirishlar va IT arxitekturasi biznesning barqaror ishlashi uchun.",
+				"description": "On-premise va cloud infratuzilmani loyihalaymiz va joylashtiramiz: serverlar, tarmoq, ish stantsiyalari, kirishlar va IT arxitekturasi biznesning barqaror ishlashi uchun.",
 				"tag": "Loyiha asosida"
 			},
 			{
@@ -112,12 +175,12 @@
 			},
 			{
 				"title": "CRM va savdo avtomatizatsiyasi",
-				"description": "AmoCRM joriy etamiz, savdo hunillarini avtomatlаshtiramiz, telefoniya, messenjerlar, veb-sayt va boshqa kanallarni yagona liderlarni boshqarish tizimiga ulaymiz.",
+				"description": "AmoCRM joriy etamiz, savdo hunillarini avtomatlashtiramiz, telefoniya, messenjerlar, veb-sayt va boshqa kanallarni yagona liderlarni boshqarish tizimiga ulaymiz.",
 				"tag": "Loyiha asosida"
 			},
 			{
 				"title": "Biznes-jarayonlarni avtomatlashtirish",
-				"description": "Botlar, integratsiyalar, AI yechimlari va ichki tizimlar yordamida qo'lda bajariladigan jarayonlarni avtomatlаshtiramiz — biznes tezroq, aniqroq va samaraliroq ishlaydi.",
+				"description": "Botlar, integratsiyalar, AI yechimlari va ichki tizimlar yordamida qo'lda bajariladigan jarayonlarni avtomatlashtiramiz — biznes tezroq, aniqroq va samaraliroq ishlaydi.",
 				"tag": "Loyiha asosida"
 			},
 			{
@@ -203,23 +266,23 @@
 	},
 	"howItWorks": {
 		"badge": "Bizning jarayon",
-		"title": "Biz qanday ishlаymiz",
+		"title": "Biz qanday ishlaymiz",
 		"subtitle": "Birinchi suhbatdan uzoq muddatli hamkorlikkacha aniq va sinovdan o'tgan jarayon.",
 		"items": [
 			{
 				"step": "01",
 				"title": "Konsultatsiya",
-				"description": "Biz sizning muammolaringiz va maqsadlaringizni tinglаymiz. Shablonsiz — faqat nima kerakligingiz haqida ochiq suhbat."
+				"description": "Biz sizning muammolaringiz va maqsadlaringizni tinglaymiz. Shablonsiz — faqat nima kerakligingiz haqida ochiq suhbat."
 			},
 			{
 				"step": "02",
 				"title": "Rejalashtirish",
-				"description": "Biznesingizga moslashtirilgan yechim arxitekturasi, muddati va byudjetini ishlab chiqамiz. Siz qurilishdan oldin tasdiqlaysiz."
+				"description": "Biznesingizga moslashtirilgan yechim arxitekturasi, muddati va byudjetini ishlab chiqamiz. Siz qurilishdan oldin tasdiqlaysiz."
 			},
 			{
 				"step": "03",
 				"title": "Bajarish",
-				"description": "Jamoamiz quради, sozlaydi va joylashtiradi. Siz har bir bosqichda xabardor bo'lasiz — kutilmagan holatlar yo'q."
+				"description": "Jamoamiz quradi, sozlaydi va joylashtiradi. Siz har bir bosqichda xabardor bo'lasiz — kutilmagan holatlar yo'q."
 			},
 			{
 				"step": "04",
@@ -273,7 +336,12 @@
 			"websites": "Veb-saytlar",
 			"pricing": "Narxlar",
 			"contactPage": "Kontaktlar"
-		}
+		},
+		"about": "Toshkentdagi IT-kompaniya. 2020-yildan beri biznes uchun infratuzilma, CRM, avtomatlashtirish va dasturiy ta'minot.",
+		"products": "Mahsulotlar",
+		"solutions": "Yechimlar",
+		"location": "Toshkent, O'zbekiston",
+		"backToTop": "Yuqoriga"
 	},
 	"about": {
 		"hero": {
@@ -313,78 +381,106 @@
 		}
 	},
 	"customers": {
-		"hero": {
-			"badge": "Case Study'lar",
-			"title": "ITHINKga Ishongan Mijozlar",
-			"subtitle": "Startaplardan tortib yirik korxonalargacha — biz yordam bergan bizneslardan bir qismi."
-		},
 		"services": "Ko'rsatilgan xizmatlar",
 		"items": [
 			{
 				"name": "Crayton & Vilt",
 				"industry": "Chakana Savdo",
 				"description": "Tez o'sib borayotgan chakana savdo zanjiri uchun IT infratuzilmasi va boshqariladigan xizmatlar.",
-				"services": ["Boshqariladigan IT", "Tarmoq"]
+				"services": [
+					"Boshqariladigan IT",
+					"Tarmoq"
+				]
 			},
 			{
 				"name": "OBBO",
 				"industry": "E-Commerce",
 				"description": "Onlayn bozor uchun to'liq veb-ilova va CRM integratsiyasi.",
-				"services": ["Dasturiy Ta'minot", "CRM"]
+				"services": [
+					"Dasturiy Ta'minot",
+					"CRM"
+				]
 			},
 			{
 				"name": "AslZar",
 				"industry": "Zargarlik",
 				"description": "Inventar boshqaruvi va mijozlar sodiqlik tizimi bo'lgan maxsus e-commerce platforma.",
-				"services": ["Dasturiy Ta'minot", "E-Commerce"]
+				"services": [
+					"Dasturiy Ta'minot",
+					"E-Commerce"
+				]
 			},
 			{
 				"name": "Kredit Market",
 				"industry": "Moliya",
 				"description": "Kredit ariza ish oqimlari va mijozlar boshqaruv tizimini raqamlashtirish.",
-				"services": ["Raqamlashtirish", "CRM"]
+				"services": [
+					"Raqamlashtirish",
+					"CRM"
+				]
 			},
 			{
 				"name": "Penostyle",
 				"industry": "Chakana Savdo",
 				"description": "Ko'p filial operatsiyalar uchun tarmoq infratuzilmasi va VoIP.",
-				"services": ["Tarmoq", "VoIP"]
+				"services": [
+					"Tarmoq",
+					"VoIP"
+				]
 			},
 			{
 				"name": "Avtozet",
 				"industry": "Avtomobil",
 				"description": "Avtosalon uchun CRM implementatsiyasi va savdo jarayonlarini avtomatlashtirish.",
-				"services": ["CRM", "Raqamlashtirish"]
+				"services": [
+					"CRM",
+					"Raqamlashtirish"
+				]
 			},
 			{
 				"name": "SOKOLOV",
 				"industry": "Zargarlik",
 				"description": "Premium zargarlik brendining mahalliy operatsiyalari uchun IT qo'llab-quvvatlash.",
-				"services": ["Boshqariladigan IT"]
+				"services": [
+					"Boshqariladigan IT"
+				]
 			},
 			{
 				"name": "UDirect",
 				"industry": "Professional Xizmatlar",
 				"description": "Konsalting firmasi uchun biznes jarayonlarini raqamlashtirish va dasturiy ta'minot.",
-				"services": ["Raqamlashtirish", "Dasturiy Ta'minot"]
+				"services": [
+					"Raqamlashtirish",
+					"Dasturiy Ta'minot"
+				]
 			},
 			{
 				"name": "ParadiseWall",
 				"industry": "Interyer",
 				"description": "Uy bezagi kompaniyasi uchun veb-sayt va raqamli vositalar.",
-				"services": ["Veb-saytlar", "Dasturiy Ta'minot"]
+				"services": [
+					"Veb-saytlar",
+					"Dasturiy Ta'minot"
+				]
 			},
 			{
 				"name": "Mobicenter",
 				"industry": "Chakana Savdo",
 				"description": "Ko'p filial chakana elektronika do'koni uchun IT infratuzilmasi va VoIP.",
-				"services": ["Tarmoq", "VoIP", "Boshqariladigan IT"]
+				"services": [
+					"Tarmoq",
+					"VoIP",
+					"Boshqariladigan IT"
+				]
 			},
 			{
 				"name": "Chudo Tovary",
 				"industry": "E-Commerce",
 				"description": "Onlayn bozor uchun e-commerce platforma va CRM integratsiyasi.",
-				"services": ["E-Commerce", "CRM"]
+				"services": [
+					"E-Commerce",
+					"CRM"
+				]
 			}
 		]
 	},
@@ -553,7 +649,7 @@
 			},
 			{
 				"q": "ITHINK boshqa IT kompaniyalardan qanday farq qiladi?",
-				"a": "Biz texnik chuqurlikni biznesni tushunish bilan birlashtirамиз. Har bir mijoz maxsus hisob menejeri oladi."
+				"a": "Biz texnik chuqurlikni biznesni tushunish bilan birlashtiramiz. Har bir mijoz maxsus hisob menejeri oladi."
 			},
 			{
 				"q": "Maxsus dasturiy ta'minot ishlab chiqasizmi?",
@@ -573,10 +669,10 @@
 			},
 			{
 				"q": "Qanday boshlash mumkin?",
-				"a": "Aloqa formasini to'ldiring yoki to'g'ridan-to'g'ri qo'ng'iring. Ehtiyojlaringizni tushunish uchun 30 daqiqalik kashfiyot qo'ng'irog'ini rejalashtirамиз."
+				"a": "Aloqa formasini to'ldiring yoki to'g'ridan-to'g'ri qo'ng'iring. Ehtiyojlaringizni tushunish uchun 30 daqiqalik kashfiyot qo'ng'irog'ini rejalashtiramiz."
 			},
 			{
-				"q": "Xalqaro mijozlar bilan ishlayсизми?",
+				"q": "Xalqaro mijozlar bilan ishlaysizmi?",
 				"a": "Asosiy diqqatimiz O'zbekiston, ammo Markaziy Osiyo bo'ylab va dasturiy ta'minot ishlab chiqish hamda CRM loyihalari uchun xalqaro loyihalar bilan ishlaymiz."
 			}
 		]
@@ -614,31 +710,76 @@
 			"badge": "Missiya va maqsad",
 			"title": "Nima uchun mavjudmiz",
 			"cards": [
-				{ "label": "Missiya", "text": "Ishonchli, maxsus IT yechimlari orqali biznesga raqamlashish va kengayishga yordam beramiz." },
-				{ "label": "Maqsad", "text": "Markaziy Osiyodagi biznes uchun eng ishonchli IT hamkoriga aylanish." },
-				{ "label": "Yondashuv", "text": "Shaffof muloqot, aniq hajm va ishga tushirgandan keyin qo'llab-quvvatlash — hech qanday kutilmagan holatlar yo'q." }
+				{
+					"label": "Missiya",
+					"text": "Ishonchli, maxsus IT yechimlari orqali biznesga raqamlashish va kengayishga yordam beramiz."
+				},
+				{
+					"label": "Maqsad",
+					"text": "Markaziy Osiyodagi biznes uchun eng ishonchli IT hamkoriga aylanish."
+				},
+				{
+					"label": "Yondashuv",
+					"text": "Shaffof muloqot, aniq hajm va ishga tushirgandan keyin qo'llab-quvvatlash — hech qanday kutilmagan holatlar yo'q."
+				}
 			]
 		},
 		"timeline": {
 			"badge": "Bizning yo'limiz",
 			"title": "2020 yildan beri qurayapmiz",
 			"items": [
-				{ "year": "2020", "title": "Toshkentda tashkil etildi", "description": "ITHINK zamonaviy IT texnologiyalarini o'zbek biznesiga olib kelish missiyasi bilan yaratildi." },
-				{ "year": "2021", "title": "Birinchi korporativ mijoz", "description": "Mintaqaviy korxona bilan birinchi yirik infratuzilma shartnomasini imzoladik." },
-				{ "year": "2022", "title": "Dasturlash va botlar bo'limi", "description": "Dasturiy ta'minot ishlab chiqish va Telegram orqali avtomatlashtirish xizmatlarini ishga tushirdik." },
-				{ "year": "2023", "title": "Jamoa 15+ kishiga etdi", "description": "O'sib borayotgan mijozlar bazasiga xizmat ko'rsatish uchun muhandislik jamoamizni kengaytirdik." },
-				{ "year": "2024", "title": "72+ loyiha topshirildi", "description": "Muvaffaqiyatli yakunlangan mijozlar loyihalarining muhim ko'rsatkichini oshirdik." },
-				{ "year": "2025", "title": "Mintaqaviy kengayish", "description": "Tojikiston, Qozog'iston va AQShda mijozlarga xizmat ko'rsata boshladik." }
+				{
+					"year": "2020",
+					"title": "Toshkentda tashkil etildi",
+					"description": "ITHINK zamonaviy IT texnologiyalarini o'zbek biznesiga olib kelish missiyasi bilan yaratildi."
+				},
+				{
+					"year": "2021",
+					"title": "Birinchi korporativ mijoz",
+					"description": "Mintaqaviy korxona bilan birinchi yirik infratuzilma shartnomasini imzoladik."
+				},
+				{
+					"year": "2022",
+					"title": "Dasturlash va botlar bo'limi",
+					"description": "Dasturiy ta'minot ishlab chiqish va Telegram orqali avtomatlashtirish xizmatlarini ishga tushirdik."
+				},
+				{
+					"year": "2023",
+					"title": "Jamoa 15+ kishiga etdi",
+					"description": "O'sib borayotgan mijozlar bazasiga xizmat ko'rsatish uchun muhandislik jamoamizni kengaytirdik."
+				},
+				{
+					"year": "2024",
+					"title": "72+ loyiha topshirildi",
+					"description": "Muvaffaqiyatli yakunlangan mijozlar loyihalarining muhim ko'rsatkichini oshirdik."
+				},
+				{
+					"year": "2025",
+					"title": "Mintaqaviy kengayish",
+					"description": "Tojikiston, Qozog'iston va AQShda mijozlarga xizmat ko'rsata boshladik."
+				}
 			]
 		},
 		"why": {
 			"badge": "Nima uchun ITHINK",
 			"title": "Bizning farqimiz",
 			"items": [
-				{ "title": "Toshkentdagi jamoa", "description": "Autsorsing yo'q. Loyihangizni boshidan oxirigacha o'z muhandislarimiz boshqaradi." },
-				{ "title": "Aniq hajm va narxlar", "description": "Natija va narxni oldindan kelishamiz. Qo'shimcha xarajatlar, yashirin hisob-fakturalar yo'q." },
-				{ "title": "Ishga tushirgandan keyin qo'llab-quvvatlash", "description": "Relizdan keyin ham qolamiz. Xatoliklarni tuzatish, yangilanishlar va monitoring shartnoma bir qismi." },
-				{ "title": "Shaffof muloqot", "description": "Loyiha qaysi bosqichda ekanini har doim bilasiz. Haftalik yangilanishlar, jamoaga to'g'ridan-to'g'ri kirish." }
+				{
+					"title": "Toshkentdagi jamoa",
+					"description": "Autsorsing yo'q. Loyihangizni boshidan oxirigacha o'z muhandislarimiz boshqaradi."
+				},
+				{
+					"title": "Aniq hajm va narxlar",
+					"description": "Natija va narxni oldindan kelishamiz. Qo'shimcha xarajatlar, yashirin hisob-fakturalar yo'q."
+				},
+				{
+					"title": "Ishga tushirgandan keyin qo'llab-quvvatlash",
+					"description": "Relizdan keyin ham qolamiz. Xatoliklarni tuzatish, yangilanishlar va monitoring shartnoma bir qismi."
+				},
+				{
+					"title": "Shaffof muloqot",
+					"description": "Loyiha qaysi bosqichda ekanini har doim bilasiz. Haftalik yangilanishlar, jamoaga to'g'ridan-to'g'ri kirish."
+				}
 			]
 		},
 		"location": {
@@ -658,13 +799,23 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "Barcha xizmatlar"
+			"ctaPrimary": "Loyihani muhokama qilish",
+			"ctaSecondary": "Barcha xizmatlar",
+			"otherEyebrow": "Boshqa xizmatlar",
+			"otherTitle": "Qo'shni vazifalarni ham hal qilamiz",
+			"before": "Oldin",
+			"after": "Keyin",
+			"example": "Interfeys namunasi",
+			"exampleReport": "Hisobot namunasi",
+			"resolved": "Hal qilindi",
+			"tickets": "Xodimlar so'rovlari",
+			"auto": "Avtomatik"
 		},
 		"it-infrastructure": {
 			"hero": {
 				"badge": "IT-infratuzilma",
 				"title": "Biznesingiz uchun ishonchli IT-infratuzilma",
-				"subtitle": "Biz on-premise va cloud tizimlarni loyihalаymiz va joylashtiramiz — bitta ofisdan ko'p filiallik tarmoqlargacha uzluksiz ishlashni ta'minlаymiz."
+				"subtitle": "Biz on-premise va cloud tizimlarni loyihalaymiz va joylashtiramiz — bitta ofisdan ko'p filiallik tarmoqlargacha uzluksiz ishlashni ta'minlaymiz."
 			},
 			"features": {
 				"badge": "Nima kiradi",
@@ -682,8 +833,14 @@
 						"title": "Ish stantsiyalari va qurilmalarni boshqarish",
 						"description": "Barcha xodimlar qurilmalari, hisoblar va kirishlarni markazlashtirilgan boshqarish."
 					},
-					{ "title": "Cloud infratuzilmasi", "description": "AWS, Azure yoki on-prem gibrid yechimlar biznesingiz o'sishiga moslashtirilgan." },
-					{ "title": "Kirish nazorati va xavfsizlik", "description": "Rol asosidagi kirish, VPN konfiguratsiyasi va tarmoq perimetr himoyasi." },
+					{
+						"title": "Cloud infratuzilmasi",
+						"description": "AWS, Azure yoki on-prem gibrid yechimlar biznesingiz o'sishiga moslashtirilgan."
+					},
+					{
+						"title": "Kirish nazorati va xavfsizlik",
+						"description": "Rol asosidagi kirish, VPN konfiguratsiyasi va tarmoq perimetr himoyasi."
+					},
 					{
 						"title": "Zaxira nusxa va ofat holatidan tiklash",
 						"description": "Avtomatlashtirilgan zaxira nusxa va sinab ko'rilgan tiklash rejalari."
@@ -695,18 +852,18 @@
 				"title": "Yetkazib berish jarayonimiz",
 				"items": [
 					{
-						"step": "01",
 						"title": "Infratuzilma auditi",
-						"description": "Mavjud muhitni baholaymiz, muammoli joylarni aniqlaymiz va o'zgartirish kerak bo'lgan narsalarni hujjatlаshtirамиз."
+						"description": "Mavjud muhitni baholaymiz, muammoli joylarni aniqlaymiz va o'zgartirish kerak bo'lgan narsalarni hujjatlashtiramiz."
 					},
 					{
-						"step": "02",
 						"title": "Arxitektura dizayni",
-						"description": "Miqyos, byudjet va 3 yillik o'sish yo'nalishingizga mos yechim loyihalаymiz."
+						"description": "Miqyos, byudjet va 3 yillik o'sish yo'nalishingizga mos yechim loyihalaymiz."
 					},
-					{ "step": "03", "title": "Joylashtirish", "description": "Muhandislarimiz hamma narsani biznesingizga minimal ta'sir ko'rsatib sozlaydi." },
 					{
-						"step": "04",
+						"title": "Joylashtirish",
+						"description": "Muhandislarimiz hamma narsani biznesingizga minimal ta'sir ko'rsatib sozlaydi."
+					},
+					{
 						"title": "Topshirish va o'qitish",
 						"description": "To'liq hujjatlashtirish, administrator o'qitish va ixtiyoriy qo'llab-quvvatlash rejasi."
 					}
@@ -720,7 +877,10 @@
 						"title": "Uzilishsiz ishlash",
 						"description": "Barqaror, ortiqcha infratuzilma jamoangiz kundan-kunga uzilishsiz ishlashini ta'minlaydi."
 					},
-					{ "title": "Kengaytiriladigan asos", "description": "Xodimlar yoki filiallar qo'shilganda qimmat qayta qurishsiz o'suvchi tizimlar." },
+					{
+						"title": "Kengaytiriladigan asos",
+						"description": "Xodimlar yoki filiallar qo'shilganda qimmat qayta qurishsiz o'suvchi tizimlar."
+					},
 					{
 						"title": "To'liq xavfsizlik",
 						"description": "Birinchi kundan boshlab himoyalangan qurilmalar, nazorat qilinadigan kirish va zaxira nusxa."
@@ -730,7 +890,12 @@
 			"cta": {
 				"title": "Mustahkam IT asosini qurishga tayyormisiz?",
 				"subtitle": "Mavjud tizimingiz haqida aytib bering — 24 soat ichida reja tuzamiz."
-			}
+			},
+			"before": [
+				"Tarmoq va serverlar bo'laklab yig'ilgan, har qanday nosozlik ofis ishini to'xtatadi.",
+				"Har bir yangi xodim yoki filial uchun tarmoq va sozlamalarni qayta qilish kerak bo'ladi.",
+				"Kirish huquqlari qo'lda beriladi, zaxira nusxalarni esa hech kim tekshirmagan."
+			]
 		},
 		"managed-it": {
 			"hero": {
@@ -750,7 +915,10 @@
 						"title": "Helpdesk va foydalanuvchi qo'llab-quvvatlashi",
 						"description": "Xodimlar IT muammolariga tezkor javob — parollar, qurilmalar, dasturlar va boshqalar."
 					},
-					{ "title": "Proaktiv texnik xizmat", "description": "Muntazam yangilanishlar, yamoq boshqaruvi va muammolar avval oldini olish." },
+					{
+						"title": "Proaktiv texnik xizmat",
+						"description": "Muntazam yangilanishlar, yamoq boshqaruvi va muammolar avval oldini olish."
+					},
 					{
 						"title": "Xavfsizlik va antivirus boshqaruvi",
 						"description": "Barcha qurilmalarga endpoint himoya, firewall qoidalari va xavfsizlik yamoqlarini qo'llash."
@@ -770,22 +938,18 @@
 				"title": "Boshlash juda oddiy",
 				"items": [
 					{
-						"step": "01",
 						"title": "Onboarding auditi",
-						"description": "IT muhitingizni to'liq hujjatlashtirамиз: qurilmalar, dasturlar, hisoblar va kirish nuqtalari."
+						"description": "IT muhitingizni to'liq hujjatlashtiramiz: qurilmalar, dasturlar, hisoblar va kirish nuqtalari."
 					},
 					{
-						"step": "02",
 						"title": "Monitoring o'rnatish",
 						"description": "Monitoring agentlarini joylashtiramiz va infratuzilmangiz uchun ogohlantirish chegaralarini sozlaymiz."
 					},
 					{
-						"step": "03",
 						"title": "Doimiy operatsiyalar",
 						"description": "Kunlik monitoring, tezkor hodisaga javob va belgilangan SLA asosida texnik xizmat."
 					},
 					{
-						"step": "04",
 						"title": "Oylik ko'rib chiqish",
 						"description": "Oylik uchrashuv: hodisalar tahlili, ishlash hisoboti va kelgusi yaxshilanishlarni rejalashtirish."
 					}
@@ -810,8 +974,23 @@
 				]
 			},
 			"cta": {
-				"title": "IT bilan biz shug'ullаnamiz — siz biznesga e'tibor bering.",
+				"title": "IT bilan biz shug'ullanamiz — siz biznesga e'tibor bering.",
 				"subtitle": "Jamoa hajmingiz va infratuzilmangiz haqida aytib bering — to'g'ri reja tuzamiz."
+			},
+			"before": [
+				"IT xarajatlari oldindan noma'lum: har bir nosozlik shoshilinch hisobga aylanadi.",
+				"Xodimlar kompyuter yoki printerni kimdir bo'shab tuzatishini kutib o'tiradi.",
+				"Muammo haqida server allaqachon ishlamay qolganda bilishadi."
+			],
+			"visual": {
+				"tickets": [
+					"Yangi xodim uchun parolni tiklash",
+					"Buxgalteriyadagi printer chop etmayapti",
+					"Ish stansiyasiga dastur o'rnatish",
+					"Serverlarda patchlarni yangilash",
+					"Noutbuk Wi-Fi'ga ulanmayapti",
+					"Antivirus litsenziyasini uzaytirish"
+				]
 			}
 		},
 		"crm-automation": {
@@ -844,7 +1023,10 @@
 						"title": "Avtomatik kuzatib borish",
 						"description": "Jamoangiz qo'lsiz ishlovchi triggerli vazifalar, eslatmalar va xabar ketma-ketliklari."
 					},
-					{ "title": "Jamoa o'qitish", "description": "Savdo jamoangiz uchun amaliy onboarding — faqat nazariya emas, kundalik foydalanish usuli." }
+					{
+						"title": "Jamoa o'qitish",
+						"description": "Savdo jamoangiz uchun amaliy onboarding — faqat nazariya emas, kundalik foydalanish usuli."
+					}
 				]
 			},
 			"process": {
@@ -852,22 +1034,18 @@
 				"title": "Tartibsizlikdan aniqlikka",
 				"items": [
 					{
-						"step": "01",
 						"title": "Savdo jarayoni auditi",
-						"description": "Leadlar birinchi kontaktdan bitim yopilishigacha qanday harakatlanishini xaritalаymiz."
+						"description": "Leadlar birinchi kontaktdan bitim yopilishigacha qanday harakatlanishini xaritalaymiz."
 					},
 					{
-						"step": "02",
 						"title": "CRM sozlash",
 						"description": "CRM ni noldan sozlaymiz — pipelinelar, foydalanuvchilar, avtomatlashtirish va shablonlar."
 					},
 					{
-						"step": "03",
 						"title": "Kanal integratsiyasi",
 						"description": "Telefoniya, messenjerlar, sayt formalar va boshqa lead manbalarini CRM ga ulaymiz."
 					},
 					{
-						"step": "04",
 						"title": "O'qitish va ishga tushirish",
 						"description": "Jamoangizni o'qitamiz, parallel test davri o'tkazamiz va ishga tushirgandan keyin yordam beramiz."
 					}
@@ -894,7 +1072,12 @@
 			"cta": {
 				"title": "Savdoni avtomatlashtirishga tayyormisiz?",
 				"subtitle": "Hozirgi tizimingiz va lead manbalaringizni aytib bering — 48 soat ichida CRM arxitekturasini taklif etamiz."
-			}
+			},
+			"before": [
+				"Menejerga qayta qo'ng'iroq qilishni hech kim eslatmagani uchun arizalar yo'qoladi.",
+				"Bitimlar menejerlarning daftarlari va shaxsiy yozishmalarida qoladi.",
+				"Lidlar WhatsApp, Telegram, Instagram va saytga keladi, ularni qo'lda yig'ishadi."
+			]
 		},
 		"process-automation": {
 			"hero": {
@@ -908,7 +1091,7 @@
 				"items": [
 					{
 						"title": "Jarayonlarni xaritalash va tahlil qilish",
-						"description": "Joriy workflowlarni hujjatlashtirамиз va har bir to'siq, qo'l operatsiyasi va ortiqchalikni aniqlaymiz."
+						"description": "Joriy workflowlarni hujjatlashtiramiz va har bir to'siq, qo'l operatsiyasi va ortiqchalikni aniqlaymiz."
 					},
 					{
 						"title": "Telegram bot ishlab chiqish",
@@ -937,22 +1120,18 @@
 				"title": "Avtomatlashtirish, qadam-baqadam",
 				"items": [
 					{
-						"step": "01",
 						"title": "Jarayon auditi",
 						"description": "Jamoangiz bilan hozirgi workflowlar, og'riqli nuqtalar va avtomatlashtirish imkoniyatlarini o'rganamiz."
 					},
 					{
-						"step": "02",
 						"title": "Yechim dizayni",
 						"description": "Aniq avtomatlashtirish rejasini taklif etamiz: nimani birinchi avtomatlashtirish, texnik stek va kutilgan ROI."
 					},
 					{
-						"step": "03",
 						"title": "Qurish va integratsiya qilish",
 						"description": "Botlar, integratsiyalar va workflowlarni quramiz — ishga tushirishdan oldin test muhitida sinovdan o'tkazamiz."
 					},
 					{
-						"step": "04",
 						"title": "Monitoring va takomillashtirish",
 						"description": "Ishga tushirgandan keyin ishlashni kuzatamiz va haqiqiy foydalanish ma'lumotlariga asoslanib takomillashtiramiz."
 					}
@@ -979,6 +1158,40 @@
 			"cta": {
 				"title": "Nimani birinchi avtomatlashtirgan bo'lar edingiz?",
 				"subtitle": "Eng og'riqli qo'l jarayoningizni aytib bering — qanday hal qilishni ko'rsatamiz."
+			},
+			"before": [
+				"Xodimlar jadvallar, CRM va buxgalteriya o'rtasida ma'lumotlarni soatlab ko'chiradi.",
+				"Qo'lda kiritish xatolar, o'tkazib yuborilgan qadamlar va takrorlarga olib keladi.",
+				"Jamoa mijozlar va o'sish o'rniga kundalik ishlar bilan band."
+			],
+			"visual": {
+				"title": "Avtomatlashtirish lentasi",
+				"events": [
+					{
+						"title": "Hisob-faktura yaratildi va mijozga yuborildi",
+						"source": "Buxgalteriya"
+					},
+					{
+						"title": "Vazifa menejerga biriktirildi",
+						"source": "CRM"
+					},
+					{
+						"title": "Shartnoma imzolandi",
+						"source": "Hujjatlar"
+					},
+					{
+						"title": "Jamoaga bildirishnoma yuborildi",
+						"source": "Telegram-bot"
+					},
+					{
+						"title": "Ombordagi qoldiqlar yangilandi",
+						"source": "Ombor"
+					},
+					{
+						"title": "Ta'til so'rovi tasdiqlandi",
+						"source": "HR"
+					}
+				]
 			}
 		},
 		"software-development": {
@@ -1022,22 +1235,18 @@
 				"title": "G'oyadan ishlab chiqarishgacha",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery va qamrov",
 						"description": "Birorta qator kod yozmasdan oldin talablar, foydalanuvchi oqimlari va texnik arxitekturani aniqlaymiz."
 					},
 					{
-						"step": "02",
 						"title": "Dizayn",
 						"description": "Haqiqiy wireframelar va maketchalar bilan UI/UX dizayn — qurishdan oldin nima olishingizni ko'rasiz."
 					},
 					{
-						"step": "03",
 						"title": "Ishlab chiqish",
 						"description": "Muntazam demolar bilan iterativ sprintlar — faqat oxirida emas, har bir bosqichda xabardor bo'lasiz."
 					},
 					{
-						"step": "04",
 						"title": "QA va ishga tushirish",
 						"description": "Sinchiklab sinov, ishlab chiqarishga joylashtirish va hujjatlashtirish bilan tuzilgan topshirish."
 					}
@@ -1064,6 +1273,14 @@
 			"cta": {
 				"title": "Loyiha rejangiz bormi?",
 				"subtitle": "Nima qurishingiz kerakligini tasvirlab bering — 48 soat ichida qamrov va taklif tayyorlaymiz."
+			},
+			"before": [
+				"Tayyor servis pudratchiga tegishli, usiz hech narsani o'zgartirib bo'lmaydi.",
+				"Shablon vositalar jarayonlarni birovning mantiqiga moslashga majbur qiladi.",
+				"Har bir yangi funksiya tizimni qaytadan yozishni talab qiladi."
+			],
+			"visual": {
+				"done": "Tayyor: reliz prodakshnda ishlamoqda"
 			}
 		},
 		"it-audit": {
@@ -1107,22 +1324,18 @@
 				"title": "Audit jarayoni",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery suhbatlari",
 						"description": "Asosiy manfaatdor tomonlar — IT xodimlar, menejerlar va oxirgi foydalanuvchilar — bilan to'liq tablo tushunish uchun suhbatlashamiz."
 					},
 					{
-						"step": "02",
 						"title": "Texnik tahlil",
-						"description": "Infratuzilmangizga kiramiz va hujjatlаштирамиз, diagnostika vositalarini ishlaтамиз va konfiguratsiyalaringizni ko'rib chiqamiz."
+						"description": "Infratuzilmangizga kiramiz va hujjatlashtiramiz, diagnostika vositalarini ishlatamiz va konfiguratsiyalaringizni ko'rib chiqamiz."
 					},
 					{
-						"step": "03",
 						"title": "Hisobot tayyorlash",
-						"description": "Topilmalarni aniq xulosalar, risk reytinglari va aniq tavsiyalar bilan tuzilgan hisobotga jamlаймиз."
+						"description": "Topilmalarni aniq xulosalar, risk reytinglari va aniq tavsiyalar bilan tuzilgan hisobotga jamlaymiz."
 					},
 					{
-						"step": "04",
 						"title": "Yo'l xaritasini taqdimot",
 						"description": "Hisobot bo'yicha savollarga javob beramiz va birinchi navbatda nimaga kirishishni aniqlaymizga yordam beramiz."
 					}
@@ -1149,6 +1362,30 @@
 			"cta": {
 				"title": "IT bo'shliqlari qayerdaligini bilmayapsizmi?",
 				"subtitle": "Audit aynan shuning uchun. Birgalikda aniqlaymiz."
+			},
+			"before": [
+				"Kompaniyada qanday qurilmalar, litsenziyalar va kirish huquqlari borligini hech kim aniq bilmaydi.",
+				"Zaifliklar faqat nosozlik yoki ma'lumotlar sizib chiqqandan keyin aniqlanadi.",
+				"Yaxshilashni nimadan boshlash va byudjetni qayerga yo'naltirish noaniq."
+			],
+			"visual": {
+				"title": "IT muhiti bahosi",
+				"areas": [
+					"Tarmoq",
+					"Xavfsizlik",
+					"Zaxira nusxalar",
+					"Litsenziyalar"
+				],
+				"findings": [
+					{
+						"text": "Zaxira nusxalar tiklash uchun tekshirilmagan",
+						"risk": "Yuqori xavf"
+					},
+					{
+						"text": "Ish stansiyalarida eskirgan dasturlar",
+						"risk": "O'rta xavf"
+					}
+				]
 			}
 		}
 	},
@@ -1198,6 +1435,1839 @@
 			"software-licenses": "Dasturiy ta'minot litsenziyalari",
 			"corporate-training": "Korporativ o'qitish",
 			"other": "Boshqa"
+		}
+	},
+	"home": {
+		"meta": {
+			"title": "ITHINK — biznes uchun IT-infratuzilma, CRM va avtomatlashtirish",
+			"description": "Toshkentdagi IT-kompaniya. Infratuzilma quramiz, amoCRM va Bitrix24 joriy etamiz, jarayonlarni avtomatlashtiramiz va dasturiy ta'minot yaratamiz. 50+ mijoz, 72+ loyiha."
+		},
+		"hero": {
+			"eyebrow": "Toshkentdagi IT-kompaniya · 2020-yildan beri",
+			"titleLead": "Biznesingiz o'sishi uchun",
+			"titleAccent": "ishlaydigan IT",
+			"subtitle": "Infratuzilma quramiz, amoCRM va Bitrix24 joriy etamiz, jarayonlarni avtomatlashtiramiz va dasturiy ta'minot yaratamiz. Serverdan savdo voronkasigacha butun IT uchun bitta jamoa javob beradi.",
+			"ctaPrimary": "Bepul konsultatsiya",
+			"ctaSecondary": "Xizmatlarni ko'rish",
+			"note": "Majburiyatsiz · 1 ish soati ichida javob beramiz",
+			"pipeline": {
+				"title": "Savdo voronkasi",
+				"stage1": "Yangi",
+				"stage2": "Muzokara",
+				"stage3": "Bitim",
+				"lead": "Saytdan ariza",
+				"source": "Telegram orqali"
+			},
+			"monitor": {
+				"title": "24/7 monitoring",
+				"status": "Barcha tizimlar ishlamoqda",
+				"servers": "Serverlar",
+				"network": "Tarmoq",
+				"backup": "Zaxira nusxalar"
+			},
+			"bot": {
+				"title": "Telegram-bot",
+				"message": "Yangi ariza menejerga yuborildi"
+			}
+		},
+		"clients": {
+			"caption": "50+ kompaniya o'z infratuzilmasi va savdosini ITHINK'ga ishonib topshirgan"
+		},
+		"services": {
+			"eyebrow": "Xizmatlar",
+			"title": "Biznesning butun IT tizimi bitta jamoa qo'lida",
+			"subtitle": "Olti yo'nalish: infratuzilma, qo'llab-quvvatlash, savdo, avtomatlashtirish, dasturlash va audit. Bittasini tanlang yoki hammasini birga quramiz.",
+			"more": "Batafsil",
+			"all": "Barcha xizmatlar"
+		},
+		"stats": {
+			"eyebrow": "ITHINK raqamlarda",
+			"title": "Hisoblash mumkin bo'lgan natijalar",
+			"clients": "mijoz IT'ni bizga ishonadi",
+			"projects": "loyiha to'liq topshirilgan",
+			"team": "Toshkentdagi shtatdagi mutaxassis",
+			"markets": "bozor: O'zbekiston, Qozog'iston, Tojikiston, AQSh",
+			"since": "kompaniya tashkil topgan yil"
+		},
+		"crm": {
+			"website": "Sayt",
+			"phone": "Telefoniya",
+			"hub": "CRM",
+			"team": "Savdo bo'limi"
+		},
+		"process": {
+			"eyebrow": "Qanday ishlaymiz",
+			"title": "Vazifadan natijagacha to'rt qadam",
+			"subtitle": "Shaffof jarayon: ish boshlanishidan oldin reja, muddat va byudjetni tasdiqlaysiz va har bir bosqichni ko'rib turasiz."
+		},
+		"testimonials": {
+			"eyebrow": "Fikrlar",
+			"title": "Mijozlar nima deydi",
+			"prev": "Oldingi fikr",
+			"next": "Keyingi fikr"
+		},
+		"partners": {
+			"eyebrow": "Hamkorlar",
+			"title": "Biznesingiz ishlaydigan platformalarning rasmiy hamkori",
+			"subtitle": "amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT va Itgrix. Joriy etamiz, sozlaymiz, jamoangizni o'qitamiz va ishga tushgandan keyin qo'llab-quvvatlaymiz.",
+			"all": "Barcha hamkorlar",
+			"marketsTitle": "4 ta bozorda ishlaymiz",
+			"market1": "O'zbekiston",
+			"market2": "Qozog'iston",
+			"market3": "Tojikiston",
+			"market4": "AQSh"
+		},
+		"faq": {
+			"eyebrow": "Savollar",
+			"title": "Ko'p beriladigan savollar",
+			"subtitle": "Javob topmadingizmi? Telegram'da yozing yoki qo'ng'iroq qiling, bir ish soati ichida javob beramiz."
+		},
+		"cta": {
+			"eyebrow": "Boshlaymiz",
+			"title": "Vazifangiz haqida aytib bering. Bitta qo'ng'iroqda yechim taklif qilamiz.",
+			"subtitle": "Bepul 30 daqiqalik konsultatsiya. Hozirgi holatni ko'rib chiqamiz va aniq muddat va byudjetli reja taklif qilamiz.",
+			"response": "1 ish soati ichida javob beramiz",
+			"direct": "Yoki bizga to'g'ridan-to'g'ri yozing"
+		}
+	},
+	"contactPage": {
+		"meta": {
+			"title": "ITHINK bilan aloqa",
+			"description": "ITHINK telefoni, Telegram va email. Bepul konsultatsiya, 1 ish soati ichida javob beramiz."
+		},
+		"hero": {
+			"eyebrow": "Kontaktlar",
+			"title": "Vazifangiz haqida gaplashamiz",
+			"subtitle": "Qo'ng'iroq qiling, Telegram'da yozing yoki ariza qoldiring. 1 ish soati ichida javob beramiz va konsultatsiya uchun qulay vaqt taklif qilamiz."
+		},
+		"phone": {
+			"label": "Telefon",
+			"note": "Vazifa shoshilinch bo'lsa, qo'ng'iroq qiling"
+		},
+		"telegram": {
+			"label": "Telegram",
+			"note": "Bu yerda eng tez javob beramiz"
+		},
+		"email": {
+			"label": "Email",
+			"note": "Hujjatlar, tenderlar va takliflar uchun"
+		},
+		"instagram": {
+			"label": "Instagram",
+			"note": "Kompaniya yangiliklari va loyihalari"
+		},
+		"bot": {
+			"label": "Telegram-bot",
+			"note": "Arizani to'g'ridan-to'g'ri botda qoldiring"
+		},
+		"office": {
+			"title": "Toshkent, O'zbekiston",
+			"note": "O'zbekiston, Qozog'iston, Tojikiston va AQShdagi mijozlar bilan ishlaymiz"
+		},
+		"formTitle": "Ariza qoldiring",
+		"formSubtitle": "Formani to'ldiring, menejer siz bilan bog'lanadi. Konsultatsiya bepul va hech narsaga majbur qilmaydi."
+	},
+	"hireUsPage": {
+		"meta": {
+			"title": "IT-autsorsing: ITHINK ajratilgan jamoasi",
+			"description": "Yollash xarajatlarisiz ajratilgan dasturchilar, tarmoq muhandislari va CRM mutaxassislari. Oylik shartnomalar."
+		},
+		"hero": {
+			"eyebrow": "Autsorsing",
+			"cta": "Jamoani muhokama qilish"
+		},
+		"benefits": {
+			"eyebrow": "Nega autsorsing",
+			"title": "Yollash va moslashtirishsiz IT-bo'lim"
+		},
+		"roles": {
+			"eyebrow": "Kimga ega bo'lasiz",
+			"title": "Vazifangiz uchun mutaxassislar",
+			"subtitle": "Jamoani ITHINK'ning Toshkentdagi shtatdagi muhandislaridan yig'amiz. Tarkib vazifalar bilan birga o'zgaradi.",
+			"dev": "Dasturchilar",
+			"devNote": "Veb-ilovalar, Telegram-botlar, integratsiyalar",
+			"network": "Tarmoq muhandislari",
+			"networkNote": "Serverlar, tarmoq, bulut, xavfsizlik",
+			"crm": "CRM mutaxassislari",
+			"crmNote": "amoCRM, Bitrix24, telefoniya, voronkalar",
+			"support": "Foydalanuvchilarni qo'llab-quvvatlash",
+			"supportNote": "SLA bo'yicha helpdesk va monitoring"
+		},
+		"cta": {
+			"title": "Qanday mutaxassislar kerakligini ayting",
+			"subtitle": "Vazifa va muddatlarni tasvirlab bering. Jamoa tarkibi va ish formatini taklif qilamiz."
+		}
+	},
+	"companyPage": {
+		"meta": {
+			"title": "ITHINK haqida: 2020 yildan beri Toshkentdagi IT jamoa",
+			"description": "ITHINK IT infratuzilma quradi, CRM joriy qiladi, jarayonlarni avtomatlashtiradi va dasturiy ta'minot ishlab chiqadi. 50+ mijoz, 72+ loyiha, 15+ shtatdagi mutaxassis, 4 bozor."
+		},
+		"hero": {
+			"eyebrow": "Kompaniya haqida · 2020 yildan",
+			"title": "Biznesingizning butun IT'si uchun bitta jamoa",
+			"subtitle": "ITHINK: Toshkentdagi IT kompaniya. 2020 yildan beri O'zbekiston, Qozog'iston, Tojikiston va AQShdagi bizneslar uchun infratuzilma quramiz, CRM joriy qilamiz, jarayonlarni avtomatlashtiramiz va dasturiy ta'minot ishlab chiqamiz.",
+			"ctaSecondary": "Mijozlarimiz"
+		},
+		"location": {
+			"subtitle": "Jamoa Toshkentdan ishlaydi. Loyihalarni O'zbekiston, Qozog'iston, Tojikiston va AQShda olib boramiz."
+		}
+	},
+	"customersPage": {
+		"meta": {
+			"title": "ITHINK mijozlari keyslari: chakana savdo, moliya, e-commerce",
+			"description": "ITHINK keyslari: mijozning vazifasi, nima qilganimiz va natija. Chakana savdo, moliya va e-commerce uchun infratuzilma, VoIP, CRM va dasturiy ta'minot."
+		},
+		"hero": {
+			"eyebrow": "50+ mijoz · 2020 yildan",
+			"subtitle": "Chakana savdo, moliya, e-commerce, zargarlik va professional xizmatlar sohalaridan batafsil keyslar va mijoz kartalari. Har biri bo'yicha: vazifa, nima qilganimiz va natija.",
+			"title": "Mijozlarimiz uchun nima qildik",
+			"casesCta": "Keyslarni ko'rish",
+			"wall": "Sohalar bo'yicha mijozlar"
+		},
+		"list": {
+			"eyebrow": "Sohalar",
+			"title": "Kimga va qanday yordam berdik",
+			"filter": "Soha bo'yicha saralash",
+			"subtitle": "Yana sakkizta mijoz. Vazifa, yechim va natijani ko'rish uchun kartani oching.",
+			"more": "Vazifa va yechim"
+		},
+		"cases": {
+			"eyebrow": "Keyslar",
+			"title": "Uchta loyiha batafsil",
+			"subtitle": "Mijozning vazifasi, ITHINK jamoasi nima qilgani va nima o'zgargani.",
+			"labels": {
+				"case": "Keys",
+				"challenge": "Vazifa",
+				"solution": "Nima qildik",
+				"result": "Natija",
+				"services": "Xizmatlar",
+				"stack": "Texnologiyalar"
+			},
+			"items": {
+				"mobicenter": {
+					"challenge": "Bir nechta filialga ega elektronika chakana savdogari: har bir nuqtaga barqaror tarmoq va aloqa kerak, IT esa barcha filiallarda bir xil ishlashi lozim.",
+					"steps": [
+						"Filiallar uchun tarmoqni loyihalab, joriy qildik",
+						"Barcha nuqtalarda VoIP telefoniyani ulab berdik",
+						"IT infratuzilmasini doimiy boshqaruvga oldik"
+					],
+					"results": [
+						"Barcha filiallarda yagona tarmoq va telefoniya",
+						"Infratuzilma va qo'llab-quvvatlash uchun bitta pudratchi javob beradi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"obbo": {
+					"challenge": "Onlayn bozorga o'z veb-ilovasi kerak, arizalar va buyurtmalar esa darhol CRM'ga tushishi lozim.",
+					"steps": [
+						"Bozorning to'liq veb-ilovasini ishlab chiqdik",
+						"Veb-ilovani CRM bilan integratsiya qildik",
+						"Mijozlar va buyurtmalar ma'lumotlarining CRM'ga uzatilishini sozladik"
+					],
+					"results": [
+						"Bozor savdolari bitta tizimda ko'rinadi",
+						"Sayt va CRM yagona tizim sifatida ishlaydi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"avtozet": {
+					"challenge": "Avtosalonga mijozlar va bitimlarni bitta tizimda yuritish, savdoning odatiy bosqichlarini esa qo'l mehnatisiz bajarish kerak.",
+					"steps": [
+						"Diler savdo jarayoniga mos CRM joriy qildik",
+						"Savdoning takrorlanuvchi bosqichlarini avtomatlashtirdik",
+						"Savdo bo'limining qo'lda bajariladigan jarayonlarini raqamli shaklga o'tkazdik"
+					],
+					"results": [
+						"Dilerning mijozlari va bitimlari bitta CRM'da",
+						"Savdoda qo'l mehnati kamaydi"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"craytonVilt": {
+					"challenge": "Chakana savdo zanjiri tez o'smoqda, IT esa har bir yangi nuqtaga ulgurishi kerak.",
+					"solution": "IT infratuzilmasini sozladik va uni boshqaruvga oldik.",
+					"result": "Yangi nuqtalar tayyor infratuzilmaga ulanadi.",
+					"metrics": []
+				},
+				"aslzar": {
+					"challenge": "Zargarlik biznesiga inventar hisobi bilan bog'langan onlayn do'kon va xaridorlarni ushlab qolish usuli kerak.",
+					"solution": "Inventar boshqaruvi va sodiqlik dasturiga ega maxsus e-commerce platforma ishlab chiqdik.",
+					"result": "Savdo, qoldiqlar va sodiqlik dasturi bitta platformada ishlaydi.",
+					"metrics": []
+				},
+				"kreditMarket": {
+					"challenge": "Kredit rasmiylashtirish va mijozlar bilan ishlash qo'lda bajariladigan jarayonlar orqali borardi.",
+					"solution": "Kredit rasmiylashtirishni raqamli jarayonga o'tkazdik va mijozlar bilan ishlash uchun CRM uladik.",
+					"result": "Arizalar va mijozlar bitta tizimda yuritiladi.",
+					"metrics": []
+				},
+				"penostyle": {
+					"challenge": "Bir nechta nuqtaga ega kompaniyaga ular o'rtasida umumiy tarmoq va aloqa kerak.",
+					"solution": "Tarmoq infratuzilmasini qurdik va VoIP telefoniyani ulab berdik.",
+					"result": "Barcha nuqtalar bitta tarmoq va bitta telefoniyada ishlaydi.",
+					"metrics": []
+				},
+				"sokolov": {
+					"challenge": "Premium brendga har kuni ishonsa bo'ladigan IT qo'llab-quvvatlash kerak.",
+					"solution": "IT qo'llab-quvvatlash va boshqariladigan xizmatlarni o'z zimmamizga oldik.",
+					"result": "Brend jamoasi biznes bilan shug'ullanadi, IT'ni esa biz yuritamiz.",
+					"metrics": []
+				},
+				"udirect": {
+					"challenge": "Konsalting firmasiga ichki jarayonlarini raqamli shaklga o'tkazish kerak.",
+					"solution": "Biznes jarayonlarini raqamlashtirdik va ular uchun dasturiy ta'minot ishlab chiqdik.",
+					"result": "Kompaniya jarayonlari o'z raqamli vositalarida ishlaydi.",
+					"metrics": []
+				},
+				"paradiseWall": {
+					"challenge": "Uy bezagi kompaniyasiga veb-sayt va biznes uchun raqamli vositalar kerak.",
+					"solution": "Veb-sayt va raqamli vositalar to'plamini ishlab chiqdik.",
+					"result": "Kompaniyaning o'z veb-sayti va vazifalariga mos vositalari bor.",
+					"metrics": []
+				},
+				"chudoTovary": {
+					"challenge": "Onlayn bozorga CRM bilan bog'langan savdo platformasi kerak.",
+					"solution": "E-commerce platformani ishlab chiqdik va uni CRM bilan integratsiya qildik.",
+					"result": "Platformadagi buyurtmalar darhol CRM'ga tushadi.",
+					"metrics": []
+				}
+			}
+		}
+	},
+	"careerPage": {
+		"meta": {
+			"title": "ITHINK'da karyera: Toshkentdagi IT jamoada ish",
+			"description": "ITHINK: Toshkentdagi 15+ mutaxassisdan iborat shtatdagi jamoa: infratuzilma, CRM, avtomatlashtirish, ishlab chiqish va qo'llab-quvvatlash. Hozircha ochiq vakansiyalar yo'q, rezyumeni {email} manziliga yuboring."
+		},
+		"hero": {
+			"eyebrow": "ITHINK'da karyera",
+			"title": "Biznes uchun IT'ni biz bilan birga quring",
+			"subtitle": "Toshkentda 15+ mutaxassisdan iborat shtatdagi jamoa. Hozircha ochiq vakansiyalar yo'q, lekin ochiq arizani istalgan vaqtda yuborishingiz mumkin.",
+			"ctaEmail": "Rezyume yuborish",
+			"ctaTelegram": "Telegram'da yozish"
+		},
+		"team": {
+			"eyebrow": "Jamoa",
+			"title": "Biz kimmiz",
+			"p1": "ITHINK: 2020 yilda tashkil topgan Toshkentdagi IT kompaniya. Biz bizneslar uchun infratuzilma quramiz, CRM joriy qilamiz, jarayonlarni avtomatlashtiramiz va dasturiy ta'minot ishlab chiqamiz.",
+			"p2": "Loyihalarni shtatdagi muhandislar boshidan oxirigacha olib boradi, pudratchilarga topshirmaydi. O'zbekiston, Qozog'iston, Tojikiston va AQShdagi mijozlar bilan ishlaymiz."
+		},
+		"directions": {
+			"eyebrow": "Yo'nalishlar",
+			"title": "Beshta ish yo'nalishi",
+			"subtitle": "Arizada sizga qaysi yo'nalish yaqinligini yozing.",
+			"items": [
+				{
+					"title": "IT infratuzilma",
+					"description": "Mijozlar ofislari uchun tarmoqlar, serverlar, bulutli infratuzilma va telefoniya."
+				},
+				{
+					"title": "CRM va savdo",
+					"description": "amoCRM va Bitrix24 joriy qilish: voronkalar, telefoniya, messenjerlar va mijoz jamoasini o'qitish."
+				},
+				{
+					"title": "Jarayonlarni avtomatlashtirish",
+					"description": "Telegram-botlar, CRM, buxgalteriya va ombor bilan API-integratsiyalar, ichki vositalar va dashbordlar."
+				},
+				{
+					"title": "Dasturiy ta'minot ishlab chiqish",
+					"description": "React, Next.js va Node.js'da veb-ilovalar, saytlar, Telegram Mini Apps va admin panellar."
+				},
+				{
+					"title": "Qo'llab-quvvatlash va servis",
+					"description": "Mijozlarning IT tizimlariga obuna asosida helpdesk, monitoring va texnik xizmat."
+				},
+				{
+					"title": "Boshqa yo'nalish",
+					"description": "Ro'yxatda yo'qmi? Nima bilan shug'ullanmoqchi ekaningizni yozing va rezyume ilova qiling."
+				}
+			]
+		},
+		"values": {
+			"eyebrow": "Qanday ishlaymiz",
+			"title": "Biz amal qiladigan tamoyillar",
+			"extra": {
+				"title": "Bitta loyiha, bitta jamoa",
+				"description": "Loyihani shtatdagi muhandislar boshidan oxirigacha olib boradi va ishga tushirilgandan keyin ham u bilan qoladi."
+			}
+		},
+		"apply": {
+			"eyebrow": "Ochiq ariza",
+			"title": "Rezyumeni qanday yuborish",
+			"subtitle": "Hozircha vakansiyalar yo'q. Rezyumeni oldindan yuboring: yo'nalishingiz bo'yicha lavozim ochilganda, biz siz haqingizda bilib turamiz.",
+			"subject": "Rezyume",
+			"steps": [
+				{
+					"title": "Kanalni tanlang",
+					"description": "Pochta {email} yoki Telegram {telegram}."
+				},
+				{
+					"title": "O'zingiz haqingizda yozing",
+					"description": "Yo'nalish, tajriba va ishlaringizga havolalar: GitHub, portfolio yoki faxrlanadigan loyihalaringiz."
+				},
+				{
+					"title": "Mavzuda yo'nalishni ko'rsating",
+					"description": "Masalan: \"Rezyume: dasturiy ta'minot ishlab chiqish\". Shunda xat darhol kerakli odamga yetib boradi."
+				}
+			]
+		},
+		"band": {
+			"title": "ITHINK'da ishlashni xohlaysizmi?",
+			"subtitle": "Rezyumeni pochta yoki Telegram orqali yuboring."
+		}
+	},
+	"partnersHub": {
+		"meta": {
+			"title": "Hamkorlar va integratsiyalar",
+			"description": "amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT va Itgrix rasmiy hamkori. Joriy etamiz, sozlaymiz, jamoangizni o'qitamiz va ishga tushgandan keyin qo'llab-quvvatlaymiz."
+		},
+		"hero": {
+			"eyebrow": "Hamkorlar va integratsiyalar",
+			"title": "Biz joriy etadigan va qo'llab-quvvatlaydigan platformalar",
+			"subtitle": "amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT va Itgrix. Joriy etamiz, sozlaymiz, jamoangizni o'qitamiz va ishga tushgandan keyin qo'llab-quvvatlaymiz.",
+			"ctaPrimary": "Loyihani muhokama qilish",
+			"ctaSecondary": "CRM va savdoni avtomatlashtirish"
+		},
+		"list": {
+			"eyebrow": "Rasmiy hamkor",
+			"title": "Savdo, aloqa va tahlil uchun oltita platforma",
+			"subtitle": "Platforma nima qila olishi va biz u bilan nima qilishimizni bilish uchun uni tanlang.",
+			"more": "Batafsil"
+		},
+		"how": {
+			"eyebrow": "Qanday ishlaymiz",
+			"title": "Har bir platforma uchun bir xil ish tartibi",
+			"subtitle": "Biz platformaga kirishni sotish bilan cheklanmaymiz. Uni jarayoningizga moslab ishga tushiramiz va keyin ham yoningizda qolamiz.",
+			"items": [
+				{
+					"title": "Joriy etish",
+					"description": "Jarayoningizni tahlil qilamiz, vazifaga mos platformani tanlaymiz va tizimni ishga tushiramiz."
+				},
+				{
+					"title": "Sozlash",
+					"description": "Voronkalar, maydonlar, kirish huquqlari, avtomatlashtirish hamda telefoniya, messenjerlar va sayt bilan integratsiyalar."
+				},
+				{
+					"title": "O'qitish",
+					"description": "Xodimlar uchun amaliy o'qitish: tizimda har kuni qanday ishlash."
+				},
+				{
+					"title": "Qo'llab-quvvatlash",
+					"description": "Ishga tushgandan keyin ham aloqadamiz: savollarga javob beramiz va sozlamalarni takomillashtiramiz."
+				}
+			]
+		},
+		"story": {
+			"eyebrow": "Platformalar birgalikda qanday ishlaydi",
+			"title": "Qo'ng'iroqlar, messenjerlar va sayt bitta CRM'da",
+			"subtitle": "Hamkor platformalar bitta zanjirning turli qismlarini yopadi. Har bir ariza mijoz kartochkasiga tushishi uchun ularni bog'laymiz.",
+			"messengers": {
+				"label": "Messenjerlar",
+				"text": "Wazzup WhatsApp, Telegram va Instagram'ni CRM'ga uzatadi."
+			},
+			"telephony": {
+				"label": "Telefoniya",
+				"text": "onlinePBX bulutli ATS yoki Itgrix konnektori orqali o'zingizning Asterisk."
+			},
+			"crm": {
+				"label": "CRM",
+				"text": "amoCRM yoki Bitrix24 mijoz tarixi, qo'ng'iroqlar va yozishmalarni saqlaydi."
+			}
+		},
+		"cta": {
+			"title": "Qaysi platforma mos kelishini bilmaysizmi?",
+			"subtitle": "Vazifangiz haqida aytib bering. Bepul konsultatsiyada platforma va joriy etish rejasini taklif qilamiz."
+		}
+	},
+	"partnerPages": {
+		"common": {
+			"about": "Platforma haqida",
+			"work": "ITHINK nima qiladi",
+			"features": "Imkoniyatlar",
+			"integrations": "Integratsiyalar",
+			"forWhom": "Kimga mos keladi",
+			"faq": "Savol va javoblar",
+			"others": "Boshqa hamkorlar",
+			"othersTitle": "Birgalikda ishlaydigan platformalar",
+			"ctaPrimary": "Joriy etishni muhokama qilish",
+			"ctaAll": "Barcha hamkorlar",
+			"ctaCrm": "CRM va savdoni avtomatlashtirish"
+		},
+		"amocrm": {
+			"name": "amoCRM",
+			"category": "Savdo uchun CRM",
+			"meta": {
+				"title": "amoCRM joriy etish",
+				"description": "amoCRM joriy etish va sozlash: savdo voronkalari, telefoniya, WhatsApp, Telegram va Instagram mijoz kartochkasida. Jamoani o'qitish va ishga tushgandan keyin qo'llab-quvvatlash."
+			},
+			"hero": {
+				"title": "Savdo jarayoningizga mos amoCRM joriy etish",
+				"subtitle": "amoCRM savdoga yo'naltirilgan CRM. Biz joriy etamiz, moslashtiramiz va xodimlaringizni o'qitamiz, har bir ariza mijoz kartochkasiga tushishi uchun telefoniya va messenjerlarni ulaymiz."
+			},
+			"tags": [
+				"Savdo voronkalari",
+				"Messenjerlar",
+				"Telefoniya",
+				"Avtomatlashtirish"
+			],
+			"about": {
+				"title": "amoCRM nima",
+				"text": "amoCRM savdo bo'limlari uchun CRM tizimi. Bitimlar voronka bosqichlari bo'ylab harakatlanadi, mijoz bo'yicha yozishmalar, qo'ng'iroqlar va vazifalar bitta kartochkada jamlanadi. Platforma arizalarni yo'qotmaslik va har bir bitimni ko'rish muhim bo'lgan tez o'suvchi jamoalarga mos keladi."
+			},
+			"work": {
+				"title": "ITHINK amoCRM bilan nima qiladi",
+				"items": [
+					{
+						"title": "Savdo auditi",
+						"description": "Arizalar birinchi aloqadan bitimgacha qanday o'tishini tahlil qilamiz va ular qayerda yo'qolishini topamiz."
+					},
+					{
+						"title": "Voronkalarni sozlash",
+						"description": "Jarayoningizga mos bosqichlar, maydonlar, foydalanuvchi huquqlari, avtomatlashtirish qoidalari va shablonlar."
+					},
+					{
+						"title": "Kanallarni integratsiya qilish",
+						"description": "Telefoniya (onlinePBX yoki Itgrix orqali Asterisk), Wazzup orqali WhatsApp, Telegram va Instagram hamda sayt formalarini ulaymiz."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Savdo bo'limi uchun amaliy o'qitish va ishga tushgandan keyin qo'llab-quvvatlash."
+					}
+				]
+			},
+			"features": {
+				"title": "amoCRM imkoniyatlari",
+				"items": [
+					"Sozlanadigan bosqichli savdo voronkalari",
+					"Bitimlar, yozishmalar va qo'ng'iroqlar tarixi bilan mijoz kartochkasi",
+					"Messenjerlar va ijtimoiy tarmoqlar bilan integratsiyalar",
+					"IP-telefoniyani ulash va suhbatlarni yozib olish",
+					"Menejerlar uchun vazifalar va eslatmalar",
+					"Bitim bosqichi o'zgarganda avtomatik amallar",
+					"Savdo bo'yicha hisobotlar va tahlil",
+					"Ofisdan tashqarida ishlash uchun mobil ilova"
+				]
+			},
+			"forWhom": {
+				"title": "amoCRM kimga mos keladi",
+				"items": [
+					{
+						"title": "Savdo bo'limlariga",
+						"description": "Arizalari qo'ng'iroq, messenjer va saytdan kelib, menejerlar o'rtasida yo'qoladigan jamoalarga."
+					},
+					{
+						"title": "O'sayotgan biznesga",
+						"description": "Jadval va daftarlardan yagona mijozlar bazasiga o'tayotgan kompaniyalarga."
+					},
+					{
+						"title": "Rahbarlarga",
+						"description": "Har bir bitim va voronka bosqichini qo'lda hisobotlarsiz ko'rishni istaganlarga."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "amoCRM'ga telefoniyani ulash mumkinmi?",
+						"a": "Ha. onlinePBX bulutli telefoniyasini yoki Itgrix konnektori orqali Asterisk'dagi ATS'ingizni ulaymiz. Qo'ng'iroqlar va yozuvlar mijoz kartochkasida saqlanadi."
+					},
+					{
+						"q": "WhatsApp va Telegram xabarlarini qabul qilish mumkinmi?",
+						"a": "Ha. Wazzup orqali WhatsApp, Telegram va Instagram xabarlari amoCRM'ga tushadi va menejer to'g'ridan-to'g'ri mijoz kartochkasidan javob beradi."
+					},
+					{
+						"q": "Nimani tanlash kerak: amoCRM yoki Bitrix24?",
+						"a": "amoCRM savdoga yo'naltirilgan. Bitrix24 CRM, loyiha boshqaruvi, HR va kommunikatsiyalarni birlashtiradi. Bepul konsultatsiyada jarayoningizni ko'rib chiqib, platforma taklif qilamiz."
+					}
+				]
+			},
+			"cta": {
+				"title": "amoCRM joriy etishni muhokama qilamizmi?",
+				"subtitle": "Savdo jarayoningiz va arizalar manbalari haqida aytib bering. Bepul konsultatsiyada joriy etish rejasini taklif qilamiz."
+			}
+		},
+		"bitrix24": {
+			"name": "Bitrix24",
+			"category": "CRM va jamoaviy ish",
+			"meta": {
+				"title": "Bitrix24 joriy etish",
+				"description": "Bitrix24 joriy etish va sozlash: CRM, vazifalar va loyihalar, jamoa kommunikatsiyasi. Telefoniya va messenjerlarni ulaymiz, xodimlarni o'qitamiz va keyin ham qo'llab-quvvatlaymiz."
+			},
+			"hero": {
+				"title": "Bitrix24 joriy etish: CRM, vazifalar va jamoa bitta tizimda",
+				"subtitle": "Bitrix24 CRM, loyiha boshqaruvi, HR va kommunikatsiyalarni birlashtiradi. Platformani jarayonlaringizga moslab sozlaymiz, savdo kanallarini ulaymiz va jamoani o'qitamiz."
+			},
+			"tags": [
+				"CRM",
+				"Vazifalar va loyihalar",
+				"HR",
+				"Kommunikatsiyalar"
+			],
+			"about": {
+				"title": "Bitrix24 nima",
+				"text": "Bitrix24 universal platforma. Bitta tizimda CRM, vazifalar va loyihalar, HR vositalari va ichki kommunikatsiyalar jamlangan: chatlar, videoqo'ng'iroqlar va umumiy disk. Kompaniya alohida servislar to'plami o'rniga bitta oynada ishlaydi."
+			},
+			"work": {
+				"title": "ITHINK Bitrix24 bilan nima qiladi",
+				"items": [
+					{
+						"title": "Jarayonlar auditi",
+						"description": "Savdo va jamoa qanday ishlashini tahlil qilamiz va Bitrix24'ning qaysi modullari kerakligini aniqlaymiz."
+					},
+					{
+						"title": "CRM va vazifalarni sozlash",
+						"description": "Jarayoningizga mos voronkalar, kartochkalar, rollar, kirish huquqlari, robotlar va vazifa shablonlari."
+					},
+					{
+						"title": "Kanallarni integratsiya qilish",
+						"description": "Telefoniya (onlinePBX yoki Itgrix orqali Asterisk), Wazzup orqali messenjerlar va sayt formalarini ulaymiz."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Xodimlar uchun amaliy o'qitish va ishga tushgandan keyin qo'llab-quvvatlash."
+					}
+				]
+			},
+			"features": {
+				"title": "Bitrix24 imkoniyatlari",
+				"items": [
+					"Savdo voronkalari va mijoz kartochkalari bilan CRM",
+					"Muddat va mas'ullar bilan vazifalar va loyihalar",
+					"Chatlar, videoqo'ng'iroqlar va kompaniya yangiliklar lentasi",
+					"Umumiy disk va hujjatlar bilan ishlash",
+					"HR vositalari: kompaniya tuzilmasi va ish vaqtini hisobga olish",
+					"Avtomatlashtirish uchun robotlar va biznes-jarayonlar",
+					"Telefoniya va messenjerlarni ulash",
+					"Savdo va jamoa ishi bo'yicha hisobotlar"
+				]
+			},
+			"forWhom": {
+				"title": "Bitrix24 kimga mos keladi",
+				"items": [
+					{
+						"title": "Yagona tizim kerak bo'lgan kompaniyalarga",
+						"description": "Savdo, vazifalar va jamoa muloqoti turli servislarga tarqalib ketgan bo'lsa."
+					},
+					{
+						"title": "Savdo bo'limlariga",
+						"description": "Voronkalar, qo'ng'iroqlar va mijoz bilan yozishmalar bitta kartochkada."
+					},
+					{
+						"title": "Rahbarlarga",
+						"description": "Vazifalar, bitimlar va xodimlar bandligi bitta joyda ko'rinadi."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Bitrix24'ga telefoniyani ulash mumkinmi?",
+						"a": "Ha. onlinePBX bulutli telefoniyasini yoki Itgrix konnektori orqali Asterisk'dagi ATS'ingizni ulaymiz. Qo'ng'iroqlar va yozuvlar mijoz kartochkasida saqlanadi."
+					},
+					{
+						"q": "Bitrix24'ning barcha modullarini birdaniga ishga tushirish kerakmi?",
+						"a": "Yo'q. Joriy vazifani hal qiladigan modullardan boshlaymiz va qolganlarini kerak bo'lganda qo'shamiz."
+					},
+					{
+						"q": "Nimani tanlash kerak: Bitrix24 yoki amoCRM?",
+						"a": "Bitrix24 savdodan tashqari vazifalar, loyihalar va ichki kommunikatsiyalar kerak bo'lganda mos keladi. amoCRM savdoga yo'naltirilgan. Bepul konsultatsiyada jarayoningizni ko'rib chiqib, platforma taklif qilamiz."
+					}
+				]
+			},
+			"cta": {
+				"title": "Bitrix24 joriy etishni muhokama qilamizmi?",
+				"subtitle": "Bitrix24'ga qaysi jarayonlarni o'tkazmoqchi ekaningizni aytib bering. Bepul konsultatsiyada joriy etish rejasini taklif qilamiz."
+			}
+		},
+		"online-pbx": {
+			"name": "onlinePBX",
+			"category": "Bulutli telefoniya",
+			"meta": {
+				"title": "onlinePBX: CRM bilan bulutli telefoniya",
+				"description": "onlinePBX bulutli ATS'ini sozlash va amoCRM hamda Bitrix24 bilan integratsiya: qo'ng'iroqlarni yo'naltirish, suhbatlarni yozib olish, har bir qo'ng'iroq mijoz kartochkasida."
+			},
+			"hero": {
+				"title": "CRM'ingizga ulangan onlinePBX bulutli telefoniyasi",
+				"subtitle": "onlinePBX bulutli telefoniya va call-markaz yechimlarini taqdim etadi. ATS va qo'ng'iroqlar yo'nalishini sozlaymiz hamda telefoniyani amoCRM yoki Bitrix24 bilan bog'laymiz."
+			},
+			"tags": [
+				"Bulutli ATS",
+				"Call-markaz",
+				"Suhbatlarni yozib olish",
+				"CRM bilan integratsiya"
+			],
+			"about": {
+				"title": "onlinePBX nima",
+				"text": "onlinePBX bulutli ATS. Telefoniya bulutda ishlaydi, shuning uchun ofis uchun uskuna sotib olish va unga xizmat ko'rsatish shart emas. Xodimlar IP-telefon, kompyuter yoki smartfondan qo'ng'iroq qiladi, qo'ng'iroqlar va yozuvlar esa CRM'ga uzatiladi."
+			},
+			"work": {
+				"title": "ITHINK onlinePBX bilan nima qiladi",
+				"items": [
+					{
+						"title": "Qo'ng'iroqlar sxemasi",
+						"description": "Qo'ng'iroqlar bo'limlar va xodimlar o'rtasida qanday taqsimlanishini va o'tkazib yuborilganlari bilan nima bo'lishini belgilaymiz."
+					},
+					{
+						"title": "ATS'ni sozlash",
+						"description": "Ichki raqamlar, guruhlar, navbatlar, ovozli menyu va suhbatlarni yozib olish."
+					},
+					{
+						"title": "CRM bilan integratsiya",
+						"description": "onlinePBX'ni amoCRM yoki Bitrix24 bilan bog'laymiz: har bir qo'ng'iroq qayd etiladi va kerakli bitimga biriktiriladi."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Xodimlarga qo'ng'iroqlar bilan ishlashni ko'rsatamiz va ishga tushgandan keyin ham aloqada bo'lamiz."
+					}
+				]
+			},
+			"features": {
+				"title": "onlinePBX imkoniyatlari",
+				"items": [
+					"Ofisda uskunasiz bulutli ATS",
+					"Ovozli menyu va kiruvchi qo'ng'iroqlarni yo'naltirish",
+					"Call-markaz uchun navbatlar va guruhlar",
+					"Suhbatlarni yozib olish",
+					"IP-telefon, kompyuter va smartfondan qo'ng'iroqlar",
+					"Mobil raqamlarga yo'naltirish",
+					"CRM tizimlari bilan integratsiya",
+					"Qo'ng'iroqlar statistikasi"
+				]
+			},
+			"forWhom": {
+				"title": "onlinePBX kimga mos keladi",
+				"items": [
+					{
+						"title": "Savdo bo'limlariga",
+						"description": "Har bir qo'ng'iroq suhbat yozuvi bilan birga CRM'ga tushadi."
+					},
+					{
+						"title": "Call-markazlar va qo'llab-quvvatlash xizmatlariga",
+						"description": "Navbatlar, qo'ng'iroqlarni taqsimlash va operatorlar bo'yicha statistika."
+					},
+					{
+						"title": "Bir nechta ofisi bor kompaniyalarga",
+						"description": "Barcha filiallar va masofaviy xodimlar uchun bitta telefoniya."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Uskuna sotib olish kerakmi?",
+						"a": "Yo'q. ATS bulutda ishlaydi. Xodimlarga internetga ulangan IP-telefon, kompyuter yoki smartfon kerak."
+					},
+					{
+						"q": "onlinePBX'ni qaysi CRM'larga ulaymiz?",
+						"a": "onlinePBX'ni amoCRM va Bitrix24 ga ulaymiz."
+					},
+					{
+						"q": "onlinePBX Itgrix bilan Asterisk'dan nimasi bilan farq qiladi?",
+						"a": "onlinePBX bulutda ishlaydi. Asterisk serveringizga o'rnatiladi, Itgrix konnektori esa uni CRM bilan bog'laydi. Tanlov telefoniya qayerda ishlashi kerakligiga bog'liq."
+					}
+				]
+			},
+			"cta": {
+				"title": "Telefoniyani CRM'ingizga ulaymizmi?",
+				"subtitle": "Telefonda nechta xodim ishlashi va qaysi CRM'dan foydalanishingizni aytib bering. Bepul konsultatsiyada sxema taklif qilamiz."
+			}
+		},
+		"wazzup": {
+			"name": "Wazzup",
+			"category": "CRM ichida messenjerlar",
+			"meta": {
+				"title": "Wazzup: CRM'da WhatsApp, Telegram va Instagram",
+				"description": "Wazzup'ni amoCRM va Bitrix24 ga ulaymiz: WhatsApp, Telegram va Instagram xabarlari mijoz kartochkasiga tushadi, menejerlar to'g'ridan-to'g'ri CRM'dan javob beradi."
+			},
+			"hero": {
+				"title": "CRM'ingiz ichida WhatsApp, Telegram va Instagram",
+				"subtitle": "Wazzup mijozlarning messenjerlardagi xabarlarini amoCRM yoki Bitrix24 ga uzatadi. Menejerlar mijoz kartochkasidan javob beradi va suhbatlar yo'qolmaydi."
+			},
+			"tags": [
+				"WhatsApp",
+				"Telegram",
+				"Instagram",
+				"amoCRM · Bitrix24"
+			],
+			"about": {
+				"title": "Wazzup nima",
+				"text": "Wazzup messenjerlar va ijtimoiy tarmoqlarni CRM'ga ulaydigan servis. Mijoz bilan yozishma menejerlarning shaxsiy telefonlarida emas, uning kartochkasida bitim va qo'ng'iroqlar yonida saqlanadi."
+			},
+			"work": {
+				"title": "ITHINK Wazzup bilan nima qiladi",
+				"items": [
+					{
+						"title": "Kanallarni ulash",
+						"description": "Kompaniyangizning WhatsApp, Telegram va Instagram'ini Wazzup'ga ulaymiz."
+					},
+					{
+						"title": "CRM bilan integratsiya",
+						"description": "Yozishmalar tarixi mijoz kartochkasida qolishi uchun suhbatlarni amoCRM yoki Bitrix24 ga uzatishni sozlaymiz."
+					},
+					{
+						"title": "Suhbatlarni taqsimlash",
+						"description": "Mijoz javob kutib qolmasligi uchun yangi murojaatni qaysi menejer olishini sozlaymiz."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Menejerlarga CRM'dan yozishmani ko'rsatamiz va ishga tushgandan keyin ham aloqada bo'lamiz."
+					}
+				]
+			},
+			"features": {
+				"title": "Wazzup imkoniyatlari",
+				"items": [
+					"WhatsApp, Telegram va Instagram bitta oynada",
+					"Yozishma CRM'dagi mijoz kartochkasida saqlanadi",
+					"Yangi murojaat bo'yicha bitim yaratish",
+					"Suhbatlarni menejerlar o'rtasida taqsimlash",
+					"Menejerning shaxsiy telefonisiz CRM'dan javob berish",
+					"Tezkor javob shablonlari"
+				]
+			},
+			"forWhom": {
+				"title": "Wazzup kimga mos keladi",
+				"items": [
+					{
+						"title": "Messenjerlarda sotadigan biznesga",
+						"description": "Arizalar WhatsApp, Telegram va Instagram'ga kelganda."
+					},
+					{
+						"title": "Savdo bo'limlariga",
+						"description": "Rahbar barcha yozishmalarni ko'radi, mijozlar esa menejer bilan birga ketib qolmaydi."
+					},
+					{
+						"title": "amoCRM va Bitrix24'dagi jamoalarga",
+						"description": "Messenjerlar siz allaqachon foydalanayotgan CRM'ga ulanadi."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Wazzup'ni qaysi CRM'larga ulaymiz?",
+						"a": "Wazzup'ni amoCRM va Bitrix24 ga ulaymiz."
+					},
+					{
+						"q": "Menejer ishdan ketsa, yozishmalar saqlanadimi?",
+						"a": "Ha. Suhbatlar xodimning shaxsiy telefonida emas, CRM'da, mijoz kartochkasida saqlanadi."
+					},
+					{
+						"q": "Telefoniyani ham ulash mumkinmi?",
+						"a": "Ha. Qo'ng'iroqlarni onlinePBX yoki Itgrix konnektori bilan Asterisk orqali ulaymiz. Menejer qo'ng'iroqlar va yozishmalarni bitta kartochkada ko'radi."
+					}
+				]
+			},
+			"cta": {
+				"title": "Messenjerlarni CRM'ingizga ulaymizmi?",
+				"subtitle": "Mijozlaringiz qaysi messenjerlarda yozishi va qaysi CRM'dan foydalanishingizni aytib bering. Bepul konsultatsiyada sxema taklif qilamiz."
+			}
+		},
+		"megacount": {
+			"name": "MEGACOUNT",
+			"category": "Tashrif buyuruvchilar tahlili",
+			"meta": {
+				"title": "MEGACOUNT: tashrif buyuruvchilarni sanash",
+				"description": "Do'konlar va boshqa jismoniy obyektlar uchun MEGACOUNT sun'iy intellektga asoslangan tashrif buyuruvchilarni sanash va chakana savdo tahlili. Tanlash, ishga tushirish va qo'llab-quvvatlash."
+			},
+			"hero": {
+				"title": "Oflayn nuqtalar uchun tashrif buyuruvchilarni sanash va tahlil",
+				"subtitle": "MEGACOUNT jismoniy biznes joylari uchun sun'iy intellektga asoslangan tashrif buyuruvchilarni sanash va chakana savdo tahlilini taqdim etadi. Yechimni tanlash va uni nuqtalaringizda ishga tushirishda yordam beramiz."
+			},
+			"tags": [
+				"Tashrif buyuruvchilarni sanash",
+				"Sun'iy intellekt",
+				"Chakana savdo tahlili",
+				"Oflayn nuqtalar"
+			],
+			"about": {
+				"title": "MEGACOUNT nima",
+				"text": "MEGACOUNT sun'iy intellekt yordamida do'konlar va boshqa jismoniy obyektlarga tashrif buyuruvchilarni sanaydi va trafikni tahlilga aylantiradi: qancha odam kelgani, qaysi soatlarda va qaysi nuqtalarga."
+			},
+			"work": {
+				"title": "ITHINK MEGACOUNT bilan nima qiladi",
+				"items": [
+					{
+						"title": "Vazifani tahlil qilish",
+						"description": "Qaysi nuqtalarda va qaysi ko'rsatkichlarni sanash kerakligini aniqlaymiz."
+					},
+					{
+						"title": "Tanlash va ishga tushirish",
+						"description": "Nuqtalaringizga mos yechimni tanlaymiz va sanashni ishga tushiramiz."
+					},
+					{
+						"title": "Hisobotlarni sozlash",
+						"description": "Rahbar har bir nuqta bo'yicha trafikni ko'rishi uchun hisobotlarni sozlaymiz."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Jamoaga hisobotlarni o'qishni ko'rsatamiz va ishga tushgandan keyin ham aloqada bo'lamiz."
+					}
+				]
+			},
+			"features": {
+				"title": "MEGACOUNT imkoniyatlari",
+				"items": [
+					"Sun'iy intellekt yordamida tashrif buyuruvchilarni sanash",
+					"Soatlar, kunlar va nuqtalar bo'yicha trafik",
+					"Do'konlar va filiallarni solishtirish",
+					"Jismoniy obyektlar uchun chakana savdo tahlili",
+					"Rahbarlar uchun hisobotlar"
+				]
+			},
+			"forWhom": {
+				"title": "MEGACOUNT kimga mos keladi",
+				"items": [
+					{
+						"title": "Chakana savdo tarmoqlariga",
+						"description": "Do'konlar o'rtasida trafikni solishtirish va zaif nuqtalarni topish."
+					},
+					{
+						"title": "Savdo va biznes markazlariga",
+						"description": "Qancha odam va qaysi soatlarda kelishini bilish."
+					},
+					{
+						"title": "Xizmat ko'rsatish nuqtalariga",
+						"description": "Xodimlar smenalarini real yuklama bo'yicha rejalashtirish."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "MEGACOUNT qayerda ishlaydi?",
+						"a": "Do'konlar, savdo markazlari va tashrif buyuruvchilar sonini bilish muhim bo'lgan boshqa jismoniy obyektlarda."
+					},
+					{
+						"q": "Tashrif buyuruvchilarni sanash nima beradi?",
+						"a": "Soatlar va nuqtalar bo'yicha real trafikni ko'rasiz va uni savdo hamda xodimlar jadvali bilan solishtira olasiz."
+					}
+				]
+			},
+			"cta": {
+				"title": "Nuqtalaringiz uchun tahlilni muhokama qilamizmi?",
+				"subtitle": "Nechta nuqtangiz borligi va qaysi ko'rsatkichlar kerakligini aytib bering. Bepul konsultatsiyada yechim taklif qilamiz."
+			}
+		},
+		"itgrix": {
+			"name": "Itgrix",
+			"category": "Asterisk konnektori",
+			"meta": {
+				"title": "Itgrix: Asterisk'ni Bitrix24 va amoCRM bilan integratsiya qilish",
+				"description": "Itgrix konnektori Asterisk IP-telefoniyasini Bitrix24 va amoCRM bilan bog'laydi. 2017 yildan beri bozorda, 20 mamlakatda 3000+ o'rnatish. ITHINK tomonidan o'rnatish va sozlash."
+			},
+			"hero": {
+				"title": "Asterisk IP-telefoniyasini CRM tizimlariga integratsiya qilish",
+				"subtitle": "Itgrix qo'ng'iroqlar bilan samarali ishlash uchun Asterisk'ni Bitrix24 va amoCRM bilan bog'laydi. Konnektorni ATS va CRM'ingizga moslab o'rnatamiz va sozlaymiz."
+			},
+			"tags": [
+				"Asterisk",
+				"Bitrix24",
+				"amoCRM",
+				"FreePBX · Elastix · Issabel"
+			],
+			"stats": [
+				{
+					"value": "2017",
+					"label": "bozorga chiqqan yil"
+				},
+				{
+					"value": "3000+",
+					"label": "o'rnatish"
+				},
+				{
+					"value": "20",
+					"label": "mamlakat"
+				}
+			],
+			"linkLabel": "Itgrix haqida batafsil",
+			"about": {
+				"title": "Itgrix konnektori haqida",
+				"text": "Itgrix konnektori — Asterisk IP-telefoniyasi va CRM tizimlarini qo'ng'iroqlar bilan samarali ishlash uchun ishonchli integratsiya vositasi. Itgrix integratsiya moduli 2017 yildan beri bozorda mashhur, 20 mamlakatda 3000 martadan ko'proq o'rnatilgan va Bitrix24 va amoCRM CRM tizimlari ekspert-integratorlari tomonidan tavsiya etilgan vidjetlardan biri hisoblanadi."
+			},
+			"work": {
+				"title": "ITHINK Itgrix bilan nima qiladi",
+				"items": [
+					{
+						"title": "ATS'ni tekshirish",
+						"description": "Ulashdan oldin Asterisk'dagi ATS'ingizni (FreePBX, Elastix, Issabel) va CRM'ni tekshiramiz."
+					},
+					{
+						"title": "Konnektorni o'rnatish",
+						"description": "Itgrix'ni o'rnatamiz va qo'ng'iroqlar ssenariylarini savdo jarayoningizga moslab sozlaymiz."
+					},
+					{
+						"title": "CRM'ni sozlash",
+						"description": "Yangi raqamlar uchun lid va kontaktlar, o'tkazib yuborilgan qo'ng'iroqlarga vazifalar, mas'ullarga taqsimlash."
+					},
+					{
+						"title": "O'qitish va qo'llab-quvvatlash",
+						"description": "Menejerlarga CRM'da qo'ng'iroqlar bilan ishlashni ko'rsatamiz va ishga tushgandan keyin ham aloqada bo'lamiz."
+					}
+				]
+			},
+			"features": {
+				"title": "Afzalliklar",
+				"items": [
+					"Har qanday zamonaviy Asterisk bilan ishlaydi (FreePBX, Elastix, Issabel)",
+					"Dasturlash talab qilinmaydi — 17 daqiqada sozlash",
+					"Tajribali mahsulot ishlab chiqish jamoasi",
+					"Kuchli texnik qo'llab-quvvatlash jamoasi",
+					"Buyurtma asosida cheksiz moslashtirish imkoniyatlari",
+					"Modul bilan ishlash bo'yicha batafsil bilimlar bazasi",
+					"Yopiq tarmoqda ishlaydi",
+					"Rossiya dasturiy ta'minot reestriga kiritilgan"
+				]
+			},
+			"integrations": {
+				"title": "Integratsiya imkoniyatlari",
+				"groups": [
+					{
+						"title": "Bitrix24 uchun",
+						"items": [
+							"Noma'lum raqamlar uchun avtomatik lid yaratish",
+							"Qayta qo'ng'iroqda mas'ul xodimga avtomatik ulanish",
+							"Mijoz kartasida qo'ng'iroqlar va yozuvlarni saqlash",
+							"O'tkazib yuborilgan qo'ng'iroqlarni qayd etish va vazifalarni avtomatik yaratish",
+							"CRM dan bir klik bilan qo'ng'iroq qilish (click-to-call)",
+							"Mijoz ma'lumotlari bilan qo'ng'iroq kartasi",
+							"Trafik manbalari bilan kross-kanal tahlili",
+							"Keng moslashtirish imkoniyatlari"
+						]
+					},
+					{
+						"title": "amoCRM uchun",
+						"items": [
+							"Noma'lum raqamlar uchun avtomatik kontakt yaratish",
+							"Muddati, holati va audio yozuvi bilan qo'ng'iroqlarni yaratish",
+							"Qo'ng'iroqlarni mas'ul xodimlarga avtomatik taqsimlash",
+							"O'tkazib yuborilgan qo'ng'iroqlarni vazifalar bilan qayd etish",
+							"Savdo voronkalariga qo'ng'iroqlarni taqsimlash",
+							"CRM dan bir klik bilan qo'ng'iroq qilish (click-to-call)",
+							"Qo'ng'iroq kartasi bilan brauzer bildirishnomalari",
+							"Xodimlar bo'yicha qo'ng'iroqlar tahlili"
+						]
+					}
+				]
+			},
+			"forWhom": {
+				"title": "Itgrix kimga mos keladi",
+				"items": [
+					{
+						"title": "Asterisk'dagi kompaniyalarga",
+						"description": "Sizda allaqachon Asterisk'da o'z ATS'ingiz bor va qo'ng'iroqlarni CRM'da ko'rish kerak."
+					},
+					{
+						"title": "Bitrix24 va amoCRM foydalanuvchilariga",
+						"description": "Qo'ng'iroqlar, yozuvlar va o'tkazib yuborilgan qo'ng'iroqlar mijoz kartochkasiga tushadi."
+					},
+					{
+						"title": "Yopiq tarmoqlarga",
+						"description": "Konnektor yopiq tarmoqda ishlay oladi."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Itgrix qaysi ATS'lar bilan ishlaydi?",
+						"a": "Har qanday zamonaviy Asterisk bilan, jumladan FreePBX, Elastix va Issabel."
+					},
+					{
+						"q": "Sozlash uchun dasturchi kerakmi?",
+						"a": "Yo'q. Ishlab chiquvchi ma'lumotlariga ko'ra, dasturlashsiz sozlash 17 daqiqa oladi. Biz buni siz uchun bajaramiz va ssenariylarni jarayoningizga moslaymiz."
+					},
+					{
+						"q": "Itgrix onlinePBX'dan nimasi bilan farq qiladi?",
+						"a": "Itgrix Asterisk'dagi o'z ATS'ingizni CRM bilan bog'laydi. onlinePBX esa bulutli ATS. Tanlov telefoniya qayerda ishlashi kerakligiga bog'liq."
+					}
+				]
+			},
+			"cta": {
+				"title": "Itgrix ni ulashga tayyormisiz?",
+				"subtitle": "Biz bilan bog'laning yoki Itgrix rasmiy saytida ko'proq bilib oling."
+			}
+		}
+	},
+	"productPages": {
+		"common": {
+			"ctaPrimary": "Ariza qoldirish",
+			"ctaSecondary": "Biz bilan bog'lanish",
+			"includedEyebrow": "Nimalar kiradi",
+			"stepsEyebrow": "Qanday ishlaydi",
+			"audienceEyebrow": "Kimlar uchun",
+			"relatedEyebrow": "Shuningdek ko'ring",
+			"relatedTitle": "Bog'liq yechimlar va xizmatlar",
+			"more": "Batafsil"
+		},
+		"licenses": {
+			"microsoft": {
+				"meta": {
+					"title": "Biznes uchun Microsoft litsenziyalari",
+					"description": "ITHINK kompaniyalar uchun rasmiy Microsoft litsenziyalarini tanlaydi, yetkazib beradi, o'rnatadi va qo'llab-quvvatlaydi."
+				},
+				"hero": {
+					"title": "Kompaniyangiz uchun rasmiy Microsoft litsenziyalari",
+					"subtitle": "Jamoa vazifalariga mos mahsulot va tahrirlarni tanlaymiz, litsenziyalarni yetkazib beramiz, o'rnatamiz va sozlaymiz, keyin esa muddatlarini kuzatib boramiz."
+				},
+				"included": {
+					"title": "Tanlashdan muddatni uzaytirishgacha",
+					"subtitle": "Litsenziyalar bilan bog'liq barcha ishni o'z zimmamizga olamiz: siz o'rnatilgan, sozlangan va hisobga olingan qonuniy dasturiy ta'minotga ega bo'lasiz.",
+					"items": [
+						{
+							"title": "Lavozimga qarab tanlash",
+							"description": "Har bir xodimga qaysi mahsulot va tahrirlar kerakligini aniqlaymiz, ortiqcha narsaga pul to'lamaysiz."
+						},
+						{
+							"title": "Ofis va birgalikda ishlash",
+							"description": "Hujjatlar va jamoaviy ish uchun Microsoft ofis ilovalari, pochta va bulutli xizmatlari."
+						},
+						{
+							"title": "Ish o'rinlari va serverlar",
+							"description": "Xodimlar kompyuterlari va server infratuzilmasi uchun operatsion tizim litsenziyalari."
+						},
+						{
+							"title": "Rasmiy litsenziyalar",
+							"description": "Litsenziyasiz nusxalar o'rniga qonuniy dasturiy ta'minot: xavfsizlik yangilanishlari va biznes uchun kamroq xavf."
+						},
+						{
+							"title": "O'rnatish va sozlash",
+							"description": "Dasturlarni o'rnatamiz va faollashtiramiz, xodimlarning hisob qaydnomalari va kirish huquqlarini sozlaymiz."
+						},
+						{
+							"title": "Hisob va muddatni uzaytirish",
+							"description": "Obuna muddatlarini kuzatamiz, jamoa o'zgarganda litsenziyalarni qo'shamiz yoki olib tashlaymiz."
+						}
+					]
+				},
+				"steps": {
+					"title": "Litsenziyalar bilan qanday ishlaymiz",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "Qaysi dasturlar ishlatilayotgani, ish o'rinlari soni va jamoa vazifalarini ko'rib chiqamiz."
+						},
+						{
+							"title": "Tanlash",
+							"description": "Mahsulotlar, tahrirlar va litsenziyalar sonini taklif qilamiz. Tarkib va byudjet xariddan oldin kelishiladi."
+						},
+						{
+							"title": "Yetkazib berish va o'rnatish",
+							"description": "Litsenziyalarni yetkazib beramiz, dasturlarni o'rnatib faollashtiramiz, hisob qaydnomalarini sozlaymiz."
+						},
+						{
+							"title": "Kuzatib borish",
+							"description": "Litsenziyalar hisobini yuritamiz, muddatlarni eslatamiz va xodimlarga dasturlar bo'yicha yordam beramiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Bu kimga kerak",
+					"subtitle": "Microsoft mahsulotlarida ishlaydigan va litsenziyalarni tartibda saqlamoqchi bo'lgan kompaniyalarga.",
+					"items": [
+						{
+							"title": "Yangi ofis",
+							"description": "Ish o'rinlarini noldan va birinchi kundan qonuniy dasturlarda ishga tushirish kerak."
+						},
+						{
+							"title": "O'sayotgan jamoa",
+							"description": "Xodimlar ko'paymoqda va litsenziyalarni tartib bilan qo'shib borish kerak."
+						},
+						{
+							"title": "Qonuniy dasturlarga o'tish",
+							"description": "Kompaniyada litsenziyasiz nusxalar bor va ularni almashtirish vaqti keldi."
+						},
+						{
+							"title": "IT bo'limi yo'q kompaniyalar",
+							"description": "Obunalar, muddatlar va hisob qaydnomalarini kuzatadigan odam yo'q."
+						}
+					]
+				},
+				"cta": {
+					"title": "Jamoangiz uchun Microsoft litsenziyalarini tanlaymiz",
+					"subtitle": "Ish o'rinlaringiz soni va xodimlar vazifalari haqida aytib bering. Litsenziyalar tarkibi va o'rnatish rejasini taklif qilamiz."
+				}
+			},
+			"security": {
+				"meta": {
+					"title": "Biznes uchun xavfsizlik dasturlari",
+					"description": "ITHINK kompaniyalar uchun antiviruslar, endpoint himoyasi, tarmoq himoyasi va zaxira nusxalash dasturlarini tanlaydi, yetkazib beradi va sozlaydi."
+				},
+				"hero": {
+					"title": "Ish o'rinlari, serverlar va ma'lumotlar himoyasi",
+					"subtitle": "Antiviruslar va endpoint himoya yechimlarini tanlaymiz, litsenziyalarni yetkazib beramiz, barcha qurilmalarda himoyani sozlaymiz va uning ishini kuzatamiz."
+				},
+				"included": {
+					"title": "Har bir darajada himoya",
+					"subtitle": "Avval nima allaqachon himoyalanganini tekshiramiz, keyin bo'shliqlarni litsenziyali dasturlar bilan yopamiz.",
+					"items": [
+						{
+							"title": "Himoya auditi",
+							"description": "Qaysi qurilmalar, serverlar va ma'lumotlar himoyasiz qolganini tekshiramiz."
+						},
+						{
+							"title": "Antivirus va endpoint himoyasi",
+							"description": "Xodimlar kompyuterlari va serverlarni viruslar va zararli dasturlardan himoya qilamiz."
+						},
+						{
+							"title": "Tarmoq himoyasi",
+							"description": "Xavfsizlik devorlari va xodimlarning kompaniya resurslariga himoyalangan VPN orqali kirishi."
+						},
+						{
+							"title": "Zaxira nusxalash",
+							"description": "Zaxira nusxalar va nosozlik yoki hujumdan keyin ma'lumotlarni tiklash uchun dasturlar."
+						},
+						{
+							"title": "Yagona boshqaruv",
+							"description": "Barcha qurilmalar uchun siyosatlar, yangilanishlar va hisobotlar bitta konsolda."
+						},
+						{
+							"title": "Hisob va muddatni uzaytirish",
+							"description": "Himoya noqulay paytda o'chib qolmasligi uchun litsenziya muddatlarini kuzatamiz."
+						}
+					]
+				},
+				"steps": {
+					"title": "Himoyani qanday joriy qilamiz",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "Qurilmalar, tarmoq va zaxira nusxalarni tekshiramiz, zaif joylarni topamiz."
+						},
+						{
+							"title": "Tanlash",
+							"description": "Qurilmalaringiz va byudjetingizga mos dasturlar va litsenziyalar sonini taklif qilamiz."
+						},
+						{
+							"title": "Joriy qilish",
+							"description": "Ish o'rinlari va serverlarga himoyani o'rnatamiz, siyosatlarni sozlaymiz."
+						},
+						{
+							"title": "Monitoring",
+							"description": "Himoya ishi va muddatlarni kuzatamiz. 24/7 monitoringli boshqariladigan IT-xizmatlarni ham ulash mumkin."
+						}
+					]
+				},
+				"audience": {
+					"title": "Bu kimga kerak",
+					"subtitle": "Mijozlar ma'lumotlari, hujjatlar va moliyani o'z kompyuterlari va serverlarida saqlaydigan kompaniyalarga.",
+					"items": [
+						{
+							"title": "Ofislar va filiallar",
+							"description": "Qurilmalar ko'p va har birini bir xil qoidalar bilan himoya qilish kerak."
+						},
+						{
+							"title": "Mijozlar ma'lumotlari",
+							"description": "Yo'qolsa, ishni to'xtatib qo'yadigan CRM, bazalar va hujjatlar."
+						},
+						{
+							"title": "Masofaviy xodimlar",
+							"description": "Uydan va safarda kompaniya resurslariga xavfsiz kirish kerak."
+						},
+						{
+							"title": "Hodisadan keyin",
+							"description": "Virus yoki ma'lumot sizib chiqishi bo'lgan va himoyani qaytadan qurish kerak."
+						}
+					]
+				},
+				"cta": {
+					"title": "Qurilmalaringiz qanchalik himoyalanganini tekshiramiz",
+					"subtitle": "Ish o'rinlari va serverlaringiz soni haqida aytib bering. Himoya tarkibi va joriy qilish rejasini taklif qilamiz."
+				}
+			},
+			"design": {
+				"meta": {
+					"title": "Dizayn va CAD dasturlari litsenziyalari",
+					"description": "ITHINK dizaynerlar, muhandislar va marketing jamoalari uchun professional grafik, CAD va video dasturlarni tanlaydi, yetkazib beradi va o'rnatadi."
+				},
+				"hero": {
+					"title": "Dizayn, muhandislik va video uchun dasturlar",
+					"subtitle": "Jamoa vazifalariga mos professional grafik va CAD dasturlarini tanlaymiz, litsenziyalarni yetkazib beramiz va ular kechikishsiz ishlaydigan ish o'rinlarini sozlaymiz."
+				},
+				"included": {
+					"title": "Ijodiy va muhandislik jamoalari uchun vositalar",
+					"subtitle": "Har bir xodimning vazifalariga mos dasturni tanlaymiz va unga ish o'rnini tayyorlaymiz.",
+					"items": [
+						{
+							"title": "Lavozimga qarab tanlash",
+							"description": "Dizaynerlar, muhandislar va marketologlarga turli dasturlar kerak. Ro'yxat bo'yicha emas, vazifaga qarab tanlaymiz."
+						},
+						{
+							"title": "Grafika va sahifalash",
+							"description": "Rastr va vektor grafika, maketlar va sahifalash uchun professional grafik muharrirlar."
+						},
+						{
+							"title": "CAD va 3D",
+							"description": "Chizmalar, loyihalash va 3D modellashtirish uchun dasturlar."
+						},
+						{
+							"title": "Video va animatsiya",
+							"description": "Video montaj, motion-dizayn va ovozga ishlov berish uchun dasturlar."
+						},
+						{
+							"title": "Og'ir yuklama uchun ish stantsiyalari",
+							"description": "Og'ir dasturlar kechikishsiz ishlaydigan kompyuterlarni tanlaymiz va sozlaymiz."
+						},
+						{
+							"title": "O'rnatish, hisob va muddatni uzaytirish",
+							"description": "Dasturlarni o'rnatamiz va faollashtiramiz, litsenziyalar va obuna muddatlari hisobini yuritamiz."
+						}
+					]
+				},
+				"steps": {
+					"title": "Qanday ishlaymiz",
+					"items": [
+						{
+							"title": "Jamoa vazifalari",
+							"description": "Jamoada kim nima bilan shug'ullanishi va hozir qaysi dasturlarda ishlashini aniqlaymiz."
+						},
+						{
+							"title": "Tanlash",
+							"description": "Dasturlar, litsenziya turlari va ish o'rinlari konfiguratsiyasini taklif qilamiz, byudjetni kelishamiz."
+						},
+						{
+							"title": "Yetkazib berish va o'rnatish",
+							"description": "Litsenziyalarni yetkazib beramiz, dasturlarni o'rnatamiz va ish stantsiyalarini sozlaymiz."
+						},
+						{
+							"title": "Kuzatib borish",
+							"description": "Yangi xodimlarga litsenziya qo'shamiz va muddatlarni kuzatamiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Bu kimga kerak",
+					"subtitle": "Grafik, muhandislik va video dasturlar asosiy ish quroli bo'lgan jamoalarga.",
+					"items": [
+						{
+							"title": "Dizayn studiyalari va agentliklar",
+							"description": "Mijozlar uchun grafika, sahifalash va video."
+						},
+						{
+							"title": "Loyiha va muhandislik byurolari",
+							"description": "Chizmalar, hisob-kitoblar va 3D modellar."
+						},
+						{
+							"title": "Kompaniya ichidagi marketing",
+							"description": "O'z kanallari uchun bannerlar, taqdimotlar va roliklar."
+						},
+						{
+							"title": "Interyer va arxitektura",
+							"description": "Buyurtmachilar uchun vizualizatsiya va rejalar."
+						}
+					]
+				},
+				"cta": {
+					"title": "Jamoangiz uchun dasturlarni tanlaymiz",
+					"subtitle": "Xodimlaringiz soni va ular nima bilan shug'ullanishi haqida aytib bering. Litsenziyalar tarkibi va ish o'rinlari konfiguratsiyasini taklif qilamiz."
+				}
+			}
+		},
+		"training": {
+			"courses": {
+				"meta": {
+					"title": "Xodimlar uchun onlayn IT kurslari",
+					"description": "ITHINK ishlaydigan yo'nalishlar bo'yicha o'z sur'atida onlayn o'qish: IT-infratuzilma, savdo uchun CRM, avtomatlashtirish va kiberxavfsizlik asoslari."
+				},
+				"hero": {
+					"title": "O'z sur'atingizda onlayn IT kurslari",
+					"subtitle": "IT mutaxassislari va xodimlar uchun biz har kuni ishlaydigan mavzular bo'yicha o'qish: infratuzilma, CRM, avtomatlashtirish va xavfsizlik."
+				},
+				"included": {
+					"title": "Mavzular va format",
+					"subtitle": "Mavzular ITHINK ishlaydigan yo'nalishlardan olingan. Xodimlar ularni ishdan ajralmagan holda o'tadi.",
+					"items": [
+						{
+							"title": "IT-infratuzilma",
+							"description": "Tarmoqlar, serverlar, ish o'rinlari va kirish huquqlari: tizim administratorlari uchun asoslar."
+						},
+						{
+							"title": "Savdo bo'limlari uchun CRM",
+							"description": "amoCRM va Bitrix24'da ishlash: voronkalar, vazifalar, qo'ng'iroqlar va mijoz kartasidagi xabarlar."
+						},
+						{
+							"title": "Avtomatlashtirish",
+							"description": "Qo'l mehnatini olib tashlaydigan Telegram botlar, integratsiyalar va vositalar."
+						},
+						{
+							"title": "Kiberxavfsizlik asoslari",
+							"description": "Barcha xodimlar uchun parollar, fishing va ma'lumotlar bilan xavfsiz ishlash."
+						},
+						{
+							"title": "O'z sur'atingizda",
+							"description": "Materiallar onlayn mavjud, xodim ularni qulay vaqtda o'tadi."
+						},
+						{
+							"title": "Lavozimga mos dastur",
+							"description": "Mavzularni lavozimga qarab tanlashga yordam beramiz: administratorga bir xil, savdo menejeriga boshqacha."
+						}
+					]
+				},
+				"steps": {
+					"title": "Qanday boshlash kerak",
+					"items": [
+						{
+							"title": "Ariza",
+							"description": "Kimni va qaysi mavzularga o'qitish kerakligini aytib bering."
+						},
+						{
+							"title": "Dasturni tanlash",
+							"description": "Har bir xodimning lavozimiga mos mavzular va o'tish tartibini taklif qilamiz."
+						},
+						{
+							"title": "O'qish",
+							"description": "Xodimlar materiallarni onlayn, o'z sur'atida o'tadi."
+						},
+						{
+							"title": "Savollar va amaliyot",
+							"description": "Kurs mavzulari bo'yicha savollarga javob beramiz va bilimlarni ishda qo'llashga yordam beramiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimga mos keladi",
+					"subtitle": "Uzoq muddatli tashqi kurslarsiz kompaniyaning IT vositalarini tushunib olmoqchi bo'lganlarga.",
+					"items": [
+						{
+							"title": "Boshlovchi administratorlar",
+							"description": "Tarmoqlar, serverlar va ish o'rinlari asoslari."
+						},
+						{
+							"title": "Savdo menejerlari",
+							"description": "Lidlarni yo'qotmasdan CRM'da kundalik ish."
+						},
+						{
+							"title": "Rahbarlar",
+							"description": "Kompaniyada IT va avtomatlashtirish qanday tuzilganini tushunish."
+						},
+						{
+							"title": "Barcha xodimlar",
+							"description": "Kiberxavfsizlikning asosiy qoidalari."
+						}
+					]
+				},
+				"cta": {
+					"title": "Jamoangiz uchun kurs tanlaymiz",
+					"subtitle": "Kimni va qaysi mavzularga o'qitish kerakligini aytib bering. Dastur va formatni taklif qilamiz."
+				}
+			},
+			"certification": {
+				"meta": {
+					"title": "IT sertifikatlashtirishga tayyorgarlik",
+					"description": "ITHINK IT mutaxassislariga sertifikatni tanlash va unga tayyorlanishda yordam beradi: reja, nazariya va tarmoqlar, serverlar, bulut va xavfsizlik bo'yicha amaliyot."
+				},
+				"hero": {
+					"title": "IT sertifikatlashtirishga tayyorgarlik",
+					"subtitle": "Mutaxassisning lavozimi va maqsadlariga mos sertifikatni tanlashga yordam beramiz, tayyorgarlik rejasini tuzamiz va mavzularni amalda ko'rib chiqamiz."
+				},
+				"included": {
+					"title": "Tayyorgarlikka nimalar kiradi",
+					"subtitle": "Tayyorgarlik ITHINK ishlaydigan yo'nalishlar atrofida quriladi: tarmoqlar, serverlar, bulut va xavfsizlik.",
+					"items": [
+						{
+							"title": "Sertifikatni tanlash",
+							"description": "Lavozim va keyingi o'sish uchun qaysi sertifikat kerakligini aniqlashga yordam beramiz."
+						},
+						{
+							"title": "Tayyorgarlik rejasi",
+							"description": "Mutaxassisning ish jadvaliga mos mavzular, tartib va muddatlar."
+						},
+						{
+							"title": "Nazariya va amaliyot",
+							"description": "Mavzularni tarmoqlar, serverlar, bulut va xavfsizlikdan olingan misollarda ko'rib chiqamiz."
+						},
+						{
+							"title": "Tayyorlikni tekshirish",
+							"description": "Bo'shliqlarni oldindan ko'rish uchun imtihondan oldin sinov topshiriqlari."
+						},
+						{
+							"title": "Xodimlar guruhlari uchun",
+							"description": "Kompaniyaning bir nechta mutaxassisini bitta dastur bo'yicha tayyorlaymiz."
+						},
+						{
+							"title": "Maslahatlar",
+							"description": "Tayyorgarlik davomida murakkab mavzular bo'yicha savollarga javob beramiz."
+						}
+					]
+				},
+				"steps": {
+					"title": "Tayyorgarlik qanday o'tadi",
+					"items": [
+						{
+							"title": "Maqsadlar",
+							"description": "Mutaxassisning lavozimi, tajribasi va kerakli sertifikatni muhokama qilamiz."
+						},
+						{
+							"title": "Reja",
+							"description": "Mavzular va muddatlar bilan tayyorgarlik rejasini tuzamiz."
+						},
+						{
+							"title": "Tayyorgarlik",
+							"description": "Mutaxassis mavzularni o'rganadi va amaliy topshiriqlarni bajaradi."
+						},
+						{
+							"title": "Tekshirish",
+							"description": "Imtihondan oldin tayyorlikni tekshiramiz va bo'shliqlarni yopamiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimga mos keladi",
+					"subtitle": "Tasdiqlangan bilim darajasi kerak bo'lgan mutaxassislar va kompaniyalarga.",
+					"items": [
+						{
+							"title": "Tizim administratorlari",
+							"description": "Tarmoqlar va serverlar bo'yicha bilimni tasdiqlash."
+						},
+						{
+							"title": "Tarmoq muhandislari",
+							"description": "Kasbda keyingi bosqichga o'tish."
+						},
+						{
+							"title": "Kompaniyalarning IT bo'limlari",
+							"description": "Jamoa malakasini yagona reja bo'yicha oshirish."
+						},
+						{
+							"title": "Xavfsizlik mutaxassislari",
+							"description": "Axborot xavfsizligi bo'yicha sertifikatga tayyorlanish."
+						}
+					]
+				},
+				"cta": {
+					"title": "Sertifikatni tanlash va tayyorlanishga yordam beramiz",
+					"subtitle": "Mutaxassisning lavozimi va tajribasi haqida aytib bering. Tayyorgarlik rejasini taklif qilamiz."
+				}
+			},
+			"corporate": {
+				"meta": {
+					"title": "Xodimlar uchun korporativ IT o'qitish",
+					"description": "ITHINK jamoalarni CRM, IT tizimlari va avtomatlashtirish bilan ishlashga hamda kiberxavfsizlik qoidalariga o'rgatadi. Dastur kompaniya vazifalariga mos."
+				},
+				"hero": {
+					"title": "Jamoangiz uchun korporativ o'qitish",
+					"subtitle": "Xodimlarni CRM, IT tizimlari va yangi avtomatlashtirish vositalari bilan ishlashga o'rgatamiz. Dastur va formatni kompaniya vazifalariga qarab tanlaymiz."
+				},
+				"included": {
+					"title": "Kompaniya vazifalariga mos dasturlar",
+					"subtitle": "Jamoani o'qitish CRM va infratuzilma loyihalarimizga allaqachon kiradi. Bu yerda uni alohida buyurtma qilish mumkin.",
+					"items": [
+						{
+							"title": "Savdo bo'limlari uchun CRM",
+							"description": "amoCRM va Bitrix24'da ishlash: voronkalar, vazifalar, qo'ng'iroqlar, xabarlar va hisobotlar."
+						},
+						{
+							"title": "Kompaniyaning IT tizimlari",
+							"description": "Joriy qilingandan keyin tarmoq, pochta, kirish huquqlari va umumiy resurslardan qanday foydalanish."
+						},
+						{
+							"title": "Xodimlar uchun kiberxavfsizlik",
+							"description": "Parollar, fishing, pochta va ma'lumotlar bilan xavfsiz ishlash."
+						},
+						{
+							"title": "Avtomatlashtirish va botlar",
+							"description": "Yangi botlar, integratsiyalar va dashbordlar bilan qanday ishlash."
+						},
+						{
+							"title": "Jamoaga mos dastur",
+							"description": "Mavzular, chuqurlik va misollar jarayonlaringiz va vositalaringizga qarab tanlanadi."
+						},
+						{
+							"title": "Onlayn yoki ofisda",
+							"description": "Formatni oldindan kelishamiz: mashg'ulotlar onlayn yoki sizning ofisingizda."
+						}
+					]
+				},
+				"steps": {
+					"title": "O'qitishni qanday o'tkazamiz",
+					"items": [
+						{
+							"title": "Vazifalar",
+							"description": "Kimni, qaysi vositalarga va qaysi muddatgacha o'qitish kerakligini aniqlaymiz."
+						},
+						{
+							"title": "Dastur",
+							"description": "Mavzular, format va jadvalni tuzamiz va siz bilan kelishamiz."
+						},
+						{
+							"title": "O'qitish",
+							"description": "Mashg'ulotlarni sizning tizimlaringizda va real misollarda o'tkazamiz."
+						},
+						{
+							"title": "Keyingi yordam",
+							"description": "Yangi ko'nikmalar mustahkamlanguncha jamoa savollariga javob beramiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimga mos keladi",
+					"subtitle": "Yangi tizimlarni joriy qilayotgan yoki jamoa ularda ishonch bilan ishlashini istagan kompaniyalarga.",
+					"items": [
+						{
+							"title": "Savdo bo'limlari",
+							"description": "CRM joriy qilingandan yoki almashtirilgandan keyin."
+						},
+						{
+							"title": "Yangi xodimlar",
+							"description": "Kompaniyaning IT tizimlariga tez kirish."
+						},
+						{
+							"title": "Butun kompaniya",
+							"description": "Yagona kiberxavfsizlik qoidalari."
+						},
+						{
+							"title": "Avtomatlashtirishdan keyingi jamoalar",
+							"description": "Yangi botlar va integratsiyalar bilan ishlash."
+						}
+					]
+				},
+				"cta": {
+					"title": "Jamoangizni o'qitamiz",
+					"subtitle": "Kimni nimaga o'rgatish kerakligini aytib bering. Dastur, format va jadvalni taklif qilamiz."
+				}
+			}
+		},
+		"solutions": {
+			"business": {
+				"meta": {
+					"title": "Kichik va o'rta biznes uchun IT yechimlari",
+					"description": "Kichik va o'rta biznes uchun CRM, jarayonlarni avtomatlashtirish, boshqariladigan IT-xizmatlar va IT-audit, barchasi bitta ITHINK jamoasidan."
+				},
+				"hero": {
+					"title": "O'z IT bo'limi bo'lmagan o'sayotgan biznes uchun IT",
+					"subtitle": "CRM, avtomatlashtirish va IT qo'llab-quvvatlashni bitta tizimga yig'amiz, shunda jamoa texnika bilan kurashmasdan sotadi va ishlaydi."
+				},
+				"included": {
+					"title": "Nimalarni o'z zimmamizga olamiz",
+					"subtitle": "Kichik va o'rta biznes vazifalari uchun yig'ilgan to'rtta ITHINK xizmati. Bittasidan boshlash mumkin.",
+					"items": [
+						{
+							"title": "CRM va savdoni avtomatlashtirish",
+							"description": "Voronkalar, telefoniya va messenjerlar bitta tizimda: amoCRM yoki Bitrix24."
+						},
+						{
+							"title": "Jarayonlarni avtomatlashtirish",
+							"description": "Arizalar, hujjatlar va hisobotlar bilan qo'lda ishlash o'rniga botlar va integratsiyalar."
+						},
+						{
+							"title": "Boshqariladigan IT-xizmatlar",
+							"description": "Oylik obuna asosida foydalanuvchilarni qo'llab-quvvatlash, monitoring va IT xizmat ko'rsatish."
+						},
+						{
+							"title": "IT-audit",
+							"description": "Hozirgi IT'ning aniq manzarasi va nimadan boshlash rejasi."
+						}
+					]
+				},
+				"steps": {
+					"title": "Qanday ishlaymiz",
+					"items": [
+						{
+							"title": "Konsultatsiya",
+							"description": "Biznes vazifalari va hozirgi vositalarni bepul ko'rib chiqamiz."
+						},
+						{
+							"title": "Reja",
+							"description": "Qaysi xizmatlardan boshlashni taklif qilamiz. Muddat va byudjet ish boshlanishidan oldin kelishiladi."
+						},
+						{
+							"title": "Joriy qilish",
+							"description": "Biznes to'xtamasligi uchun bosqichma-bosqich joriy qilamiz."
+						},
+						{
+							"title": "Qo'llab-quvvatlash",
+							"description": "Ishga tushirilgandan keyin tizimlarni kuzatib boramiz va biznes bilan birga rivojlantiramiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimlar uchun",
+					"subtitle": "Biz chakana savdo, e-commerce, moliya va xizmat ko'rsatish sohasidagi kompaniyalar bilan ishlaymiz.",
+					"items": [
+						{
+							"title": "Chakana savdo tarmoqlari",
+							"description": "Yagona tarmoq, CRM va qo'llab-quvvatlash kerak bo'lgan do'konlar va filiallar."
+						},
+						{
+							"title": "Internet-do'konlar",
+							"description": "Ma'lumotlarni qo'lda ko'chirmasdan buyurtmalar, CRM va integratsiyalar."
+						},
+						{
+							"title": "Xizmat ko'rsatish sohasi",
+							"description": "CRM'da arizalar, mijozlarni yozib olish va takroriy savdolar."
+						},
+						{
+							"title": "IT bo'limi yo'q kompaniyalar",
+							"description": "ITHINK obuna asosida sizning IT bo'limingizga aylanadi."
+						}
+					]
+				},
+				"cta": {
+					"title": "Biznesingiz uchun IT'ni yig'amiz",
+					"subtitle": "Kompaniya va vazifalar haqida aytib bering. Nimadan boshlashni taklif qilamiz, muddat va byudjetni aytamiz."
+				}
+			},
+			"education": {
+				"meta": {
+					"title": "Maktablar va universitetlar uchun IT yechimlari",
+					"description": "Maktablar, kollejlar va universitetlar uchun IT-infratuzilma, tarmoq va Wi-Fi, dasturiy ta'minot litsenziyalari va xodimlarni o'qitish."
+				},
+				"hero": {
+					"title": "Maktablar va universitetlar uchun IT-infratuzilma",
+					"subtitle": "Tarmoq va Wi-Fi quramiz, serverlar va kompyuter sinflarini sozlaymiz, litsenziyalarni yetkazib beramiz va xodimlarni tizimlar bilan ishlashga o'rgatamiz."
+				},
+				"included": {
+					"title": "O'quv muassasalari uchun nima qilamiz",
+					"subtitle": "Maktablar, kollejlar va universitetlar vazifalari uchun yig'ilgan ITHINK xizmatlari.",
+					"items": [
+						{
+							"title": "Serverlar va kompyuter sinflari",
+							"description": "Serverlar, o'qituvchilar ish o'rinlari va sinflar, hisob qaydnomalari va kirish huquqlari."
+						},
+						{
+							"title": "Tarmoq va Wi-Fi",
+							"description": "Strukturaviy kabellashtirish, butun bino bo'ylab Wi-Fi va o'quvchilar hamda xodimlar uchun alohida tarmoqlar."
+						},
+						{
+							"title": "Dasturiy ta'minot litsenziyalari",
+							"description": "O'quv jarayoni va ma'muriyat uchun rasmiy Microsoft litsenziyalari va boshqa dasturlar."
+						},
+						{
+							"title": "Xodimlarni o'qitish",
+							"description": "O'qituvchilar va ma'muriyatni yangi tizimlar bilan ishlashga o'rgatamiz."
+						}
+					]
+				},
+				"steps": {
+					"title": "Qanday ishlaymiz",
+					"items": [
+						{
+							"title": "Tekshiruv",
+							"description": "Bino, hozirgi tarmoq, jihozlar va o'quv muassasasi vazifalarini o'rganamiz."
+						},
+						{
+							"title": "Loyiha",
+							"description": "Tarmoq va infratuzilmani loyihalaymiz, hajm, muddat va byudjetni kelishamiz."
+						},
+						{
+							"title": "Joriy qilish",
+							"description": "Kabel tarmog'ini o'tkazamiz, Wi-Fi, serverlar va ish o'rinlarini sozlaymiz."
+						},
+						{
+							"title": "Topshirish va o'qitish",
+							"description": "Hujjatlarni topshiramiz va xodimlarni tizimlar bilan ishlashga o'rgatamiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimlar uchun",
+					"subtitle": "Barqaror tarmoq va tushunarli IT qo'llab-quvvatlash kerak bo'lgan o'quv muassasalariga.",
+					"items": [
+						{
+							"title": "Maktablar",
+							"description": "Kompyuter sinflari, Wi-Fi va o'qituvchilar uchun hisob qaydnomalari."
+						},
+						{
+							"title": "Xususiy maktablar va o'quv markazlari",
+							"description": "Yangi bino yoki filialda IT'ni tez ishga tushirish."
+						},
+						{
+							"title": "Kollejlar va universitetlar",
+							"description": "Bir nechta binoga tarmoq, serverlar va kirish huquqlari."
+						},
+						{
+							"title": "O'quv muassasalarining IT xizmatlari",
+							"description": "Katta loyihalar uchun qo'shimcha jamoa va tajriba."
+						}
+					]
+				},
+				"cta": {
+					"title": "O'quv muassasangiz uchun IT'ni muhokama qilamiz",
+					"subtitle": "Bino, sinflar soni va vazifalar haqida aytib bering. Loyiha va ish rejasini taklif qilamiz."
+				}
+			},
+			"enterprise": {
+				"meta": {
+					"title": "Yirik kompaniyalar uchun IT yechimlari",
+					"description": "Yirik tashkilotlar va filiallari bor kompaniyalar uchun IT-infratuzilma, audit, SLA bo'yicha boshqariladigan IT-xizmatlar va dasturiy ta'minot ishlab chiqish."
+				},
+				"hero": {
+					"title": "Yirik tashkilotlar uchun infratuzilma va IT operatsiyalari",
+					"subtitle": "Audit o'tkazamiz, ofislar va filiallar uchun infratuzilma quramiz, IT operatsiyalarini SLA bo'yicha qo'llab-quvvatlashga olamiz va jarayonlaringizga mos tizimlar ishlab chiqamiz."
+				},
+				"included": {
+					"title": "Nimalarni o'z zimmamizga olamiz",
+					"subtitle": "IT uzilishlarsiz ishlashi kerak bo'lgan tashkilotlar uchun ITHINK xizmatlari.",
+					"items": [
+						{
+							"title": "IT-infratuzilma",
+							"description": "Ofislar va filiallar uchun serverlar, tarmoqlar, bulut va zaxira nusxalash."
+						},
+						{
+							"title": "IT-audit",
+							"description": "Xavf reytinglari va yo'l xaritasi bilan infratuzilma, xavfsizlik va jarayonlarni baholash."
+						},
+						{
+							"title": "Boshqariladigan IT-xizmatlar",
+							"description": "24/7 monitoring, helpdesk va oylik hisobotlar bilan SLA bo'yicha xizmat ko'rsatish."
+						},
+						{
+							"title": "Dasturiy ta'minot ishlab chiqish",
+							"description": "Kompaniya jarayonlariga mos ichki tizimlar, integratsiyalar va API."
+						}
+					]
+				},
+				"steps": {
+					"title": "Qanday ishlaymiz",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "Infratuzilma, xavfsizlik va jarayonlarni baholaymiz."
+						},
+						{
+							"title": "Yo'l xaritasi",
+							"description": "Ustuvorliklar, bosqichlar va byudjetni taklif qilamiz va ish boshlanishidan oldin kelishamiz."
+						},
+						{
+							"title": "Bosqichma-bosqich joriy qilish",
+							"description": "Infratuzilma va tizimlarni ishni to'xtatmasdan bosqichma-bosqich o'zgartiramiz."
+						},
+						{
+							"title": "SLA bo'yicha qo'llab-quvvatlash",
+							"description": "Tizimlarni oylik hisobotlar bilan monitoring va xizmat ko'rsatishga olamiz."
+						}
+					]
+				},
+				"audience": {
+					"title": "Kimlar uchun",
+					"subtitle": "IT'da foydalanuvchilar va filiallar ko'p, ishonchlilik talablari yuqori bo'lgan tashkilotlarga.",
+					"items": [
+						{
+							"title": "Filiallari bor kompaniyalar",
+							"description": "Barcha ofislar uchun yagona tarmoq va kirish huquqlari."
+						},
+						{
+							"title": "Ishlab chiqarish va logistika",
+							"description": "Uzilishlarsiz ishlashi kerak bo'lgan tizimlar."
+						},
+						{
+							"title": "Moliya kompaniyalari",
+							"description": "Ma'lumotlarni himoya qilish va kirishni nazorat qilish."
+						},
+						{
+							"title": "O'z IT bo'limlari",
+							"description": "Loyihalar va qo'llab-quvvatlash uchun qo'shimcha jamoa."
+						}
+					]
+				},
+				"cta": {
+					"title": "Tashkilotingiz IT tizimini muhokama qilamiz",
+					"subtitle": "Ko'lam va vazifalar haqida aytib bering. Audit yoki aniq loyihadan boshlaymiz."
+				}
+			}
 		}
 	}
 }

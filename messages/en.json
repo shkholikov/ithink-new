@@ -36,40 +36,109 @@
 		"lightMode": "Light theme",
 		"items": {
 			"services": {
-				"it-infrastructure": { "title": "IT Infrastructure", "description": "Servers, networks, and cloud infrastructure for stable operations." },
-				"managed-it": { "title": "Managed IT Services", "description": "24/7 monitoring, helpdesk, and full IT management by subscription." },
-				"crm-automation": { "title": "CRM & Sales Automation", "description": "AmoCRM and Bitrix24 implementation with full channel integration." },
-				"process-automation": { "title": "Process Automation", "description": "Bots, integrations, and AI tools to eliminate manual work." },
+				"it-infrastructure": {
+					"title": "IT Infrastructure",
+					"description": "Servers, networks, and cloud infrastructure for stable operations."
+				},
+				"managed-it": {
+					"title": "Managed IT Services",
+					"description": "24/7 monitoring, helpdesk, and full IT management by subscription."
+				},
+				"crm-automation": {
+					"title": "CRM & Sales Automation",
+					"description": "AmoCRM and Bitrix24 implementation with full channel integration."
+				},
+				"process-automation": {
+					"title": "Process Automation",
+					"description": "Bots, integrations, and AI tools to eliminate manual work."
+				},
 				"software-development": {
 					"title": "Software Development",
 					"description": "Web apps, Telegram bots, Mini Apps, and custom business systems."
 				},
-				"it-audit": { "title": "IT Audit & Consulting", "description": "Infrastructure and security audit with a prioritized action plan." }
+				"it-audit": {
+					"title": "IT Audit & Consulting",
+					"description": "Infrastructure and security audit with a prioritized action plan."
+				}
 			},
 			"licenses": {
-				"microsoft": { "title": "Microsoft", "description": "Official Microsoft licenses for business and enterprise." },
-				"security": { "title": "Security Software", "description": "Antivirus and endpoint protection solutions." },
-				"design": { "title": "Design Tools", "description": "Creative software licenses for your team." }
+				"microsoft": {
+					"title": "Microsoft",
+					"description": "Official Microsoft licenses for business and enterprise."
+				},
+				"security": {
+					"title": "Security Software",
+					"description": "Antivirus and endpoint protection solutions."
+				},
+				"design": {
+					"title": "Design Tools",
+					"description": "Creative software licenses for your team."
+				}
 			},
 			"training": {
-				"courses": { "title": "Online Courses", "description": "Self-paced learning programs for IT professionals." },
-				"certification": { "title": "Certifications", "description": "Recognized certifications to validate your skills." },
-				"corporate": { "title": "Corporate Training", "description": "Tailored training programs for your team." }
+				"courses": {
+					"title": "Online Courses",
+					"description": "Self-paced learning programs for IT professionals."
+				},
+				"certification": {
+					"title": "Certifications",
+					"description": "Recognized certifications to validate your skills."
+				},
+				"corporate": {
+					"title": "Corporate Training",
+					"description": "Tailored training programs for your team."
+				}
 			},
 			"solutions": {
-				"business": { "title": "For Business", "description": "End-to-end IT solutions for growing companies." },
-				"education": { "title": "For Education", "description": "Technology tools for schools and universities." },
-				"enterprise": { "title": "For Enterprise", "description": "Scalable infrastructure for large organizations." }
+				"business": {
+					"title": "For Business",
+					"description": "End-to-end IT solutions for growing companies."
+				},
+				"education": {
+					"title": "For Education",
+					"description": "Technology tools for schools and universities."
+				},
+				"enterprise": {
+					"title": "For Enterprise",
+					"description": "Scalable infrastructure for large organizations."
+				}
 			},
 			"partners": {
-				"amocrm": { "title": "amoCRM", "description": "Sales-focused CRM built for fast-growing teams." },
-				"bitrix24": { "title": "Bitrix24", "description": "All-in-one CRM, project management and HR." },
-				"itgrix": { "title": "Itgrix", "description": "Asterisk telephony integration for Bitrix24 and amoCRM." },
-				"online-pbx": { "title": "onlinePBX", "description": "Cloud telephony and call center solutions." },
-				"wazzup": { "title": "Wazzup", "description": "Omnichannel messaging inside your CRM." },
-				"megacount": { "title": "MEGACOUNT", "description": "AI-powered visitor counting and retail analytics." }
+				"amocrm": {
+					"title": "amoCRM",
+					"description": "Sales-focused CRM built for fast-growing teams."
+				},
+				"bitrix24": {
+					"title": "Bitrix24",
+					"description": "All-in-one CRM, project management and HR."
+				},
+				"itgrix": {
+					"title": "Itgrix",
+					"description": "Asterisk telephony integration for Bitrix24 and amoCRM."
+				},
+				"online-pbx": {
+					"title": "onlinePBX",
+					"description": "Cloud telephony and call center solutions."
+				},
+				"wazzup": {
+					"title": "Wazzup",
+					"description": "Omnichannel messaging inside your CRM."
+				},
+				"megacount": {
+					"title": "MEGACOUNT",
+					"description": "AI-powered visitor counting and retail analytics."
+				}
 			}
-		}
+		},
+		"products": "Products",
+		"consult": "Consultation",
+		"language": "Language",
+		"allPartners": "All partners",
+		"allServices": "All services",
+		"companyPage": "About the company",
+		"clients": "Clients",
+		"home": "Home",
+		"skip": "Skip to content"
 	},
 	"hero": {
 		"badge": "50+ satisfied clients",
@@ -267,7 +336,12 @@
 			"websites": "Websites",
 			"pricing": "Pricing",
 			"contactPage": "Contact Us"
-		}
+		},
+		"about": "An IT company in Tashkent. Infrastructure, CRM, automation and software for business since 2020.",
+		"products": "Products",
+		"solutions": "Solutions",
+		"location": "Tashkent, Uzbekistan",
+		"backToTop": "Back to top"
 	},
 	"about": {
 		"hero": {
@@ -307,78 +381,106 @@
 		}
 	},
 	"customers": {
-		"hero": {
-			"badge": "Case Studies",
-			"title": "Clients Who Trust ITHINK",
-			"subtitle": "From startups to established enterprises, here's a selection of businesses we've helped grow."
-		},
 		"services": "Services provided",
 		"items": [
 			{
 				"name": "Crayton & Vilt",
 				"industry": "Retail",
 				"description": "IT infrastructure setup and managed services for a fast-growing retail chain.",
-				"services": ["Managed IT", "Network Setup"]
+				"services": [
+					"Managed IT",
+					"Network Setup"
+				]
 			},
 			{
 				"name": "OBBO",
 				"industry": "E-Commerce",
 				"description": "Full-stack web application development and CRM integration for an online marketplace.",
-				"services": ["Software Dev", "CRM Integration"]
+				"services": [
+					"Software Dev",
+					"CRM Integration"
+				]
 			},
 			{
 				"name": "AslZar",
 				"industry": "Jewelry",
 				"description": "Custom e-commerce platform with inventory management and customer loyalty system.",
-				"services": ["Software Dev", "E-Commerce"]
+				"services": [
+					"Software Dev",
+					"E-Commerce"
+				]
 			},
 			{
 				"name": "Kredit Market",
 				"industry": "Finance",
 				"description": "Digitalization of loan application workflows and customer management system.",
-				"services": ["Digitalization", "CRM Integration"]
+				"services": [
+					"Digitalization",
+					"CRM Integration"
+				]
 			},
 			{
 				"name": "Penostyle",
 				"industry": "Retail",
 				"description": "Network infrastructure and VoIP communications for multi-location operations.",
-				"services": ["Network & Infra", "VoIP"]
+				"services": [
+					"Network & Infra",
+					"VoIP"
+				]
 			},
 			{
 				"name": "Avtozet",
 				"industry": "Automotive",
 				"description": "CRM implementation and sales process automation for an auto dealership.",
-				"services": ["CRM Integration", "Digitalization"]
+				"services": [
+					"CRM Integration",
+					"Digitalization"
+				]
 			},
 			{
 				"name": "SOKOLOV",
 				"industry": "Jewelry",
 				"description": "IT support and managed services for a premium jewelry brand's local operations.",
-				"services": ["Managed IT"]
+				"services": [
+					"Managed IT"
+				]
 			},
 			{
 				"name": "UDirect",
 				"industry": "Professional Services",
 				"description": "Business process digitalization and software development for a consulting firm.",
-				"services": ["Digitalization", "Software Dev"]
+				"services": [
+					"Digitalization",
+					"Software Dev"
+				]
 			},
 			{
 				"name": "ParadiseWall",
 				"industry": "Interior",
 				"description": "Website development and digital tools for a home decor and wallpaper company.",
-				"services": ["Websites", "Software Dev"]
+				"services": [
+					"Websites",
+					"Software Dev"
+				]
 			},
 			{
 				"name": "Mobicenter",
 				"industry": "Retail",
 				"description": "Multi-branch IT infrastructure and VoIP setup for a consumer electronics retailer.",
-				"services": ["Network & Infra", "VoIP", "Managed IT"]
+				"services": [
+					"Network & Infra",
+					"VoIP",
+					"Managed IT"
+				]
 			},
 			{
 				"name": "Chudo Tovary",
 				"industry": "E-Commerce",
 				"description": "E-commerce platform development and CRM integration for an online goods marketplace.",
-				"services": ["E-Commerce", "CRM Integration"]
+				"services": [
+					"E-Commerce",
+					"CRM Integration"
+				]
 			}
 		]
 	},
@@ -397,7 +499,14 @@
 				"price": "$300",
 				"period": "one-time",
 				"description": "Professional landing page to present your business online.",
-				"features": ["Custom design", "Mobile responsive", "SEO optimized", "1 contact form", "Hosting setup guide", "2 revision rounds"]
+				"features": [
+					"Custom design",
+					"Mobile responsive",
+					"SEO optimized",
+					"1 contact form",
+					"Hosting setup guide",
+					"2 revision rounds"
+				]
 			},
 			{
 				"name": "Web Application",
@@ -601,31 +710,76 @@
 			"badge": "Mission & Vision",
 			"title": "Why We Exist",
 			"cards": [
-				{ "label": "Mission", "text": "We help businesses digitalize and scale through reliable, custom-built IT solutions that actually work." },
-				{ "label": "Vision", "text": "To become the most trusted IT partner for businesses across Central Asia." },
-				{ "label": "Approach", "text": "Transparent communication, fixed scope, and post-launch support — no surprises, ever." }
+				{
+					"label": "Mission",
+					"text": "We help businesses digitalize and scale through reliable, custom-built IT solutions that actually work."
+				},
+				{
+					"label": "Vision",
+					"text": "To become the most trusted IT partner for businesses across Central Asia."
+				},
+				{
+					"label": "Approach",
+					"text": "Transparent communication, fixed scope, and post-launch support — no surprises, ever."
+				}
 			]
 		},
 		"timeline": {
 			"badge": "Our Journey",
 			"title": "Building Since 2020",
 			"items": [
-				{ "year": "2020", "title": "Founded in Tashkent", "description": "ITHINK was established with a mission to bring modern IT to Uzbek businesses." },
-				{ "year": "2021", "title": "First Enterprise Client", "description": "Signed our first large-scale infrastructure contract with a regional enterprise." },
-				{ "year": "2022", "title": "Software & Bots Division", "description": "Launched dedicated software development and Telegram automation services." },
-				{ "year": "2023", "title": "Team Grew to 15+", "description": "Expanded our engineering and support team to serve a growing client base." },
-				{ "year": "2024", "title": "72+ Projects Delivered", "description": "Crossed a major milestone of successfully delivered client projects." },
-				{ "year": "2025", "title": "Regional Expansion", "description": "Began serving clients in Tajikistan, Kazakhstan, and the US." }
+				{
+					"year": "2020",
+					"title": "Founded in Tashkent",
+					"description": "ITHINK was established with a mission to bring modern IT to Uzbek businesses."
+				},
+				{
+					"year": "2021",
+					"title": "First Enterprise Client",
+					"description": "Signed our first large-scale infrastructure contract with a regional enterprise."
+				},
+				{
+					"year": "2022",
+					"title": "Software & Bots Division",
+					"description": "Launched dedicated software development and Telegram automation services."
+				},
+				{
+					"year": "2023",
+					"title": "Team Grew to 15+",
+					"description": "Expanded our engineering and support team to serve a growing client base."
+				},
+				{
+					"year": "2024",
+					"title": "72+ Projects Delivered",
+					"description": "Crossed a major milestone of successfully delivered client projects."
+				},
+				{
+					"year": "2025",
+					"title": "Regional Expansion",
+					"description": "Began serving clients in Tajikistan, Kazakhstan, and the US."
+				}
 			]
 		},
 		"why": {
 			"badge": "Why ITHINK",
 			"title": "What Sets Us Apart",
 			"items": [
-				{ "title": "Tashkent-Based Team", "description": "No outsourcing. Your project is handled by our in-house engineers from start to finish." },
-				{ "title": "Fixed Scope & Clear Pricing", "description": "We agree on deliverables and price upfront. No scope creep, no surprise invoices." },
-				{ "title": "Post-Launch Support", "description": "We stay after go-live. Bug fixes, updates, and monitoring are part of the deal." },
-				{ "title": "Transparent Communication", "description": "You always know where your project stands. Weekly updates, direct access to your team." }
+				{
+					"title": "Tashkent-Based Team",
+					"description": "No outsourcing. Your project is handled by our in-house engineers from start to finish."
+				},
+				{
+					"title": "Fixed Scope & Clear Pricing",
+					"description": "We agree on deliverables and price upfront. No scope creep, no surprise invoices."
+				},
+				{
+					"title": "Post-Launch Support",
+					"description": "We stay after go-live. Bug fixes, updates, and monitoring are part of the deal."
+				},
+				{
+					"title": "Transparent Communication",
+					"description": "You always know where your project stands. Weekly updates, direct access to your team."
+				}
 			]
 		},
 		"location": {
@@ -645,7 +799,17 @@
 	},
 	"servicePages": {
 		"common": {
-			"allServices": "All Services"
+			"ctaPrimary": "Discuss your project",
+			"ctaSecondary": "All services",
+			"otherEyebrow": "More services",
+			"otherTitle": "We cover the adjacent tasks too",
+			"before": "Before",
+			"after": "After",
+			"example": "Sample interface",
+			"exampleReport": "Sample report",
+			"resolved": "Resolved",
+			"tickets": "Staff requests",
+			"auto": "Automatic"
 		},
 		"it-infrastructure": {
 			"hero": {
@@ -669,7 +833,10 @@
 						"title": "Workstation & Device Management",
 						"description": "Centralized management of all employee devices, accounts, software, and access permissions."
 					},
-					{ "title": "Cloud Infrastructure", "description": "AWS, Azure, or on-prem hybrid setups designed to scale with your business growth." },
+					{
+						"title": "Cloud Infrastructure",
+						"description": "AWS, Azure, or on-prem hybrid setups designed to scale with your business growth."
+					},
 					{
 						"title": "Access Control & Security",
 						"description": "Role-based access, VPN configuration, and network perimeter protection from day one."
@@ -685,39 +852,50 @@
 				"title": "Our Delivery Process",
 				"items": [
 					{
-						"step": "01",
 						"title": "Infrastructure Audit",
 						"description": "We assess your current environment, identify bottlenecks, and document what needs to change."
 					},
 					{
-						"step": "02",
 						"title": "Architecture Design",
 						"description": "We design a solution matching your scale, budget, and 3-year growth trajectory."
 					},
 					{
-						"step": "03",
 						"title": "Deployment",
 						"description": "Our engineers deploy and configure everything with minimal disruption to your business operations."
 					},
-					{ "step": "04", "title": "Handover & Training", "description": "Full documentation, admin training, and an optional ongoing support plan." }
+					{
+						"title": "Handover & Training",
+						"description": "Full documentation, admin training, and an optional ongoing support plan."
+					}
 				]
 			},
 			"outcomes": {
 				"badge": "Results",
 				"title": "What You Walk Away With",
 				"items": [
-					{ "title": "Zero Downtime", "description": "Stable, redundant infrastructure means your team works without interruptions day after day." },
+					{
+						"title": "Zero Downtime",
+						"description": "Stable, redundant infrastructure means your team works without interruptions day after day."
+					},
 					{
 						"title": "Scalable Foundation",
 						"description": "Systems built to grow with your business — no expensive rebuilds as you add headcount or offices."
 					},
-					{ "title": "End-to-End Security", "description": "Protected endpoints, controlled access, and resilient backups from the very first day." }
+					{
+						"title": "End-to-End Security",
+						"description": "Protected endpoints, controlled access, and resilient backups from the very first day."
+					}
 				]
 			},
 			"cta": {
 				"title": "Ready to build a solid IT foundation?",
 				"subtitle": "Tell us about your current setup and we'll map out a plan within 24 hours."
-			}
+			},
+			"before": [
+				"The network and servers were assembled piece by piece, and any failure stops the office.",
+				"Every new hire or branch means reworking the network and settings.",
+				"Access is granted by hand, and nobody has tested the backups."
+			]
 		},
 		"managed-it": {
 			"hero": {
@@ -760,22 +938,18 @@
 				"title": "Getting Started Is Simple",
 				"items": [
 					{
-						"step": "01",
 						"title": "Onboarding Audit",
 						"description": "We document your entire IT environment: devices, software, accounts, and access points."
 					},
 					{
-						"step": "02",
 						"title": "Monitoring Setup",
 						"description": "We deploy monitoring agents and configure alerting thresholds for your specific infrastructure."
 					},
 					{
-						"step": "03",
 						"title": "Ongoing Operations",
 						"description": "Daily monitoring, fast incident response, and regular maintenance on a defined SLA."
 					},
 					{
-						"step": "04",
 						"title": "Monthly Review",
 						"description": "We meet monthly to review incidents, report on performance, and plan upcoming improvements."
 					}
@@ -785,8 +959,14 @@
 				"badge": "Results",
 				"title": "What You Get",
 				"items": [
-					{ "title": "Predictable IT Costs", "description": "Fixed monthly fee — no surprise invoices when something breaks or needs upgrading." },
-					{ "title": "Faster Issue Resolution", "description": "Average response in 15 minutes. Critical issues handled within 1–2 hours under SLA." },
+					{
+						"title": "Predictable IT Costs",
+						"description": "Fixed monthly fee — no surprise invoices when something breaks or needs upgrading."
+					},
+					{
+						"title": "Faster Issue Resolution",
+						"description": "Average response in 15 minutes. Critical issues handled within 1–2 hours under SLA."
+					},
 					{
 						"title": "Business Continuity",
 						"description": "Proactive monitoring catches problems before they cause downtime or data loss for your team."
@@ -796,6 +976,21 @@
 			"cta": {
 				"title": "Let us handle IT — you focus on business.",
 				"subtitle": "Talk to us about your team size and infrastructure — we'll design the right plan."
+			},
+			"before": [
+				"IT costs are unpredictable: every breakdown turns into an urgent invoice.",
+				"Staff wait until someone is free to fix a computer or printer.",
+				"You find out about a problem when the server is already down."
+			],
+			"visual": {
+				"tickets": [
+					"Password reset for a new hire",
+					"Accounting printer is not printing",
+					"Software install on a workstation",
+					"Patch update on servers",
+					"Laptop cannot connect to Wi-Fi",
+					"Antivirus licence renewal"
+				]
 			}
 		},
 		"crm-automation": {
@@ -839,18 +1034,18 @@
 				"title": "From Chaos to Clarity",
 				"items": [
 					{
-						"step": "01",
 						"title": "Sales Process Audit",
 						"description": "We map how leads move from first contact to closed deal and identify where they're being lost."
 					},
-					{ "step": "02", "title": "CRM Setup", "description": "We configure the CRM from scratch — pipelines, users, automations, and templates." },
 					{
-						"step": "03",
+						"title": "CRM Setup",
+						"description": "We configure the CRM from scratch — pipelines, users, automations, and templates."
+					},
+					{
 						"title": "Channel Integration",
 						"description": "We connect telephony, messengers, website forms, and other lead sources to the CRM."
 					},
 					{
-						"step": "04",
 						"title": "Training & Launch",
 						"description": "We train your team, run a parallel test period, and stay on hand for questions after go-live."
 					}
@@ -877,7 +1072,12 @@
 			"cta": {
 				"title": "Ready to automate your sales?",
 				"subtitle": "Tell us your current setup and lead sources — we'll propose a CRM architecture in 48 hours."
-			}
+			},
+			"before": [
+				"Leads get lost because nobody reminded the manager to call back.",
+				"Deals live in managers' notebooks and personal chats.",
+				"Leads arrive via WhatsApp, Telegram, Instagram and the website, and someone collects them by hand."
+			]
 		},
 		"process-automation": {
 			"hero": {
@@ -920,22 +1120,18 @@
 				"title": "Automation, Step by Step",
 				"items": [
 					{
-						"step": "01",
 						"title": "Process Audit",
 						"description": "We spend time with your team to understand current workflows, pain points, and automation opportunities."
 					},
 					{
-						"step": "02",
 						"title": "Solution Design",
 						"description": "We propose a concrete automation plan: what to automate first, the tech stack, and expected ROI."
 					},
 					{
-						"step": "03",
 						"title": "Build & Integrate",
 						"description": "We build bots, integrations, and workflows — tested in a staging environment before going live."
 					},
 					{
-						"step": "04",
 						"title": "Monitor & Improve",
 						"description": "After launch we monitor performance and iterate based on real-world usage data and your feedback."
 					}
@@ -962,6 +1158,40 @@
 			"cta": {
 				"title": "What would you automate first?",
 				"subtitle": "Tell us your most painful manual process — we'll show you how to fix it."
+			},
+			"before": [
+				"Staff spend hours moving data between spreadsheets, the CRM and accounting.",
+				"Manual entry brings typos, skipped steps and duplicates.",
+				"The team is busy with routine instead of customers and growth."
+			],
+			"visual": {
+				"title": "Automation feed",
+				"events": [
+					{
+						"title": "Invoice created and sent to the client",
+						"source": "Accounting"
+					},
+					{
+						"title": "Task assigned to a manager",
+						"source": "CRM"
+					},
+					{
+						"title": "Contract signed",
+						"source": "Documents"
+					},
+					{
+						"title": "Notification sent to the team",
+						"source": "Telegram bot"
+					},
+					{
+						"title": "Stock levels updated",
+						"source": "Warehouse"
+					},
+					{
+						"title": "Leave request approved",
+						"source": "HR"
+					}
+				]
 			}
 		},
 		"software-development": {
@@ -1005,22 +1235,18 @@
 				"title": "From Idea to Production",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery & Scoping",
 						"description": "We define requirements, user flows, and technical architecture before writing a single line of code."
 					},
 					{
-						"step": "02",
 						"title": "Design",
 						"description": "UI/UX design with real wireframes and mockups — you see exactly what you're getting before we build it."
 					},
 					{
-						"step": "03",
 						"title": "Development",
 						"description": "Iterative sprints with regular demos — you stay in the loop at every milestone, not just at the end."
 					},
 					{
-						"step": "04",
 						"title": "QA & Launch",
 						"description": "Thorough testing, deployment to production, and structured handover with documentation and training."
 					}
@@ -1047,6 +1273,14 @@
 			"cta": {
 				"title": "Have a project in mind?",
 				"subtitle": "Describe what you need to build — we'll scope it and share a proposal within 48 hours."
+			},
+			"before": [
+				"The off-the-shelf service belongs to the vendor, and nothing changes without them.",
+				"Template tools force your processes into someone else's logic.",
+				"Every new feature means rewriting the system."
+			],
+			"visual": {
+				"done": "Done: the release is live in production"
 			}
 		},
 		"it-audit": {
@@ -1090,22 +1324,18 @@
 				"title": "The Audit Process",
 				"items": [
 					{
-						"step": "01",
 						"title": "Discovery Interviews",
 						"description": "We interview key stakeholders — IT staff, managers, and end users — to understand the full picture."
 					},
 					{
-						"step": "02",
 						"title": "Technical Analysis",
 						"description": "We access and document your infrastructure, run diagnostic tools, and review your configurations."
 					},
 					{
-						"step": "03",
 						"title": "Report Preparation",
 						"description": "We compile findings into a structured report with clear findings, risk ratings, and concrete recommendations."
 					},
 					{
-						"step": "04",
 						"title": "Roadmap Presentation",
 						"description": "We walk you through the report, answer questions, and help you prioritize what to tackle first."
 					}
@@ -1132,6 +1362,30 @@
 			"cta": {
 				"title": "Not sure where your IT gaps are?",
 				"subtitle": "That's exactly what the audit is for. Let's find out together."
+			},
+			"before": [
+				"Nobody knows exactly which devices, licences and access rights the company has.",
+				"Vulnerabilities surface only after an outage or a data leak.",
+				"It is unclear where to start improving and where to put the budget."
+			],
+			"visual": {
+				"title": "IT environment score",
+				"areas": [
+					"Network",
+					"Security",
+					"Backups",
+					"Licences"
+				],
+				"findings": [
+					{
+						"text": "Backups never tested for restore",
+						"risk": "High risk"
+					},
+					{
+						"text": "Outdated software on workstations",
+						"risk": "Medium risk"
+					}
+				]
 			}
 		}
 	},
@@ -1181,6 +1435,1839 @@
 			"software-licenses": "Software licenses",
 			"corporate-training": "Corporate training",
 			"other": "Other"
+		}
+	},
+	"home": {
+		"meta": {
+			"title": "ITHINK — IT infrastructure, CRM and automation for business",
+			"description": "An IT company in Tashkent. We build infrastructure, implement amoCRM and Bitrix24, automate processes and develop software. 50+ clients, 72+ projects."
+		},
+		"hero": {
+			"eyebrow": "IT company in Tashkent · since 2020",
+			"titleLead": "IT that works",
+			"titleAccent": "for your business growth",
+			"subtitle": "We build infrastructure, implement amoCRM and Bitrix24, automate processes and develop software. One team runs your whole IT stack, from the server to the sales funnel.",
+			"ctaPrimary": "Free consultation",
+			"ctaSecondary": "See services",
+			"note": "No commitment · We reply within 1 business hour",
+			"pipeline": {
+				"title": "Sales pipeline",
+				"stage1": "New",
+				"stage2": "Negotiation",
+				"stage3": "Won",
+				"lead": "Website request",
+				"source": "via Telegram"
+			},
+			"monitor": {
+				"title": "24/7 monitoring",
+				"status": "All systems operational",
+				"servers": "Servers",
+				"network": "Network",
+				"backup": "Backups"
+			},
+			"bot": {
+				"title": "Telegram bot",
+				"message": "New request sent to a manager"
+			}
+		},
+		"clients": {
+			"caption": "50+ companies trust ITHINK with their infrastructure and sales"
+		},
+		"services": {
+			"eyebrow": "Services",
+			"title": "Your whole IT stack in one team's hands",
+			"subtitle": "Six practices: infrastructure, support, sales, automation, development and audit. Take one, or let us build all of it together.",
+			"more": "Learn more",
+			"all": "All services"
+		},
+		"stats": {
+			"eyebrow": "ITHINK in numbers",
+			"title": "Results you can count",
+			"clients": "clients trust us with their IT",
+			"projects": "projects delivered turnkey",
+			"team": "in-house specialists in Tashkent",
+			"markets": "markets: Uzbekistan, Kazakhstan, Tajikistan, USA",
+			"since": "the year we were founded"
+		},
+		"crm": {
+			"website": "Website",
+			"phone": "Telephony",
+			"hub": "CRM",
+			"team": "Sales team"
+		},
+		"process": {
+			"eyebrow": "How we work",
+			"title": "Four steps from task to result",
+			"subtitle": "A transparent process: you approve the plan, timeline and budget before work starts, and you see every stage."
+		},
+		"testimonials": {
+			"eyebrow": "Testimonials",
+			"title": "What clients say",
+			"prev": "Previous testimonial",
+			"next": "Next testimonial"
+		},
+		"partners": {
+			"eyebrow": "Partners",
+			"title": "Official partner of the platforms your business runs on",
+			"subtitle": "amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT and Itgrix. We implement, configure, train your team and support you after launch.",
+			"all": "All partners",
+			"marketsTitle": "Working in 4 markets",
+			"market1": "Uzbekistan",
+			"market2": "Kazakhstan",
+			"market3": "Tajikistan",
+			"market4": "USA"
+		},
+		"faq": {
+			"eyebrow": "Questions",
+			"title": "Frequently asked questions",
+			"subtitle": "Didn't find an answer? Message us on Telegram or call, we reply within a business hour."
+		},
+		"cta": {
+			"eyebrow": "Let's start",
+			"title": "Tell us about your task. We'll propose a solution in one call.",
+			"subtitle": "A free 30-minute consultation. We review where you are now and propose a plan with a clear timeline and budget.",
+			"response": "We reply within 1 business hour",
+			"direct": "Or write to us directly"
+		}
+	},
+	"contactPage": {
+		"meta": {
+			"title": "Contact ITHINK",
+			"description": "ITHINK phone, Telegram and email. Free consultation, we reply within 1 business hour."
+		},
+		"hero": {
+			"eyebrow": "Contact",
+			"title": "Let's talk about your task",
+			"subtitle": "Call, message us on Telegram or leave a request. We reply within 1 business hour and suggest a convenient time for a consultation."
+		},
+		"phone": {
+			"label": "Phone",
+			"note": "Call if the task is urgent"
+		},
+		"telegram": {
+			"label": "Telegram",
+			"note": "Where we reply fastest"
+		},
+		"email": {
+			"label": "Email",
+			"note": "For documents, tenders and proposals"
+		},
+		"instagram": {
+			"label": "Instagram",
+			"note": "Company news and projects"
+		},
+		"bot": {
+			"label": "Telegram bot",
+			"note": "Leave a request right in the bot"
+		},
+		"office": {
+			"title": "Tashkent, Uzbekistan",
+			"note": "We work with clients in Uzbekistan, Kazakhstan, Tajikistan and the USA"
+		},
+		"formTitle": "Leave a request",
+		"formSubtitle": "Fill in the form and a manager will contact you. The consultation is free and carries no obligation."
+	},
+	"hireUsPage": {
+		"meta": {
+			"title": "IT outsourcing: a dedicated ITHINK team",
+			"description": "Dedicated developers, network engineers and CRM specialists without hiring costs. Monthly contracts."
+		},
+		"hero": {
+			"eyebrow": "Outsourcing",
+			"cta": "Discuss a team"
+		},
+		"benefits": {
+			"eyebrow": "Why outsource",
+			"title": "An IT department without hiring and onboarding"
+		},
+		"roles": {
+			"eyebrow": "Who you get",
+			"title": "Specialists for your task",
+			"subtitle": "We assemble the team from ITHINK's in-house engineers in Tashkent. Its makeup changes with your tasks.",
+			"dev": "Developers",
+			"devNote": "Web apps, Telegram bots, integrations",
+			"network": "Network engineers",
+			"networkNote": "Servers, network, cloud, security",
+			"crm": "CRM specialists",
+			"crmNote": "amoCRM, Bitrix24, telephony, pipelines",
+			"support": "User support",
+			"supportNote": "Helpdesk and monitoring under an SLA"
+		},
+		"cta": {
+			"title": "Tell us which specialists you need",
+			"subtitle": "Describe the task and timeline. We'll propose a team and a way of working."
+		}
+	},
+	"companyPage": {
+		"meta": {
+			"title": "About ITHINK: a Tashkent IT team since 2020",
+			"description": "ITHINK builds IT infrastructure, implements CRM, automates processes and develops software. 50+ clients, 72+ projects, 15+ in-house specialists, 4 markets."
+		},
+		"hero": {
+			"eyebrow": "About ITHINK · since 2020",
+			"title": "One team for all of your business IT",
+			"subtitle": "ITHINK is an IT company in Tashkent. Since 2020 we have built infrastructure, implemented CRM, automated processes and developed software for businesses in Uzbekistan, Kazakhstan, Tajikistan and the USA.",
+			"ctaSecondary": "Our clients"
+		},
+		"location": {
+			"subtitle": "The team works from Tashkent. We run projects in Uzbekistan, Kazakhstan, Tajikistan and the USA."
+		}
+	},
+	"customersPage": {
+		"meta": {
+			"title": "ITHINK client cases: retail, finance, e-commerce",
+			"description": "ITHINK case studies: the client's challenge, what we did and the result. Infrastructure, VoIP, CRM and software for retail, finance and e-commerce."
+		},
+		"hero": {
+			"eyebrow": "50+ clients · since 2020",
+			"subtitle": "Detailed cases and client cards from retail, finance, e-commerce, jewellery and professional services. For each: the challenge, what we did and the result.",
+			"title": "What we built for our clients",
+			"casesCta": "See the cases",
+			"wall": "Clients by industry"
+		},
+		"list": {
+			"eyebrow": "Industries",
+			"title": "Who we helped, and how",
+			"filter": "Filter by industry",
+			"subtitle": "Eight more clients. Open a card to see the challenge, the solution and the result.",
+			"more": "Challenge and solution"
+		},
+		"cases": {
+			"eyebrow": "Case studies",
+			"title": "Three projects in detail",
+			"subtitle": "The client's challenge, what the ITHINK team did and what changed.",
+			"labels": {
+				"case": "Case",
+				"challenge": "Challenge",
+				"solution": "What we did",
+				"result": "Result",
+				"services": "Services",
+				"stack": "Stack"
+			},
+			"items": {
+				"mobicenter": {
+					"challenge": "An electronics retailer with several branches: every location needs a stable network and phone line, and IT has to work the same way in all of them.",
+					"steps": [
+						"Designed and deployed the branch network",
+						"Connected VoIP telephony at every location",
+						"Took over day-to-day management of the IT infrastructure"
+					],
+					"results": [
+						"One network and one phone system across all branches",
+						"One contractor is responsible for infrastructure and support"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"obbo": {
+					"challenge": "An online marketplace needs its own web application, and enquiries and orders have to land in the CRM straight away.",
+					"steps": [
+						"Built the marketplace's full-stack web application",
+						"Integrated the web application with the CRM",
+						"Set up customer and order data flowing into the CRM"
+					],
+					"results": [
+						"Marketplace sales are visible in one system",
+						"The website and the CRM work as one"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"avtozet": {
+					"challenge": "A car dealership needs to track customers and deals in one system and run routine sales steps without manual work.",
+					"steps": [
+						"Implemented a CRM around the dealer's sales process",
+						"Automated the repetitive sales steps",
+						"Moved the sales team's manual processes into digital form"
+					],
+					"results": [
+						"The dealer's customers and deals live in one CRM",
+						"Less manual work in sales"
+					],
+					"metrics": [],
+					"stack": []
+				},
+				"craytonVilt": {
+					"challenge": "A retail chain is growing fast, and IT has to keep up with each new location.",
+					"solution": "Set up the IT infrastructure and took over its management.",
+					"result": "New locations plug into infrastructure that is already in place.",
+					"metrics": []
+				},
+				"aslzar": {
+					"challenge": "A jewellery business needs an online shop tied to its inventory and a way to keep customers coming back.",
+					"solution": "Built a custom e-commerce platform with inventory management and a loyalty programme.",
+					"result": "Sales, stock and loyalty run on one platform.",
+					"metrics": []
+				},
+				"kreditMarket": {
+					"challenge": "Loan applications and customer management ran on manual processes.",
+					"solution": "Digitised the loan application workflow and connected a CRM for customer management.",
+					"result": "Applications and customers are handled in one system.",
+					"metrics": []
+				},
+				"penostyle": {
+					"challenge": "A business with several locations needs a shared network and phone links between them.",
+					"solution": "Built the network infrastructure and connected VoIP telephony.",
+					"result": "All locations run on one network and one phone system.",
+					"metrics": []
+				},
+				"sokolov": {
+					"challenge": "A premium brand needs IT support it can rely on every day.",
+					"solution": "Took over IT support and managed services.",
+					"result": "The brand's team focuses on the business while we run the IT.",
+					"metrics": []
+				},
+				"udirect": {
+					"challenge": "A consulting firm needs to move its internal processes into digital form.",
+					"solution": "Digitised the business processes and built software around them.",
+					"result": "The firm's processes run in its own digital tools.",
+					"metrics": []
+				},
+				"paradiseWall": {
+					"challenge": "A home decor company needs a website and digital tools for the business.",
+					"solution": "Built the website and a set of digital tools.",
+					"result": "The company has its own website and tools built for its needs.",
+					"metrics": []
+				},
+				"chudoTovary": {
+					"challenge": "An online marketplace needs a sales platform connected to its CRM.",
+					"solution": "Built the e-commerce platform and integrated it with the CRM.",
+					"result": "Orders from the platform go straight into the CRM.",
+					"metrics": []
+				}
+			}
+		}
+	},
+	"careerPage": {
+		"meta": {
+			"title": "Careers at ITHINK: join an IT team in Tashkent",
+			"description": "ITHINK is an in-house team of 15+ specialists in Tashkent: infrastructure, CRM, automation, development and support. No open vacancies right now; send your CV to {email}."
+		},
+		"hero": {
+			"eyebrow": "Careers at ITHINK",
+			"title": "Build business IT with us",
+			"subtitle": "An in-house team of 15+ specialists in Tashkent. There are no open vacancies right now, but you can send an open application at any time.",
+			"ctaEmail": "Send your CV",
+			"ctaTelegram": "Message us on Telegram"
+		},
+		"team": {
+			"eyebrow": "Team",
+			"title": "Who we are",
+			"p1": "ITHINK is an IT company in Tashkent, founded in 2020. We build infrastructure, implement CRM, automate processes and develop software for businesses.",
+			"p2": "In-house engineers run each project from start to finish, with no hand-off to contractors. We work with clients in Uzbekistan, Kazakhstan, Tajikistan and the USA."
+		},
+		"directions": {
+			"eyebrow": "Areas",
+			"title": "Five areas of work",
+			"subtitle": "Tell us in your application which area fits you best.",
+			"items": [
+				{
+					"title": "IT infrastructure",
+					"description": "Networks, servers, cloud infrastructure and telephony for client offices."
+				},
+				{
+					"title": "CRM and sales",
+					"description": "amoCRM and Bitrix24 rollouts: pipelines, telephony, messengers and training for the client's team."
+				},
+				{
+					"title": "Process automation",
+					"description": "Telegram bots, API integrations with CRM, accounting and warehouse systems, internal tools and dashboards."
+				},
+				{
+					"title": "Software development",
+					"description": "Web apps on React, Next.js and Node.js, websites, Telegram Mini Apps and admin panels."
+				},
+				{
+					"title": "Support and service",
+					"description": "Helpdesk, monitoring and maintenance of client IT systems on a subscription."
+				},
+				{
+					"title": "Something else",
+					"description": "Not on the list? Tell us what you want to work on and attach your CV."
+				}
+			]
+		},
+		"values": {
+			"eyebrow": "How we work",
+			"title": "The principles we work by",
+			"extra": {
+				"title": "One project, one team",
+				"description": "In-house engineers run a project from start to finish and stay with it after launch."
+			}
+		},
+		"apply": {
+			"eyebrow": "Open application",
+			"title": "How to send your CV",
+			"subtitle": "There are no vacancies right now. Send your CV ahead: when a role opens in your area, we will already know about you.",
+			"subject": "CV",
+			"steps": [
+				{
+					"title": "Pick a channel",
+					"description": "Email {email} or Telegram {telegram}."
+				},
+				{
+					"title": "Tell us about yourself",
+					"description": "Your area, experience and links to your work: GitHub, a portfolio or projects you are proud of."
+				},
+				{
+					"title": "Put the area in the subject",
+					"description": "For example: \"CV: software development\". That way it reaches the right person straight away."
+				}
+			]
+		},
+		"band": {
+			"title": "Want to work at ITHINK?",
+			"subtitle": "Send your CV by email or on Telegram."
+		}
+	},
+	"partnersHub": {
+		"meta": {
+			"title": "Partners and integrations",
+			"description": "Official partner of amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT and Itgrix. We implement, configure, train your team and support you after launch."
+		},
+		"hero": {
+			"eyebrow": "Partners and integrations",
+			"title": "The platforms we implement and support",
+			"subtitle": "amoCRM, Bitrix24, onlinePBX, Wazzup, MEGACOUNT and Itgrix. We implement, configure, train your team and support you after launch.",
+			"ctaPrimary": "Discuss a project",
+			"ctaSecondary": "CRM and sales automation"
+		},
+		"list": {
+			"eyebrow": "Official partner",
+			"title": "Six platforms for sales, communication and analytics",
+			"subtitle": "Pick a platform to see what it does and what we do with it.",
+			"more": "Learn more"
+		},
+		"how": {
+			"eyebrow": "How we work",
+			"title": "One way of working for every platform",
+			"subtitle": "We do more than sell access to a platform. We launch it around your process and stay with you after launch.",
+			"items": [
+				{
+					"title": "Implement",
+					"description": "We map your process, pick the platform that fits the task and launch the system."
+				},
+				{
+					"title": "Configure",
+					"description": "Pipelines, fields, access rights, automations and integrations with telephony, messengers and your website."
+				},
+				{
+					"title": "Train",
+					"description": "Hands-on training for your staff: how to work in the system every day."
+				},
+				{
+					"title": "Support",
+					"description": "We stay in touch after launch: we answer questions and refine the setup."
+				}
+			]
+		},
+		"story": {
+			"eyebrow": "How the platforms work together",
+			"title": "Calls, messengers and your website in one CRM",
+			"subtitle": "Each partner platform covers one part of the same chain. We connect them so every request lands in the client card.",
+			"messengers": {
+				"label": "Messengers",
+				"text": "Wazzup brings WhatsApp, Telegram and Instagram into the CRM."
+			},
+			"telephony": {
+				"label": "Telephony",
+				"text": "The onlinePBX cloud PBX, or your own Asterisk through the Itgrix connector."
+			},
+			"crm": {
+				"label": "CRM",
+				"text": "amoCRM or Bitrix24 keeps the client history, calls and messages."
+			}
+		},
+		"cta": {
+			"title": "Not sure which platform fits?",
+			"subtitle": "Tell us about the task. In a free consultation we suggest a platform and an implementation plan."
+		}
+	},
+	"partnerPages": {
+		"common": {
+			"about": "About the platform",
+			"work": "What ITHINK does",
+			"features": "Capabilities",
+			"integrations": "Integrations",
+			"forWhom": "Who it suits",
+			"faq": "Questions and answers",
+			"others": "Other partners",
+			"othersTitle": "Platforms that work together",
+			"ctaPrimary": "Discuss implementation",
+			"ctaAll": "All partners",
+			"ctaCrm": "CRM and sales automation"
+		},
+		"amocrm": {
+			"name": "amoCRM",
+			"category": "Sales CRM",
+			"meta": {
+				"title": "amoCRM implementation",
+				"description": "amoCRM implementation and setup: sales pipelines, telephony, WhatsApp, Telegram and Instagram in the client card. Team training and support after launch."
+			},
+			"hero": {
+				"title": "amoCRM implementation built around your sales process",
+				"subtitle": "amoCRM is a sales-focused CRM. We implement, customize and train your staff, and connect telephony and messengers so every request lands in the client card."
+			},
+			"tags": [
+				"Sales pipelines",
+				"Messengers",
+				"Telephony",
+				"Automation"
+			],
+			"about": {
+				"title": "What amoCRM is",
+				"text": "amoCRM is a CRM for sales teams. Deals move through pipeline stages, and the messages, calls and tasks for each client sit in one card. It suits fast-growing teams that cannot afford to lose requests and want to see every deal."
+			},
+			"work": {
+				"title": "What ITHINK does with amoCRM",
+				"items": [
+					{
+						"title": "Sales audit",
+						"description": "We map how requests travel from first contact to a closed deal and find where they get lost."
+					},
+					{
+						"title": "Pipeline setup",
+						"description": "Stages, fields, user rights, automation rules and templates that match your process."
+					},
+					{
+						"title": "Channel integration",
+						"description": "We connect telephony (onlinePBX, or Asterisk through Itgrix), WhatsApp, Telegram and Instagram through Wazzup, and website forms."
+					},
+					{
+						"title": "Training and support",
+						"description": "Hands-on training for the sales team and support after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "amoCRM capabilities",
+				"items": [
+					"Sales pipelines with custom stages",
+					"Client card with deal, message and call history",
+					"Messenger and social media integrations",
+					"IP telephony connection and call recording",
+					"Tasks and reminders for managers",
+					"Automatic actions when a deal changes stage",
+					"Sales reports and analytics",
+					"Mobile app for work outside the office"
+				]
+			},
+			"forWhom": {
+				"title": "Who amoCRM suits",
+				"items": [
+					{
+						"title": "Sales teams",
+						"description": "Teams whose requests arrive by phone, messenger and website and get lost between managers."
+					},
+					{
+						"title": "Growing businesses",
+						"description": "Companies moving from spreadsheets and notebooks to a single client database."
+					},
+					{
+						"title": "Managers",
+						"description": "Anyone who wants to see every deal and pipeline stage without manual reports."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Can telephony be connected to amoCRM?",
+						"a": "Yes. We connect the onlinePBX cloud telephony or your Asterisk PBX through the Itgrix connector. Calls and recordings are saved in the client card."
+					},
+					{
+						"q": "Can we receive WhatsApp and Telegram messages?",
+						"a": "Yes. Through Wazzup, messages from WhatsApp, Telegram and Instagram arrive in amoCRM, and managers reply straight from the client card."
+					},
+					{
+						"q": "amoCRM or Bitrix24?",
+						"a": "amoCRM focuses on sales. Bitrix24 combines CRM, project management, HR and communications. In a free consultation we review your process and suggest a platform."
+					}
+				]
+			},
+			"cta": {
+				"title": "Shall we discuss your amoCRM rollout?",
+				"subtitle": "Tell us about your sales process and lead sources. We propose an implementation plan in a free consultation."
+			}
+		},
+		"bitrix24": {
+			"name": "Bitrix24",
+			"category": "CRM and collaboration",
+			"meta": {
+				"title": "Bitrix24 implementation",
+				"description": "Bitrix24 implementation and setup: CRM, tasks and projects, team communication. We connect telephony and messengers, train your staff and support you after launch."
+			},
+			"hero": {
+				"title": "Bitrix24 implementation: CRM, tasks and your team in one system",
+				"subtitle": "Bitrix24 combines CRM, project management, HR and communications. We configure the platform around your processes, connect your sales channels and train your team."
+			},
+			"tags": [
+				"CRM",
+				"Tasks and projects",
+				"HR",
+				"Communications"
+			],
+			"about": {
+				"title": "What Bitrix24 is",
+				"text": "Bitrix24 is an all-in-one platform. One system holds the CRM, tasks and projects, HR tools and internal communication: chats, video calls and a shared drive. The company works in one place instead of a set of separate services."
+			},
+			"work": {
+				"title": "What ITHINK does with Bitrix24",
+				"items": [
+					{
+						"title": "Process audit",
+						"description": "We review how sales and the team work and decide which Bitrix24 modules you need."
+					},
+					{
+						"title": "CRM and task setup",
+						"description": "Pipelines, cards, roles, access rights, automation rules and task templates that match your process."
+					},
+					{
+						"title": "Channel integration",
+						"description": "We connect telephony (onlinePBX, or Asterisk through Itgrix), messengers through Wazzup and website forms."
+					},
+					{
+						"title": "Training and support",
+						"description": "Hands-on training for your staff and support after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "Bitrix24 capabilities",
+				"items": [
+					"CRM with sales pipelines and client cards",
+					"Tasks and projects with deadlines and owners",
+					"Chats, video calls and a company news feed",
+					"Shared drive and document collaboration",
+					"HR tools: company structure and time tracking",
+					"Automation rules and business processes",
+					"Telephony and messenger connections",
+					"Reports on sales and team performance"
+				]
+			},
+			"forWhom": {
+				"title": "Who Bitrix24 suits",
+				"items": [
+					{
+						"title": "Companies that need one system",
+						"description": "When sales, tasks and team chat are spread across different services."
+					},
+					{
+						"title": "Sales teams",
+						"description": "Pipelines, calls and client messages in one card."
+					},
+					{
+						"title": "Managers",
+						"description": "Tasks, deals and staff workload visible in one place."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Can telephony be connected to Bitrix24?",
+						"a": "Yes. We connect the onlinePBX cloud telephony or your Asterisk PBX through the Itgrix connector. Calls and recordings are saved in the client card."
+					},
+					{
+						"q": "Do we need every Bitrix24 module at once?",
+						"a": "No. We start with the modules that solve the current task and add the rest as you need them."
+					},
+					{
+						"q": "Bitrix24 or amoCRM?",
+						"a": "Bitrix24 fits when you need tasks, projects and internal communication besides sales. amoCRM focuses on sales. In a free consultation we review your process and suggest a platform."
+					}
+				]
+			},
+			"cta": {
+				"title": "Shall we discuss your Bitrix24 rollout?",
+				"subtitle": "Tell us which processes you want to move into Bitrix24. We propose an implementation plan in a free consultation."
+			}
+		},
+		"online-pbx": {
+			"name": "onlinePBX",
+			"category": "Cloud telephony",
+			"meta": {
+				"title": "onlinePBX: cloud telephony with your CRM",
+				"description": "onlinePBX cloud PBX setup and integration with amoCRM and Bitrix24: call routing, call recording and every call in the client card."
+			},
+			"hero": {
+				"title": "onlinePBX cloud telephony, connected to your CRM",
+				"subtitle": "onlinePBX provides cloud telephony and call center solutions. We set up the PBX and call routing and link telephony to amoCRM or Bitrix24."
+			},
+			"tags": [
+				"Cloud PBX",
+				"Call center",
+				"Call recording",
+				"CRM integration"
+			],
+			"about": {
+				"title": "What onlinePBX is",
+				"text": "onlinePBX is a cloud PBX. Telephony runs in the cloud, so there is no office hardware to buy or maintain. Staff call from IP phones, computers or smartphones, and calls and recordings flow into the CRM."
+			},
+			"work": {
+				"title": "What ITHINK does with onlinePBX",
+				"items": [
+					{
+						"title": "Call flow design",
+						"description": "We decide how calls are routed between departments and staff and what happens to missed calls."
+					},
+					{
+						"title": "PBX setup",
+						"description": "Extensions, groups, queues, voice menu and call recording."
+					},
+					{
+						"title": "CRM integration",
+						"description": "We link onlinePBX to amoCRM or Bitrix24: every call is logged and attached to the right deal."
+					},
+					{
+						"title": "Training and support",
+						"description": "We show staff how to handle calls and stay in touch after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "onlinePBX capabilities",
+				"items": [
+					"Cloud PBX with no office hardware",
+					"Voice menu and inbound call routing",
+					"Queues and groups for a call center",
+					"Call recording",
+					"Calls from an IP phone, computer or smartphone",
+					"Forwarding to mobile numbers",
+					"CRM integration",
+					"Call statistics"
+				]
+			},
+			"forWhom": {
+				"title": "Who onlinePBX suits",
+				"items": [
+					{
+						"title": "Sales teams",
+						"description": "Every call lands in the CRM together with its recording."
+					},
+					{
+						"title": "Call centers and support",
+						"description": "Queues, call distribution and per-operator statistics."
+					},
+					{
+						"title": "Companies with several offices",
+						"description": "One phone system for every branch and remote employee."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Do we need to buy hardware?",
+						"a": "No. The PBX runs in the cloud. Staff need an IP phone, a computer or a smartphone with internet access."
+					},
+					{
+						"q": "Which CRMs do we connect onlinePBX to?",
+						"a": "We connect onlinePBX to amoCRM and Bitrix24."
+					},
+					{
+						"q": "How is onlinePBX different from Asterisk with Itgrix?",
+						"a": "onlinePBX runs in the cloud. Asterisk is installed on your server, and the Itgrix connector links it to the CRM. The choice depends on where your telephony should run."
+					}
+				]
+			},
+			"cta": {
+				"title": "Shall we connect telephony to your CRM?",
+				"subtitle": "Tell us how many staff work the phones and which CRM you use. We propose a setup in a free consultation."
+			}
+		},
+		"wazzup": {
+			"name": "Wazzup",
+			"category": "Messengers in your CRM",
+			"meta": {
+				"title": "Wazzup: WhatsApp, Telegram and Instagram in your CRM",
+				"description": "We connect Wazzup to amoCRM and Bitrix24: WhatsApp, Telegram and Instagram messages land in the client card, and managers reply straight from the CRM."
+			},
+			"hero": {
+				"title": "WhatsApp, Telegram and Instagram inside your CRM",
+				"subtitle": "Wazzup passes client messages from messengers into amoCRM or Bitrix24. Managers reply from the client card, and conversations do not get lost."
+			},
+			"tags": [
+				"WhatsApp",
+				"Telegram",
+				"Instagram",
+				"amoCRM · Bitrix24"
+			],
+			"about": {
+				"title": "What Wazzup is",
+				"text": "Wazzup is a service that connects messengers and social networks to a CRM. The conversation with a client stays in their card next to the deal and calls, instead of on managers' personal phones."
+			},
+			"work": {
+				"title": "What ITHINK does with Wazzup",
+				"items": [
+					{
+						"title": "Channel connection",
+						"description": "We connect your company's WhatsApp, Telegram and Instagram to Wazzup."
+					},
+					{
+						"title": "CRM integration",
+						"description": "We route conversations into amoCRM or Bitrix24 so the message history stays in the client card."
+					},
+					{
+						"title": "Conversation routing",
+						"description": "We set which manager receives each new request so clients are not left waiting."
+					},
+					{
+						"title": "Training and support",
+						"description": "We show managers how to message clients from the CRM and stay in touch after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "Wazzup capabilities",
+				"items": [
+					"WhatsApp, Telegram and Instagram in one window",
+					"Messages saved in the client card in the CRM",
+					"A deal created from each new request",
+					"Conversations distributed between managers",
+					"Replies from the CRM without a manager's personal phone",
+					"Quick reply templates"
+				]
+			},
+			"forWhom": {
+				"title": "Who Wazzup suits",
+				"items": [
+					{
+						"title": "Businesses that sell in messengers",
+						"description": "When requests arrive in WhatsApp, Telegram and Instagram."
+					},
+					{
+						"title": "Sales teams",
+						"description": "The manager sees every conversation, and clients do not leave with a departing salesperson."
+					},
+					{
+						"title": "Teams on amoCRM and Bitrix24",
+						"description": "Messengers connect to the CRM you already use."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Which CRMs do we connect Wazzup to?",
+						"a": "We connect Wazzup to amoCRM and Bitrix24."
+					},
+					{
+						"q": "Do conversations stay if a manager leaves?",
+						"a": "Yes. Conversations are stored in the CRM, in the client card, not on the employee's personal phone."
+					},
+					{
+						"q": "Can telephony be connected too?",
+						"a": "Yes. We connect calls through onlinePBX or Asterisk with the Itgrix connector. The manager sees calls and messages in one card."
+					}
+				]
+			},
+			"cta": {
+				"title": "Shall we connect messengers to your CRM?",
+				"subtitle": "Tell us which messengers your clients use and which CRM you run. We propose a setup in a free consultation."
+			}
+		},
+		"megacount": {
+			"name": "MEGACOUNT",
+			"category": "Visitor analytics",
+			"meta": {
+				"title": "MEGACOUNT: visitor counting",
+				"description": "MEGACOUNT AI-powered visitor counting and retail analytics for stores and other physical locations. Selection, launch and support."
+			},
+			"hero": {
+				"title": "Visitor counting and analytics for physical locations",
+				"subtitle": "MEGACOUNT provides AI-powered visitor counting and retail analytics for physical business locations. We help you choose a setup and launch it at your locations."
+			},
+			"tags": [
+				"Visitor counting",
+				"AI",
+				"Retail analytics",
+				"Physical locations"
+			],
+			"about": {
+				"title": "What MEGACOUNT is",
+				"text": "MEGACOUNT uses AI to count visitors to stores and other physical locations and turns that traffic into analytics: how many people came, at what hours and to which locations."
+			},
+			"work": {
+				"title": "What ITHINK does with MEGACOUNT",
+				"items": [
+					{
+						"title": "Task review",
+						"description": "We work out which locations and which metrics need counting."
+					},
+					{
+						"title": "Selection and launch",
+						"description": "We choose a setup for your locations and launch the counting."
+					},
+					{
+						"title": "Report setup",
+						"description": "We set up reports so managers see the traffic at each location."
+					},
+					{
+						"title": "Training and support",
+						"description": "We show your team how to read the reports and stay in touch after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "MEGACOUNT capabilities",
+				"items": [
+					"AI-powered visitor counting",
+					"Traffic by hour, day and location",
+					"Comparison of stores and branches",
+					"Retail analytics for physical locations",
+					"Reports for managers"
+				]
+			},
+			"forWhom": {
+				"title": "Who MEGACOUNT suits",
+				"items": [
+					{
+						"title": "Retail chains",
+						"description": "Compare traffic between stores and find the weak ones."
+					},
+					{
+						"title": "Shopping and business centers",
+						"description": "Know how many people come and at what hours."
+					},
+					{
+						"title": "Service locations",
+						"description": "Plan staff shifts around real footfall."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Where does MEGACOUNT work?",
+						"a": "In stores, shopping centers and other physical locations where the number of visitors matters."
+					},
+					{
+						"q": "What does visitor counting give us?",
+						"a": "You see real traffic by hour and location and can compare it with sales and staff schedules."
+					}
+				]
+			},
+			"cta": {
+				"title": "Shall we discuss analytics for your locations?",
+				"subtitle": "Tell us how many locations you have and which metrics you need. We propose a solution in a free consultation."
+			}
+		},
+		"itgrix": {
+			"name": "Itgrix",
+			"category": "Asterisk connector",
+			"meta": {
+				"title": "Itgrix: Asterisk integration for Bitrix24 and amoCRM",
+				"description": "The Itgrix connector links Asterisk IP telephony to Bitrix24 and amoCRM. On the market since 2017, 3000+ installs in 20 countries. Installation and setup by ITHINK."
+			},
+			"hero": {
+				"title": "Asterisk IP telephony integration for CRM systems",
+				"subtitle": "Itgrix links Asterisk to Bitrix24 and amoCRM for efficient call handling. We install and configure the connector for your PBX and CRM."
+			},
+			"tags": [
+				"Asterisk",
+				"Bitrix24",
+				"amoCRM",
+				"FreePBX · Elastix · Issabel"
+			],
+			"stats": [
+				{
+					"value": "2017",
+					"label": "on the market since"
+				},
+				{
+					"value": "3000+",
+					"label": "installs"
+				},
+				{
+					"value": "20",
+					"label": "countries"
+				}
+			],
+			"linkLabel": "Learn more about Itgrix",
+			"about": {
+				"title": "About the Itgrix connector",
+				"text": "Itgrix is a reliable integration tool for Asterisk IP telephony and CRM systems, enabling efficient call management. The Itgrix integration module has been popular in the market since 2017, installed more than 3000 times across 20 countries, and is one of the widgets recommended by CRM integration experts for Bitrix24 and amoCRM."
+			},
+			"work": {
+				"title": "What ITHINK does with Itgrix",
+				"items": [
+					{
+						"title": "PBX check",
+						"description": "We check your Asterisk PBX (FreePBX, Elastix, Issabel) and CRM before connecting them."
+					},
+					{
+						"title": "Connector installation",
+						"description": "We install Itgrix and set up call scenarios around your sales process."
+					},
+					{
+						"title": "CRM setup",
+						"description": "Leads and contacts for new numbers, tasks for missed calls, routing to the responsible employee."
+					},
+					{
+						"title": "Training and support",
+						"description": "We show managers how to handle calls in the CRM and stay in touch after launch."
+					}
+				]
+			},
+			"features": {
+				"title": "Advantages",
+				"items": [
+					"Works with any modern Asterisk (FreePBX, Elastix, Issabel)",
+					"No programming required — 17-minute setup",
+					"Experienced product development team",
+					"Strong technical support team",
+					"Unlimited customization options on demand",
+					"Detailed knowledge base for module usage",
+					"Works in closed/private networks",
+					"Registered in Russian software registry"
+				]
+			},
+			"integrations": {
+				"title": "Integration features",
+				"groups": [
+					{
+						"title": "For Bitrix24",
+						"items": [
+							"Auto lead creation for unknown numbers",
+							"Auto-connect to responsible employee on repeat calls",
+							"Call logging with recordings in client card",
+							"Missed call tracking with auto task creation",
+							"Click-to-call directly from CRM",
+							"Popup call card with client data during call",
+							"Cross-channel analytics with traffic sources",
+							"Wide customization capabilities"
+						]
+					},
+					{
+						"title": "For amoCRM",
+						"items": [
+							"Auto contact creation for unknown numbers",
+							"Call logging with duration, status and recording",
+							"Auto-routing calls to responsible employees",
+							"Missed call tracking with task assignment",
+							"Sales funnel distribution by phone number",
+							"Click-to-call directly from CRM",
+							"Browser notification call card",
+							"Call analytics broken down by employee"
+						]
+					}
+				]
+			},
+			"forWhom": {
+				"title": "Who Itgrix suits",
+				"items": [
+					{
+						"title": "Companies on Asterisk",
+						"description": "You already run your own Asterisk PBX and need to see calls in the CRM."
+					},
+					{
+						"title": "Bitrix24 and amoCRM users",
+						"description": "Calls, recordings and missed calls land in the client card."
+					},
+					{
+						"title": "Closed networks",
+						"description": "The connector can work inside a closed network."
+					}
+				]
+			},
+			"faq": {
+				"items": [
+					{
+						"q": "Which PBXs does Itgrix work with?",
+						"a": "Any modern Asterisk, including FreePBX, Elastix and Issabel."
+					},
+					{
+						"q": "Do we need a programmer to set it up?",
+						"a": "No. According to the developer, setup takes 17 minutes without programming. We do it for you and adapt the call scenarios to your process."
+					},
+					{
+						"q": "How is Itgrix different from onlinePBX?",
+						"a": "Itgrix links your own Asterisk PBX to the CRM. onlinePBX is a cloud PBX. The choice depends on where your telephony should run."
+					}
+				]
+			},
+			"cta": {
+				"title": "Ready to connect Itgrix?",
+				"subtitle": "Contact us or learn more on the official Itgrix website."
+			}
+		}
+	},
+	"productPages": {
+		"common": {
+			"ctaPrimary": "Send a request",
+			"ctaSecondary": "Contact us",
+			"includedEyebrow": "What's included",
+			"stepsEyebrow": "How it works",
+			"audienceEyebrow": "Who it's for",
+			"relatedEyebrow": "See also",
+			"relatedTitle": "Related solutions and services",
+			"more": "Learn more"
+		},
+		"licenses": {
+			"microsoft": {
+				"meta": {
+					"title": "Microsoft licenses for business",
+					"description": "ITHINK selects, supplies, installs and supports official Microsoft licenses for companies."
+				},
+				"hero": {
+					"title": "Official Microsoft licenses for your company",
+					"subtitle": "We pick the products and editions your team needs, supply the licenses, install and configure them, then keep track of renewals."
+				},
+				"included": {
+					"title": "From selection to renewal",
+					"subtitle": "We handle the licensing work end to end: you get legal software that is installed, configured and accounted for.",
+					"items": [
+						{
+							"title": "Selection by role",
+							"description": "We work out which products and editions each employee needs, so you don't pay for extras."
+						},
+						{
+							"title": "Office and collaboration",
+							"description": "Microsoft office apps, email and cloud services for documents and teamwork."
+						},
+						{
+							"title": "Workstations and servers",
+							"description": "Operating system licenses for employee computers and server infrastructure."
+						},
+						{
+							"title": "Official licenses",
+							"description": "Legal software instead of unlicensed copies: security updates and less risk for the business."
+						},
+						{
+							"title": "Installation and setup",
+							"description": "We install and activate the software and set up employee accounts and access."
+						},
+						{
+							"title": "Tracking and renewals",
+							"description": "We watch subscription dates and add or remove licenses as your team changes."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we handle licensing",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "We look at the software already in use, the number of workstations and what the team does."
+						},
+						{
+							"title": "Selection",
+							"description": "We propose products, editions and license counts. Scope and budget are agreed before purchase."
+						},
+						{
+							"title": "Supply and installation",
+							"description": "We supply the licenses, install and activate the software and set up accounts."
+						},
+						{
+							"title": "Ongoing support",
+							"description": "We keep the license records, remind you about renewals and help staff with software questions."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who needs this",
+					"subtitle": "Companies that work in Microsoft products and want their licensing in order.",
+					"items": [
+						{
+							"title": "A new office",
+							"description": "Workstations have to start from scratch, on legal software from day one."
+						},
+						{
+							"title": "A growing team",
+							"description": "Headcount is rising and licenses need to be added without chaos."
+						},
+						{
+							"title": "Moving to legal software",
+							"description": "The company has unlicensed copies and it is time to replace them."
+						},
+						{
+							"title": "No in-house IT",
+							"description": "Nobody is watching subscriptions, renewals and user accounts."
+						}
+					]
+				},
+				"cta": {
+					"title": "We'll pick the right Microsoft licenses for your team",
+					"subtitle": "Tell us how many workstations you have and what your staff do. We'll propose a license set and an installation plan."
+				}
+			},
+			"security": {
+				"meta": {
+					"title": "Security software for business",
+					"description": "ITHINK selects, supplies and configures antivirus, endpoint protection, network security and backup software for companies."
+				},
+				"hero": {
+					"title": "Protection for workstations, servers and data",
+					"subtitle": "We select antivirus and endpoint protection, supply the licenses, set up protection on every device and keep watch over it."
+				},
+				"included": {
+					"title": "Protection at every layer",
+					"subtitle": "We start by checking what is already protected, then close the gaps with licensed software.",
+					"items": [
+						{
+							"title": "Security audit",
+							"description": "We check which devices, servers and data are left unprotected."
+						},
+						{
+							"title": "Antivirus and endpoint protection",
+							"description": "We protect employee computers and servers from viruses and malware."
+						},
+						{
+							"title": "Network protection",
+							"description": "Firewalls and secure VPN access for staff to company resources."
+						},
+						{
+							"title": "Backup",
+							"description": "Software for backups and data recovery after a failure or an attack."
+						},
+						{
+							"title": "Central management",
+							"description": "Policies, updates and reports for every device in one console."
+						},
+						{
+							"title": "Tracking and renewals",
+							"description": "We watch license dates so protection never lapses at a bad moment."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we roll out protection",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "We check devices, the network and backups and find the weak spots."
+						},
+						{
+							"title": "Selection",
+							"description": "We propose software and license counts to fit your devices and budget."
+						},
+						{
+							"title": "Deployment",
+							"description": "We install protection on workstations and servers and set up policies."
+						},
+						{
+							"title": "Monitoring",
+							"description": "We watch protection and renewals. You can add managed IT services with 24/7 monitoring."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who needs this",
+					"subtitle": "Companies that keep customer data, documents and finances on their own computers and servers.",
+					"items": [
+						{
+							"title": "Offices and branches",
+							"description": "Many devices, and each one needs the same rules."
+						},
+						{
+							"title": "Customer data",
+							"description": "CRM, databases and documents whose loss would stop the business."
+						},
+						{
+							"title": "Remote staff",
+							"description": "Secure access to company resources from home and on the road."
+						},
+						{
+							"title": "After an incident",
+							"description": "There was a virus or a leak, and protection has to be rebuilt."
+						}
+					]
+				},
+				"cta": {
+					"title": "Let's check how well your devices are protected",
+					"subtitle": "Tell us how many workstations and servers you have. We'll propose a protection set and a rollout plan."
+				}
+			},
+			"design": {
+				"meta": {
+					"title": "Design and CAD software licenses",
+					"description": "ITHINK selects, supplies and installs professional graphics, CAD and video software for designers, engineers and marketing teams."
+				},
+				"hero": {
+					"title": "Software for design, engineering and video",
+					"subtitle": "We select professional graphics and CAD software for your team's work, supply the licenses and set up workstations that run it without lag."
+				},
+				"included": {
+					"title": "Tools for creative and engineering teams",
+					"subtitle": "We choose software for each person's tasks and prepare a workstation for it.",
+					"items": [
+						{
+							"title": "Selection by role",
+							"description": "Designers, engineers and marketers need different software. We choose by task, not from a list."
+						},
+						{
+							"title": "Graphics and layout",
+							"description": "Professional graphics editors for raster and vector work, mock-ups and layout."
+						},
+						{
+							"title": "CAD and 3D",
+							"description": "Software for drawings, design engineering and 3D modeling."
+						},
+						{
+							"title": "Video and animation",
+							"description": "Software for video editing, motion design and audio."
+						},
+						{
+							"title": "Workstations for heavy loads",
+							"description": "We select and set up computers that run demanding software without lag."
+						},
+						{
+							"title": "Installation, tracking and renewals",
+							"description": "We install and activate the software and keep track of licenses and subscription dates."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we work",
+					"items": [
+						{
+							"title": "Team tasks",
+							"description": "We find out who does what and which software they use today."
+						},
+						{
+							"title": "Selection",
+							"description": "We propose software, license types and workstation configurations and agree the budget."
+						},
+						{
+							"title": "Supply and installation",
+							"description": "We supply the licenses, install the software and set up the workstations."
+						},
+						{
+							"title": "Ongoing support",
+							"description": "We add licenses for new hires and keep track of renewals."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who needs this",
+					"subtitle": "Teams whose main working tools are graphics, engineering and video software.",
+					"items": [
+						{
+							"title": "Design studios and agencies",
+							"description": "Graphics, layout and video for clients."
+						},
+						{
+							"title": "Design and engineering firms",
+							"description": "Drawings, calculations and 3D models."
+						},
+						{
+							"title": "In-house marketing",
+							"description": "Banners, presentations and videos for your own channels."
+						},
+						{
+							"title": "Interior and architecture",
+							"description": "Visualizations and floor plans for clients."
+						}
+					]
+				},
+				"cta": {
+					"title": "We'll pick the software your team needs",
+					"subtitle": "Tell us how many people you have and what they work on. We'll propose a license set and workstation configurations."
+				}
+			}
+		},
+		"training": {
+			"courses": {
+				"meta": {
+					"title": "Online IT courses for employees",
+					"description": "Self-paced online learning in the fields ITHINK works in: IT infrastructure, CRM for sales, automation and cybersecurity basics."
+				},
+				"hero": {
+					"title": "Self-paced online IT courses",
+					"subtitle": "Learning for IT specialists and staff on the topics we work with every day: infrastructure, CRM, automation and security."
+				},
+				"included": {
+					"title": "Topics and format",
+					"subtitle": "Topics come from the fields ITHINK works in. Staff complete them without leaving their work.",
+					"items": [
+						{
+							"title": "IT infrastructure",
+							"description": "Networks, servers, workstations and access: the basics for system administrators."
+						},
+						{
+							"title": "CRM for sales teams",
+							"description": "Working in amoCRM and Bitrix24: pipelines, tasks, calls and messages in the client card."
+						},
+						{
+							"title": "Automation",
+							"description": "Telegram bots, integrations and tools that remove manual work."
+						},
+						{
+							"title": "Cybersecurity basics",
+							"description": "Passwords, phishing and safe handling of data for every employee."
+						},
+						{
+							"title": "At your own pace",
+							"description": "Materials are online, and each person works through them when it suits them."
+						},
+						{
+							"title": "A program per role",
+							"description": "We help pick topics by job: one set for an administrator, another for a sales manager."
+						}
+					]
+				},
+				"steps": {
+					"title": "How to start",
+					"items": [
+						{
+							"title": "Request",
+							"description": "Tell us who needs training and on which topics."
+						},
+						{
+							"title": "Program",
+							"description": "We propose topics and an order of study for each person's role."
+						},
+						{
+							"title": "Learning",
+							"description": "Staff work through the materials online at their own pace."
+						},
+						{
+							"title": "Questions and practice",
+							"description": "We answer questions on the course topics and help apply them at work."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it suits",
+					"subtitle": "People who want to understand their company's IT tools without long off-site courses.",
+					"items": [
+						{
+							"title": "Junior administrators",
+							"description": "The basics of networks, servers and workstations."
+						},
+						{
+							"title": "Sales managers",
+							"description": "Daily work in the CRM without lost leads."
+						},
+						{
+							"title": "Managers",
+							"description": "How IT and automation work in the company."
+						},
+						{
+							"title": "Every employee",
+							"description": "The basic rules of cybersecurity."
+						}
+					]
+				},
+				"cta": {
+					"title": "We'll pick a course for your team",
+					"subtitle": "Tell us who needs training and on which topics. We'll propose a program and format."
+				}
+			},
+			"certification": {
+				"meta": {
+					"title": "IT certification preparation",
+					"description": "ITHINK helps IT specialists choose a certification and prepare for it: a plan, theory and practice in networks, servers, cloud and security."
+				},
+				"hero": {
+					"title": "IT certification preparation",
+					"subtitle": "We help choose a certification for the specialist's role and goals, build a study plan and work through the topics in practice."
+				},
+				"included": {
+					"title": "What preparation includes",
+					"subtitle": "Preparation is built around the fields ITHINK works in: networks, servers, cloud and security.",
+					"items": [
+						{
+							"title": "Choosing a certification",
+							"description": "We help work out which certification fits the job and the next career step."
+						},
+						{
+							"title": "Study plan",
+							"description": "Topics, order and timing that fit the specialist's work schedule."
+						},
+						{
+							"title": "Theory and practice",
+							"description": "We work through topics with examples from networks, servers, cloud and security."
+						},
+						{
+							"title": "Readiness check",
+							"description": "Practice tasks before the exam, to find gaps early."
+						},
+						{
+							"title": "For groups of staff",
+							"description": "We prepare several of your specialists on one program."
+						},
+						{
+							"title": "Consultations",
+							"description": "We answer questions on hard topics during preparation."
+						}
+					]
+				},
+				"steps": {
+					"title": "How preparation works",
+					"items": [
+						{
+							"title": "Goals",
+							"description": "We discuss the specialist's role, experience and the certification they need."
+						},
+						{
+							"title": "Plan",
+							"description": "We build a study plan with topics and dates."
+						},
+						{
+							"title": "Preparation",
+							"description": "The specialist studies the topics and completes practice tasks."
+						},
+						{
+							"title": "Check",
+							"description": "We check readiness before the exam and close the gaps."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it suits",
+					"subtitle": "Specialists and companies that need a confirmed level of knowledge.",
+					"items": [
+						{
+							"title": "System administrators",
+							"description": "Confirm knowledge of networks and servers."
+						},
+						{
+							"title": "Network engineers",
+							"description": "Move up to the next level in the profession."
+						},
+						{
+							"title": "Company IT departments",
+							"description": "Raise the team's skills on one plan."
+						},
+						{
+							"title": "Security specialists",
+							"description": "Prepare for an information security certification."
+						}
+					]
+				},
+				"cta": {
+					"title": "We'll help choose a certification and prepare for it",
+					"subtitle": "Tell us about the specialist's role and experience. We'll propose a study plan."
+				}
+			},
+			"corporate": {
+				"meta": {
+					"title": "Corporate IT training for employees",
+					"description": "ITHINK trains teams to work with CRM, IT systems and automation, and teaches cybersecurity rules. The program fits your company's tasks."
+				},
+				"hero": {
+					"title": "Corporate training for your team",
+					"subtitle": "We teach staff to work with CRM, IT systems and new automation tools. The program and format fit your company's tasks."
+				},
+				"included": {
+					"title": "Programs built around your company",
+					"subtitle": "Team training is already part of our CRM and infrastructure projects. Here you can order it on its own.",
+					"items": [
+						{
+							"title": "CRM for sales teams",
+							"description": "Working in amoCRM and Bitrix24: pipelines, tasks, calls, messages and reports."
+						},
+						{
+							"title": "Company IT systems",
+							"description": "How to use the network, email, access rights and shared resources after a rollout."
+						},
+						{
+							"title": "Cybersecurity for staff",
+							"description": "Passwords, phishing and safe work with email and data."
+						},
+						{
+							"title": "Automation and bots",
+							"description": "How to work with new bots, integrations and dashboards."
+						},
+						{
+							"title": "A program for your team",
+							"description": "Topics, depth and examples are chosen to match your processes and tools."
+						},
+						{
+							"title": "Online or at your office",
+							"description": "We agree the format in advance: sessions online or at your office."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we run training",
+					"items": [
+						{
+							"title": "Tasks",
+							"description": "We work out who needs training, on which tools and by when."
+						},
+						{
+							"title": "Program",
+							"description": "We set topics, format and schedule and agree them with you."
+						},
+						{
+							"title": "Training",
+							"description": "We run sessions on your systems with real examples."
+						},
+						{
+							"title": "Support afterwards",
+							"description": "We answer the team's questions until the new skills stick."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it suits",
+					"subtitle": "Companies rolling out new systems, or wanting the team to work in them with confidence.",
+					"items": [
+						{
+							"title": "Sales teams",
+							"description": "After a CRM rollout or a CRM change."
+						},
+						{
+							"title": "New hires",
+							"description": "A quick start in the company's IT systems."
+						},
+						{
+							"title": "The whole company",
+							"description": "One set of cybersecurity rules."
+						},
+						{
+							"title": "Teams after automation",
+							"description": "Working with new bots and integrations."
+						}
+					]
+				},
+				"cta": {
+					"title": "We'll train your team",
+					"subtitle": "Tell us who needs to learn what. We'll propose a program, format and schedule."
+				}
+			}
+		},
+		"solutions": {
+			"business": {
+				"meta": {
+					"title": "IT solutions for small and medium businesses",
+					"description": "CRM, process automation, managed IT services and IT audit for small and medium businesses, from one ITHINK team."
+				},
+				"hero": {
+					"title": "IT for a growing business without its own IT department",
+					"subtitle": "We bring CRM, automation and IT support together into one system, so your team sells and works instead of fighting with technology."
+				},
+				"included": {
+					"title": "What we take on",
+					"subtitle": "Four ITHINK services put together for small and medium businesses. You can start with one.",
+					"items": [
+						{
+							"title": "CRM and sales automation",
+							"description": "amoCRM or Bitrix24 with pipelines, telephony and messengers in one system."
+						},
+						{
+							"title": "Process automation",
+							"description": "Bots and integrations instead of manual work with requests, documents and reports."
+						},
+						{
+							"title": "Managed IT services",
+							"description": "User support, monitoring and IT maintenance on a monthly subscription."
+						},
+						{
+							"title": "IT audit",
+							"description": "A clear picture of your current IT and a plan for where to start."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we work",
+					"items": [
+						{
+							"title": "Consultation",
+							"description": "A free review of your business tasks and current tools."
+						},
+						{
+							"title": "Plan",
+							"description": "We propose which services to start with. Timeline and budget are agreed before work begins."
+						},
+						{
+							"title": "Rollout",
+							"description": "We roll out in stages so the business keeps running."
+						},
+						{
+							"title": "Support",
+							"description": "We support the systems after launch and develop them as the business grows."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it's for",
+					"subtitle": "We work with companies in retail, e-commerce, finance and services.",
+					"items": [
+						{
+							"title": "Retail chains",
+							"description": "Shops and branches that need one network, a CRM and support."
+						},
+						{
+							"title": "Online stores",
+							"description": "Orders, CRM and integrations without copying data by hand."
+						},
+						{
+							"title": "Service businesses",
+							"description": "Requests, client bookings and repeat sales in the CRM."
+						},
+						{
+							"title": "No in-house IT",
+							"description": "ITHINK becomes your IT department on a subscription."
+						}
+					]
+				},
+				"cta": {
+					"title": "Let's put together IT for your business",
+					"subtitle": "Tell us about the company and its tasks. We'll suggest where to start, with a timeline and budget."
+				}
+			},
+			"education": {
+				"meta": {
+					"title": "IT solutions for schools and universities",
+					"description": "IT infrastructure, networks and Wi-Fi, software licenses and staff training for schools, colleges and universities."
+				},
+				"hero": {
+					"title": "IT infrastructure for schools and universities",
+					"subtitle": "We build networks and Wi-Fi, set up servers and computer labs, supply licenses and train staff to work with the systems."
+				},
+				"included": {
+					"title": "What we do for schools and universities",
+					"subtitle": "ITHINK services put together for schools, colleges and universities.",
+					"items": [
+						{
+							"title": "Servers and computer labs",
+							"description": "Servers, teacher workstations and labs, user accounts and access."
+						},
+						{
+							"title": "Network and Wi-Fi",
+							"description": "Structured cabling, Wi-Fi across the building and separate networks for students and staff."
+						},
+						{
+							"title": "Software licenses",
+							"description": "Official Microsoft licenses and other software for teaching and administration."
+						},
+						{
+							"title": "Staff training",
+							"description": "We teach teachers and administrators to work with the new systems."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we work",
+					"items": [
+						{
+							"title": "Survey",
+							"description": "We study the building, the current network, equipment and what the institution needs."
+						},
+						{
+							"title": "Design",
+							"description": "We design the network and infrastructure and agree scope, timeline and budget."
+						},
+						{
+							"title": "Deployment",
+							"description": "We install the cabling and set up Wi-Fi, servers and workstations."
+						},
+						{
+							"title": "Handover and training",
+							"description": "We hand over documentation and train staff to work with the systems."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it's for",
+					"subtitle": "Educational institutions that need a stable network and clear IT support.",
+					"items": [
+						{
+							"title": "Schools",
+							"description": "Computer labs, Wi-Fi and accounts for teachers."
+						},
+						{
+							"title": "Private schools and learning centers",
+							"description": "IT up and running fast in a new building or branch."
+						},
+						{
+							"title": "Colleges and universities",
+							"description": "A network across several buildings, servers and access."
+						},
+						{
+							"title": "In-house IT teams",
+							"description": "Extra hands and expertise for large projects."
+						}
+					]
+				},
+				"cta": {
+					"title": "Let's discuss IT for your institution",
+					"subtitle": "Tell us about the building, the number of classrooms and your tasks. We'll propose a design and a work plan."
+				}
+			},
+			"enterprise": {
+				"meta": {
+					"title": "IT solutions for large companies",
+					"description": "IT infrastructure, audit, managed IT services under SLA and software development for large organizations and companies with branches."
+				},
+				"hero": {
+					"title": "Infrastructure and IT operations for large organizations",
+					"subtitle": "We audit, build infrastructure for offices and branches, take IT operations on under SLA and develop systems around your processes."
+				},
+				"included": {
+					"title": "What we take on",
+					"subtitle": "ITHINK services for organizations where IT has to run without downtime.",
+					"items": [
+						{
+							"title": "IT infrastructure",
+							"description": "Servers, networks, cloud and backup for offices and branches."
+						},
+						{
+							"title": "IT audit",
+							"description": "An assessment of infrastructure, security and processes with risk ratings and a roadmap."
+						},
+						{
+							"title": "Managed IT services",
+							"description": "24/7 monitoring, helpdesk and maintenance under SLA with monthly reports."
+						},
+						{
+							"title": "Software development",
+							"description": "Internal systems, integrations and APIs built around the company's processes."
+						}
+					]
+				},
+				"steps": {
+					"title": "How we work",
+					"items": [
+						{
+							"title": "Audit",
+							"description": "We assess infrastructure, security and processes."
+						},
+						{
+							"title": "Roadmap",
+							"description": "We propose priorities, stages and budget and agree them before work begins."
+						},
+						{
+							"title": "Staged rollout",
+							"description": "We change infrastructure and systems in stages, without stopping operations."
+						},
+						{
+							"title": "Support under SLA",
+							"description": "We take the systems on for monitoring and maintenance with monthly reports."
+						}
+					]
+				},
+				"audience": {
+					"title": "Who it's for",
+					"subtitle": "Organisations whose IT has many users, many branches and strict reliability needs.",
+					"items": [
+						{
+							"title": "Companies with branches",
+							"description": "One network and one set of access rights for every office."
+						},
+						{
+							"title": "Manufacturing and logistics",
+							"description": "Systems that have to run without downtime."
+						},
+						{
+							"title": "Financial companies",
+							"description": "Data protection and access control."
+						},
+						{
+							"title": "In-house IT departments",
+							"description": "An extra team for projects and support."
+						}
+					]
+				},
+				"cta": {
+					"title": "Let's discuss your organization's IT",
+					"subtitle": "Tell us about your scale and tasks. We'll start with an audit or a specific project."
+				}
+			}
 		}
 	}
 }
