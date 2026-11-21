@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      # package.json has no packageManager field, so the version is pinned here.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm check:messages
+      # next-env.d.ts is gitignored and written by next build, so build runs before typecheck.
+      # NEXT_PUBLIC_LEAD_ENDPOINT stays unset: next.config.ts falls back to the live origin for the CSP only.
+      - run: pnpm build
+      - run: pnpm typecheck

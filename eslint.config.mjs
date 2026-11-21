@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Local Playwright screenshots and scripts (gitignored).
     ".playwright-mcp/**",
     ".remember/**",
+    // Claude worktrees (.claude/worktrees/) are full checkouts with their own .next output.
+    ".claude/**",
   ]),
 ]);
 
