@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowRight as ArrowRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { GlassCard } from "@/components/site/glass-card"
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode
@@ -46,20 +47,19 @@ const BentoCard = ({
   index,
   ...props
 }: BentoCardProps) => (
-  <div
+  <GlassCard
     key={name}
-    className={cn(
-      "blueprint-hover group relative col-span-3 cursor-pointer flex flex-col justify-between overflow-hidden rounded-3xl border border-border bg-card transition-colors duration-300 hover:border-brand/40",
-      // light styles
-      "[box-shadow:0_1px_2px_rgba(10,16,36,.04),0_12px_32px_-12px_rgba(10,16,36,.12)]",
-      // dark styles
-      "transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff14_inset]",
-      className
-    )}
+    interactive
+    blueprint
+    className={cn("group relative col-span-3 flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl p-0", className)}
     {...props}
   >
-    <div>{background}</div>
-    <div className="relative z-10 p-6">
+    {/* No wrapper: GlassyUI makes a glass card's direct children position:relative, so a wrapper would become the
+        box the background's absolute layers size against. Unwrapped, absolute layers fill the card and in-flow
+        ones (the home illustrations) keep their height. */}
+    {background}
+    {/* mt-auto keeps the copy at the bottom when the background is only absolute layers (hire-us, solutions). */}
+    <div className="relative z-10 mt-auto p-6">
       <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
         {/* Index numeral in place of the registry's icon tile; the icon stays small beside it. */}
         <span className="mb-4 flex items-end gap-3">
@@ -98,9 +98,9 @@ const BentoCard = ({
     <Link
       href={href}
       aria-label={name}
-      className="absolute inset-0 z-20 rounded-[inherit] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      className="absolute inset-0 z-20 rounded-[inherit] focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-ring"
     />
-  </div>
+  </GlassCard>
 )
 
 export { BentoCard, BentoGrid }

@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 export type Step = { title: string; description: string; icon?: LucideIcon };
 
@@ -19,8 +20,10 @@ export function Stepper({ steps, className }: { steps: Step[]; className?: strin
 			/>
 			{steps.map((s, i) => (
 				<li key={s.title} className="reveal group relative md:text-center">
-					<span
-						className="process-node absolute -left-16 top-0 flex size-14 items-center justify-center rounded-2xl border border-border bg-linear-to-b from-card to-secondary text-brand-text shadow-sm transition-transform duration-300 group-hover:-translate-y-1 md:relative md:left-auto md:mx-auto"
+					<GlassCard
+						as="span"
+						preset="prominent"
+						className="process-node absolute -left-16 top-0 flex size-14 items-center justify-center overflow-visible rounded-2xl p-0 [contain:layout_style] text-brand-text transition-transform duration-300 group-hover:-translate-y-1 md:relative md:left-auto md:mx-auto"
 						style={{ animationDelay: `${i * 1.5}s` }}
 					>
 						{s.icon ? <s.icon className="size-6" aria-hidden="true" /> : <span className="text-lg font-semibold tabular-nums">{i + 1}</span>}
@@ -29,7 +32,7 @@ export function Stepper({ steps, className }: { steps: Step[]; className?: strin
 								{i + 1}
 							</span>
 						)}
-					</span>
+					</GlassCard>
 					<h3 className="text-lg font-semibold tracking-tight text-foreground md:mt-6">{s.title}</h3>
 					<p className="mt-2 text-sm leading-relaxed text-muted-foreground md:mx-auto md:max-w-[17rem]">{s.description}</p>
 				</li>

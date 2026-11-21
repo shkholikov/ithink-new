@@ -88,7 +88,7 @@
 [data-lg-theme] {
 	--lg-accent: #2563eb;
 	--lg-prominent-fill: #2563eb;
-	--lg-prominent-tint: grayscale(1) contrast(0) brightness(0.62) sepia(1) hue-rotate(178deg) saturate(9) brightness(1.05);
+	--lg-prominent-tint: grayscale(1) contrast(0) brightness(0.62) sepia(1) hue-rotate(178deg) saturate(9) brightness(0.9);
 	--lg-prominent-glow: 156 192 255;
 	--lg-prominent-shade: 10 30 90;
 }
@@ -131,6 +131,9 @@
 	--scene-glow-2: rgba(124, 92, 255, 0.1);
 	--scene-glow-3: rgba(249, 185, 52, 0.1);
 	--scene-grid: rgba(15, 35, 95, 0.06);
+	--body-glow-1: rgba(55, 125, 255, 0.34);
+	--body-glow-2: rgba(124, 92, 255, 0.22);
+	--body-glow-3: rgba(249, 185, 52, 0.3);
 }
 
 .dark {
@@ -145,7 +148,7 @@
 	--secondary: #0a0f1d;
 	--secondary-foreground: #edf1f8;
 	--muted: #0a0f1d;
-	--muted-foreground: #9aa5ba;
+	--muted-foreground: #a9b3c6;
 	--accent: #121a30;
 	--accent-foreground: #edf1f8;
 	--destructive: oklch(0.704 0.191 22.216);
@@ -164,6 +167,9 @@
 	--scene-glow-2: rgba(124, 92, 255, 0.18);
 	--scene-glow-3: rgba(249, 185, 52, 0.08);
 	--scene-grid: rgba(148, 170, 255, 0.07);
+	--body-glow-1: rgba(55, 125, 255, 0.28);
+	--body-glow-2: rgba(124, 92, 255, 0.18);
+	--body-glow-3: rgba(249, 185, 52, 0.1);
 }
 
 @layer base {
@@ -234,24 +240,21 @@
 /* Labels: square corners, small tracked uppercase. Used for tags, services, markets and status.
    In @layer components so hover and colour utilities can still override them. */
 @layer components {
+	/* A label, not a badge: small uppercase text with no box, border or fill. */
 	.tag {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.375rem;
-		border-radius: 6px;
-		border: 1px solid var(--border);
-		padding: 0.3rem 0.55rem;
 		font-size: 11px;
 		font-weight: 600;
 		line-height: 1.2;
-		letter-spacing: 0.06em;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--muted-foreground);
-		transition: color 0.2s, border-color 0.2s;
+		transition: color 0.2s;
 	}
 	.tag-scene {
-		border-color: color-mix(in srgb, var(--ink-foreground) 16%, transparent);
-		color: color-mix(in srgb, var(--ink-foreground) 82%, transparent);
+		color: var(--ink-muted);
 	}
 	/* A square status light in front of a label. */
 	.led {
@@ -261,27 +264,24 @@
 		background: currentColor;
 		flex: none;
 	}
-	/* Faint blueprint grid that fades in on hover (index cards). */
-	.blueprint-hover {
-		position: relative;
-		isolation: isolate;
-	}
-	.blueprint-hover::before {
-		content: "";
+	/* Faint blueprint grid that fades in on hover, as a child layer: on glass cards ::before / ::after draw the glass.
+	   z-index 1 puts it over the noise and under the content (GlassyUI lifts children to 2). */
+	.blueprint-layer {
 		position: absolute;
 		inset: 0;
-		z-index: -1;
+		z-index: 1;
 		border-radius: inherit;
+		pointer-events: none;
 		background-image:
-			linear-gradient(color-mix(in srgb, var(--color-brand) 12%, transparent) 1px, transparent 1px),
-			linear-gradient(90deg, color-mix(in srgb, var(--color-brand) 12%, transparent) 1px, transparent 1px);
+			linear-gradient(color-mix(in srgb, var(--color-brand) 14%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in srgb, var(--color-brand) 14%, transparent) 1px, transparent 1px);
 		background-size: 22px 22px;
 		mask-image: radial-gradient(120% 90% at 100% 0%, #000, transparent 70%);
 		opacity: 0;
 		transition: opacity 0.35s;
 	}
-	.blueprint-hover:hover::before,
-	.blueprint-hover:focus-visible::before {
+	.group:hover > .blueprint-layer,
+	.group:focus-visible > .blueprint-layer {
 		opacity: 1;
 	}
 }
@@ -343,6 +343,44 @@
 		radial-gradient(60% 50% at 15% 0%, var(--scene-glow-1), transparent 70%),
 		radial-gradient(45% 40% at 90% 20%, var(--scene-glow-2), transparent 70%),
 		radial-gradient(40% 35% at 70% 100%, var(--scene-glow-3), transparent 70%);
+}
+/* Soft brand glows behind body sections that hold glass cards, so the frost has colour to blur.
+   Layered over the section's own background colour (white or bg-secondary). */
+.section-glow {
+	background-image:
+		radial-gradient(34% 40% at 22% 70%, var(--body-glow-1), transparent 75%),
+		radial-gradient(30% 38% at 80% 64%, var(--body-glow-2), transparent 75%),
+		radial-gradient(26% 30% at 52% 82%, var(--body-glow-3), transparent 75%);
+}
+@media (prefers-reduced-transparency: reduce) {
+	.section-glow {
+		background-image: none;
+	}
+}
+/* Denser frost for glass that carries small text over busy content: menus, dropdowns, the form panel. */
+.glass-dense {
+	--lg-glass-alpha: 0.86;
+	--lg-overlay-surface: rgb(255 255 255 / 0.94);
+	--lg-glass-blur: 28px;
+}
+.dark .glass-dense {
+	--lg-glass-alpha: 0.05;
+	--lg-overlay-surface: rgb(28 28 30 / 0.88);
+	--lg-glass-brightness: 0.32;
+	--lg-glass-blur: 28px;
+}
+/* Option lists float over the form, and a frosted blue button behind one reads like a highlighted option:
+   the list's frost layer gets a near-solid fill. */
+.lg-select-content.glass-dense::before {
+	background-color: rgb(255 255 255 / 0.94);
+}
+.dark .lg-select-content.glass-dense::before {
+	background-color: rgb(28 28 30 / 0.92);
+}
+/* GlassyUI fades placeholders to about 3.8:1; the site keeps them at the muted token. */
+.lg-input::placeholder {
+	color: var(--muted-foreground);
+	opacity: 1;
 }
 .ink-grid {
 	background-image:

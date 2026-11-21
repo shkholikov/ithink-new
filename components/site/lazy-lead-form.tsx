@@ -33,7 +33,8 @@ export function LazyLeadForm(props: ComponentProps<typeof LeadFormType>) {
 	}, []);
 
 	return (
-		<div ref={ref} className="min-h-[540px]">
+		// The height is held only until the form mounts; kept after, it left an empty band under shorter forms.
+		<div ref={ref} className={show ? undefined : "min-h-[560px]"}>
 			{show && <LeadForm {...props} />}
 		</div>
 	);

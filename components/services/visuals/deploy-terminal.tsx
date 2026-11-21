@@ -32,7 +32,7 @@ export function DeployTerminal({ labels }: { labels: { done: string } }) {
 				<AnimatedSpan className={ok}>✔ bot  Telegram Mini App</AnimatedSpan>
 				<AnimatedSpan className="min-h-5 font-semibold text-brand-text">{labels.done}</AnimatedSpan>
 			</Terminal>
-			<div className="flex flex-wrap gap-2 border-t border-ink-foreground/10 bg-ink-foreground/5 px-4 py-3">
+			<div className="flex flex-wrap gap-x-4 gap-y-2 border-t border-ink-foreground/10 bg-ink-foreground/5 px-4 py-3">
 				{STACK.map((s) => (
 					<span key={s} className="tag tag-scene">
 						{s}

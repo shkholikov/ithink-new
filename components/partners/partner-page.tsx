@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { ArrowUpRight, Check, GraduationCap, Plug, Plus, Search, Settings2 } from "lucide-react";
+import { ArrowUpRight, Check, GraduationCap, Plug, Search, Settings2 } from "lucide-react";
 import { GlassPanel } from "@/components/glassyui/glass-panel";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { PageHero } from "@/components/site/page-hero";
 import { Section, SectionHeading } from "@/components/site/section";
+import { FaqList } from "@/components/site/faq-list";
 import { Cta, CtaRow } from "@/components/site/cta";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { CtaSection } from "@/components/site/cta-section";
 import { PARTNER_SLUGS, type PartnerSlug } from "@/lib/site-nav";
 import { PartnerMark } from "@/components/partners/partner-mark";
 import { PARTNER_LEAD_SERVICE, PARTNER_LINKS, PARTNER_LOGOS } from "@/components/partners/partner-meta";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Item = { title: string; description: string };
 type Faq = { q: string; a: string };
@@ -62,10 +64,10 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 							<h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-text">{t("forWhom.title")}</h3>
 							<ul className="space-y-3">
 								{forWhom.map((item) => (
-									<li key={item.title} className="rounded-3xl border border-border bg-card p-6">
+									<GlassCard as="li" key={item.title} className="rounded-3xl p-6">
 										<p className="font-semibold text-foreground">{item.title}</p>
 										<p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-									</li>
+									</GlassCard>
 								))}
 							</ul>
 						</div>
@@ -101,10 +103,10 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 					<SectionHeading eyebrow={common("integrations")} title={t("integrations.title")} />
 					<div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
 						{groups.map((group) => (
-							<div key={group.title} className="reveal rounded-3xl border border-border bg-card p-6 sm:p-8">
+							<GlassCard key={group.title} className="reveal rounded-3xl p-6 sm:p-8">
 								<h3 className="mb-5 text-lg font-semibold tracking-tight text-foreground">{group.title}</h3>
 								<CheckList items={group.items} plain />
-							</div>
+							</GlassCard>
 						))}
 					</div>
 				</Section>
@@ -119,17 +121,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 				<Section tone={tone}>
 					<div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
 						<SectionHeading eyebrow={name} title={common("faq")} className="lg:sticky lg:top-28 lg:self-start" />
-						<div className="reveal divide-y divide-border rounded-3xl border border-border bg-card">
-							{faq.map((item) => (
-								<details key={item.q} className="group px-6 [&_summary::-webkit-details-marker]:hidden">
-									<summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-medium text-foreground">
-										{item.q}
-										<Plus className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-45" aria-hidden="true" />
-									</summary>
-									<p className="-mt-1 pb-5 leading-relaxed text-muted-foreground">{item.a}</p>
-								</details>
-							))}
-						</div>
+						<FaqList items={faq} />
 					</div>
 				</Section>
 			)
@@ -144,10 +136,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 				<ul className="reveal grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
 					{others.map((p) => (
 						<li key={p.slug}>
-							<Link
-								href={`/${locale}/partners/${p.slug}`}
-								className="group flex h-full flex-col rounded-2xl border border-border bg-card p-4 transition-colors hover:border-brand/40"
-							>
+							<GlassCard as={Link} href={`/${locale}/partners/${p.slug}`} interactive className="group flex h-full flex-col rounded-2xl p-4">
 								<span className="flex items-center justify-between gap-2 text-sm font-semibold text-foreground">
 									<span className="inline-flex items-center gap-2">
 										<PartnerMark slug={p.slug} name="" className="size-7 rounded-lg" />
@@ -159,7 +148,7 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 									/>
 								</span>
 								<span className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{p.description}</span>
-							</Link>
+							</GlassCard>
 						</li>
 					))}
 				</ul>
@@ -221,12 +210,12 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 						)}
 						{logo && <p className="mt-4 text-sm text-ink-muted">{t("category")}</p>}
 						{stats.length > 0 && (
-							<dl className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-ink-foreground/10 bg-ink-foreground/10">
+							<dl className="mt-6 grid grid-cols-3 gap-1">
 								{stats.map((s) => {
 									const [, num, suffix] = /^(\d+)(.*)$/.exec(s.value) ?? [];
 									const value = Number(num);
 									return (
-										<div key={s.label} className="flex flex-col gap-1 bg-ink/80 p-3 sm:p-4">
+										<GlassCard key={s.label} preset="subtle" noise={false} className="flex flex-col gap-1 rounded-2xl p-2.5 sm:p-3.5">
 											<dt className="order-2 text-xs leading-snug text-ink-muted">{s.label}</dt>
 											<dd className="order-1 text-2xl font-semibold tracking-tight text-ink-foreground sm:text-3xl">
 												{num ? (
@@ -236,12 +225,12 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 												)}
 												<span className="text-ink-accent">{suffix}</span>
 											</dd>
-										</div>
+										</GlassCard>
 									);
 								})}
 							</dl>
 						)}
-						<ul className="mt-6 flex flex-wrap gap-2">
+						<ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
 							{tags.map((tag) => (
 								<li key={tag} className="tag tag-scene">
 									{tag}
@@ -268,17 +257,25 @@ export async function PartnerPage({ locale, slug }: { locale: string; slug: Part
 function CheckList({ items, className, plain = false }: { items: string[]; className?: string; plain?: boolean }) {
 	return (
 		<ul className={plain ? "space-y-3" : `grid grid-cols-1 gap-3 ${className ?? ""}`}>
-			{items.map((item) => (
-				<li
-					key={item}
-					className={plain ? "flex items-start gap-3 text-sm leading-relaxed text-foreground" : "reveal flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-foreground"}
-				>
-					<span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brand/10">
-						<Check className="size-3.5 text-brand-text" aria-hidden="true" />
-					</span>
-					{item}
-				</li>
-			))}
+			{items.map((item) => {
+				const content = (
+					<>
+						<span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brand/10">
+							<Check className="size-3.5 text-brand-text" aria-hidden="true" />
+						</span>
+						<span>{item}</span>
+					</>
+				);
+				return plain ? (
+					<li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-foreground">
+						{content}
+					</li>
+				) : (
+					<GlassCard as="li" key={item} className="reveal flex items-start gap-3 rounded-2xl p-4 text-foreground">
+						{content}
+					</GlassCard>
+				);
+			})}
 		</ul>
 	);
 }

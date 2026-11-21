@@ -9,12 +9,15 @@ type Tone = "default" | "muted" | "ink";
 export function Section({
 	id,
 	tone = "default",
+	glow = true,
 	className,
 	containerClassName,
 	children
 }: {
 	id?: string;
 	tone?: Tone;
+	/** Soft brand glows behind the content, so glass cards have colour to blur. On by default; `ink` has its own. */
+	glow?: boolean;
 	className?: string;
 	containerClassName?: string;
 	children: React.ReactNode;
@@ -25,6 +28,7 @@ export function Section({
 			className={cn(
 				"relative scroll-mt-24 py-20 sm:py-28",
 				tone === "muted" && "bg-secondary",
+				glow && tone !== "ink" && "section-glow",
 				tone === "ink" && "ink-scene overflow-hidden text-ink-foreground",
 				className
 			)}

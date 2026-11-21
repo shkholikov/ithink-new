@@ -2,13 +2,14 @@ import { Check, CreditCard, FileText, MessageCircle, Send, ShoppingCart, Users, 
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 import type { TileVisual } from "./config";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 /** Small CSS-only illustrations for the wide bento tiles. No text beyond product names already in the copy. */
 export function FeatureVisual({ kind }: { kind: TileVisual }) {
 	return (
-		<div aria-hidden="true" className="relative flex h-40 items-center overflow-hidden rounded-2xl border border-border bg-secondary/70 p-4">
+		<GlassCard preset="subtle" aria-hidden="true" className="relative flex h-40 items-center overflow-hidden rounded-2xl p-4">
 			{VISUALS[kind]()}
-		</div>
+		</GlassCard>
 	);
 }
 
@@ -183,7 +184,7 @@ const VISUALS: Record<TileVisual, () => React.ReactNode> = {
 
 function Chip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
 	return (
-		<span className="tag bg-card text-foreground">
+		<span className="tag text-foreground">
 			{icon}
 			{children}
 		</span>

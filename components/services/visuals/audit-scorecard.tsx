@@ -6,13 +6,14 @@ import { AlertTriangle, ScanSearch } from "lucide-react";
 import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar";
 import { VisualFrame, VisualHeader } from "./frame";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Labels = { title: string; example: string; areas: string[]; findings: { text: string; risk: string }[] };
 
 // Illustrative scores for a sample report, labelled as such in the header. Not client data.
 const SCORES = [82, 54, 38, 71];
 const COLORS = ["#377dff", "#f9b934", "var(--destructive)", "#377dff"];
-const RISK = ["border-destructive/40 text-destructive", "border-accent-yellow/50 text-accent-yellow-text"];
+const RISK = ["text-destructive", "text-accent-yellow-text"];
 
 /** IT audit: Magic UI progress rings per area fill once the card is on screen, then two sample findings. */
 export function AuditScorecard({ labels }: { labels: Labels }) {
@@ -37,11 +38,11 @@ export function AuditScorecard({ labels }: { labels: Labels }) {
 			</div>
 			<ul className="mt-6 space-y-2.5">
 				{labels.findings.map((f, i) => (
-					<li key={f.text} className="flex items-center gap-3 rounded-xl border border-ink-foreground/10 bg-ink-foreground/5 px-3 py-2.5">
+					<GlassCard as="li" key={f.text} preset="subtle" className="flex items-center gap-3 rounded-xl px-3 py-2.5">
 						<AlertTriangle className={cn("size-4 shrink-0", i === 0 ? "text-destructive" : "text-accent-yellow-text")} />
 						<span className="min-w-0 flex-1 text-sm leading-snug">{f.text}</span>
 						<span className={cn("tag shrink-0", RISK[i % RISK.length])}>{f.risk}</span>
-					</li>
+					</GlassCard>
 				))}
 			</ul>
 		</VisualFrame>

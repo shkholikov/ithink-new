@@ -1,7 +1,7 @@
-import { MagicCard } from "@/components/ui/magic-card";
 import type { TileVisual } from "./config";
 import { FeatureVisual } from "./feature-visuals";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 export type BentoFeature = { title: string; description: string; visual?: TileVisual };
 
@@ -13,13 +13,7 @@ export function FeatureBento({ items }: { items: BentoFeature[] }) {
 	return (
 		<div className="grid grid-flow-dense grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{items.map((f, i) => (
-				<MagicCard
-					key={f.title}
-					className={cn("reveal group rounded-3xl", f.visual && "sm:col-span-2")}
-					gradientColor="rgba(55,125,255,0.10)"
-					gradientFrom="#377dff"
-					gradientTo="#f9b934"
-				>
+				<GlassCard key={f.title} interactive blueprint className={cn("reveal group rounded-3xl p-0", f.visual && "sm:col-span-2")}>
 					<div className={cn("relative flex h-full flex-col gap-6 p-6 sm:p-7", f.visual && "xl:grid xl:grid-cols-[1fr_1.05fr] xl:items-center")}>
 						<div>
 							<span className="mb-6 block text-4xl font-light leading-none tracking-tight text-muted-foreground/60 tabular-nums transition-colors group-hover:text-brand-text">
@@ -30,7 +24,7 @@ export function FeatureBento({ items }: { items: BentoFeature[] }) {
 						</div>
 						{f.visual && <FeatureVisual kind={f.visual} />}
 					</div>
-				</MagicCard>
+				</GlassCard>
 			))}
 		</div>
 	);

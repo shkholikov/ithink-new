@@ -33,7 +33,7 @@ export function PageHero({
 			<div aria-hidden="true" className="ink-grid pointer-events-none absolute inset-0" />
 			<div
 				className={cn(
-					"relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-32 sm:px-6 sm:pb-24 sm:pt-40 lg:px-8",
+					"relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 pb-16 pt-32 sm:px-6 sm:pb-24 sm:pt-40 lg:px-8",
 					aside && "lg:grid-cols-[1.15fr_1fr]"
 				)}
 			>

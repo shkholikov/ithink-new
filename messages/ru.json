@@ -1435,7 +1435,10 @@
 			"software-licenses": "Лицензии на ПО",
 			"corporate-training": "Корпоративное обучение",
 			"other": "Другое"
-		}
+		},
+		"closeToast": "Закрыть уведомление",
+		"telegramAlt": "Напишите нашему Telegram-боту @ithinkuzbot",
+		"toastLabel": "Уведомление"
 	},
 	"home": {
 		"meta": {

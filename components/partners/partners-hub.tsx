@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, BadgeCheck, GraduationCap, LifeBuoy, Rocket, Settings2 } from "lucide-react";
 import { GlassPanel } from "@/components/glassyui/glass-panel";
-import { MagicCard } from "@/components/ui/magic-card";
 import { PageHero } from "@/components/site/page-hero";
 import { Section, SectionHeading } from "@/components/site/section";
 import { Cta, CtaRow } from "@/components/site/cta";
@@ -10,6 +9,7 @@ import { FeatureGrid } from "@/components/site/feature-grid";
 import { CrmBeam } from "@/components/home/crm-beam";
 import { PARTNER_SLUGS, type PartnerSlug } from "@/lib/site-nav";
 import { PartnerMark } from "@/components/partners/partner-mark";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Item = { title: string; description: string };
 
@@ -53,16 +53,19 @@ export async function PartnersHero({ locale }: { locale: string }) {
 					<ul className="grid grid-cols-2 gap-2.5">
 						{list.map((p) => (
 							<li key={p.slug}>
-								<Link
+								<GlassCard
+									as={Link}
 									href={`/${locale}/partners/${p.slug}`}
-									className="flex h-full flex-col gap-3 rounded-2xl border border-ink-foreground/10 bg-ink-foreground/5 p-4 transition-colors hover:bg-ink-foreground/10"
+									preset="subtle"
+									interactive
+									className="flex h-full flex-col gap-3 rounded-2xl p-4"
 								>
 									<PartnerMark slug={p.slug} name="" className="size-10" />
 									<span>
 										<span className="block text-sm font-semibold text-ink-foreground">{p.name}</span>
 										<span className="block text-xs text-ink-muted">{p.category}</span>
 									</span>
-								</Link>
+								</GlassCard>
 							</li>
 						))}
 					</ul>
@@ -83,24 +86,28 @@ export async function PartnersList({ locale }: { locale: string }) {
 			<ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{list.map((p) => (
 					<li key={p.slug} className="reveal">
-						<MagicCard className="h-full rounded-3xl" gradientColor="rgba(55,125,255,0.10)" gradientFrom="#377dff" gradientTo="#f9b934">
-							<Link href={`/${locale}/partners/${p.slug}`} className="group relative flex h-full flex-col p-6 sm:p-7">
-								<span className="flex items-start justify-between gap-3">
-									<PartnerMark slug={p.slug} name="" className="size-12" />
-									<span className="tag">
-										<BadgeCheck className="size-3.5 text-brand-text" aria-hidden="true" />
-										{partners("officialPartner")}
-									</span>
+						<GlassCard
+							as={Link}
+							href={`/${locale}/partners/${p.slug}`}
+							interactive
+							blueprint
+							className="group relative flex h-full flex-col rounded-3xl p-6 sm:p-7"
+						>
+							<span className="flex items-start justify-between gap-3">
+								<PartnerMark slug={p.slug} name="" className="size-12" />
+								<span className="tag">
+									<BadgeCheck className="size-3.5 text-brand-text" aria-hidden="true" />
+									{partners("officialPartner")}
 								</span>
-								<span className="mt-5 text-xs font-semibold uppercase tracking-wider text-brand-text">{p.category}</span>
-								<span className="mt-2 text-lg font-semibold tracking-tight text-foreground">{p.name}</span>
-								<span className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</span>
-								<span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-brand-text">
-									{t("more")}
-									<ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-								</span>
-							</Link>
-						</MagicCard>
+							</span>
+							<span className="mt-5 text-xs font-semibold uppercase tracking-wider text-brand-text">{p.category}</span>
+							<span className="mt-2 text-lg font-semibold tracking-tight text-foreground">{p.name}</span>
+							<span className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</span>
+							<span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-brand-text">
+								{t("more")}
+								<ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+							</span>
+						</GlassCard>
 					</li>
 				))}
 			</ul>
@@ -140,22 +147,22 @@ export async function PartnersStory({ locale }: { locale: string }) {
 					<SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} className="mb-8 sm:mb-10" />
 					<ul className="reveal space-y-3">
 						{STORY_ROWS.map((row) => (
-							<li key={row.key} className="rounded-2xl border border-border bg-card p-4">
+							<GlassCard as="li" key={row.key} className="rounded-2xl p-4">
 								<p className="text-xs font-semibold uppercase tracking-wider text-brand-text">{t(`${row.key}.label`)}</p>
 								<p className="mt-1.5 text-sm leading-relaxed text-foreground">{t(`${row.key}.text`)}</p>
-								<p className="mt-3 flex flex-wrap gap-2">
+								<p className="mt-3 flex flex-wrap gap-x-4 gap-y-3">
 									{row.slugs.map((slug) => (
 										<Link
 											key={slug}
 											href={`/${locale}/partners/${slug}`}
-											className="tag hover:border-brand/50 hover:text-brand-text"
+											className="tag -my-1.5 py-1.5 hover:text-brand-text"
 										>
 											{pages(`${slug}.name`)}
 											<ArrowRight className="size-3" aria-hidden="true" />
 										</Link>
 									))}
 								</p>
-							</li>
+							</GlassCard>
 						))}
 					</ul>
 				</div>

@@ -5,6 +5,8 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { initials, type CompactCase } from "@/components/customers/cases";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
+import { GlassButton } from "@/components/glassyui/glass-button";
 
 type Labels = { all: string; filter: string; services: string; more: string; challenge: string; solution: string; result: string };
 
@@ -28,25 +30,25 @@ export function ClientGrid({ clients, labels }: { clients: CompactCase[]; labels
 				{options.map((o) => {
 					const active = industry === o.value;
 					return (
-						<button
+						<GlassButton
 							key={o.label}
 							type="button"
+							variant={active ? "prominent" : "primary"}
+							size="sm"
+							lens={false}
 							aria-pressed={active}
 							onClick={() => setIndustry(o.value)}
-							className={cn(
-								"inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-								active ? "border-brand-dark bg-brand-dark text-white" : "border-border bg-card text-foreground hover:border-brand/40"
-							)}
+							className="gap-2 rounded-xl"
 						>
 							{o.label}
 							<span className={cn("text-xs tabular-nums", active ? "text-white/80" : "text-muted-foreground")}>{o.count}</span>
-						</button>
+						</GlassButton>
 					);
 				})}
 			</div>
 			<ul className="grid grid-cols-1 items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{shown.map((c) => (
-					<li key={c.key} id={`case-${c.key}`} className="flex scroll-mt-24 flex-col rounded-3xl border border-border bg-card p-6 transition-colors hover:border-brand/30">
+					<GlassCard as="li" key={c.key} id={`case-${c.key}`} interactive className="flex scroll-mt-24 flex-col rounded-3xl p-6">
 						<div className="flex items-center gap-4">
 							<span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-base font-semibold text-brand-text">
 								{initials(c.name)}
@@ -59,12 +61,12 @@ export function ClientGrid({ clients, labels }: { clients: CompactCase[]; labels
 						<p className="mt-5 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
 						<div className="mt-5">
 							<p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{labels.services}</p>
-							<ul className="mt-3 flex flex-wrap gap-1.5">
+							<ul className="mt-3 flex flex-wrap gap-x-4 gap-y-3">
 								{c.services.map((s) => (
 									<li key={s.label}>
 										<Link
 											href={s.href}
-											className="tag hover:border-brand/50 hover:text-brand-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+											className="tag -my-1.5 py-1.5 hover:text-brand-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
 										>
 											{s.label}
 										</Link>
@@ -73,7 +75,7 @@ export function ClientGrid({ clients, labels }: { clients: CompactCase[]; labels
 							</ul>
 						</div>
 						<details className="group mt-5 border-t border-border pt-4">
-							<summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-xl text-sm font-semibold text-brand-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand [&::-webkit-details-marker]:hidden">
+							<summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-lg py-2 text-sm font-semibold text-brand-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand [&::-webkit-details-marker]:hidden">
 								{labels.more}
 								<ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
 							</summary>
@@ -101,7 +103,7 @@ export function ClientGrid({ clients, labels }: { clients: CompactCase[]; labels
 								))}
 							</dl>
 						</details>
-					</li>
+					</GlassCard>
 				))}
 			</ul>
 		</>

@@ -3,12 +3,13 @@ import { Mail, Phone, Send } from "lucide-react";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { LazyLeadForm } from "@/components/site/lazy-lead-form";
 import { Section, Eyebrow } from "@/components/site/section";
+import { GlassCard } from "@/components/site/glass-card";
 import { CONTACT } from "@/lib/contact";
 import type { LeadService } from "@/lib/lead";
 
 /**
  * The closing call to action used by the homepage and every inner page: copy and direct channels
- * on the left, the lead form in a border-beam panel on the right.
+ * on the left, the lead form on a glass panel with a border beam on the right.
  */
 export async function CtaSection({
 	locale,
@@ -52,23 +53,27 @@ export async function CtaSection({
 					<ul className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
 						{channels.map((c) => (
 							<li key={c.href}>
-								<a
+								<GlassCard
+									as="a"
 									href={c.href}
 									target={c.href.startsWith("http") ? "_blank" : undefined}
 									rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-									className="inline-flex items-center gap-2 rounded-xl border border-ink-foreground/12 bg-ink-foreground/5 px-4 py-2.5 text-sm text-ink-foreground transition-colors hover:bg-ink-foreground/10"
+									preset="subtle"
+									interactive
+									className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-ink-foreground"
 								>
 									<c.icon className="size-4" aria-hidden="true" />
-									{c.label}
-								</a>
+									{/* In an element: a bare text node paints under the glass frost and blurs. */}
+									<span>{c.label}</span>
+								</GlassCard>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className="relative overflow-hidden rounded-3xl border border-ink-foreground/10 bg-card p-6 text-foreground shadow-2xl sm:p-8">
+				<GlassCard preset="prominent" className="glass-dense rounded-3xl p-6 text-foreground sm:p-8">
 					<LazyLeadForm pageTag={pageTag} service={service} />
 					<BorderBeam size={260} duration={10} colorFrom="#377dff" colorTo="#f9b934" borderWidth={2} />
-				</div>
+				</GlassCard>
 			</div>
 		</Section>
 	);

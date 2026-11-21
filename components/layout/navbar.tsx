@@ -9,15 +9,17 @@ import { Cta } from "@/components/site/cta";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleSwitch } from "@/components/layout/locale-switch";
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { BlurOnNavigate } from "@/components/layout/blur-on-navigate";
 import { cn } from "@/lib/utils";
 import { BorderBeamTrain } from "@/components/ui/border-beam-train";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Item = { href: string; title: string; description?: string; icon?: LucideIcon };
 
 /**
  * Server-rendered navbar. Desktop dropdowns open on hover and keyboard focus with CSS only;
  * the client islands are the theme toggle, the locale switch and the mobile menu's close-on-navigate.
- * The bar is a dark glass pill in both themes, so it reads the same over the navy heroes and the light body.
+ * The bar, dropdowns and mobile menu are GlassyUI glass that follows the theme.
  */
 export default async function Navbar({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "nav" });
@@ -49,9 +51,13 @@ export default async function Navbar({ locale }: { locale: string }) {
 			>
 				{t("skip")}
 			</a>
-			<div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-3xl border border-ink-foreground/10 bg-ink/70 pl-6 pr-2.5 shadow-[0_8px_40px_rgba(2,6,23,0.35)] backdrop-blur-xl">
+			<div className="relative isolate mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-3xl pl-6 pr-2.5">
+				{/* The glass is a layer behind the bar, not the bar itself: glass clips its children, and the
+				    dropdowns and mobile menu hang below the bar. */}
+				<GlassCard aria-hidden="true" preset="prominent" className="pointer-events-none absolute inset-0 -z-10 rounded-3xl p-0" />
 				{/* Magic UI border beam as a train of 28 px squares, so the trail bends round the bar's ends. */}
 				<BorderBeamTrain duration={10} />
+				<BlurOnNavigate />
 				<Link href={`/${locale}`} aria-label={t("home")} className="shrink-0">
 					<Image src="/logo.png" alt="ITHINK" width={1372} height={440} priority sizes="96px" className="h-7 w-auto dark:hidden" />
 					<Image src="/logo-negative.png" alt="ITHINK" width={1372} height={440} loading="eager" fetchPriority="low" sizes="96px" className="h-7 w-auto hidden dark:block" />
@@ -134,8 +140,13 @@ export default async function Navbar({ locale }: { locale: string }) {
 
 /** Opens on hover and on focus-within, so it works with the keyboard and without JavaScript. */
 function Dropdown({ label, wide = false, children }: { label: string; wide?: boolean; children: React.ReactNode }) {
+	// Wide panels are not anchored to their trigger but centred under the whole bar (the nearest
+	// positioned ancestor): centred on "Services", a 760 px panel ran off the left edge below 1290 px.
+	// The panel itself never fades: an ancestor below opacity 1 cuts the glass off from the page
+	// behind it, so the frost (in dark mode, the whole fill) stayed blank until the fade ended,
+	// for up to a second in Safari. It slides in at full opacity; only its contents fade.
 	return (
-		<div className="group/dd relative">
+		<div className={cn("group/dd", !wide && "relative")}>
 			<button
 				type="button"
 				aria-haspopup="true"
@@ -146,14 +157,14 @@ function Dropdown({ label, wide = false, children }: { label: string; wide?: boo
 			</button>
 			<div
 				className={cn(
-					"invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200",
-					"group-hover/dd:visible group-hover/dd:opacity-100 group-focus-within/dd:visible group-focus-within/dd:opacity-100",
-					wide ? "w-[760px]" : "w-80"
+					"invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-3 transition-[visibility,translate] duration-200",
+					"group-hover/dd:visible group-hover/dd:translate-y-0 group-focus-within/dd:visible group-focus-within/dd:translate-y-0",
+					wide ? "w-[min(760px,calc(100vw-2rem))]" : "w-80"
 				)}
 			>
-				<div className="rounded-2xl border border-border bg-popover p-4 text-popover-foreground shadow-[0_24px_60px_rgba(2,6,23,0.25)]">
-					{children}
-				</div>
+				<GlassCard preset="prominent" className="glass-dense rounded-2xl p-4 text-foreground">
+					<div className="opacity-0 transition-opacity duration-200 group-hover/dd:opacity-100 group-focus-within/dd:opacity-100">{children}</div>
+				</GlassCard>
 			</div>
 		</div>
 	);
@@ -163,7 +174,7 @@ function ItemGrid({ items }: { items: Item[] }) {
 	return (
 		<div className="grid grid-cols-2 gap-1">
 			{items.map((i) => (
-				<Link key={i.href} href={i.href} className="flex gap-3 rounded-xl p-3 transition-colors hover:bg-accent">
+				<Link key={i.href} href={i.href} className="flex gap-3 rounded-xl p-3 transition-colors hover:bg-foreground/5">
 					{i.icon && (
 						<span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand-text">
 							<i.icon className="size-[18px]" aria-hidden="true" />
@@ -183,7 +194,7 @@ function ItemList({ items }: { items: Item[] }) {
 	return (
 		<div className="flex flex-col gap-1">
 			{items.map((i) => (
-				<Link key={i.href} href={i.href} className="group/item flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-accent">
+				<Link key={i.href} href={i.href} className="group/item flex items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-foreground/5">
 					{i.icon && <i.icon className="size-4 shrink-0 text-brand-text" aria-hidden="true" />}
 					<span className="text-sm font-medium text-foreground">{i.title}</span>
 					<ArrowRight

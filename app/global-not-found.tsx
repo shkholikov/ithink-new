@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Inter } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import messages from "@/messages/ru.json";
 import "./globals.css";
+import "@/components/glassyui/styles/liquid.css";
+import { Cta } from "@/components/site/cta";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -28,27 +29,23 @@ export const metadata: Metadata = {
  *
  * The root layout lives under `[locale]` so <html lang> can follow the URL, so
  * this page has no layout above it and brings its own document, styles and
- * font (see next.config.ts `globalNotFound`).
+ * font (see next.config.ts `globalNotFound`). No theme provider runs here, so
+ * the page is light and says so to the glass tokens itself.
  */
 export default function GlobalNotFound() {
 	const t = messages.notFound;
 	const home = `/${routing.defaultLocale}`;
 
 	return (
-		<html lang="ru" className={`${inter.variable} h-full`}>
+		<html lang="ru" className={`${inter.variable} h-full`} data-lg-theme="light">
 			<body className="min-h-full flex flex-col bg-background text-foreground antialiased">
 				<div className="min-h-[70vh] flex flex-col items-center justify-center gap-4 px-4 text-center">
-					<span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium bg-[#377dff]/10 border border-[#377dff]/20 text-brand-text">
-						{t.badge}
-					</span>
+					<span className="tag">{t.badge}</span>
 					<h1 className="text-4xl sm:text-5xl font-bold text-foreground">{t.title}</h1>
 					<p className="text-base text-muted-foreground max-w-xl">{t.subtitle}</p>
-					<Link
-						href={home}
-						className="mt-2 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#2563eb] hover:bg-[#1d4fd8] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02]"
-					>
+					<Cta href={home} arrow className="mt-2">
 						{t.home}
-					</Link>
+					</Cta>
 				</div>
 			</body>
 		</html>

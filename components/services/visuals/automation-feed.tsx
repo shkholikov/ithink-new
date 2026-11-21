@@ -25,7 +25,7 @@ export function AutomationFeed({ labels }: { labels: Labels }) {
 									<span className="block truncate text-sm font-medium">{e.title}</span>
 									<span className="block truncate text-xs text-ink-muted">{e.source}</span>
 								</span>
-								<span className="tag hidden border-accent-yellow/50 text-accent-yellow-text sm:inline-flex">
+								<span className="tag hidden text-accent-yellow-text sm:inline-flex">
 									<Zap className="size-3" />
 									{labels.auto}
 								</span>

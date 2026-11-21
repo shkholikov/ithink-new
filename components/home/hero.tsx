@@ -4,6 +4,7 @@ import { GlassPanel } from "@/components/glassyui/glass-panel";
 import { StatusTable } from "@/components/services/visuals/frame";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { Cta, CtaRow } from "@/components/site/cta";
+import { GlassCard } from "@/components/site/glass-card";
 
 /**
  * Home hero on the ink backdrop. The heading block uses the CSS `appear` entrance, so the LCP text
@@ -87,7 +88,7 @@ function HeroVisual({ labels }: { labels: VisualLabels }) {
 				</div>
 				<div className="mt-5 grid grid-cols-3 gap-2.5">
 					{labels.stages.map((stage, i) => (
-						<div key={stage} className="rounded-2xl border border-ink-foreground/10 bg-ink-foreground/5 p-3">
+						<GlassCard key={stage} preset="subtle" className="rounded-2xl p-3">
 							<p className="truncate text-[11px] text-ink-foreground/60">{stage}</p>
 							<p className="mt-1 text-xl font-semibold tabular-nums">{counts[i]}</p>
 							<div className="mt-3 space-y-1.5">
@@ -95,10 +96,10 @@ function HeroVisual({ labels }: { labels: VisualLabels }) {
 									<div key={j} className="h-1.5 rounded-full bg-ink-foreground/15" style={{ width: `${90 - j * 22}%` }} />
 								))}
 							</div>
-						</div>
+						</GlassCard>
 					))}
 				</div>
-				<div className="mt-4 flex items-center gap-3 rounded-2xl border border-ink-foreground/10 bg-ink-foreground/[0.06] p-3">
+				<GlassCard preset="subtle" className="mt-4 flex items-center gap-3 rounded-2xl p-3">
 					<span className="flex size-9 items-center justify-center rounded-xl bg-[#377dff]/25">
 						<Send className="size-4 text-ink-accent" />
 					</span>
@@ -107,7 +108,7 @@ function HeroVisual({ labels }: { labels: VisualLabels }) {
 						<p className="truncate text-xs text-ink-foreground/60">{labels.source}</p>
 					</div>
 					<span className="led ml-auto animate-pulse text-accent-yellow" />
-				</div>
+				</GlassCard>
 			</GlassPanel>
 
 			<GlassPanel preset="standard" className="relative -mt-6 ml-auto w-[78%] rounded-3xl p-4 sm:-mt-8 sm:w-[70%] lg:-mr-6">

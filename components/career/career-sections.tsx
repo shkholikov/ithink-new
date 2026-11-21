@@ -4,6 +4,7 @@ import { Section, SectionHeading } from "@/components/site/section";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { Cta, CtaRow } from "@/components/site/cta";
 import { CONTACT } from "@/lib/contact";
+import { GlassCard } from "@/components/site/glass-card";
 
 /** mailto with the localized subject ("Резюме", "CV", "Rezyume") filled in. */
 export function cvMailto(subject: string) {
@@ -70,11 +71,11 @@ export async function ApplySection({ locale }: { locale: string }) {
 			<SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 			<ol className="grid grid-cols-1 gap-4 lg:grid-cols-3">
 				{steps.map((s, i) => (
-					<li key={s.title} className="reveal rounded-3xl border border-border bg-card p-6 sm:p-7">
+					<GlassCard as="li" key={s.title} className="reveal rounded-3xl p-6 sm:p-7">
 						<span className="text-sm font-semibold tabular-nums text-brand-text">{String(i + 1).padStart(2, "0")}</span>
 						<h3 className="mt-3 text-lg font-semibold tracking-tight text-foreground">{s.title}</h3>
 						<p className="mt-2 break-words text-sm leading-relaxed text-muted-foreground">{s.description}</p>
-					</li>
+					</GlassCard>
 				))}
 			</ol>
 		</Section>
