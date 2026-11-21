@@ -6,6 +6,7 @@ import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { SERVICE_SLUGS } from "@/lib/services";
 import { LICENSE_SLUGS, SOLUTION_SLUGS, TRAINING_SLUGS } from "@/lib/site-nav";
 import { CONTACT } from "@/lib/contact";
+import { GlassCard } from "@/components/site/glass-card";
 
 export default async function Footer({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "footer" });
@@ -61,9 +62,9 @@ export default async function Footer({ locale }: { locale: string }) {
 										rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
 										className="inline-flex items-center gap-3 text-sm text-ink-foreground/85 transition-colors hover:text-ink-foreground"
 									>
-										<span className="flex size-9 items-center justify-center rounded-xl border border-ink-foreground/10 bg-ink-foreground/5">
+										<GlassCard as="span" preset="subtle" className="flex size-9 items-center justify-center rounded-xl p-0 text-current">
 											<c.icon className="size-4" aria-hidden="true" />
-										</span>
+										</GlassCard>
 										{c.label}
 									</a>
 								</li>

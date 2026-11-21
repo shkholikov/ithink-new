@@ -44,7 +44,7 @@ export function MonitoringBoard({ labels }: { labels: Labels }) {
 						<div key={item} className="flex items-center gap-3 rounded-xl border border-ink-foreground/10 bg-ink-foreground/5 px-3 py-2.5">
 							<CheckCircle2 className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
 							<span className="min-w-0 flex-1 truncate text-sm">{item}</span>
-							<span className="tag shrink-0 border-emerald-500/40 text-emerald-700 dark:text-emerald-400">{labels.resolved}</span>
+							<span className="tag shrink-0 text-emerald-700 dark:text-emerald-400">{labels.resolved}</span>
 						</div>
 					))}
 				</LiveFeed>

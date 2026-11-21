@@ -3,6 +3,7 @@ import { Compass, Eye, Handshake, MessagesSquare, Scale, ShieldCheck, Target, Us
 import { Section, SectionHeading } from "@/components/site/section";
 import { FeatureGrid } from "@/components/site/feature-grid";
 import { MarketsGlobe } from "@/components/site/markets-globe";
+import { GlassCard } from "@/components/site/glass-card";
 
 /** About the company: the founding story from the old /about page, heading left and text right. */
 export async function StorySection({ locale }: { locale: string }) {
@@ -22,21 +23,21 @@ export async function StorySection({ locale }: { locale: string }) {
 
 const MISSION_ICONS = [Target, Eye, Compass];
 
-/** Mission, vision and approach as three statements in one divided panel. */
+/** Mission, vision and approach as three statements on glass cards. */
 export async function MissionSection({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "company.mission" });
 	return (
 		<Section tone="muted">
 			<SectionHeading eyebrow={t("badge")} title={t("title")} />
-			<div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-border bg-border lg:grid-cols-3">
+			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
 				{MISSION_ICONS.map((Icon, i) => (
-					<div key={i} className="reveal flex flex-col gap-5 bg-card p-6 sm:p-8">
+					<GlassCard key={i} className="reveal flex flex-col gap-5 rounded-3xl p-6 sm:p-8">
 						<span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-text">
 							<Icon className="size-4" aria-hidden="true" />
 							{t(`cards.${i}.label`)}
 						</span>
 						<p className="text-xl font-medium leading-snug tracking-tight text-foreground">{t(`cards.${i}.text`)}</p>
-					</div>
+					</GlassCard>
 				))}
 			</div>
 		</Section>
@@ -122,13 +123,10 @@ export async function MarketsSection({ locale }: { locale: string }) {
 					<SectionHeading eyebrow={t("badge")} title={t("title")} subtitle={page("subtitle")} className="mb-8 sm:mb-10" />
 					<ul className="reveal grid grid-cols-1 gap-2 sm:grid-cols-2">
 						{MARKETS.map((m, i) => (
-							<li
-								key={m}
-								className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground"
-							>
+							<GlassCard as="li" key={m} preset="subtle" className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-foreground">
 								<span className={i === 0 ? "led text-accent-yellow" : "led text-brand"} aria-hidden="true" />
-								{t(m)}
-							</li>
+								<span>{t(m)}</span>
+							</GlassCard>
 						))}
 					</ul>
 				</div>

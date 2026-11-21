@@ -29,12 +29,9 @@ export async function StatsBand({ locale }: { locale: string }) {
 				<div>
 					<MarketsGlobe labels={{ uz: markets[0], kz: markets[1], tj: markets[2], us: markets[3] }} />
 					<p className="mt-4 text-center text-sm font-semibold text-ink-foreground">{p("marketsTitle")}</p>
-					<div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+					<div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
 						{markets.map((m, i) => (
-							<span
-								key={m}
-								className="tag tag-scene"
-							>
+							<span key={m} className="tag tag-scene">
 								<span aria-hidden="true" className={i === 0 ? "led text-accent-yellow" : "led text-ink-accent"} />
 								{m}
 							</span>

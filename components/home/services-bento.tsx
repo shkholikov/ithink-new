@@ -60,7 +60,7 @@ function CardBackground({ index, tag, visual }: { index: number; tag: string; vi
 					)}
 				/>
 				<div className="absolute -right-16 -top-16 size-48 rounded-full bg-brand/10 blur-3xl transition-transform duration-500 group-hover:scale-125" />
-				<span className="tag absolute right-5 top-5 bg-background/80 backdrop-blur">{tag}</span>
+				<span className="tag absolute right-6 top-6">{tag}</span>
 			</div>
 			{/* In the card's flow, above the text, so it never overlaps the copy. */}
 			<div aria-hidden="true" className="relative px-6 pt-16 transition-transform duration-500 group-hover:-translate-y-1">

@@ -2,7 +2,7 @@
 
 import type { InputHTMLAttributes } from "react";
 import { PHONE_COUNTRIES, dialOf, flagOf, type PhoneCountry } from "@/lib/phone";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { GlassSelect, GlassSelectContent, GlassSelectItem, GlassSelectTrigger, GlassSelectValue } from "@/components/glassyui/glass-select";
 import { cn } from "@/lib/utils";
 
 interface PhoneFieldProps {
@@ -15,8 +15,9 @@ interface PhoneFieldProps {
 }
 
 /**
- * Country code and number in one box, so it reads as a single field like the
- * others: `[🇺🇿 +998 ▾ | 90 123 45 67]`. The number is formatted by the caller.
+ * Country code and number in one recessed glass field, so it reads as a single field like the
+ * others: `[🇺🇿 +998 ▾ | 90 123 45 67]`. The number is formatted by the caller. The outer box
+ * borrows GlassyUI's `lg-input` look; the two controls inside are bare.
  */
 export function PhoneField({ id, country, onCountryChange, countryLabel, invalid, inputProps }: PhoneFieldProps) {
 	const placeholder = PHONE_COUNTRIES.find((c) => c.code === country)!.placeholder;
@@ -24,34 +25,35 @@ export function PhoneField({ id, country, onCountryChange, countryLabel, invalid
 	return (
 		<div
 			className={cn(
-				"flex items-center w-full bg-background border rounded-xl transition-colors focus-within:border-[#377dff] focus-within:ring-2 focus-within:ring-[#377dff]/40",
-				invalid ? "border-red-500/60" : "border-border"
+				"lg-input flex items-center rounded-xl p-0 focus-within:bg-[var(--lg-control-surface-hover)] has-[input:focus-visible]:outline-2 has-[input:focus-visible]:outline-offset-2 has-[input:focus-visible]:outline-brand",
+				// The input inside carries aria-invalid; the box shows the same red ring lg-input uses.
+				invalid && "border-[var(--lg-invalid)] shadow-[0_0_0_1px_var(--lg-invalid)]"
 			)}
 		>
-			<Select value={country} onValueChange={(value) => value && onCountryChange(value as PhoneCountry)}>
-				<SelectTrigger
+			<GlassSelect value={country} onValueChange={(value) => value && onCountryChange(value as PhoneCountry)}>
+				<GlassSelectTrigger
 					aria-label={countryLabel}
-					className="h-auto data-[size=default]:h-auto border-0 bg-transparent dark:bg-transparent dark:hover:bg-transparent rounded-l-xl rounded-r-none pl-4 pr-2 py-3 gap-1.5 text-sm font-medium focus-visible:ring-0"
+					className="w-auto shrink-0 gap-1.5 rounded-l-xl rounded-r-none border-0 bg-transparent py-3 pl-4 pr-2 text-base font-medium shadow-none backdrop-blur-none sm:text-sm"
 				>
-					<SelectValue>
-						{(value: PhoneCountry) => (
-							<span className="flex items-center gap-1.5">
-								<span aria-hidden="true">{flagOf(value)}</span>+{dialOf(value)}
-							</span>
-						)}
-					</SelectValue>
-				</SelectTrigger>
-				<SelectContent alignItemWithTrigger={false} align="start" className="rounded-xl min-w-44">
+					<span className="flex items-center gap-1.5">
+						<GlassSelectValue>
+							<span aria-hidden="true">{flagOf(country)}</span>+{dialOf(country)}
+						</GlassSelectValue>
+					</span>
+				</GlassSelectTrigger>
+				<GlassSelectContent align="start" className="glass-dense min-w-44">
 					{PHONE_COUNTRIES.map((c) => (
-						<SelectItem key={c.code} value={c.code} className="py-2">
-							<span aria-hidden="true">{flagOf(c.code)}</span>
-							<span>{c.code}</span>
-							<span className="text-muted-foreground">+{c.dial}</span>
-						</SelectItem>
+						<GlassSelectItem key={c.code} value={c.code}>
+							<span className="flex items-center gap-2">
+								<span aria-hidden="true">{flagOf(c.code)}</span>
+								<span>{c.code}</span>
+								<span className="text-muted-foreground">+{c.dial}</span>
+							</span>
+						</GlassSelectItem>
 					))}
-				</SelectContent>
-			</Select>
-			<span className="w-px h-5 bg-border shrink-0" aria-hidden="true" />
+				</GlassSelectContent>
+			</GlassSelect>
+			<span className="h-5 w-px shrink-0 bg-[var(--lg-border)]" aria-hidden="true" />
 			<input
 				id={id}
 				type="tel"
@@ -59,7 +61,7 @@ export function PhoneField({ id, country, onCountryChange, countryLabel, invalid
 				autoComplete="tel-national"
 				placeholder={placeholder}
 				{...inputProps}
-				className="flex-1 min-w-0 bg-transparent px-3 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none"
+				className="min-w-0 flex-1 bg-transparent px-3 py-3 text-base text-[var(--lg-foreground)] placeholder:text-muted-foreground focus:outline-none sm:text-sm"
 			/>
 		</div>
 	);

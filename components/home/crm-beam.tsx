@@ -5,6 +5,7 @@ import { Globe, MessageCircle, Phone, Send, Users, Workflow } from "lucide-react
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Labels = { website: string; phone: string; hub: string; team: string };
 
@@ -23,8 +24,9 @@ export function CrmBeam({ labels }: { labels: Labels }) {
 
 	// Written out node by node: the React compiler lint rejects refs read from an array during render.
 	return (
-		<div ref={container} className="relative flex w-full items-center justify-between gap-6 rounded-3xl border border-border bg-card p-6 sm:p-10">
-			<div className="flex flex-col gap-4">
+		<GlassCard ref={container} className="flex w-full items-center justify-between gap-6 rounded-3xl p-6 sm:p-10">
+			{/* z-10: glass lifts every direct child to z-index 2, so the column must sit above the beam SVGs. */}
+			<div className="relative z-10 flex flex-col gap-4">
 				<Node nodeRef={r1} label="WhatsApp">
 					<MessageCircle className="size-5 text-emerald-500" />
 				</Node>
@@ -54,7 +56,7 @@ export function CrmBeam({ labels }: { labels: Labels }) {
 			<AnimatedBeam {...beam} fromRef={r4} curvature={-24} delay={1.2} />
 			<AnimatedBeam {...beam} fromRef={r5} curvature={-48} delay={1.6} />
 			<AnimatedBeam containerRef={container} fromRef={hub} toRef={team} duration={4} pathColor="var(--border)" pathOpacity={1} gradientStartColor="#377dff" gradientStopColor="#f9b934" />
-		</div>
+		</GlassCard>
 	);
 }
 
@@ -73,15 +75,19 @@ function Node({
 }) {
 	return (
 		<div className="relative z-10 flex flex-col items-center gap-2">
-			<div
-				ref={nodeRef}
-				className={cn(
-					"flex items-center justify-center rounded-2xl border shadow-[0_8px_24px_-8px_rgba(10,16,36,0.18)]",
-					size === "lg" ? "size-20 border-brand/40 bg-[#2563eb] sm:size-24" : "size-12 border-border bg-background"
-				)}
-			>
-				{children}
-			</div>
+			{size === "lg" ? (
+				<div
+					ref={nodeRef}
+					className="flex size-20 items-center justify-center rounded-2xl border border-brand/40 bg-[#2563eb] shadow-[0_8px_24px_-8px_rgba(10,16,36,0.18)] sm:size-24"
+				>
+					{children}
+				</div>
+			) : (
+				// Solid, not glass: the beams run under these tiles and would show through a frost.
+				<div ref={nodeRef} className="flex size-12 items-center justify-center rounded-2xl border border-border bg-background">
+					{children}
+				</div>
+			)}
 			<span className={cn("text-center text-xs font-medium text-muted-foreground", size === "lg" && "text-sm font-semibold text-foreground")}>{label}</span>
 			{sub && <span className="-mt-1.5 text-[11px] text-muted-foreground">{sub}</span>}
 		</div>

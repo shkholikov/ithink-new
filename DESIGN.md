@@ -39,7 +39,7 @@ Radii: cards and panels `rounded-3xl`, controls and small tiles `rounded-xl`, ch
 - Hero eyebrow is a kicker: a 24 px rule plus uppercase `tracking-[0.16em] text-ink-accent`. The homepage kicker opens with Tashkent's coordinates `41.31° N · 69.24° E`. No pill eyebrows anywhere.
 - Breadcrumbs are one slash-separated line at 13 px. The current page is `text-ink-foreground` with a 2 px brand underline.
 - Container: `max-w-7xl px-4 sm:px-6 lg:px-8`. Section padding `py-20 sm:py-28`.
-- Sections alternate `default` and `muted`. Never set `data-lg-theme` on a section: glass follows the `<html>` theme, so it is light glass on the light scene and dark glass on the navy one.
+- Sections alternate `default` and `muted`. Both carry soft brand glows (`section-glow`, on by default via `Section glow`) so glass cards have colour to blur; pass `glow={false}` for a plain section. Never set `data-lg-theme` on a section: glass follows the `<html>` theme, so it is light glass on the light scene and dark glass on the navy one.
 - Logos with dark text (ITHINK, partners) swap per theme: `logo.png` with `dark:hidden`, `logo-negative.png` with `hidden dark:block`. Partner marks render through `PartnerMark` on a white tile.
 
 ## Components
@@ -48,6 +48,10 @@ Radii: cards and panels `rounded-3xl`, controls and small tiles `rounded-xl`, ch
 |---|---|---|
 | Primary / secondary action | `Cta` (`prominent` / `soft` on ink / `ghost` on light), `CtaRow` | `components/site/cta.tsx`, GlassyUI `glass-button` |
 | Floating UI cards in heroes | `GlassPanel` | GlassyUI |
+| Any card or panel on a section | `GlassCard` (`preset` subtle / standard / prominent, `interactive` for hover, `blueprint` for the hover grid, `as` for li / a / Link) | `components/site/glass-card.tsx` |
+| Text fields, selects | `GlassInput`, `GlassTextarea`, `GlassSelect` (lead form, `PhoneField`) | GlassyUI |
+| Toasts | `useGlassToasts` + `GlassToaster`, mounted by the component that needs them | `components/ui/glass-toaster.tsx`, GlassyUI `glass-toast` |
+| Filter chips, icon buttons | `GlassButton` (`prominent` when active, `primary` otherwise, `lens={false}`) | GlassyUI |
 | Feature cards | `FeatureGrid` (index numeral `01`, small icon in the corner) | `components/site/feature-grid.tsx` |
 | Link cards (related pages, other services) | `IndexCard` | `components/site/index-card.tsx` |
 | Service overview | `BentoGrid` / `BentoCard` with `index`; home cards show the service page's `FeatureVisual` | Magic UI `bento-grid`, `components/services/feature-visuals.tsx` |
@@ -59,17 +63,17 @@ Radii: cards and panels `rounded-3xl`, controls and small tiles `rounded-xl`, ch
 | Markets | `MarketsGlobe` (COBE globe, Tashkent arcs, client-only via `next/dynamic`) | `components/site/markets-globe.tsx`, `components/ui/globe.tsx` |
 | Partner logos | `PartnerMark` | `components/partners/partner-mark.tsx`, `public/partners/` |
 | Quotes | `AnimatedTestimonials` (company tiles until photos exist) | Aceternity |
-| Form panel | `BorderBeam` around `LazyLeadForm` | Magic UI |
+| Form panel | `GlassCard preset="prominent"` with `glass-dense`, `BorderBeam` around `LazyLeadForm` | Magic UI |
 | Navbar outline light | `BorderBeamTrain` (`components/ui/border-beam-train.tsx`): the same beam split into 10 squares of 28 px, so it bends round a 64 px bar | Magic UI, adapted |
-| FAQ | native `<details>` list | `components/home/faq-section.tsx` |
+| FAQ | `FaqList`: native `<details>` items on glass (answers stay in the HTML) | `components/site/faq-list.tsx` |
 
 Icons: lucide-react, `size-4` inline, `size-5` as a corner mark on cards. Cards lead with an index numeral (`text-5xl font-light text-muted-foreground/45`, brand on hover). Tinted icon tiles (`size-11 rounded-xl bg-brand/10`) are retired.
 
 Labels and status (CSS classes in `globals.css`, `@layer components`):
 
-- `tag`: square 6 px radius, 1 px border, 11 px uppercase. `tag-scene` on the hero, CTA band and footer scene. No round pills with a dot.
+- `tag`: a plain label, 11 px uppercase, `tracking 0.08em`, muted colour. No box, border or fill: boxed badges read as a template. `tag-scene` on the hero, CTA band and footer scene. A `led` may lead it. Links styled as `tag` change colour on hover.
 - `led`: 6 px square light, colour from `text-*` (`text-emerald-500` ok, `text-accent-yellow` home or warning).
-- `blueprint-hover`: a brand grid fades in from the top-right corner on hover and focus. Use it on every clickable card with `hover:border-brand/40`.
+- Blueprint grid: `GlassCard blueprint` adds a `blueprint-layer` child that fades in from the top-right corner on hover and focus (the card needs `group`). Use it on clickable feature and index cards.
 - Status in visuals is a table (name, signal, OK, `led`), as in `components/services/visuals/frame.tsx` `StatusTable`.
 
 ## Glass rules
@@ -78,6 +82,13 @@ Labels and status (CSS classes in `globals.css`, `@layer components`):
 - `data-lg-theme` on `<html>` follows next-themes. Dark scopes (`data-lg-theme="dark"`) win over a light root; light scopes inside a dark root are not supported.
 - The prominent button tint is overridden in `globals.css` so it renders #2563eb-range blue on any backdrop.
 - Never use `GlassScene` or `GlassProvider` (WebGL, document-level side effects).
+- Glass clips its children (`overflow: hidden`, paint containment). Anything that must hang outside, like the navbar dropdowns, goes beside a glass layer, not inside it: the navbar bar is a `GlassCard` background layer with the links over it.
+- Text inside glass sits in an element (`<span>{label}</span>`), never as a bare child of `GlassCard`: GlassyUI lifts element children above the frost, but a bare text node paints under it and blurs.
+- The edge lens (Chromium SVG displacement) stays on buttons. Cards, panels and chips use `GlassCard` or `lens={false}`.
+- Cards that overlap each other stay solid: the testimonial stack keeps `ink-scene`, because glass would show the names of the cards behind it. Moving content (the logo marquee, `LiveFeed` rows in service visuals) stays solid too, and so do tiles that beams or lines run under (`CrmBeam` source nodes), to spare a backdrop repaint every frame.
+- Inside glass controls, GlassyUI's own variables (`--lg-foreground`, `--lg-border`, `--lg-invalid`, `--lg-control-surface-hover`) are allowed, so a hand-built control such as `PhoneField` matches the registry ones. Everywhere else use the semantic tokens.
+- `glass-dense` (globals.css) frosts harder for glass that carries small text over busy content: menus, select lists, the form panel.
+- Cards: `GlassCard` with `rounded-3xl p-6` (`rounded-2xl p-4` for small tiles, `rounded-xl` for controls). No `bg-card` surfaces on sections; `bg-card` stays only inside small illustrations.
 
 ## Motion
 

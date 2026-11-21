@@ -1435,7 +1435,10 @@
 			"software-licenses": "Software licenses",
 			"corporate-training": "Corporate training",
 			"other": "Other"
-		}
+		},
+		"closeToast": "Close notification",
+		"telegramAlt": "Message our Telegram bot @ithinkuzbot",
+		"toastLabel": "Notification"
 	},
 	"home": {
 		"meta": {

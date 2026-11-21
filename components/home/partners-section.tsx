@@ -6,6 +6,7 @@ import { PartnerMark } from "@/components/partners/partner-mark";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { Section, SectionHeading } from "@/components/site/section";
 import { PARTNER_SLUGS } from "@/lib/site-nav";
+import { GlassCard } from "@/components/site/glass-card";
 
 export async function PartnersSection({ locale }: { locale: string }) {
 	const t = await getTranslations({ locale, namespace: "home.partners" });
@@ -22,10 +23,7 @@ export async function PartnersSection({ locale }: { locale: string }) {
 					<ul className="reveal grid grid-cols-1 gap-3 sm:grid-cols-2">
 						{partners.map((partner) => (
 							<li key={partner.slug}>
-								<Link
-									href={`/${locale}/partners/${partner.slug}`}
-									className="group flex h-full flex-col rounded-2xl border border-border bg-card p-4 transition-colors hover:border-brand/40"
-								>
+								<GlassCard as={Link} href={`/${locale}/partners/${partner.slug}`} interactive className="group flex h-full flex-col rounded-2xl p-4">
 									<span className="flex items-center justify-between gap-3 text-sm font-semibold text-foreground">
 										<span className="inline-flex items-center gap-3">
 											<PartnerMark slug={partner.slug} name="" className="size-9 rounded-lg" />
@@ -34,7 +32,7 @@ export async function PartnersSection({ locale }: { locale: string }) {
 										<ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-text" aria-hidden="true" />
 									</span>
 									<span className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">{partner.description}</span>
-								</Link>
+								</GlassCard>
 							</li>
 						))}
 					</ul>

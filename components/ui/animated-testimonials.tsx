@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { m, AnimatePresence } from "framer-motion";
 
 import { useCallback, useEffect, useState } from "react";
+import { GlassButton } from "@/components/glassyui/glass-button";
 
 type Testimonial = {
   quote: string;
@@ -154,22 +155,26 @@ export const AnimatedTestimonials = ({
             </m.p>
           </m.div>
           <div className="flex gap-4 pt-12 md:pt-0">
-            <button
+            <GlassButton
               type="button"
+              variant="primary"
+              lens={false}
               onClick={handlePrev}
               aria-label={prevLabel}
-              className="group/button flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-brand/40"
+              className="group/button size-11 rounded-full p-0"
             >
-              <ArrowLeft className="size-5 text-foreground transition-transform duration-300 group-hover/button:rotate-12" />
-            </button>
-            <button
+              <ArrowLeft className="size-5 text-foreground transition-transform duration-300 group-hover/button:rotate-12" aria-hidden="true" />
+            </GlassButton>
+            <GlassButton
               type="button"
+              variant="primary"
+              lens={false}
               onClick={handleNext}
               aria-label={nextLabel}
-              className="group/button flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-brand/40"
+              className="group/button size-11 rounded-full p-0"
             >
-              <ArrowRight className="size-5 text-foreground transition-transform duration-300 group-hover/button:-rotate-12" />
-            </button>
+              <ArrowRight className="size-5 text-foreground transition-transform duration-300 group-hover/button:-rotate-12" aria-hidden="true" />
+            </GlassButton>
           </div>
         </div>
       </div>

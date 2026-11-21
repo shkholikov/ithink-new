@@ -1435,7 +1435,10 @@
 			"software-licenses": "Dasturiy ta'minot litsenziyalari",
 			"corporate-training": "Korporativ o'qitish",
 			"other": "Boshqa"
-		}
+		},
+		"closeToast": "Bildirishnomani yopish",
+		"telegramAlt": "Telegram botimizga yozing: @ithinkuzbot",
+		"toastLabel": "Bildirishnoma"
 	},
 	"home": {
 		"meta": {

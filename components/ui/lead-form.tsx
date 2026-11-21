@@ -1,29 +1,35 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { Controller, useForm, useWatch, type Control, type FieldPath } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, Building2, Check, Layers, Plus, User, type LucideIcon } from "lucide-react";
-import { toast } from "sonner";
-import { Toaster } from "@/components/ui/sonner";
+import { GlassToaster, useGlassToasts } from "@/components/ui/glass-toaster";
 import { useIsDark } from "@/hooks/use-is-dark";
 import { getAttribution } from "@/lib/attribution";
 import { DEFAULT_PHONE_COUNTRY, formatPhone, toE164, type PhoneCountry } from "@/lib/phone";
 import { PhoneField } from "@/components/ui/phone-field";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { GlassInput } from "@/components/glassyui/glass-input";
+import { GlassTextarea } from "@/components/glassyui/glass-textarea";
+import { GlassButton } from "@/components/glassyui/glass-button";
+import { GlassSpinner } from "@/components/glassyui/glass-spinner";
+import { GlassSelect, GlassSelectContent, GlassSelectItem, GlassSelectTrigger, GlassSelectValue } from "@/components/glassyui/glass-select";
 import { TURNSTILE_ENABLED, Turnstile } from "@/components/ui/turnstile";
 import { cn } from "@/lib/utils";
 import { COMPANY_SIZES, LEAD_SERVICES, LeadFormSchema, telegramLink, type LeadFormValues, type LeadService } from "@/lib/lead";
 
+/* GlassyUI's lg-input carries the recessed glass, focus fill and aria-invalid ring; these size it and add the
+   keyboard focus outline GlassyUI leaves out. */
 const INPUT_CLASS =
-	"w-full px-4 py-3 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:border-[#377dff] focus-visible:ring-2 focus-visible:ring-[#377dff]/40 transition-colors aria-[invalid=true]:border-red-500/60";
+	"rounded-xl px-4 py-3 text-base sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 const LABEL_CLASS = "block text-sm font-medium text-foreground mb-2";
-const ICON_CLASS = "pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground";
-const ERROR_CLASS = "mt-1.5 text-xs text-red-600 dark:text-red-400";
+const ICON_CLASS = "pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 w-4 h-4 text-muted-foreground";
+const ERROR_CLASS = "mt-1.5 text-xs text-red-600 dark:text-red-300";
 
 /** Fields the endpoint can reject by name; anything else is shown as a form-level error. */
-const FIELDS = ["service", "name", "phone", "company_size", "description"] as const;
+// In on-screen order: the first invalid one gets focus.
+const FIELDS = ["name", "phone", "service", "company_size", "description"] as const;
 type Field = (typeof FIELDS)[number];
 
 type ServerError = "captcha" | "rateLimited" | "unavailable" | "generic";
@@ -47,14 +53,18 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 	const uid = useId();
 	const id = (field: string) => `${uid}-${field}`;
 	const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+	// Set synchronously, so two submits in the same tick (Enter plus click) cannot both send a lead.
+	const busy = useRef(false);
 	const [token, setToken] = useState<string | null>(null);
 	const [resetKey, setResetKey] = useState(0);
 	const [showComment, setShowComment] = useState(false);
+	const toasts = useGlassToasts();
 
 	const {
 		register,
 		handleSubmit,
 		setError,
+		setFocus,
 		setValue,
 		getValues,
 		control,
@@ -62,6 +72,8 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 		formState: { errors }
 	} = useForm<LeadFormValues>({
 		resolver: zodResolver(LeadFormSchema),
+		// Focus is set by onInvalid in on-screen order; react-hook-form would pick registration order (phone first).
+		shouldFocusError: false,
 		// "" leaves a select on its placeholder; the schema rejects an empty service on submit.
 		defaultValues: {
 			service: service ?? ("" as LeadService),
@@ -80,13 +92,28 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 	// Request-level failures go to a toast; field errors stay under their fields.
 	const showError = (error: ServerError) => {
 		const offerTelegram = error === "rateLimited" || error === "unavailable";
-		toast.error(t(`errors.${error}`), {
+		toasts.show({
+			tone: "error",
+			title: t(`errors.${error}`),
 			duration: 8000,
-			action: offerTelegram ? { label: t("telegramCta"), onClick: () => window.open(telegramLink(pageTag), "_blank", "noopener") } : undefined
+			action: offerTelegram
+				? { label: t("telegramCta"), altText: t("telegramAlt"), onClick: () => window.open(telegramLink(pageTag), "_blank", "noopener") }
+				: undefined
 		});
 	};
 
-	const onSubmit = handleSubmit(async (values) => {
+	const focusFirst = (invalid: Partial<Record<string, unknown>>) => {
+		const first = FIELDS.find((f) => invalid[f]);
+		if (first) setFocus(first);
+	};
+
+	const finish = (next: "idle" | "sent") => {
+		setStatus(next);
+		if (next === "idle") busy.current = false;
+	};
+
+	const send = async (values: LeadFormValues) => {
+		if (busy.current) return;
 		const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
 		if (!endpoint) {
 			console.error("NEXT_PUBLIC_LEAD_ENDPOINT is not set.");
@@ -98,28 +125,33 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 			return;
 		}
 
+		busy.current = true;
 		setStatus("sending");
 
-		const body = {
-			service: values.service,
-			name: values.name.trim(),
-			// The schema has already checked it is valid for the chosen country.
-			phone: toE164(values.phone, values.phone_country),
-			company_size: values.company_size || undefined,
-			description: values.description?.trim() || undefined,
-			locale,
-			page_url: location.href,
-			attribution: getAttribution(),
-			event_id: crypto.randomUUID(),
-			turnstile_token: token ?? undefined,
-			website: values.website
-		};
-
+		// Building the body can throw too (crypto.randomUUID is missing on plain-http origins and
+		// old WebViews), so it sits in the same try as the request: the button must never stay on "sending".
 		let res: Response;
 		try {
+			const body = {
+				service: values.service,
+				name: values.name.trim(),
+				// The schema has already checked it is valid for the chosen country.
+				phone: toE164(values.phone, values.phone_country),
+				company_size: values.company_size || undefined,
+				description: values.description?.trim() || undefined,
+				locale,
+				page_url: location.href,
+				attribution: getAttribution(),
+				event_id: crypto.randomUUID(),
+				turnstile_token: token ?? undefined,
+				website: values.website
+			};
 			res = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-		} catch {
-			setStatus("idle");
+		} catch (error) {
+			console.error("Lead request failed before a response:", error);
+			// The server may have verified the token before the connection failed; get a fresh one.
+			setResetKey((k) => k + 1);
+			finish("idle");
 			showError("unavailable");
 			return;
 		}
@@ -128,37 +160,45 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 		setResetKey((k) => k + 1);
 
 		if (res.ok) {
-			toast.success(t("successTitle"), { description: t("successBody"), duration: 6000 });
-			// Clear the form in place for a possible second request; keep the country.
+			toasts.show({ tone: "success", title: t("successTitle"), description: t("successBody"), duration: 6000 });
+			// Clear the form in place for a possible second request; keep the country and the service.
 			reset({ ...getValues(), name: "", phone: "", company_size: "", description: "", website: "" });
 			setShowComment(false);
-			setStatus("sent");
-			setTimeout(() => setStatus("idle"), 3000);
+			finish("sent");
+			setTimeout(() => finish("idle"), 3000);
 			return;
 		}
 
-		setStatus("idle");
+		finish("idle");
 
 		if (res.status === 400) {
 			const data = await res.json().catch(() => null);
+			console.error("Lead rejected:", res.status, data);
 			const fieldErrors: Record<string, string[] | undefined> = data?.issues?.fieldErrors ?? {};
 			let matched = false;
+			let focused = false;
 			for (const field of FIELDS) {
 				if (fieldErrors[field]?.length) {
-					setError(field as FieldPath<LeadFormValues>, { message: field });
-					matched = true;
+					setError(field as FieldPath<LeadFormValues>, { message: field }, { shouldFocus: !focused });
+					focused = true;
+					if (field === "description") setShowComment(true);
+					// On service pages the service is a fixed chip with no error slot: fall back to the toast.
+					if (!(field === "service" && service)) matched = true;
 				}
 			}
-			if (fieldErrors.turnstile_token?.length) showError("captcha");
+			// Without a widget on the page the visitor cannot pass a captcha: that is a setup problem, not theirs.
+			if (fieldErrors.turnstile_token?.length) showError(TURNSTILE_ENABLED ? "captcha" : "unavailable");
 			else if (!matched) showError("generic");
 		} else if (res.status === 403) {
-			showError("captcha");
+			console.error("Lead rejected:", res.status);
+			showError(TURNSTILE_ENABLED ? "captcha" : "unavailable");
 		} else if (res.status === 429) {
 			showError("rateLimited");
 		} else {
+			console.error("Lead rejected:", res.status);
 			showError("unavailable");
 		}
-	});
+	};
 
 	const fieldError = (name: Field) => {
 		const message = errors[name]?.message;
@@ -178,17 +218,34 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 
 	const phone = register("phone");
 
+	const submitContent = {
+		idle: (
+			<>
+				{t("submit")}
+				<ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+			</>
+		),
+		sending: (
+			<>
+				{t("sending")}
+				<GlassSpinner size="sm" aria-hidden="true" />
+			</>
+		),
+		sent: (
+			<>
+				{t("sent")}
+				<Check className="size-4" aria-hidden="true" />
+			</>
+		)
+	}[status];
+
 	return (
 		<>
-			{/* Mounted here, not in the layout, so sonner only loads on pages with a form.
+			{/* Mounted here, not in the layout, so the toast code only loads on pages with a form.
 			    Outside the <form> so its live region does not take a row gap. */}
-			<Toaster position="bottom-right" closeButton />
-			<form onSubmit={onSubmit} noValidate className="space-y-5">
-				{service && (
-					<span className="inline-flex text-xs font-medium text-muted-foreground bg-secondary px-2.5 py-1 rounded-full border border-border">
-						{t(`services.${service}`)}
-					</span>
-				)}
+			<GlassToaster items={toasts.items} close={toasts.close} closeLabel={t("closeToast")} label={t("toastLabel")} />
+			<form onSubmit={(e) => handleSubmit(send, focusFirst)(e)} noValidate className="flex flex-col gap-5">
+				{service && <span className="tag">{t(`services.${service}`)}</span>}
 
 				<div>
 					<label htmlFor={id("name")} className={LABEL_CLASS}>
@@ -196,7 +253,7 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 					</label>
 					<div className="relative">
 						<User className={ICON_CLASS} aria-hidden="true" />
-						<input
+						<GlassInput
 							id={id("name")}
 							type="text"
 							autoComplete="name"
@@ -266,7 +323,9 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 						icon={Building2}
 						placeholder={t("selectPlaceholder")}
 						items={COMPANY_SIZES.map((size) => ({ value: size, label: t(`companySizes.${size}`) }))}
+						{...a11y("company_size")}
 					/>
+					{fieldError("company_size")}
 				</div>
 
 				{showComment ? (
@@ -275,7 +334,7 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 							{t("commentLabel")}
 							{optional}
 						</label>
-						<textarea
+						<GlassTextarea
 							id={id("description")}
 							rows={3}
 							autoFocus
@@ -290,7 +349,7 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 					<button
 						type="button"
 						onClick={() => setShowComment(true)}
-						className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-text hover:underline underline-offset-2"
+						className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-brand-text hover:underline underline-offset-2"
 					>
 						<Plus className="w-4 h-4" />
 						{t("addComment")}
@@ -302,31 +361,26 @@ export function LeadForm({ service, pageTag }: LeadFormProps) {
 					<input type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
 				</div>
 
-				{/* In interaction-only mode the widget is usually 0px tall; -mt-5 cancels the
-				    form's row gap so it does not leave an empty band above the button. */}
+				{/* In interaction-only mode the widget is usually 0px tall; -mt-5 cancels its row gap so it
+				    leaves no empty band above the button. Flex gap, not space-y: v4's space-y margins collapse
+				    through this empty box and the button would touch the comment field. */}
 				<div className="-mt-5">
 					<Turnstile locale={locale} theme={isDark ? "dark" : "light"} onToken={setToken} resetKey={resetKey} />
 				</div>
 
 				<div className="space-y-3">
-					<button
+					<GlassButton
 						type="submit"
-						disabled={status !== "idle"}
-						data-sending={status === "sending"}
-						className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#2563eb] hover:bg-[#1d4fd8] text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-md shadow-[#377dff]/30 hover:shadow-lg hover:shadow-[#377dff]/40 hover:scale-[1.02] data-[sending=true]:opacity-60 disabled:hover:scale-100"
+						variant="prominent"
+						size="lg"
+						// aria-disabled, not disabled: a disabled button drops keyboard focus to <body> when a request fails.
+						// The busy ref blocks repeat submits.
+						aria-disabled={status !== "idle"}
+						aria-busy={status === "sending"}
+						className={cn("w-full gap-2 font-semibold text-balance max-sm:px-5 max-sm:text-base", status === "sending" && "cursor-progress opacity-80")}
 					>
-						{status === "sent" ? (
-							<>
-								{t("sent")}
-								<Check className="w-4 h-4" />
-							</>
-						) : (
-							<>
-								{status === "sending" ? t("sending") : t("submit")}
-								<ArrowRight className="w-4 h-4" />
-							</>
-						)}
-					</button>
+						{submitContent}
+					</GlassButton>
 				</div>
 
 				<p className="text-xs text-muted-foreground text-center">
@@ -355,39 +409,38 @@ interface FormSelectProps {
 	"aria-describedby"?: string;
 }
 
-/** shadcn Select bound to the form, styled to match the text inputs. */
+/** GlassyUI select bound to the form, styled to match the text inputs. */
 function FormSelect({ control, name, id, icon: Icon, placeholder, items, onValue, ...aria }: FormSelectProps) {
 	return (
 		<Controller
 			control={control}
 			name={name}
 			render={({ field }) => (
-				<Select
-					value={field.value || null}
+				<GlassSelect
+					// Radix shows the placeholder for "", so a form reset clears the select too (undefined would
+					// make it uncontrolled and keep the last choice).
+					value={field.value ?? ""}
 					onValueChange={(value) => {
-						field.onChange(value ?? "");
-						onValue?.(value ?? "");
+						field.onChange(value);
+						onValue?.(value);
 					}}
-					items={Object.fromEntries(items.map((item) => [item.value, item.label]))}
 				>
-					<SelectTrigger
-						id={id}
-						ref={field.ref}
-						onBlur={field.onBlur}
-						{...aria}
-						className="w-full h-auto data-[size=default]:h-auto gap-3 px-4 py-3 rounded-xl border-border bg-background dark:bg-background dark:hover:bg-background text-sm text-foreground focus-visible:border-[#377dff] focus-visible:ring-2 focus-visible:ring-[#377dff]/40 aria-invalid:border-red-500/60 aria-invalid:ring-0"
-					>
-						<Icon className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
-						<SelectValue placeholder={placeholder} />
-					</SelectTrigger>
-					<SelectContent alignItemWithTrigger={false} className="rounded-xl">
+					<GlassSelectTrigger id={id} ref={field.ref} onBlur={field.onBlur} {...aria} className={INPUT_CLASS}>
+						<span className="flex min-w-0 items-center gap-3">
+							<Icon className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+							<span className="truncate">
+								<GlassSelectValue placeholder={placeholder} />
+							</span>
+						</span>
+					</GlassSelectTrigger>
+					<GlassSelectContent collisionPadding={16} className="glass-dense max-w-[calc(100vw-2rem)]">
 						{items.map((item) => (
-							<SelectItem key={item.value} value={item.value} className="py-2">
+							<GlassSelectItem key={item.value} value={item.value}>
 								{item.label}
-							</SelectItem>
+							</GlassSelectItem>
 						))}
-					</SelectContent>
-				</Select>
+					</GlassSelectContent>
+				</GlassSelect>
 			)}
 		/>
 	);

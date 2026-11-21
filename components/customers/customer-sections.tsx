@@ -10,6 +10,7 @@ import { Section, SectionHeading } from "@/components/site/section";
 import { ClientGrid } from "@/components/customers/client-grid";
 import { CASES, initials, type CompactCase, type FeaturedCase, type Metric } from "@/components/customers/cases";
 import { cn } from "@/lib/utils";
+import { GlassCard } from "@/components/site/glass-card";
 
 type Item = { name: string; industry: string; description: string; services: string[] };
 
@@ -79,18 +80,20 @@ export async function ClientWall({ locale }: { locale: string }) {
 				))}
 			</div>
 			<p className="mt-5 text-sm font-semibold text-ink-foreground">{t("wall")}</p>
-			<dl className="mt-3 grid grid-cols-2 gap-2">
+			<dl className="mt-3 grid grid-cols-1 gap-2 min-[400px]:grid-cols-2">
 				{industries.map((ind, i) => (
-					<div
+					<GlassCard
 						key={ind.name}
+						preset="subtle"
+						noise={false}
 						className={cn(
-							"flex items-center justify-between gap-3 rounded-xl border border-ink-foreground/10 bg-ink-foreground/5 px-3 py-2",
-							industries.length % 2 === 1 && i === industries.length - 1 && "col-span-2"
+							"flex items-center justify-between gap-3 rounded-xl px-3 py-2",
+							industries.length % 2 === 1 && i === industries.length - 1 && "min-[400px]:col-span-2"
 						)}
 					>
-						<dt className="min-w-0 truncate text-xs text-ink-muted">{ind.name}</dt>
+						<dt className="min-w-0 text-xs leading-snug text-ink-muted">{ind.name}</dt>
 						<dd className="text-sm font-semibold tabular-nums text-ink-foreground">{ind.count}</dd>
-					</div>
+					</GlassCard>
 				))}
 			</dl>
 		</GlassPanel>
@@ -108,14 +111,14 @@ function Metrics({ metrics }: { metrics: Metric[] }) {
 	return (
 		<dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
 			{metrics.map((m) => (
-				<div key={m.label} className="flex flex-col gap-1 rounded-xl border border-border bg-card p-4">
+				<GlassCard key={m.label} preset="subtle" noise={false} className="flex flex-col gap-1 rounded-xl p-4">
 					<dt className="order-2 text-xs leading-snug text-muted-foreground">{m.label}</dt>
 					<dd className="order-1 text-3xl font-semibold tracking-tight text-foreground tabular-nums">
 						{m.prefix}
 						<NumberTicker value={m.value} />
 						<span className="text-brand-text">{m.suffix}</span>
 					</dd>
-				</div>
+				</GlassCard>
 			))}
 		</dl>
 	);
@@ -133,12 +136,13 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 				{featured.map((c, i) => {
 					const flip = i % 2 === 1;
 					return (
-						<article
+						<GlassCard
+							as="article"
 							key={c.key}
 							id={`case-${c.key}`}
 							aria-labelledby={`case-${c.key}-title`}
 							className={cn(
-								"reveal relative grid scroll-mt-24 overflow-hidden rounded-3xl border border-border bg-card",
+								"reveal relative grid scroll-mt-24 overflow-hidden rounded-3xl p-0",
 								flip ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]" : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
 							)}
 						>
@@ -181,7 +185,7 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 										))}
 									</ol>
 								</div>
-								<div className="rounded-2xl border border-border bg-secondary p-5 sm:p-6">
+								<GlassCard preset="subtle" className="rounded-2xl p-5 sm:p-6">
 									<Label>{t("labels.result")}</Label>
 									<ul className="mt-4 grid gap-2.5">
 										{c.results.map((r) => (
@@ -192,7 +196,7 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 										))}
 									</ul>
 									<Metrics metrics={c.metrics} />
-								</div>
+								</GlassCard>
 								<div className="flex flex-col gap-6 border-t border-border pt-6 sm:flex-row sm:gap-10">
 									<div>
 										<Label>{t("labels.services")}</Label>
@@ -201,7 +205,7 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 									{c.stack.length > 0 && (
 										<div>
 											<Label>{t("labels.stack")}</Label>
-											<ul className="mt-3 flex flex-wrap gap-1.5">
+											<ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
 												{c.stack.map((s) => (
 													<li key={s} className="tag">
 														{s}
@@ -213,7 +217,7 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 								</div>
 							</div>
 							<BorderBeam size={120} duration={12} delay={i * 3} colorFrom="#377dff" colorTo="#f9b934" />
-						</article>
+						</GlassCard>
 					);
 				})}
 			</div>
@@ -224,12 +228,12 @@ export async function FeaturedCases({ locale }: { locale: string }) {
 /** Service labels as links to the matching `/services/<slug>` page. */
 function ServiceChips({ services, className }: { services: { label: string; href: string }[]; className?: string }) {
 	return (
-		<ul className={cn("flex flex-wrap gap-2", className)}>
+		<ul className={cn("flex flex-wrap gap-x-5 gap-y-3", className)}>
 			{services.map((s) => (
 				<li key={s.label}>
 					<Link
 						href={s.href}
-						className="tag group hover:border-brand/50 hover:text-brand-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+						className="tag group -my-1.5 py-1.5 hover:text-brand-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
 					>
 						{s.label}
 						<ArrowUpRight className="size-3.5 text-muted-foreground transition-colors group-hover:text-brand-text" aria-hidden="true" />
@@ -280,7 +284,7 @@ export async function QuotesSection({ locale }: { locale: string }) {
 			<SectionHeading eyebrow={t("eyebrow")} title={t("title")} />
 			<div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
 				{quotes.map((q) => (
-					<figure key={q.name} className="reveal flex flex-col rounded-3xl border border-border bg-card p-6 sm:p-8">
+					<GlassCard as="figure" key={q.name} className="reveal flex flex-col rounded-3xl p-6 sm:p-8">
 						<Quote className="size-5 text-brand-text" aria-hidden="true" />
 						<blockquote className="mt-5 flex-1 text-base leading-relaxed text-foreground sm:text-lg">{q.quote}</blockquote>
 						<figcaption className="mt-8 flex items-center gap-3 border-t border-border pt-5">
@@ -294,7 +298,7 @@ export async function QuotesSection({ locale }: { locale: string }) {
 								</span>
 							</span>
 						</figcaption>
-					</figure>
+					</GlassCard>
 				))}
 			</div>
 		</Section>

@@ -4,6 +4,7 @@ import { Bot, Mail, MapPin, Phone, Send } from "lucide-react";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { PageHero } from "@/components/site/page-hero";
 import { CtaSection } from "@/components/site/cta-section";
+import { GlassCard } from "@/components/site/glass-card";
 import { CONTACT } from "@/lib/contact";
 import { pageMetadata } from "@/lib/seo";
 
@@ -58,14 +59,14 @@ export default async function ContactRoute({ params }: Props) {
 								rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
 								className="block h-full rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
 							>
-								<div className="blueprint-hover group flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-colors duration-300 hover:border-brand/50">
+								<GlassCard interactive blueprint className="group flex h-full flex-col rounded-3xl p-6">
 									<span className="flex items-center justify-between">
 										<span className="tag">{t(`${c.key}.label`)}</span>
 										<c.icon className="size-5 text-muted-foreground/70 transition-colors group-hover:text-brand-text" aria-hidden="true" />
 									</span>
 									<span className="mt-10 break-all text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-brand-text">{c.value}</span>
 									<span className="mt-2 text-sm text-muted-foreground">{t(`${c.key}.note`)}</span>
-								</div>
+								</GlassCard>
 							</a>
 						</li>
 					))}

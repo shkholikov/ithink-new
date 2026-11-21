@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Page skeleton: `PageHero` (`components/site/page-hero.tsx`) → `Section` / `SectionHeading` (`components/site/section.tsx`) → `CtaSection` (`components/site/cta-section.tsx`). No hand-rolled `<h1>` blocks.
 - Actions: `Cta` and `CtaRow` (`components/site/cta.tsx`), GlassyUI glass buttons. `prominent` is the primary; `soft` is the secondary on ink, `ghost` on light. Two actions side by side always go in `CtaRow`.
-- Cards: `rounded-3xl border border-border bg-card p-6`; feature cards via `FeatureGrid`. Controls `rounded-xl`.
+- Cards: GlassyUI glass via `GlassCard` (`components/site/glass-card.tsx`), `rounded-3xl p-6`; feature cards via `FeatureGrid`, FAQ via `FaqList`. Controls `rounded-xl`. Form fields, selects and toasts are GlassyUI (`components/glassyui/`).
 - Colour: semantic tokens from `app/globals.css` only. Brand blue as text is `text-brand-text`; filled buttons are #2563eb (white on #377dff fails 4.5:1). The hero, CTA band and footer "scene" follows the theme: on it use `text-ink-foreground`, `text-ink-muted`, `text-ink-accent`, `border-ink-foreground/10`; `text-white` only on a solid blue fill.
 - Motion: `appear` classes for hero headings, `reveal` for scroll entrance, both CSS. framer-motion only inside registry components, via `m.*`, never `motion.*`.
 - New registry components: install from the registries in `components.json`, then rewrite `motion/react` imports to `framer-motion` + `m`, and swap other icon sets for lucide.
@@ -57,7 +57,7 @@ Every lead form is `LeadForm` (`components/ui/lead-form.tsx`). It posts to `NEXT
 
 All copy lives in `messages/{ru,en,uz}.json`, one namespace per page. **Key sets must stay identical across the three files** — next-intl does not throw on a missing key, it renders the key path to the visitor. Any wording change is a three-file edit: write a patch with all three locales and run `node scripts/i18n-merge.mjs patch.json`, then `pnpm check:messages` (also catches Cyrillic letters in Uzbek strings).
 
-Tailwind v4, CSS-first — tokens live in `@theme inline` in `app/globals.css`, there is no `tailwind.config`. Light-first: `ThemeProvider` defaults to `light` (`:root`), dark values live under `.dark`. shadcn/ui over `@base-ui/react` (not Radix); GlassyUI buttons use `@radix-ui/react-slot` for `asChild`.
+Tailwind v4, CSS-first — tokens live in `@theme inline` in `app/globals.css`, there is no `tailwind.config`. Light-first: `ThemeProvider` defaults to `light` (`:root`), dark values live under `.dark`. Controls are GlassyUI (`components/glassyui/`), which is Radix-based: `@radix-ui/react-select`, `react-toast` and `react-slot` (for `asChild`). No `@base-ui/react` components remain; `components.json` still names a Base UI shadcn style, so check what a new shadcn item imports before adding it.
 
 ## Formatting
 
