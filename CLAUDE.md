@@ -18,14 +18,34 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev            # dev server on :3000
+pnpm dev            # dev server; start it on the fixed port from ## Dev
 pnpm build          # production build
 pnpm start          # serve the build
 pnpm lint           # eslint (flat config, next core-web-vitals + typescript)
-npx tsc --noEmit    # typecheck — no script for it
+pnpm typecheck      # tsc --noEmit
 ```
 
 No test runner is configured.
+
+## Checks
+
+Run before saying a task is done, in this order (CI runs the same; `next-env.d.ts` comes from the build):
+
+```bash
+pnpm lint
+pnpm check:messages
+pnpm build
+pnpm typecheck
+```
+
+Review rules and risk tiers: `REVIEW.md`. Production bugs: `incidents.md`.
+
+## Dev
+
+- Start: `pnpm dev -p 3230`.
+- Ports: web 3230. No database, no Docker.
+- Env: `cp .env.example .env.local`, then set `NEXT_PUBLIC_LEAD_ENDPOINT=http://localhost:3210/api/site-lead` (ithink-miniapp dev, amoCRM stub without its `AMOCRM_ACCESS_TOKEN`). The example value is the live endpoint and creates real amoCRM deals. Unset, the lead form shows an error. `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is optional.
+- Stop: Ctrl+C in the dev terminal, or `/stack down`.
 
 ## Architecture
 
